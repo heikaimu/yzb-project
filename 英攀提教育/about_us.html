@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- css -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/card.css">
+  <!-- swiper -->
+  <link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
+  <!-- select -->
+  <link rel="stylesheet" href="./css/select.css">
+  <style>
+    .brand-item {
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .brand-item img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .about-us .title {
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+      font-size: 30px;
+      color: #ffba00;
+      border-bottom: 1px solid currentColor;
+    }
+
+    .about-us p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .about-us-title {
+      padding-bottom: 26px;
+      font-size: 24px;
+      color: #ffba00;
+      display: flex;
+      align-items: center;
+    }
+
+    .about-us-title:before {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 23px;
+      background-color: currentColor;
+      margin-right: 10px;
+    }
+
+    .letter-content {
+      padding: 30px;
+      background-color: #fff3d4;
+    }
+
+    .letter-content p {
+      line-height: 1.8;
+      font-size: 18px;
+      color: #070707;
+    }
+
+    /* 手机样式 */
+    @media screen and (max-width: 900px) {
+
+      .brand-item {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .brand-item img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .about-us .title {
+        font-size: 20px;
+      }
+
+      .about-us p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .about-us-title {
+        padding-bottom: 16px;
+        font-size: 18px;
+      }
+
+      .about-us-title:before {
+        height: 16px;
+      }
+
+      .letter-content {
+        padding: 10px;
+      }
+
+      .letter-content p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 顶部 -->
+  <div class="web-top">
+    <div class="container">
+      <div class="top-content">
+        <div class="left-wrapper">
+          <p class="top-text">欢迎来打英攀提教育官网</p>
+        </div>
+        <div class="right-wrapper">
+          <img src="" alt="">
+          <p class="top-text wx">英攀提教育官微</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 头部 -->
+  <header class="web-header">
+    <div class="container">
+      <div class="web-header-content">
+        <div class="left-wrapper">
+          <a class="logo"><img src="./images/logo.png" /></a>
+        </div>
+        <div class="right-wrapper">
+          <nav class="web-nav">
+            <a href="./index.html" class="active">首页</a>
+            <a href="./news.html">新闻</a>
+            <a href="./about_us.html">关于我们</a>
+          </nav>
+          <div class="usercenter">
+            <span class="phone"><img src="" alt=""></span>
+            <div class="login-register">
+              <img src="./images/top_icon.png" alt="">
+              <div class="btn-wrapper">
+                <a>登陆</a>
+                <a>注册</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu-bar" id="menuBarBtn"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- banner -->
+  <div class="banner">
+    <img src="./images/banner1.jpg" alt="">
+  </div>
+
+
+  <!-- 主体部分 -->
+  <div class="container">
+
+    <ol class="bread-nav pt-md pb-md">
+      <li><a href="#" class="home">首页</a></li>
+      <li><a href="#">关于我们</a></li>
+    </ol>
+
+    <!-- 关于我们 -->
+    <div class="about-us pb-lg">
+      <div class="about-us-title">
+        <h3>关于我们</h3>
+      </div>
+      <div class="row pt-sm">
+        <div class="col-xs-12 col-md-5 pb-md">
+          <img src="./images/banner1.jpg" alt="">
+        </div>
+        <div class="col-xs-12 col-md-6 col-xs-offset-0 col-md-offset-1 pb-md">
+          <h4 class="title">专注中小学全科辅导</h4>
+          <p>四川省成都市英攀提教育科技有限公司（网站中简称：英攀提教育）专注中小学全科辅导，为6至18岁的中小学生提供教育服务
+            。秉承“让学生乐学、让教师乐教、让家长乐意”的教育理念，从快乐学习出发，以丰富的教育教学经验为基础，专注于教师队伍的建设与整体水平的持续发展，专注于一对一教育的教学与研究，帮助学生健康的成长！</p>
+          <p>企训：坚定信念、踏实肯干、锐意进取、持之以恒</p>
+        </div>
+        <div class="col-xs-12 col-md-12">
+          <h4 class="title">梦想出击 勇往直前</h4>
+          <p>
+            英攀提教育以“传播中国优秀文化，吸收世界优秀文明成果，培养德才兼备、知行合一、人格健全且具有全球视野的优秀人才”为教育使命，英攀提教育秉承“坚定信念、踏实肯干、锐意进取、持之以恒”的教育理念，自主建立全年级全学科教研体系，深入研究教育、学习能力的开发和培养、家庭教育和前沿教育技术，不断改善学习体验。严谨科学的教研体系、人性化教材设计，帮助学生更好理解、吸收知识点，助力学生提升综合学习能力，取得更好成绩
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 写给校长的信 -->
+    <div class="letter-for-president pb-lg">
+      <div class="about-us-title">
+        <h3>写给校长的信</h3>
+      </div>
+      <div class="letter-content">
+        <p>
+          尊敬的校长：
+          您好。
+        </p>
+        <p>
+          我是四川英攀提教育科技有限公司的孙老师，一个在一线城市、普通省城、一般地级市及县城开发及管理过几十个培训机构的校长很感谢您在百忙之中看我的来信。每次和同行校长聊天，我都会滔滔不绝，因为我们都是在路上的创业者，创业的酸甜苦辣，像您和我这类人，才清楚。
+          没有优秀教师及优质课程，怎么办？很多校长伤透了脑筋。
+          要么就招资质一般的教师，慢慢培养。但培养是要付出代价和成本的，这个需要您来买单。就算培养好了，这个行业，“教会徒弟饿死师父”的惨剧每天都在不断上演。
+          要么找当地全日制学校的教师做兼职。一来政府政策有严格限制，用这些老师政策风险大；二来机构形不成自己的核心竞争力产品，您的课程和全日制学校几乎同质化了，没有竞争力；三是这些兼职教师成本很高，很多时候，实际上是您替他们打工；四是潜在风险太大：这些兼职老师，您无法实施严格的质量管理，如果遇到低能的，极可能把您辛苦招来的学生上跑，如果遇到能力强的，等他（她）和学生及家长熟悉后，极有可能带走您的学生，就算不带走，这样的老师，您也不好管了，您实际上已经是乙方了。
+          但是，优秀教师和优质课程，是一个机构的灵魂，是长期健康稳定发展的根基。没有这一点，健康稳定发展是不可能的。
+          没有品牌，同样的课程，有所谓品牌的机构收3000元，您可能只能收2000元，而您比他们付出的更多。没有一个强大的市场营销团队您只能做最低级的营销，费时费力费钱，却不见得有好的效果。没有一个系统高效的人力资源体系，优秀人才不容易进来，就是侥幸进来也留不下来。员工质量越来越差，老员工越来越没有斗志且翅膀越来越硬、越来越不好管，危险。
+          亲爱的校长朋友们，让我们紧紧团结起来吧！四川英攀题教育科技有限公司，愿意永远做大家最坚强的后盾：
+          没有优秀教师及优质的课程，我们给大家提供。英攀提，拥有强大的教师、教研及技术团队，持续为大家提供优秀的教师团队及优质的课程产品，让我们的发展没有后顾之忧。强大的产品力，可以让我们在当地形成好口碑，抵消甚至超过大机构的品牌影响力。
+          没有品牌，我们一起升华我们共同的品牌。英攀提公司核心团队，起点高、能力强、干劲足。目前已经有很多培训机构开始使用英攀提的品牌，随着像您一样的众多校长的加入，使用英攀提品牌的学校越来越多，再加上我们优秀教师团队及优质课程产品的力量，我们在小范围及大范围的品牌影响力都会越来越强。
+          当然，用不用英攀提的品牌，取决于大家的自愿。不合作品牌，只合作产品及其它也可以，即使这样，也能让您“衣食无忧”、健康稳定发展。
+          英攀提，拥有强大的市场策划及执行团队，在招生方面，可以对大家进行有力的指导及帮助。
+          人力资源方面，我们可以帮助大家吸引、招聘、培训、考核市场、咨询、学管、助教等机构需要的一切人员，让您后备之军充足且优质，不再受制于人。
+          考虑到大家的实际情况，我们不像其他有些机构，一来就收大家一大笔钱，然后您的死活与他再无关系。我们的理念：大家先赚钱，我们再赚钱，求的是大家一起健康、稳定、共生发展。期待您像其他众多校长一样，尽快加入我们这个有战斗力的大家庭。
+          预祝各位的校区发展的越来越好，创造辉煌，且长期稳定地辉煌下去。</p>
+      </div>
+    </div>
+
+    <!-- 企业文化 -->
+    <div class="company-culture pb-lg">
+      <div class="about-us-title">
+        <h3>企业文化</h3>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-3 pb-sm">
+          <div class="culture-card yellow">
+            <span class="icon"><img src="./images/culture_icon1.png" alt=""></span>
+            <h3 class="title">使命</h3>
+            <p class="context">传播中国优秀温壶，培养优秀人才</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-3 pb-sm">
+          <div class="culture-card green">
+            <span class="icon"><img src="./images/culture_icon2.png" alt=""></span>
+            <h3 class="title">精神</h3>
+            <p class="context">一切皆有可能</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 pb-sm">
+          <div class="culture-card blue">
+            <span class="icon"><img src="./images/culture_icon3.png" alt=""></span>
+            <h3 class="title">教育理念</h3>
+            <p class="context">坚定信念，踏实肯干，锐意进取，持之以恒</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 pb-sm">
+          <div class="culture-card cyan">
+            <span class="icon"><img src="./images/culture_icon4.png" alt=""></span>
+            <h3 class="title">愿景</h3>
+            <p class="context">成为世界一流的教育集团</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 pb-sm">
+          <div class="culture-card pink">
+            <span class="icon"><img src="./images/culture_icon5.png" alt=""></span>
+            <h3 class="title">核心价值观</h3>
+            <p class="context">以学生为中心，视员工为亲人，提升品牌价值</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 核心团队 -->
+    <div class="company-culture pb-lg">
+      <div class="about-us-title">
+        <h3>核心团队</h3>
+      </div>
+      <div class="swiper-not-full-box">
+        <div class="menu team-prev"></div>
+        <div class="menu team-next"></div>
+        <div class="swiper-container team-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="teacher-card">
+                <div class="avatar">
+                  <div class="img bg-cover animation" style="background-image:url(./images/banner1.jpg);">
+                  </div>
+                </div>
+                <div class="info">
+                  <h3 class="name">名字 英语老师</h3>
+                  <h4 class="honor">xxx优秀教师</h4>
+                  <p class="desc">dwadwadwdwadwadwadwd</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="teacher-card">
+                <div class="avatar">
+                  <div class="img bg-cover animation" style="background-image:url(./images/banner1.jpg);">
+                  </div>
+                </div>
+                <div class="info">
+                  <h3 class="name">名字 英语老师</h3>
+                  <h4 class="honor">xxx优秀教师</h4>
+                  <p class="desc">dwadwadwdwadwadwadwd</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="teacher-card">
+                <div class="avatar">
+                  <div class="img bg-cover animation" style="background-image:url(./images/banner1.jpg);">
+                  </div>
+                </div>
+                <div class="info">
+                  <h3 class="name">名字 英语老师</h3>
+                  <h4 class="honor">xxx优秀教师</h4>
+                  <p class="desc">dwadwadwdwadwadwadwd</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="teacher-card">
+                <div class="avatar">
+                  <div class="img bg-cover animation" style="background-image:url(./images/banner1.jpg);">
+                  </div>
+                </div>
+                <div class="info">
+                  <h3 class="name">名字 英语老师</h3>
+                  <h4 class="honor">xxx优秀教师</h4>
+                  <p class="desc">dwadwadwdwadwadwadwd</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="teacher-card">
+                <div class="avatar">
+                  <div class="img bg-cover animation" style="background-image:url(./images/banner1.jpg);">
+                  </div>
+                </div>
+                <div class="info">
+                  <h3 class="name">名字 英语老师</h3>
+                  <h4 class="honor">xxx优秀教师</h4>
+                  <p class="desc">dwadwadwdwadwadwadwd</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 合作伙伴 -->
+    <div class="company-culture pb-lg">
+      <div class="about-us-title">
+        <h3>合作伙伴</h3>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-2">
+          <div class="brand-item bg-cover"><img src="./images/logo.png" alt=""></div>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <div class="brand-item bg-cover"><img src="./images/logo.png" alt=""></div>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <div class="brand-item bg-cover"><img src="./images/logo.png" alt=""></div>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <div class="brand-item bg-cover"><img src="./images/logo.png" alt=""></div>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <div class="brand-item bg-cover"><img src="./images/logo.png" alt=""></div>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <div class="brand-item bg-cover"><img src="./images/logo.png" alt=""></div>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <div class="brand-item bg-cover"><img src="./images/logo.png" alt=""></div>
+        </div>
+        <div class="col-xs-6 col-md-2">
+          <div class="brand-item bg-cover"><img src="./images/logo.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!-- 底部 -->
+  <footer class="web-footer">
+    <div class="part-one pt-lg pb-lg">
+      <div class="container">
+        <div class="part-one-content pb-md">
+          <div class="custom-select" id="link-select">
+            <div class="input-wrapper">
+              <div class="input-text">
+                <input type="text" name="sex" value="-友情链接-">
+              </div>
+              <div class="input-btn"></div>
+            </div>
+            <div class="select-list">
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+            </div>
+          </div>
+          <div class="contact-way">
+            <p class="phone pb-xs">400-4343-121</p>
+            <p class="address">成都青羊区对我的娃第五大道</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="part-one-content">
+          <nav class="footer-menus pt-md">
+            <a>首页</a>
+            <a>课程中心</a>
+            <a>教育子</a>
+            <a>首页</a>
+          </nav>
+          <div class="third-share pt-md">
+            <a href=""><span class="qq"></span></a>
+            <a href=""><span class="wx"></span></a>
+            <a href=""><span class="wb"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="part-two">
+      <div class="container">
+        <p class="text-center">2019 www.ypt.net All Rights Reserved. 成都市英攀提教育科技有限公司版权所有.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/pictureView.js"></script>
+  <script src="./plugin/swiper/swiper.min.js"></script>
+  <script src="./js/select.js"></script>
+  <script>
+    $(function () {
+      // 导航
+      $("#menuBarBtn").click(function () {
+        $(".web-header").find(".right-wrapper").toggle();
+      })
+      document.addEventListener('click', function (e) {
+        if (document.body.clientWidth < 900) {
+          if (e.target.id !== "menuBarBtn") {
+            $(".web-header").find(".right-wrapper").hide();
+          }
+        }
+      })
+    })
+    var teamSwiper = new Swiper(".team-container", {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.team-next',
+        prevEl: '.team-prev',
+      },
+      breakpoints: {
+        //当宽度小于等于320
+        500: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        },
+        900: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- css -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/card.css">
+  <!-- swiper -->
+  <link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
+  <!-- select -->
+  <link rel="stylesheet" href="./css/select.css">
+  <style>
+    .news .news-item {
+      padding-left: 50px;
+      position: relative;
+    }
+
+    .news .news-item:before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 36px;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABaUlEQVRYR+2WfVEDMRDF31PAoAAcgAOKg0poHYADcIAD6gBwAA6QUBwUBY/ZmbSTpnvXzYXjmIH8vR+/fbtJlpj4cOL8+N0AkmYAVKnSB8l11MdVQNICwGM0iGO3JLmK+HcBbADMSb5GguQ2kraKhSC6AERy0HwkgFsAdwBujikxFsA1AFPRFFyQfO5ScjQAa5+kSwCW3Nr57kGEACRZJVdlAK9NkizRE8l7s08D/QBg5kGEAGoGMVVtN+Ci8NuQPD0owgtug5RXl4KeOAq8ReHKmFu/kAKSTELrZ36sovmPAEST9Nl9hwJlT9ckl1G4VgCTumyBAYSe23Qb3MctNAPRKkdrweQA6TE5qwSxb3nXotYZsO/5vBJgb0aaACoTu+ZNAJKs+iEt2G1GrQDuZ3REmZf8pWwCmLwFfxLA1il3gRiiRlrvVyQPrvJYa3nJ+dm1oPZuvol8SNF7Pn3r/aDVu5koC/AP8AV+TAUwCru5gwAAAABJRU5ErkJggg==') orange no-repeat center center;
+      position: absolute;
+      left: 0px;
+      top: 4px;
+      border-radius: 3px;
+    }
+
+    .news .news-item h3 {
+      padding-bottom: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .news .news-item p {
+      padding-bottom: 10px;
+      line-height: 1.3;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .news .news-item .tags {
+      display: flex;
+    }
+
+    .news .news-item .tags span {
+      display: block;
+      height: 20px;
+      font-size: 14px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+
+    .news .news-item .tags span:before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-right: 3px;
+    }
+
+    .news .news-item .tags span.views:before {
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABCklEQVQ4T7WT0VEDMQxEdyvI0UFKOCrg0oFdAZSQVBJKCBVYHSRXAZRACVDBMntjZy4JM0zIRD/+sLR6WtnEjcEb63EfgZTSAOAJQF8JPwCMEXE4Jz4hSCm5YEvSAo7vei58SrLAJiIsOMVRoBbvSXYulJRaRxORDAALSV8AVk1kEkgpLQG812J3WgFw4rY22gDoSO4rie8eI+KzCexIPjfsUkqXczaufXCMpZQh56yGLuktIl4uBIwYEQ/XCixJ2phm1jQCydeKvAbgnNIoJfXHEaoPPUljN6Py3EQAZWbwcGJim8ubqF3b7OdrHyWtf13jPLM+JK9uekiSPN7hz4f0n39xn79wDckP2AiOEf7wMNkAAAAASUVORK5CYII=') no-repeat center center;
+    }
+
+    .news .news-item .tags span.time:before {
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAArElEQVQ4T+WT0Q3CMAxE7yagIzECIzCCNyBM0GMDRugIbESYICjIqZqgqqn4JD9x7PjJ58TEj4ttvplZ9knSMrbm/wA8ePCEo++PBl75ScZxHG8FkABc9wAAXCRxBuSDV3NyCVMjofKbWaoAAMLOfoYWUCT0clYlBJLP3KDcXJKptV1qLWHRgzOAKGkys1m324Ok+xbg7yvofcP2I0UAZRZ6GS9Jw9c09maXe287jcER3JQ2+wAAAABJRU5ErkJggg==') no-repeat center center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 顶部 -->
+  <div class="web-top">
+    <div class="container">
+      <div class="top-content">
+        <div class="left-wrapper">
+          <p class="top-text">欢迎来打英攀提教育官网</p>
+        </div>
+        <div class="right-wrapper">
+          <img src="" alt="">
+          <p class="top-text wx">英攀提教育官微</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 头部 -->
+  <header class="web-header">
+    <div class="container">
+      <div class="web-header-content">
+        <div class="left-wrapper">
+          <a class="logo"><img src="./images/logo.png" /></a>
+        </div>
+        <div class="right-wrapper">
+          <nav class="web-nav">
+            <a href="./index.html" class="active">首页</a>
+            <a href="./news.html">新闻</a>
+            <a href="./about_us.html">关于我们</a>
+          </nav>
+          <div class="usercenter">
+            <span class="phone"><img src="" alt=""></span>
+            <div class="login-register">
+              <img src="./images/top_icon.png" alt="">
+              <div class="btn-wrapper">
+                <a>登陆</a>
+                <a>注册</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu-bar" id="menuBarBtn"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- banner -->
+  <div class="banner">
+    <img src="./images/banner1.jpg" alt="">
+  </div>
+
+
+  <!-- 主体部分 -->
+  <div class="container">
+
+    <ol class="bread-nav pt-md pb-md">
+      <li><a href="#" class="home">首页</a></li>
+      <li><a href="#">新闻咨询</a></li>
+    </ol>
+
+    <div class="custom-input">
+      <div class="input-text">
+        <input type="text">
+      </div>
+      <div class="input-btn"></div>
+    </div>
+
+    <ul class="news pt-md">
+      <li class="pb-sm">
+        <div class="news-item">
+          <h3 class="omit">由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.</h3>
+          <p>由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All
+            Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019
+            Tencent Inc. All Rights Reserved.</p>
+          <div class="tags">
+            <span class="time">2019-3-31</span>
+            <span class="views">3232</span>
+          </div>
+        </div>
+      </li>
+      <li class="pb-sm">
+        <div class="news-item">
+          <h3 class="omit">由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.</h3>
+          <p>由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All
+            Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019
+            Tencent Inc. All Rights Reserved.</p>
+          <div class="tags">
+            <span class="time">2019-3-31</span>
+            <span class="views">3232</span>
+          </div>
+        </div>
+      </li>
+      <li class="pb-sm">
+        <div class="news-item">
+          <h3 class="omit">由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.</h3>
+          <p>由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All
+            Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019
+            Tencent Inc. All Rights Reserved.</p>
+          <div class="tags">
+            <span class="time">2019-3-31</span>
+            <span class="views">3232</span>
+          </div>
+        </div>
+      </li>
+      <li class="pb-sm">
+        <div class="news-item">
+          <h3 class="omit">由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.</h3>
+          <p>由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All
+            Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019
+            Tencent Inc. All Rights Reserved.</p>
+          <div class="tags">
+            <span class="time">2019-3-31</span>
+            <span class="views">3232</span>
+          </div>
+        </div>
+      </li>
+      <li class="pb-sm">
+        <div class="news-item">
+          <h3 class="omit">由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.</h3>
+          <p>由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All
+            Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019
+            Tencent Inc. All Rights Reserved.</p>
+          <div class="tags">
+            <span class="time">2019-3-31</span>
+            <span class="views">3232</span>
+          </div>
+        </div>
+      </li>
+      <li class="pb-sm">
+        <div class="news-item">
+          <h3 class="omit">由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.</h3>
+          <p>由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All
+            Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019 Tencent Inc. All Rights Reserved.由腾讯企业邮提供技术支持 | © 1998 - 2019
+            Tencent Inc. All Rights Reserved.</p>
+          <div class="tags">
+            <span class="time">2019-3-31</span>
+            <span class="views">3232</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">上一页</span>
+          </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">下一页</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+
+
+  <!-- 底部 -->
+  <footer class="web-footer">
+    <div class="part-one pt-lg pb-lg">
+      <div class="container">
+        <div class="part-one-content pb-md">
+          <div class="custom-select" id="link-select">
+            <div class="input-wrapper">
+              <div class="input-text">
+                <input type="text" name="sex" value="-友情链接-">
+              </div>
+              <div class="input-btn"></div>
+            </div>
+            <div class="select-list">
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+            </div>
+          </div>
+          <div class="contact-way">
+            <p class="phone pb-xs">400-4343-121</p>
+            <p class="address">成都青羊区对我的娃第五大道</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="part-one-content">
+          <nav class="footer-menus pt-md">
+            <a>首页</a>
+            <a>课程中心</a>
+            <a>教育子</a>
+            <a>首页</a>
+          </nav>
+          <div class="third-share pt-md">
+            <a href=""><span class="qq"></span></a>
+            <a href=""><span class="wx"></span></a>
+            <a href=""><span class="wb"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="part-two">
+      <div class="container">
+        <p class="text-center">2019 www.ypt.net All Rights Reserved. 成都市英攀提教育科技有限公司版权所有.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/pictureView.js"></script>
+  <script src="./plugin/swiper/swiper.min.js"></script>
+  <script src="./js/select.js"></script>
+  <script>
+    $(function () {
+      // 导航
+      $("#menuBarBtn").click(function () {
+        $(".web-header").find(".right-wrapper").toggle();
+      })
+      document.addEventListener('click', function (e) {
+        if (document.body.clientWidth < 900) {
+          if (e.target.id !== "menuBarBtn") {
+            $(".web-header").find(".right-wrapper").hide();
+          }
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

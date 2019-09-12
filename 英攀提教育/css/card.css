@@ -1,0 +1,454 @@
+.session-card {
+  height: 155px;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 2px 5px #666;
+}
+.session-card .cover {
+  height: 155px;
+  flex: 0 0 250px;
+}
+.session-card .cover .img {
+  width: 100%;
+  height: 100%;
+}
+.session-card .info {
+  padding: 20px;
+  text-align: center;
+  background-color: currentColor;
+}
+.session-card .info h4 {
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 26px;
+  color: #fff;
+}
+.session-card .info h5 {
+  padding-bottom: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+.session-card .info p {
+  line-height: 1.4;
+  font-size: 14px;
+  color: #fff;
+  text-align: left;
+}
+.session-card.red {
+  color: #fe605f;
+}
+.session-card.green {
+  color: #93d150;
+}
+.session-card.yellow {
+  color: #ffc103;
+}
+.session-card.cyan {
+  color: #00af93;
+}
+.session-card.blue {
+  color: #1293d0;
+}
+
+/* 课堂 */
+.class-card {
+  display: flex;
+  height: 557px;
+}
+.class-card .left-wrapper {
+  width: 715px;
+  flex: 0 0 715px;
+  height: 557px;
+  position: relative;
+}
+.class-card .left-wrapper .basic {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column-reverse;
+}
+.class-card .left-wrapper .basic h3 {
+  padding: 0 60px;
+  font-size: 30px;
+  color: #fff;
+}
+.class-card .left-wrapper .basic p {
+  padding: 40px 60px 60px 60px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+}
+.class-card .right-wrapper {
+  height: 557px;
+  flex: 1;
+  padding-left: 100px;
+  color: #ffc103;
+}
+.class-card .right-wrapper h3 {
+  padding-top: 85px;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.6;
+}
+.class-card .right-wrapper h4 {
+  padding-top: 110px;
+  padding-bottom: 35px;
+  font-size: 24px;
+}
+.class-card .right-wrapper .button {
+  width: 143px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  background-color: #ffc103;
+  cursor: pointer;
+}
+
+.teacher-card {
+  width: 100%;
+}
+.teacher-card .avatar {
+  height: 300px;
+  overflow: hidden;
+}
+.teacher-card .avatar .img {
+  width: 100%;
+  height: 100%;
+}
+.teacher-card .info {
+  padding: 20px;
+  background-color: #ffc103;
+  text-align: center;
+}
+.teacher-card .info .name {
+  padding-bottom: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+.teacher-card .info .honor {
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+.teacher-card .info .honor:after {
+  content: "";
+  display: block;
+  width: 154px;
+  height: 1px;
+  background-color: #fff;
+  margin: 10px auto;
+}
+.teacher-card .info .desc {
+  font-size: 16px;
+  color: #fff;
+}
+
+.culture-card {
+  padding: 40px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.culture-card.yellow {
+  background-color: #ffc000;
+}
+.culture-card.green {
+  background-color: #93d150;
+}
+.culture-card.blue {
+  background-color: #1293d0;
+}
+.culture-card.cyan {
+  background-color: #00af93;
+}
+.culture-card.pink {
+  background-color: #fe605f;
+}
+.culture-card .icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.culture-card .title {
+  line-height: 40px;
+  font-size: 16px;
+  color: #fff;
+}
+.culture-card .context {
+  font-size: 14px;
+  color: #fff;
+}
+
+/* 教师卡片 */
+.index-teacher-card {
+  display: flex;
+}
+
+.index-teacher-card .avatar {
+  flex: 0 0 450px;
+  width: 450px;
+  height: 450px;
+  position: relative;
+}
+
+.index-teacher-card .avatar .basic-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  padding: 30px;
+}
+
+.index-teacher-card .avatar .basic-info h3 {
+  padding-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+  color: #ffc103;
+}
+
+.index-teacher-card .avatar .basic-info h4 {
+  padding: 10px;
+  background-color: #ffc103;
+  font-size: 24px;
+  color: #fff;
+}
+
+.index-teacher-card .intro {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.index-teacher-card .intro .content {
+  flex: 1;
+  height: 310px;
+  padding: 30px;
+  background-color: #e0eae4;
+  position: relative;
+}
+.index-teacher-card .intro .content p {
+  font-size:16px;
+  line-height: 1.8;
+  color: #333;
+}
+.index-teacher-card .intro .content .line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 15px 0;
+  background-color: #bdc3bf;
+}
+.index-teacher-card .intro .content .next {
+  width: 240px;
+  height: 50px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAAAJCAYAAABDuWDWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpkNGRkYjNkYi01ZWYwLWQyNDctYmQxMC01NmJkNjFiOWJkNWMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTA2RDVDQkZENDhGMTFFOTk4QTQ5MTdBNzE0MTAxMTciIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTA2RDVDQkVENDhGMTFFOTk4QTQ5MTdBNzE0MTAxMTciIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmRkOTM1OTAxLWE3OTYtZjE0NC04ZGRhLTJjYjRjNDVjNmYyZCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpkNGRkYjNkYi01ZWYwLWQyNDctYmQxMC01NmJkNjFiOWJkNWMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7CyVO9AAAAjUlEQVR42mL8//8/wyggGWwH4jIgvoxNkmk0fMgCHkB8AYjnArEkuiTjaEolCyAH2hcg7gDiPiD+Phqo1AlUGHgExBVAvAIUqKOhSl0wgQWUWkfDgSop9Q4Q14FSKsto+FAMPgBxCxBPBuJfIIHRQCUf/AHiWUBcD8RvkCVGA5U8sAOIi4H4GjZJgAADACJBI27OkDorAAAAAElFTkSuQmCC') #ffc103 no-repeat center center;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  margin-left: -120px;
+}
+
+/* 手机样式 */
+@media screen and (max-width: 900px) {
+  .session-card {
+    height: auto;
+    display: block;
+  }
+  .session-card .cover {
+    flex: 1;
+  }
+  .session-card .info h4 {
+    font-size: 20px;
+  }
+  .session-card .info h5 {
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #fff;
+  }
+  .session-card .info p {
+    line-height: 1.4;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+  }
+  .session-card.red {
+    color: #fe605f;
+  }
+  .session-card.green {
+    color: #93d150;
+  }
+  .session-card.yellow {
+    color: #ffc103;
+  }
+  .session-card.cyan {
+    color: #00af93;
+  }
+  .session-card.blue {
+    color: #1293d0;
+  }
+
+  /* 课堂 */
+  .class-card {
+    display: block;
+    height: auto;
+  }
+  .class-card .left-wrapper {
+    width: 100%;
+    flex: 1;
+    height: 200px;
+    position: relative;
+  }
+  .class-card .left-wrapper .basic h3 {
+    padding: 0 20px;
+    font-size: 20px;
+    color: #fff;
+  }
+  .class-card .left-wrapper .basic p {
+    padding: 20px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #fff;
+  }
+  .class-card .right-wrapper {
+    height: auto;
+    flex: 1;
+    padding-left: 0;
+    color: #ffc103;
+  }
+  .class-card .right-wrapper h3 {
+    padding-top: 10px;
+    font-size: 20px;
+  }
+  .class-card .right-wrapper h4 {
+    padding-top: 30px;
+    padding-bottom: 18px;
+    font-size: 16px;
+  }
+  .class-card .right-wrapper .button {
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    background-color: #ffc103;
+    cursor: pointer;
+  }
+
+  .teacher-card {
+    width: 100%;
+  }
+  .teacher-card .avatar {
+    height: 200px;
+    overflow: hidden;
+  }
+  .teacher-card .avatar .img {
+    width: 100%;
+    height: 100%;
+  }
+  .teacher-card .info {
+    padding: 20px;
+    background-color: #ffc103;
+    text-align: center;
+  }
+  .teacher-card .info .name {
+    padding-bottom: 10px;
+    color: #fff;
+  }
+  .teacher-card .info .honor {
+    padding-bottom: 10px;
+    color: #fff;
+  }
+  .teacher-card .info .desc {
+    color: #fff;
+  }
+
+  .culture-card {
+    padding: 20px 0;
+    background: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .culture-card .title {
+    line-height: 40px;
+    font-size: 16px;
+    color: #fff;
+  }
+  .culture-card .context {
+    font-size: 14px;
+    color: #fff;
+  }
+
+  /* 教师卡片 */
+.index-teacher-card {
+  display: block;
+}
+
+.index-teacher-card .avatar {
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+.index-teacher-card .avatar .basic-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  padding: 30px;
+}
+
+.index-teacher-card .avatar .basic-info h3 {
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+
+.index-teacher-card .avatar .basic-info h4 {
+  font-size: 14px;
+}
+
+.index-teacher-card .intro {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.index-teacher-card .intro .content {
+  flex: 1;
+  height: 310px;
+  padding: 30px;
+  background-color: #e0eae4;
+  position: relative;
+}
+.index-teacher-card .intro .content p {
+  font-size:16px;
+  line-height: 1.8;
+  color: #333;
+}
+.index-teacher-card .intro .content .line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 15px 0;
+  background-color: #bdc3bf;
+}
+.index-teacher-card .intro .content .next {
+  width: 140px;
+  height: 30px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAAAJCAYAAABDuWDWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpkNGRkYjNkYi01ZWYwLWQyNDctYmQxMC01NmJkNjFiOWJkNWMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTA2RDVDQkZENDhGMTFFOTk4QTQ5MTdBNzE0MTAxMTciIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTA2RDVDQkVENDhGMTFFOTk4QTQ5MTdBNzE0MTAxMTciIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmRkOTM1OTAxLWE3OTYtZjE0NC04ZGRhLTJjYjRjNDVjNmYyZCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpkNGRkYjNkYi01ZWYwLWQyNDctYmQxMC01NmJkNjFiOWJkNWMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7CyVO9AAAAjUlEQVR42mL8//8/wyggGWwH4jIgvoxNkmk0fMgCHkB8AYjnArEkuiTjaEolCyAH2hcg7gDiPiD+Phqo1AlUGHgExBVAvAIUqKOhSl0wgQWUWkfDgSop9Q4Q14FSKsto+FAMPgBxCxBPBuJfIIHRQCUf/AHiWUBcD8RvkCVGA5U8sAOIi4H4GjZJgAADACJBI27OkDorAAAAAElFTkSuQmCC') #ffc103 no-repeat center center;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  margin-left: -60px;
+}
+}
