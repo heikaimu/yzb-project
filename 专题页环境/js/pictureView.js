@@ -29,6 +29,7 @@ $(document)
 $(document)
   .off("click", "#photoView")
   .on("click", "#photoView", function () {
+    alert();
     document.body.style.overflowY = 'auto';
     $("#photoView").remove();
   });
