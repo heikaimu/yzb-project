@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- css -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <style>
+    /* banner */
+    .banner {}
+
+    .banner img {
+      display: block;
+      width: 100%;
+    }
+
+    /* 导语 */
+    .introduction {
+      padding: 50px 0;
+      background-color: #62C6CE;
+    }
+
+    .introduction p {
+      line-height: 2;
+      font-size: 22px;
+      color: #1277BF;
+      text-indent: 48px;
+    }
+
+    /* 网页标题 */
+    .web-title {
+      padding: 50px;
+      text-align: center;
+    }
+
+    /* 整治项目 */
+    .project {
+      padding-bottom: 100px;
+      background: url('./images/bg.png') no-repeat center center / cover
+    }
+
+    .project-list {
+      overflow: hidden;
+    }
+
+    .project-list li {
+      width: 25%;
+      float: left;
+    }
+
+    .project-list li a {
+      text-decoration: none;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-card .cover {
+      width: 226px;
+      height: 226px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-card .cover:hover:after {
+      content: "详情>>";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba(2, 180, 254, .55);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      text-align: center;
+      line-height: 226px;
+      color: #fff;
+      font-weight: 900;
+      font-size: 24px;
+    }
+
+    .project-card .num {
+      margin-top: 35px;
+      width: 24px;
+      height: 24px;
+      background-color: #fff;
+      text-align: center;
+      line-height: 24px;
+      color: #1277BF;
+      font-size: 20px;
+      position: relative;
+    }
+
+    .project-card .num:after {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 24px;
+      background-color: #1277BF;
+      position: absolute;
+      right: -4px;
+      top: 4px;
+    }
+
+    .project-card .num:before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 4px;
+      background-color: #1277BF;
+      position: absolute;
+      left: 4px;
+      bottom: -4px;
+    }
+
+    .project-card .title {
+      margin-top: 18px;
+      font-size: 20px;
+      line-height: 2;
+      color: #1277BF;
+      text-align: center;
+    }
+
+    /* 反馈 */
+    .request {
+      background-color: #62C6CE;
+    }
+
+    .request img {
+      width: 100%;
+    }
+
+    .request .btn {
+      display: block;
+      width: 255px;
+      height: 65px;
+      position: absolute;
+      right: 275px;
+      top: 80px;
+      opacity: 0;
+    }
+
+    /* 探索 */
+    .explore {
+      padding-bottom: 100px;
+      background: url('./images/bg.png') no-repeat center center / cover;
+    }
+
+    .warning {
+      padding-bottom: 100px;
+      background: url('./images/bg.png') no-repeat center center / cover;
+    }
+
+    .row {
+      overflow: hidden;
+    }
+
+    .half-col {
+      width: 47%;
+      float: left;
+      margin-right: 6%;
+    }
+
+    .half-col:last-child {
+      margin-right: 0;
+    }
+
+    .top-news {
+      padding-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .top-news .cover {
+      flex: 0 0 188px;
+      width: 188px;
+      height: 112px;
+      overflow: hidden;
+    }
+
+    .top-news .cover .img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .top-news .title {
+      width: 320px;
+      padding: 0 20px;
+    }
+
+    .top-news .title a {
+      display: block;
+      font-size: 22px;
+      line-height: 1.4;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .top-news .title a:hover {
+      color: #02B4FE;
+      text-decoration: underline;
+    }
+
+    .other-news li {}
+
+    .other-news li a {
+      padding-left: 20px;
+      display: block;
+      font-size: 18px;
+      color: #333;
+      line-height: 1.4;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .other-news li a:hover {
+      color: #02B4FE;
+      text-decoration: underline;
+    }
+
+    .other-news li {
+      margin-bottom: 10px;
+    }
+
+    .other-news li a:before {
+      margin-right: 10px;
+      margin-left: 1px;
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      background-color: #1277BF;
+      transform: rotate(45deg);
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+
+    .more {
+      padding-top: 20px;
+      text-align: right;
+    }
+    .more a {
+      display: inline-block;
+      width: 66px;
+      height: 24px;
+      background: url('./images/more.png');
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- banner -->
+  <div class="banner full-container">
+    <img src="./images/banner.png" alt="">
+  </div>
+
+  <!-- 导语 -->
+  <div class="introduction full-container">
+    <div class="container">
+      <p>
+        按照四川省委“不忘初心、牢记使命”主题教育专项整治工作要求，近日，省纪委监委机关牵头开展漠视侵害群众利益问题专项整治,集中整治对群众关心的利益问题漠然处之，空头承诺，推诿扯皮，以及办事不公、侵害群众利益的问题，不断增强人民群众的获得感、幸福感、安全感。
+      </p>
+    </div>
+  </div>
+
+  <!-- 整治项目 -->
+  <div class="project full-container">
+    <div class="container">
+      <div class="web-title"><img src="./images/title_1.png" alt=""></div>
+      <ul class="project-list">
+        <li>
+          <div class="project-card photo-img" _title="聚焦扶贫领域" _src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568226963850&di=2c84764def1134ff4b552b47d644936c&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201807%2F31%2F20180731132118_wudrd.thumb.700_0.jpeg">
+            <div class="cover"><img src="./images/project_1.png" alt=""></div>
+            <div class="num">1</div>
+            <p class="title">聚焦扶贫领域 <br>腐败和作风问题</p>
+          </div>
+        </li>
+        <li>
+          <div class="project-card photo-img" _title="聚焦扶贫领域" _src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568226963850&di=2c84764def1134ff4b552b47d644936c&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201807%2F31%2F20180731132118_wudrd.thumb.700_0.jpeg">
+            <div class="cover"><img src="./images/project_1.png" alt=""></div>
+            <div class="num">2</div>
+            <p class="title"> 聚焦民生领域 <br>侵害群众利益问题</p>
+          </div>
+        </li>
+        <li>
+          <div class="project-card photo-img" _title="聚焦扶贫领域" _src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568226963850&di=2c84764def1134ff4b552b47d644936c&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201807%2F31%2F20180731132118_wudrd.thumb.700_0.jpeg">
+            <div class="cover"><img src="./images/project_1.png" alt=""></div>
+            <div class="num">3</div>
+            <p class="title">
+              聚焦发生在群众身边的<br>
+              不正之风和“微腐败”问题</p>
+          </div>
+        </li>
+        <li>
+          <div class="project-card photo-img" _title="聚焦扶贫领域" _src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568226963850&di=2c84764def1134ff4b552b47d644936c&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201807%2F31%2F20180731132118_wudrd.thumb.700_0.jpeg">
+            <div class="cover"><img src="./images/project_1.png" alt=""></div>
+            <div class="num">4</div>
+            <p class="title">
+              聚焦发生在群众身边的<br>
+              不正之风和“微腐败”问题</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 反馈问题 -->
+  <div class="request full-container">
+    <div class="container">
+      <img src="./images/judge.png" alt="">
+      <a href="" class="btn">举报渠道</a>
+    </div>
+  </div>
+
+  <!-- 探索 -->
+  <div class="explore full-container">
+    <div class="container">
+      <div class="web-title"><img src="./images/title_2.png" alt=""></div>
+      <div class="row">
+        <div class="half-col">
+          <div class="top-news">
+            <div class="cover">
+              <div class="img bg-cover animation" style="background-image:url(./images/banner.png)"></div>
+            </div>
+            <div class="title"><a href="" class="omit2">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察调查</a></div>
+          </div>
+          <ul class="other-news">
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+          </ul>
+        </div>
+        <div class="half-col">
+          <div class="top-news">
+            <div class="cover">
+              <div class="img bg-cover animation" style="background-image:url(./images/banner.png)"></div>
+            </div>
+            <div class="title"><a href="">dwadawd</a></div>
+          </div>
+          <ul class="other-news">
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="more">
+        <a href=""></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 警示 -->
+  <div class="warning full-container">
+    <div class="container">
+      <div class="web-title"><img src="./images/title_2.png" alt=""></div>
+      <div class="row">
+        <div class="half-col">
+          <div class="top-news">
+            <div class="cover">
+              <div class="img bg-cover animation" style="background-image:url(./images/banner.png)"></div>
+            </div>
+            <div class="title"><a href="">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察调查</a></div>
+          </div>
+          <ul class="other-news">
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+          </ul>
+        </div>
+        <div class="half-col">
+          <div class="top-news">
+            <div class="cover">
+              <div class="img bg-cover animation" style="background-image:url(./images/banner.png)"></div>
+            </div>
+            <div class="title"><a href="">dwadawd</a></div>
+          </div>
+          <ul class="other-news">
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+            <li><a href="" class="omit">四川省冶金地质勘查局党委书记、局长何兴江 接受纪律审查和监察
+                调查</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="more">
+        <a href=""></a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 底部条 -->
+  <div class="footer-bar full-container">
+    廉洁四川、四川新闻网传媒集团联合出品
+  </div>
+
+  <footer class="web-footer">
+    <div class="container">
+      <div class="left-box">
+        <div class="icon"><img src="" alt=""></div>
+        <ul class="info-list">
+          <li>
+            <p class="text">中共四川省纪委、四川省监察委员会版权所有</p>
+          </li>
+          <li>
+            <p class="text">蜀ICP备18011764号-1</p>
+          </li>
+          <li><a href="" class="text">网站声明</a></li>
+          <li><a href="" class="text">网站地图</a></li>
+        </ul>
+      </div>
+      <div class="right-box">
+        <div class="qr-box">
+          <div class="code-img"><img src="" alt=""></div>
+          <p class="code-text">
+            廉洁四川<br />
+            网 站
+          </p>
+        </div>
+        <div class="qr-box">
+          <div class="code-img"><img src="" alt=""></div>
+          <p class="code-text">廉 洁 四 川<br />
+            微信公众号</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/pictureView.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+.flex {
+  display: flex;
+}
+
+.x-center {
+  justify-content: center;
+}
+
+.x-left {
+  justify-content: flex-start;
+}
+
+.x-right {
+  justify-content: flex-end;
+}
+
+.x-space-around {
+  justify-content: space-around;
+}
+
+.x-space-between {
+  justify-content: space-between;
+}
+
+.omit {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.hide {
+  display: none;
+}
