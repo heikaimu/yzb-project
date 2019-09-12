@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>可点击放大查看的图片列表</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="./reset.css">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="./swiper.min.css">
+
+  <!-- Demo styles -->
+  <style>
+    .cover img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .full-screen-float {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      overflow: hidden;
+      background: #333;
+      transition: .3s;
+      transform: translate3d(-100px, 0, 0);
+      z-index: -1;
+      opacity: 0;
+    }
+
+    .full-screen-float.show {
+      transform: translate3d(0, 0, 0);
+      z-index: 99;
+      opacity: 1;
+    }
+
+    .full-screen-float .close-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 99999;
+      width: 40px;
+      height: 40px;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABW0lEQVRYR9WX7XHCMBBEdysI6YB0khJIB1AR6SDpIHSQlJISoIJjjrE8smNJd4cZO/7lYYze0+lziewRkVeSP/lvc7+LyJbkb2qX+iIiewBHABsAZwAHkqc54SKyA/CRMd60s0lAoU8joEp8ziHRdVDh+XMm+UwtO4DvAuhuiQI84V5qFUgfhSUa8AvJTRLQ8fmqlNst0YArSufA6SaQTcTxOOVOZgkDvG+rF5hLwgNX5kDgXgkvfFIgKhGBFwW8ElF4VcAq0c3S8OT9MwfGS9HQu9pm2Vw5TQFjJaYkmvDmEOStOithgrsEHJUww/+XwKJD4IS7TtHmKgjCzRJVAQP88LCNyAJPVzbPt+MNY7ICkQYj/1nfcRzthXPHHGxU67iSdaFhuUupiEwFE/NaLp3HjSFdfzBxnWq1W0mhEoNgouH0vcuHFwD7B4VTzZqaQZWx68Npsl8inl8B9yUOaj27MmMAAAAASUVORK5CYII=') no-repeat center center / 60%;
+      cursor: pointer;
+    }
+
+    .swiper-zoom-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="swiper-nav">
+    <a href="./demo1.html">中间大周围越来越小</a>
+    <a href="./demo2.html">点击封面预览所有图片</a>
+    <a href="./demo3.html">多swiper切换</a>
+    <a href="./demo4.html">列表预览</a>
+  </nav>
+
+  <div class="web-container">
+    
+    <div class="cover" onclick="previewPicGroup()">
+      <img src="./images/pic1.jpg" alt="">
+    </div>
+
+    <!-- 大图预览 -->
+    <div class="full-screen-float">
+      <div class="close-btn"></div>
+      <div id="swiperPreview" class="swiper-container swiper-container-preview">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <div class="swiper-button-next swiper-button-white"></div>
+      </div>
+    </div>
+
+  </div>
+  <!-- Swiper JS -->
+  <script src="./swiper.min.js"></script>
+  <script src="./jquery.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    // 定义全局的swiper初始对象
+    var swiperPreview;
+
+    function previewPicGroup(items) {
+      // 显示swipper
+      $('.full-screen-float').addClass('show');
+
+      // 图片列表
+      items = items ? items :
+        ['./images/pic1.jpg',
+          './images/pic2.jpg',
+          './images/pic3.jpg',
+          './images/pic4.jpg',
+          './images/pic5.jpg',]
+
+      // 如果当前没有swiper对象则创建一个
+      if (!swiperPreview) {
+        swiperPreview = new Swiper('#swiperPreview', {
+          zoom: true,
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      }
+
+      // 添加slide
+      for (var i = 0; i < items.length; i++) {
+        const item = items[i];
+        slideStr = '<div class="swiper-slide"><div class="swiper-zoom-container"><img src=' + item + ' /></div></div>';
+        swiperPreview.appendSlide(slideStr);
+      }
+
+      // 点击关闭
+      $('.full-screen-float').children('.close-btn').click(function () {
+        $('.full-screen-float').removeClass('show');
+        // 清除所有的slide
+        swiperPreview.removeAllSlides()
+      })
+    }
+  </script>
+</body>
+
+</html>

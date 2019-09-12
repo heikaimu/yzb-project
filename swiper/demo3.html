@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>多swiper组合</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="./reset.css">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="./swiper.min.css">
+
+  <!-- Demo styles -->
+  <style>
+    .swiper-container {
+      width: 100%;
+    }
+
+    .h400 {
+      height: 400px;
+    }
+
+    .menus {
+      height: 40px;
+    }
+
+    .menu-item {
+      width: 100%;
+      height: 40px;
+      background: #222;
+      line-height: 40px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .menu-active .menu-item {
+      background: #fff;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .my-pagination-current {
+      color: #fff;
+    }
+
+    .my-pagination-total {
+      color: #fff;
+    }
+
+    .split-line {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="swiper-nav">
+    <a href="./demo1.html">中间大周围越来越小</a>
+    <a href="./demo2.html">点击封面预览所有图片</a>
+    <a href="./demo3.html">多swiper切换</a>
+    <a href="./demo4.html">列表预览</a>
+  </nav>
+
+  <div class="web-container">
+
+    <!-- 主体 -->
+    <div id="swiperMain" class="swiper-container h400">
+      <div class="swiper-wrapper"></div>
+    </div>
+    <!-- tab按钮 -->
+    <div id="swiperMenus" class="swiper-container menus">
+      <div class="swiper-wrapper"></div>
+    </div>
+
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="./swiper.min.js"></script>
+  <script src="./jquery.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+
+    var jsonData = [
+      {
+        name: '渡神纪',
+        items: [
+          './images/pic1.jpg',
+          './images/pic2.jpg',
+          './images/pic3.jpg',
+          './images/pic4.jpg'
+        ]
+      },
+      {
+        name: '只狼',
+        items: [
+          './images/pic5.jpg',
+          './images/pic6.jpg',
+          './images/pic8.jpg',
+          './images/pic9.jpg'
+        ]
+      },
+      {
+        name: '塞尔达：荒野之息',
+        items: [
+          './images/pic7.jpg',
+          './images/pic10.jpg',
+          './images/pic11.jpg',
+          './images/pic12.jpg'
+        ]
+      },
+      {
+        name: '其他',
+        items: [
+          './images/pic13.jpg',
+          './images/pic14.jpg',
+          './images/pic15.jpg',
+          './images/pic16.jpg'
+        ]
+      }
+    ];
+
+    $(function () {
+      // 模拟请求的延迟
+      setTimeout(() => {
+        createTabSwiper(jsonData);
+      }, 1000);
+    })
+
+    function createTabSwiper(jsonData) {
+
+      // 构造swiper本体
+      for (var i = 0; i < jsonData.length; i++) {
+
+        // 添加子swiper并且实例化
+        var items = jsonData[i].items;
+        $('#swiperMain').children('.swiper-wrapper').append(createSilerSwiper(items, i));
+
+        new Swiper('#swiperContainer' + i + '', {
+          nested: true,
+          resistanceRatio: 0,
+          spaceBetween: 50,
+          pagination: {
+            el: '.swiper-pagination-' + i,
+            currentClass: 'my-pagination-current',
+            totalClass: 'my-pagination-total',
+            type: 'fraction',
+            renderFraction: function (currentClass, totalClass) {
+              return '<span class="' + currentClass + '"></span>' +
+                '<span class="split-line"> / </span>' +
+                '<span class="' + totalClass + '"></span>';
+            },
+          },
+        });
+
+        // 添加导航
+        $('#swiperMenus').children('.swiper-wrapper').append(
+          '<div class="swiper-slide">' +
+          '<p class="menu-item">' + jsonData[i].name + '</p>' +
+          '</div>'
+        )
+      }
+
+      // 构造每个slider里的子swiper
+      function createSilerSwiper(items, i) {
+        var sliderSwiperStr = '';
+        sliderSwiperStr += '<div class="swiper-slide">';
+        sliderSwiperStr += '<div id="swiperContainer' + i + '" class="swiper-container h400">';
+        sliderSwiperStr += '<div class="swiper-wrapper">';
+        for (var j = 0; j < items.length; j++) {
+          sliderSwiperStr += ('<div class="swiper-slide"><div class="slide-img shadow" style="background-image:url(' + items[j] + ')"></div></div>');
+          // sliderSwiperStr += ('<div class="swiper-slide"><img src='+items[j]+' /></div>');
+        }
+        sliderSwiperStr += '</div>';
+        sliderSwiperStr += '<div class="swiper-pagination swiper-pagination-' + i + '"></div>';
+        sliderSwiperStr += '</div>';
+        sliderSwiperStr += '</div>';
+        return sliderSwiperStr;
+      }
+
+      // 实例化主swiper
+      var swiperH = new Swiper('#swiperMain', {
+        spaceBetween: 50,
+        thumbs: {
+          swiper: {
+            el: '#swiperMenus',
+            slidesPerView: 4,
+            spaceBetween: 2,
+          },
+          slideThumbActiveClass: 'menu-active',
+        }
+      });
+    }
+
+  </script>
+</body>
+
+</html>
