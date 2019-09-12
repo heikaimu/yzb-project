@@ -24,13 +24,7 @@ $(document)
     closeBtn.style.top = 0;
     photoView.appendChild(closeBtn);
     $("body").append(photoView);
+    $(photoView).click(function() {
+      $(this).remove();
+    })
   });
-
-document.addEventListener('click', function(e) {
-  alert();
-  var target = e.target || e;
-  if (target.id === 'photoView') {
-    alert();
-    $("#photoView").remove();
-  }
-})
