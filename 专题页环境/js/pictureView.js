@@ -26,7 +26,7 @@ $(document)
     $("body").append(photoView);
   });
 
-$(document)
+$("body")
   .off("click", "#photoView")
   .on("click", "#photoView", function () {
     alert();
