@@ -22,7 +22,20 @@
     /* 导语 */
     .introduction {
       padding: 50px 0;
-      background-color: #62C6CE;
+      background-color: rgba(2, 180, 254, .15);
+      position: relative;
+    }
+
+    .introduction:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      background: url('./images/bg.png') no-repeat center center / cover;
     }
 
     .introduction p {
@@ -133,7 +146,19 @@
 
     /* 反馈 */
     .request {
-      background-color: #62C6CE;
+      background-color: rgba(2, 180, 254, .15);
+      position: relative;
+    }
+    .request:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      background: url('./images/bg.png') no-repeat center center / cover;
     }
 
     .request img {
@@ -158,6 +183,19 @@
 
     .warning {
       padding-bottom: 100px;
+      background-color: rgba(2, 180, 254, .15);
+      position: relative;
+    }
+
+    .warning:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
       background: url('./images/bg.png') no-repeat center center / cover;
     }
 
