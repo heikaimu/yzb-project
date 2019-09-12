@@ -26,10 +26,10 @@ $(document)
     $("body").append(photoView);
   });
 
-$("body")
-  .off("click", "#photoView")
-  .on("click", "#photoView", function () {
+document.addEventListener('click', function(e) {
+  var target = e.target || e;
+  if (target.id === 'photoView') {
     alert();
-    document.body.style.overflowY = 'auto';
     $("#photoView").remove();
-  });
+  }
+})
