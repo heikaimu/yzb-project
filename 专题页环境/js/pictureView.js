@@ -27,6 +27,7 @@ $(document)
   });
 
 document.addEventListener('click', function(e) {
+  alert();
   var target = e.target || e;
   if (target.id === 'photoView') {
     alert();
