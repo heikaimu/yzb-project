@@ -25,6 +25,7 @@ $(document)
     photoView.appendChild(closeBtn);
     $("body").append(photoView);
     $(photoView).click(function() {
+      document.body.style.overflowY = 'auto';
       $(this).remove();
     })
   });

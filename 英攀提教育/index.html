@@ -18,6 +18,30 @@
   <!-- select -->
   <link rel="stylesheet" href="./css/select.css">
   <style>
+    .slide-img {
+      width: 100vw;
+      height: 650px;
+      position: relative;
+    }
+
+    .slide-img .banner-menu {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -500px;
+      width: 182px;
+      height: 58px;
+      border-radius: 29px;
+      background-color: #fff;
+      text-align: center;
+      line-height: 58px;
+      font-size: 18px;
+      color: #ea7816;
+      font-weight: 600;
+      box-shadow: 0 2px 5px 1px #666;
+      cursor: pointer;
+    }
+
     .home-title {
       padding: 40px 0;
       text-align: center;
@@ -102,6 +126,7 @@
       font-weight: 900;
       padding-bottom: 20px;
     }
+
     .teacher-intro .left-wrapper .sub-title {
       line-height: 1.6;
       font-size: 16px;
@@ -148,6 +173,25 @@
 
     /* 手机样式 */
     @media screen and (max-width: 900px) {
+
+      .slide-img {
+      width: 100vw;
+      height: 250px;
+      position: relative;
+    }
+
+    .slide-img .banner-menu {
+        left: 20px;
+        top: 80%;
+        margin-left: 0;
+        width: 120px;
+        height: 30px;
+        border-radius: 29px;
+        background-color: #fff;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+    }
 
       .home-title {
         padding: 30px 0;
@@ -203,25 +247,25 @@
 
 
       .teacher-intro {
-      display: block;
-    }
+        display: block;
+      }
 
-    .teacher-intro .left-wrapper {
-     display: none;
-    }
+      .teacher-intro .left-wrapper {
+        display: none;
+      }
 
-    .teacher-intro .right-wrapper {
-      width: 100%;
-      height: auto;
-      flex: 1;
-    }
+      .teacher-intro .right-wrapper {
+        width: 100%;
+        height: auto;
+        flex: 1;
+      }
 
     }
   </style>
 </head>
 
 <body>
-<!-- 
+  <!-- 
   <div class="contact-float">
     <button class="btn1"></button>
     <button class="btn2"></button>
@@ -274,9 +318,59 @@
 
 
   <!-- banner -->
-  <div class="banner">
-    <img src="./images/banner1.jpg" alt="">
-    <div class="banner-menu">预约体验课</div>
+  <!-- Swiper -->
+  <!-- <div class="swiper-container banner-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="slide-img bg-cover" style="background-image: url(./images/banner1.jpg)">
+          <div class="banner-menu">预约体验课</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-img bg-cover" style="background-image: url(./images/banner2.jpg)"></div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-img bg-cover" style="background-image: url(./images/banner3.jpg)"></div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-img bg-cover" style="background-image: url(./images/banner1.jpg)"></div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-img bg-cover" style="background-image: url(./images/banner2.jpg)"></div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div> -->
+
+  <div class="swiper-container banner-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="banner" style="background-image: url(./images/banner1.jpg)">
+          <img src="./images/banner1.jpg" alt="">
+          <div class="banner-menu">预约体验课</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="banner" style="background-image: url(./images/banner1.jpg)">
+          <img src="./images/banner1.jpg" alt="">
+          <div class="banner-menu">预约体验课</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="banner" style="background-image: url(./images/banner1.jpg)">
+          <img src="./images/banner1.jpg" alt="">
+          <div class="banner-menu">预约体验课</div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="banner" style="background-image: url(./images/banner1.jpg)">
+          <img src="./images/banner1.jpg" alt="">
+          <div class="banner-menu">预约体验课</div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
   </div>
 
 
@@ -638,6 +732,11 @@
         }
       })
     })
+
+    // banner
+    var bannerSwiper = new Swiper('.banner-container', {
+      loop: true,
+    });
 
     // 首页课程
     var classSwiper = new Swiper(".class-container", {
