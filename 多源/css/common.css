@@ -2,63 +2,62 @@
  * create by 刘耀文
  */
 
- .section {
-    display: block;
-    position: relative;
+.section {
+  display: block;
+  position: relative;
 }
+
 .section-content {
-    margin-left: auto;
-    margin-right: auto;
-    width: 1200px;
-    position: relative;
-}
-
-@media screen and (max-width: 1068px) {
-    .section-content {
-        width: 690px;
-    }
-}
-
-@media screen and (max-width: 734px) {
-    .section-content {
-        width: 87.5%;
-    }
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  position: relative;
 }
 
 /* swiper前进后退 */
+
 .swiper-arrow {
-    width: 300px;
-    height: 80px;
+  width: 300px;
+  height: 80px;
 }
 
 .swiper-arrow .arrow {
-    height: 80px;
-    cursor: pointer;
+  height: 80px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .swiper-arrow .arrow:active {
-    opacity: 1;
+  opacity: 1;
 }
 
 .swiper-arrow .arrow.prev.blank {
-    background: url('../images/arrow_color.png') #fff no-repeat center center;
+  background-image: url('../images/arrow_color.png');
+  background-color: #fff;
 }
+
 .swiper-arrow .arrow.prev.color {
-    background: url('../images/arrow_blank.png') #bbc4e4 no-repeat center center;
-    transform: rotate(180deg);
+  background-image: url('../images/arrow_blank.png');
+  background-color: #bbc4e4;
+  transform: rotate(180deg);
 }
 
 .swiper-arrow .arrow.next.blank {
-    background: url('../images/arrow_color.png') #fff no-repeat center center;
-    transform: rotate(180deg);
+  background-image: url('../images/arrow_color.png');
+  background-color: #fff;
+  transform: rotate(180deg);
 }
+
 .swiper-arrow .arrow.next.color {
-    background: url('../images/arrow_blank.png') #bbc4e4 no-repeat center center;
+  background-image: url('../images/arrow_blank.png');
+  background-color: #bbc4e4;
 }
 
 /* more */
+
 .more {
-  display: block;
+  display: inline-block;
   width: 90px;
   height: 26px;
   text-align: center;
@@ -69,101 +68,56 @@
   text-decoration: none;
 }
 
-  /* 背景图片 */
-  .bg-cover {
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+/* 背景图片 */
+
+.bg-cover {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-cover.animation {
+  transition: 0.5s;
+}
+
+.bg-cover.animation:hover {
+  transform: scale(1.05);
+}
+
+/* 超出省略 */
+
+.omit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.omit2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1068px) {
+  .section-content {
+    width: 690px;
   }
-  
-  .bg-cover.animation {
-    transition: 0.5s;
+}
+
+@media screen and (max-width: 734px) {
+  .section-content {
+    width: 87.5%;
   }
-  
-  .bg-cover.animation:hover {
-    transform: scale(1.05);
+  /* swiper前进后退 */
+  .swiper-arrow {
+    width: 120px;
+    height: 30px;
   }
-  
-  /* 超出省略 */
-  .omit {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .swiper-arrow .arrow {
+    height: 30px;
+    background-size: 15px;
   }
-  
-  .omit2 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
-  
-  /* 行间距 */
-  .pt-xs {
-    padding-top: 10px;
-  }
-  
-  .pt-sm {
-    padding-top: 30px;
-  }
-  
-  .pt-md {
-    padding-top: 50px;
-  }
-  
-  .pt-lg {
-    padding-top: 70px;
-  }
-  
-  .pb-xs {
-    padding-bottom: 10px;
-  }
-  
-  .pb-sm {
-    padding-bottom: 30px;
-  }
-  
-  .pb-md {
-    padding-bottom: 50px;
-  }
-  
-  .pb-lg {
-    padding-bottom: 70px;
-  }
-  
-  /* 手机样式 */
-  @media screen and (max-width: 900px) {
-    .pt-xs {
-      padding-top: 5px;
-    }
-  
-    .pt-sm {
-      padding-top: 15px;
-    }
-  
-    .pt-md {
-      padding-top: 25px;
-    }
-  
-    .pt-lg {
-      padding-top: 35px;
-    }
-  
-    .pb-xs {
-      padding-bottom: 5px;
-    }
-  
-    .pb-sm {
-      padding-bottom: 15px;
-    }
-  
-    .pb-md {
-      padding-bottom: 25px;
-    }
-  
-    .pb-lg {
-      padding-bottom: 35px;
-    }
-  }
+}

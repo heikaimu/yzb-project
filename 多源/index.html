@@ -15,10 +15,6 @@
 	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
 
 	<style>
-		.swiper-slide {
-			overflow: hidden;
-		}
-
 		/* banner */
 		.index-banner {
 			position: relative;
@@ -33,9 +29,18 @@
 			width: 100%;
 		}
 
+		.index-banner-pagination {
+			position: absolute;
+			left: 50%;
+			margin-left: -750px;
+			bottom: 150px;
+			z-index: 99999;
+		}
+
 		.index-banner-arrow-wrapper {
 			position: absolute;
-			left: 0;
+			left: 50%;
+			margin-left: -750px;
 			bottom: 0;
 			z-index: 99999;
 		}
@@ -53,24 +58,25 @@
 			width: calc(50vw - 450px);
 			height: 160px;
 			position: absolute;
-			right: 0px;
+			right: -150px;
 			top: -160px;
 			z-index: 99999;
 			background-color: #fff;
 			color: #333;
+			font-size: 12px;
 		}
 
 		.production-title .web-name {
 			padding-top: 35px;
 			padding-left: 13px;
 			padding-bottom: 10px;
-			font-size: 12px;
+			font-size: 1em;
 			position: relative;
 		}
 
 		.production-title .section-name {
 			padding-left: 13px;
-			font-size: 30px;
+			font-size: 2.5em;
 			font-weight: 900;
 			line-height: 1.2;
 			display: flex;
@@ -112,6 +118,7 @@
 			flex-direction: column;
 			align-items: flex-end;
 			transition: .5s;
+			font-size: 30px;
 		}
 
 		.production-card:hover .title {
@@ -134,7 +141,7 @@
 			padding-left: 10px;
 			padding-right: 0;
 			margin-bottom: 10px;
-			font-size: 30px;
+			font-size: 1em;
 			color: #333;
 			border-bottom: 2px solid #c8cee7;
 		}
@@ -145,7 +152,7 @@
 		}
 
 		.production-card .title .en {
-			font-size: 14px;
+			font-size: 0.45em;
 			color: #333;
 			opacity: .5;
 		}
@@ -177,18 +184,25 @@
 		.production-arrow-wrapper {
 			position: absolute;
 			bottom: 0;
-			right: 0;
+			right: -150px;
 			z-index: 9999;
+		}
+
+		.production-pagination {
+			position: absolute;
+			right: -150px;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 
 		/* 介绍 */
 		.introduce {
 			padding-top: 200px;
-			padding-bottom: 50px;
+			padding-bottom: 60px;
 		}
 
 		.introduce .line {
-			width: calc(50vw - 610px);
+			width: calc(50vw - 750px);
 			height: 1px;
 			background: #e3edf2;
 			position: absolute;
@@ -196,22 +210,27 @@
 			top: 220px;
 		}
 
+		.introduce .info .title {
+			margin-left: -140px;
+		}
+
 		.introduce .info .content {
-			padding-left: 140px;
+			max-width: 250px;
+			padding-right: 10px;
 			padding-top: 140px;
-			padding-right: 150px;
+			font-size: 12px;
 			color: #333;
 		}
 
 		.introduce .info .content .en {
-			padding-bottom: 10px;
-			font-size: 12px;
+			padding-bottom: 0.8em;
+			font-size: 1em;
 			opacity: 0.5;
 		}
 
 		.introduce .info .content .ch {
-			padding-bottom: 30px;
-			font-size: 24px;
+			padding-bottom: 1.1em;
+			font-size: 2em;
 			font-weight: 600;
 			position: relative;
 		}
@@ -228,15 +247,15 @@
 		}
 
 		.introduce .info .content .desc {
-			padding-bottom: 25px;
+			padding-bottom: 1.8em;
 			line-height: 1.4;
-			font-size: 14px;
+			font-size: 1.15em;
 			color: #666;
 		}
 
 		.introduce .image {
-			width: 750px;
-			height: 500px;
+			width: 100%;
+			height: auto;
 			position: relative;
 		}
 
@@ -244,10 +263,10 @@
 			content: "";
 			display: block;
 			position: absolute;
-			left: 50px;
-			right: -50px;
-			top: 50px;
-			bottom: -50px;
+			left: 60px;
+			right: -60px;
+			top: 60px;
+			bottom: -60px;
 			z-index: -1;
 			background-color: #e9f1f5;
 		}
@@ -257,17 +276,16 @@
 			padding-top: 200px;
 			padding-bottom: 150px;
 			background-color: #f8f9fb;
-			overflow: hidden;
 		}
 
 		.research .line {
-			width: 2000px;
+			width: 4000px;
 			height: 1px;
 			background: #c1c9e6;
 			position: absolute;
 			left: 50%;
 			top: 50%;
-			transform: translate3d(-60%, -2px, 0) rotate(29deg);
+			transform: translate3d(-60%, -114px, 0) rotate(29deg);
 		}
 
 		.research-card {
@@ -286,17 +304,18 @@
 
 		.research-card .info .content {
 			color: #333;
+			font-size: 12px;
 		}
 
 		.research-card .info .content .en {
 			padding-bottom: 10px;
-			font-size: 12px;
+			font-size: 1em;
 			opacity: 0.5;
 		}
 
 		.research-card .info .content .ch {
-			padding-bottom: 30px;
-			font-size: 24px;
+			padding-bottom: 1.1em;
+			font-size: 2em;
 			font-weight: 600;
 			position: relative;
 		}
@@ -313,9 +332,9 @@
 		}
 
 		.research-card .info .content .desc {
-			padding-bottom: 25px;
+			padding-bottom: 1.8em;
 			line-height: 1.4;
-			font-size: 14px;
+			font-size: 1.15em;
 			color: #666;
 		}
 
@@ -388,29 +407,30 @@
 
 		.news-card {
 			margin-left: 20px;
+			font-size: 14px;
 		}
 
 		.news-card .cover {
-			height: 125px;
+			height: 9em;
 			overflow: hidden;
 		}
 
 		.news-card .title {
-			padding: 20px 0;
-			font-size: 14px;
+			padding: 1.5em 0;
+			font-size: 1em;
 			font-weight: 600;
 			color: #034593;
 		}
 
 		.news-card .time {
-			padding-bottom: 20px;
-			font-size: 12px;
+			padding-bottom: 1.5em;
+			font-size: 0.8em;
 			color: #999;
 		}
 
 		.news-card .desc {
 			line-height: 1.4;
-			font-size: 12px;
+			font-size: 0.8em;
 			color: #999;
 		}
 
@@ -422,16 +442,17 @@
 			margin-bottom: 20px;
 			color: #666;
 			cursor: pointer;
+			font-size: 16px;
 		}
 
 		.news-bullet .ch {
 			padding-bottom: 10px;
-			font-size: 16px;
+			font-size: 1em;
 			font-weight: 600;
 		}
 
 		.news-bullet .en {
-			font-size: 12px;
+			font-size: 0.7em;
 			font-weight: 600;
 			transform: translateX(-30px) scale(0.8);
 			opacity: .5;
@@ -440,11 +461,12 @@
 		.news-bullet-active {
 			margin-bottom: 20px;
 			color: #333;
+			font-size: 24px;
 		}
 
 		.news-bullet-active .ch {
 			padding-bottom: 10px;
-			font-size: 24px;
+			font-size: 1em;
 			font-weight: 600;
 			position: relative;
 		}
@@ -461,10 +483,164 @@
 		}
 
 		.news-bullet-active .en {
-			font-size: 12px;
+			font-size: 0.5em;
 			font-weight: 600;
 			transform: translateX(-30px) scale(0.8);
 			opacity: .5;
+		}
+
+		@media screen and (max-width: 734px) {
+
+			/* banner */
+			.index-banner-arrow-wrapper {
+				left: auto;
+				right: 0;
+				margin-left: 0;
+			}
+
+			/* 产品 */
+			.production {
+				padding-top: 40px;
+			}
+
+			.production-title {
+				width: 100%;
+				height: auto;
+				position: relative;
+				right: 0;
+				top: 0;
+				padding-bottom: 20px;
+			}
+
+			.production-title .web-name {
+				padding-top: 0;
+				padding-left: 20px;
+			}
+
+			.production-title .section-name {
+				padding-left: 20px;
+				font-size: 1.5em;
+			}
+
+			.production-title .section-name:after {
+				margin: 10px 0 0 34px;
+			}
+
+			.production-card .title {
+				top: 20px;
+				right: 20px;
+				font-size: 14px;
+			}
+
+			.production-card .title.left {
+				left: 20px;
+			}
+
+			.production-card:hover .title.left {
+				transform: translateX(10%);
+			}
+
+			.production-pagination {
+				text-align: center;
+				padding-top: 20px;
+				position: relative;
+				right: 0;
+				top: 0;
+				transform: translateY(0);
+			}
+
+			.production-bullet {
+				display: inline-block;
+				margin: 0 20px;
+				width: 10px;
+				height: 10px;
+			}
+
+			.production-bullet-active:after {
+				width: 18px;
+				height: 18px;
+				margin-left: -11px;
+				margin-top: -11px;
+			}
+
+			.production-arrow-wrapper {
+				display: none;
+			}
+
+			/* 介绍 */
+			.introduce {
+				padding-top: 40px;
+				padding-bottom: 0;
+			}
+
+			.introduce .info .content {
+				width: 100%;
+				padding-right: 0;
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+
+			.introduce .image:after {
+				display: none;
+			}
+
+			/* 研究 */
+			.research {
+				padding-top: 40px;
+				padding-bottom: 30px;
+			}
+
+			.research-card {
+				height: auto;
+			}
+
+			.research-card .image {
+				height: 200px;
+			}
+
+			.research-card .info {
+				padding-left: 0;
+				padding-top: 20px;
+			}
+
+			.research-arrow-wrapper {
+				right: 0;
+				bottom: -20px;
+			}
+
+			/* 新闻 */
+			.news {
+				padding-top: 40px;
+				padding-bottom: 40px;
+			}
+
+			.more-wrapper {
+				padding-left: 0;
+				text-align: center;
+			}
+
+			.news-card {
+				margin-left: 0;
+				margin-bottom: 20px;
+			}
+
+			.news-card .title {
+				padding: 1em 0;
+			}
+
+			.news-card .time {
+				padding-bottom: 1em;
+			}
+
+			.news-card .desc {
+				line-height: 1.4;
+				font-size: 0.8em;
+				color: #999;
+			}
+
+			.news-pagination {
+				margin-bottom: 20px;
+			}
 		}
 	</style>
 
@@ -482,9 +658,10 @@
 
 	<!-- 导航 -->
 	<section class="section web-header" id="webHeader">
-		<div class="section-content web-header-content flex-column flex-middle">
-			<div class="flex-item-4"><img src="./images/logo.png" alt=""></div>
-			<div class="flex-item-19 flex-offset-1 flex-column flex-right">
+		<div class="phone-menus-btn flex-md-show" id="phoneMenusBtn"></div>
+		<div class="section-content web-header-content flex-column flex-middle flex-md">
+			<div class="flex-item-4"><img src="./images/logo.png" alt="" class="logo"></div>
+			<div class="header-menus flex-item-19 flex-offset-1 flex-column flex-right" id="webMenus">
 				<a href="" class="active">首页</a>
 				<a href="">多源介绍</a>
 				<a href="">产品中心</a>
@@ -528,6 +705,7 @@
 				<div class="arrow next blank flex-item-12" id="indexBannerNext"></div>
 			</div>
 		</div>
+		<div class="index-banner-pagination flex-sm-hide"></div>
 	</section>
 
 	<!-- 产品 -->
@@ -537,78 +715,71 @@
 			<p class="section-name">PRODUCT <br>CENTER</p>
 		</div>
 		<div class="section-content">
-			<div class="flex-column">
-				<div class="production-main flex-item-21">
-					<div class="swiper-container" id="production">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<a href="">
-									<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
-										<div class="title">
-											<p class="ch">医院设备</p>
-											<p class="en">hospital equipment</p>
-										</div>
-									</div>
-								</a>
+			<div class="swiper-container" id="production">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="">
+							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
+								<div class="title">
+									<p class="ch">医院设备</p>
+									<p class="en">hospital equipment</p>
+								</div>
 							</div>
-							<div class="swiper-slide">
-								<a href="">
-									<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
-										<div class="title left">
-											<p class="ch">医院设备</p>
-											<p class="en">hospital equipment</p>
-										</div>
-									</div>
-								</a>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="">
+							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
+								<div class="title left">
+									<p class="ch">医院设备</p>
+									<p class="en">hospital equipment</p>
+								</div>
 							</div>
-							<div class="swiper-slide">
-								<a href="">
-									<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
-										<div class="title">
-											<p class="ch">医院设备</p>
-											<p class="en">hospital equipment</p>
-										</div>
-									</div>
-								</a>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="">
+							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
+								<div class="title">
+									<p class="ch">医院设备</p>
+									<p class="en">hospital equipment</p>
+								</div>
 							</div>
-							<div class="swiper-slide">
-								<a href="">
-									<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
-										<div class="title left">
-											<p class="ch">医院设备</p>
-											<p class="en">hospital equipment</p>
-										</div>
-									</div>
-								</a>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="">
+							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
+								<div class="title left">
+									<p class="ch">医院设备</p>
+									<p class="en">hospital equipment</p>
+								</div>
 							</div>
-							<div class="swiper-slide">
-								<a href="">
-									<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
-										<div class="title">
-											<p class="ch">医院设备</p>
-											<p class="en">hospital equipment</p>
-										</div>
-									</div>
-								</a>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="">
+							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
+								<div class="title">
+									<p class="ch">医院设备</p>
+									<p class="en">hospital equipment</p>
+								</div>
 							</div>
-							<div class="swiper-slide">
-								<a href="">
-									<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
-										<div class="title left">
-											<p class="ch">医院设备</p>
-											<p class="en">hospital equipment</p>
-										</div>
-									</div>
-								</a>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="">
+							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
+								<div class="title left">
+									<p class="ch">医院设备</p>
+									<p class="en">hospital equipment</p>
+								</div>
 							</div>
-						</div>
+						</a>
 					</div>
 				</div>
-				<div class="flex-item-3 flex-column flex-middle flex-right">
-					<!-- Add Pagination -->
-					<div class="production-pagination"></div>
-				</div>
 			</div>
+			<div class="production-pagination"></div>
 			<div class="production-arrow-wrapper">
 				<div class="swiper-arrow flex-column">
 					<!-- Add Arrows -->
@@ -621,12 +792,12 @@
 
 	<!-- 介绍 -->
 	<div class="section introduce">
-		<div class="line"></div>
+		<div class="line flex-md-hide"></div>
 		<div class="section-content">
-			<div class="flex-column">
-				<div class="flex-item-12">
+			<div class="flex-column flex-md">
+				<div class="flex-item-8">
 					<figure class="info">
-						<img src="./images/title_introduce.png" alt="">
+						<img src="./images/title_introduce.png" alt="" class="title flex-md-hide">
 						<div class="content">
 							<p class="en">DUOYUANJIESHAO</p>
 							<p class="ch">多源介绍</p>
@@ -637,8 +808,10 @@
 						</div>
 					</figure>
 				</div>
-				<div class="flex-item-12">
-					<figure class="image bg-cover" style="background-image:url(./images/introduce.jpg)"></figure>
+				<div class="flex-item-16">
+					<figure class="image">
+						<img src="./images/introduce.jpg" alt="">
+					</figure>
 				</div>
 			</div>
 		</div>
@@ -646,12 +819,28 @@
 
 	<!-- 科研成果 -->
 	<div class="section research">
-		<div class="line"></div>
+		<div class="line flex-md-hide"></div>
 		<div class="section-content">
 			<div class="swiper-container" id="research">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<div class="research-card flex-column">
+						<div class="research-card flex-column flex-md">
+							<div class="flex-item-18">
+								<figure class="image bg-cover" style="background-image:url(./images/test.jpg)"></figure>
+							</div>
+							<div class="flex-item-6">
+								<figure class="info">
+									<div class="content">
+										<p class="en">KEYANCHENGGUO</p>
+										<p class="ch">科研成果</p>
+										<p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流</p>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="research-card flex-column flex-md">
 							<div class="flex-item-18">
 								<figure class="image bg-cover" style="background-image:url(./images/test.jpg)"></figure>
 							</div>
@@ -667,23 +856,7 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="research-card flex-column">
-							<div class="flex-item-18">
-								<figure class="image bg-cover" style="background-image:url(./images/test.jpg)"></figure>
-							</div>
-							<div class="flex-item-6">
-								<figure class="info">
-									<div class="content">
-										<p class="en">KEYANCHENGGUO</p>
-										<p class="ch">科研成果</p>
-										<p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流</p>
-									</div>
-								</figure>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="research-card flex-column">
+						<div class="research-card flex-column flex-md">
 							<div class="flex-item-18">
 								<figure class="image bg-cover" style="background-image:url(./images/test.jpg)"></figure>
 							</div>
@@ -707,24 +880,24 @@
 					<div class="arrow next color flex-item-12" id="researchNext"></div>
 				</div>
 			</div>
-			<div class="research-pagination"></div>
+			<div class="research-pagination flex-md-hide"></div>
 		</div>
 	</div>
 
 	<!-- 新闻 -->
 	<div class="section news">
 		<div class="section-content">
-			<figure class="research-title"><img src="./images/title_scientific.png" alt=""></figure>
-			<div class="flex-column">
+			<figure class="research-title flex-md-hide"><img src="./images/title_scientific.png" alt=""></figure>
+			<div class="flex-column flex-md">
 				<div class="flex-item-6">
 					<div class="news-pagination"></div>
-					<figure class="news-title"><img src="./images/title_news.png" alt=""></figure>
+					<figure class="news-title flex-md-hide"><img src="./images/title_news.png" alt=""></figure>
 				</div>
 				<div class="flex-item-18">
 					<div class="swiper-container" id="news">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
-								<div class="news-group flex-column">
+								<div class="news-group flex-column flex-md">
 									<div class="flex-item-8">
 										<a href="">
 											<figure class="news-card">
@@ -777,7 +950,7 @@
 								<div class="more-wrapper"><a href="" class="more">查看更多</a></div>
 							</div>
 							<div class="swiper-slide">
-								<div class="news-group flex-column">
+								<div class="news-group flex-column flex-md">
 									<div class="flex-item-8">
 										<a href="">
 											<figure class="news-card">
@@ -830,7 +1003,7 @@
 								<div class="more-wrapper"><a href="" class="more">查看更多</a></div>
 							</div>
 							<div class="swiper-slide">
-								<div class="news-group flex-column">
+								<div class="news-group flex-column flex-md">
 									<div class="flex-item-8">
 										<a href="">
 											<figure class="news-card">
@@ -889,10 +1062,90 @@
 		</div>
 	</div>
 
-
+	<!-- 底部 -->
+	<section class="section web-footer">
+		<div class="section-content">
+			<div class="flex-column flex-md">
+				<div class="flex-item-20 flex-column flex-md-hide">
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+				</div>
+				<div class="flex-item-4">
+					<div class="third-way-wrapper">
+						<figure class="third-way">
+							<img src="./images/icon_qq.png" alt="">
+							<p>在线QQ</p>
+						</figure>
+						<figure class="third-way">
+							<img src="./images/icon_qr.png" alt="">
+							<p>多源微信</p>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section footer-bottom">
+		<div class="section-content ">
+			<p>版权所有 Copyright@ 2019 成都鑫博浩科技有限公司网站设计：网匠科技</p>
+		</div>
+	</section>
 
 	<script src="./js/jquery.js"></script>
 	<script src="./js/scroll.js"></script>
+	<script src="./js/common.js"></script>
 	<script src="./plugin/swiper/swiper.min.js"></script>
 	<script>
 
@@ -903,6 +1156,15 @@
 			navigation: {
 				nextEl: '#indexBannerPrev',
 				prevEl: '#indexBannerNext',
+			},
+			pagination: {
+				el: '.index-banner-pagination',
+				clickable: true,
+				bulletClass: 'research-bullet',
+				bulletActiveClass: 'research-bullet-active',
+				renderBullet: function (index, className) {
+					return '<span class="' + className + '">0' + (index + 1) + '</span>';
+				},
 			},
 		});
 
@@ -921,7 +1183,7 @@
 			navigation: {
 				nextEl: '#productionPrev',
 				prevEl: '#productionNext',
-			},
+			}
 		});
 
 		new Swiper('#research', {
