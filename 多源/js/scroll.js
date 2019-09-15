@@ -9,8 +9,8 @@ document.addEventListener('scroll', function () {
         headerEl.style.backgroundColor = 'rgba(255, 255, 255, 1)';
         headerEl.style.borderBottom = "1px solid #f9f9f9";
     } else {
-        topEl.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
-        headerEl.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+        topEl.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+        headerEl.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
         headerEl.style.borderBottom = "none";
     }
 })

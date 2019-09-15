@@ -5,7 +5,7 @@
     right: 0;
     top: 0;
     z-index: 999999;
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, .8);
 }
 .web-top-content {
     height: 20px;
@@ -22,7 +22,7 @@
     right: 0;
     top: 20px;
     z-index: 999999;
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, .8);
     border-top: 1px solid #f9f9f9;
 }
 .web-header-content {
