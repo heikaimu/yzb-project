@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/layout.css">
+	<link rel="stylesheet" href="./css/magic.css">
 	<!-- swiper -->
 	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
 	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
@@ -76,8 +77,9 @@
 			padding-top: 160px;
 		}
 
-		.production-main {
-			position: relative;
+		.production-content {
+			margin-left: -20px;
+			margin-right: -20px;
 		}
 
 		.production-title {
@@ -90,6 +92,7 @@
 			background-color: #fff;
 			color: #333;
 			font-size: 12px;
+			transform: translate3d(0, 160px, 0);
 		}
 
 		.production-title .web-name {
@@ -117,29 +120,39 @@
 			margin: 20px 0 0 34px;
 		}
 
-		.production-main:before {
-			content: "";
-			display: block;
-			width: 48%;
-			background: #f4f5f7;
-			position: absolute;
-			left: -50px;
-			top: -50px;
-			bottom: 50px;
-		}
-
 		.production-card {
 			width: 100%;
 			height: 0;
 			padding-bottom: 100%;
+			position: relative;
+		}
+
+		.production-card.left:before {
+			content: "";
+			display: block;
+			background: #f4f5f7;
+			position: absolute;
+			left: -30px;
+			right: 70px;
+			top: -30px;
+			bottom: 70px;
+		}
+
+		.production-card .img-wrapper {
+			position: absolute;
+			left: 20px;
+			right: 20px;
+			top: 20px;
+			bottom: 20px;
+			z-index: 2;
 			overflow: hidden;
 		}
 
 		.production-card .title {
 			position: absolute;
-			top: 90px;
-			left: auto;
-			right: 90px;
+			right: 60px;
+			top: 60px;
+			z-index: 99;
 			display: flex;
 			flex-direction: column;
 			align-items: flex-end;
@@ -147,19 +160,10 @@
 			font-size: 30px;
 		}
 
-		.production-card:hover .title {
-			transform: translateX(-10%);
-			/* text-shadow: 2px 2px 3px #666; */
-		}
-
 		.production-card .title.left {
 			right: auto;
-			left: 90px;
+			left: 60px;
 			align-items: flex-start;
-		}
-
-		.production-card:hover .title.left {
-			transform: translateX(10%);
 		}
 
 		.production-card .title .ch {
@@ -207,7 +211,7 @@
 			margin-top: -14px;
 		}
 
-		.production-arrow-wrapper {
+		/* .production-arrow-wrapper {
 			position: absolute;
 			bottom: 0;
 			right: -150px;
@@ -219,7 +223,7 @@
 			right: -150px;
 			top: 50%;
 			transform: translateY(-50%);
-		}
+		} */
 
 		/* 介绍 */
 		.introduce {
@@ -434,6 +438,18 @@
 		.news-card {
 			margin-left: 20px;
 			font-size: 14px;
+			transition: .5s;
+		}
+
+		.news-card:hover .bg-cover {
+			transform: scale(1.05);
+		}
+
+		.news-card:hover .time {
+			color: #034593;
+		}
+		.news-card:hover .desc {
+			color: #034593;
 		}
 
 		.news-card .cover {
@@ -446,18 +462,21 @@
 			font-size: 1em;
 			font-weight: 600;
 			color: #034593;
+			transition: .3s;
 		}
 
 		.news-card .time {
 			padding-bottom: 1.3em;
 			font-size: 0.8em;
 			color: #999;
+			transition: .3s;
 		}
 
 		.news-card .desc {
 			line-height: 1.6;
 			font-size: 0.8em;
 			color: #999;
+			transition: .3s;
 		}
 
 		.news-pagination {
@@ -664,6 +683,10 @@
 				color: #999;
 			}
 
+			.news-card:hover {
+				background-color: #034593;
+			}
+
 			.news-pagination {
 				margin-bottom: 20px;
 			}
@@ -748,82 +771,37 @@
 
 	<!-- 产品 -->
 	<div class="section production">
-		<div class="production-title">
+		<div class="production-title" id="productionTitle">
 			<p class="web-name">DUOYUAN</p>
 			<p class="section-name">PRODUCT <br>CENTER</p>
 		</div>
 		<div class="section-content">
-			<div class="swiper-container" id="production">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<a href="">
-							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
+			<div class="production-content flex-column">
+				<div class="flex-item-12">
+					<a href="">
+						<div class="production-card left">
+							<div class="img-wrapper hover-line">
+								<img src="./images/test.jpg" alt="" class="scale">
 								<div class="title">
 									<p class="ch">医院设备</p>
 									<p class="en">hospital equipment</p>
 								</div>
 							</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="">
-							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
-								<div class="title left">
-									<p class="ch">医院设备</p>
-									<p class="en">hospital equipment</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="">
-							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
-								<div class="title">
-									<p class="ch">医院设备</p>
-									<p class="en">hospital equipment</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="">
-							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
-								<div class="title left">
-									<p class="ch">医院设备</p>
-									<p class="en">hospital equipment</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="">
-							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
-								<div class="title">
-									<p class="ch">医院设备</p>
-									<p class="en">hospital equipment</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a href="">
-							<div class="production-card bg-cover animation" style="background-image:url(./images/test.jpg)">
-								<div class="title left">
-									<p class="ch">医院设备</p>
-									<p class="en">hospital equipment</p>
-								</div>
-							</div>
-						</a>
-					</div>
+						</div>
 				</div>
-			</div>
-			<div class="production-pagination"></div>
-			<div class="production-arrow-wrapper">
-				<div class="swiper-arrow flex-column">
-					<!-- Add Arrows -->
-					<div class="arrow prev blank flex-item-12" id="productionPrev"></div>
-					<div class="arrow next color flex-item-12" id="productionNext"></div>
+				<div class="flex-item-12">
+					<a href="">
+						<div class="production-card left">
+							<div class="img-wrapper hover-line">
+								<img src="./images/test.jpg" alt="" class="scale">
+								<div class="title">
+									<p class="ch">医院设备</p>
+									<p class="en">hospital equipment</p>
+								</div>
+							</div>
+						</div>
 				</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -842,7 +820,7 @@
 							<p class="desc">成都鑫博浩科技有限公司是从事
 								新型医疗器械和消毒剂的研发、生产及销售的企业.公司一直秉承“为发展人类健康事业，努力创新、追求卓越、
 								持续发展”的理念</p>
-							<a href="" class="more">查看更多</a>
+							<a href="" class="more hover-color">查看更多</a>
 						</div>
 					</figure>
 				</div>
@@ -943,12 +921,14 @@
 													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
 													</figure>
 												</div>
-												<h3 class="title">产品交流会</h3>
-												<p class="time">2018.11.1</p>
-												<p class="desc">
-													研发生产的“杰雪”系列
-													消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
-												</p>
+												<div class="info">
+													<h3 class="title">产品交流会</h3>
+													<p class="time">2018.11.1</p>
+													<p class="desc">
+														研发生产的“杰雪”系列
+														消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
+													</p>
+												</div>
 											</figure>
 										</a>
 									</div>
@@ -959,12 +939,14 @@
 													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
 													</figure>
 												</div>
-												<h3 class="title">产品交流会</h3>
-												<p class="time">2018.11.1</p>
-												<p class="desc">
-													研发生产的“杰雪”系列
-													消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
-												</p>
+												<div class="info">
+													<h3 class="title">产品交流会</h3>
+													<p class="time">2018.11.1</p>
+													<p class="desc">
+														研发生产的“杰雪”系列
+														消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
+													</p>
+												</div>
 											</figure>
 										</a>
 									</div>
@@ -975,65 +957,14 @@
 													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
 													</figure>
 												</div>
-												<h3 class="title">产品交流会</h3>
-												<p class="time">2018.11.1</p>
-												<p class="desc">
-													研发生产的“杰雪”系列
-													消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
-												</p>
-											</figure>
-										</a>
-									</div>
-								</div>
-								<div class="more-wrapper"><a href="" class="more">查看更多</a></div>
-							</div>
-							<div class="swiper-slide">
-								<div class="news-group flex-column flex-md">
-									<div class="flex-item-8">
-										<a href="">
-											<figure class="news-card">
-												<div class="cover">
-													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
-													</figure>
+												<div class="info">
+													<h3 class="title">产品交流会</h3>
+													<p class="time">2018.11.1</p>
+													<p class="desc">
+														研发生产的“杰雪”系列
+														消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
+													</p>
 												</div>
-												<h3 class="title">产品交流会</h3>
-												<p class="time">2018.11.1</p>
-												<p class="desc">
-													研发生产的“杰雪”系列
-													消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
-												</p>
-											</figure>
-										</a>
-									</div>
-									<div class="flex-item-8">
-										<a href="">
-											<figure class="news-card">
-												<div class="cover">
-													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
-													</figure>
-												</div>
-												<h3 class="title">产品交流会</h3>
-												<p class="time">2018.11.1</p>
-												<p class="desc">
-													研发生产的“杰雪”系列
-													消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
-												</p>
-											</figure>
-										</a>
-									</div>
-									<div class="flex-item-8">
-										<a href="">
-											<figure class="news-card">
-												<div class="cover">
-													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
-													</figure>
-												</div>
-												<h3 class="title">产品交流会</h3>
-												<p class="time">2018.11.1</p>
-												<p class="desc">
-													研发生产的“杰雪”系列
-													消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
-												</p>
 											</figure>
 										</a>
 									</div>
@@ -1049,12 +980,14 @@
 													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
 													</figure>
 												</div>
-												<h3 class="title">产品交流会</h3>
-												<p class="time">2018.11.1</p>
-												<p class="desc">
-													研发生产的“杰雪”系列
-													消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
-												</p>
+												<div class="info">
+													<h3 class="title">产品交流会</h3>
+													<p class="time">2018.11.1</p>
+													<p class="desc">
+														研发生产的“杰雪”系列
+														消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
+													</p>
+												</div>
 											</figure>
 										</a>
 									</div>
@@ -1065,12 +998,14 @@
 													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
 													</figure>
 												</div>
-												<h3 class="title">产品交流会</h3>
-												<p class="time">2018.11.1</p>
-												<p class="desc">
-													研发生产的“杰雪”系列
-													消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
-												</p>
+												<div class="info">
+													<h3 class="title">产品交流会</h3>
+													<p class="time">2018.11.1</p>
+													<p class="desc">
+														研发生产的“杰雪”系列
+														消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
+													</p>
+												</div>
 											</figure>
 										</a>
 									</div>
@@ -1081,12 +1016,73 @@
 													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
 													</figure>
 												</div>
-												<h3 class="title">产品交流会</h3>
-												<p class="time">2018.11.1</p>
-												<p class="desc">
-													研发生产的“杰雪”系列
-													消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
-												</p>
+												<div class="info">
+													<h3 class="title">产品交流会</h3>
+													<p class="time">2018.11.1</p>
+													<p class="desc">
+														研发生产的“杰雪”系列
+														消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
+													</p>
+												</div>
+											</figure>
+										</a>
+									</div>
+								</div>
+								<div class="more-wrapper"><a href="" class="more">查看更多</a></div>
+							</div>
+							<div class="swiper-slide">
+								<div class="news-group flex-column flex-md">
+									<div class="flex-item-8">
+										<a href="">
+											<figure class="news-card">
+												<div class="cover">
+													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
+													</figure>
+												</div>
+												<div class="info">
+													<h3 class="title">产品交流会</h3>
+													<p class="time">2018.11.1</p>
+													<p class="desc">
+														研发生产的“杰雪”系列
+														消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
+													</p>
+												</div>
+											</figure>
+										</a>
+									</div>
+									<div class="flex-item-8">
+										<a href="">
+											<figure class="news-card">
+												<div class="cover">
+													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
+													</figure>
+												</div>
+												<div class="info">
+													<h3 class="title">产品交流会</h3>
+													<p class="time">2018.11.1</p>
+													<p class="desc">
+														研发生产的“杰雪”系列
+														消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
+													</p>
+												</div>
+											</figure>
+										</a>
+									</div>
+									<div class="flex-item-8">
+										<a href="">
+											<figure class="news-card">
+												<div class="cover">
+													<figure class="img bg-cover animation" style="background-image:url(./images/test.jpg)">
+													</figure>
+												</div>
+												<div class="info">
+													<h3 class="title">产品交流会</h3>
+													<p class="time">2018.11.1</p>
+													<p class="desc">
+														研发生产的“杰雪”系列
+														消毒液产品交流会公司研发生产的“杰雪”系列消毒液产品会公司研发生产的“杰雪”系列消毒液产品交流会公司研发生产
+													</p>
+												</div>
 											</figure>
 										</a>
 									</div>
@@ -1197,7 +1193,7 @@
 			speed: 1000,
 			effect: 'fade',
 			// loop: true,//必须
-			preventInteractionOnTransition : true,
+			preventInteractionOnTransition: true,
 			pagination: {
 				el: '.index-banner-pagination',
 				dynamicBullets: true,
@@ -1218,18 +1214,7 @@
 		new Swiper('#production', {
 			slidesPerView: 2,
 			slidesPerGroup: 2,
-			spaceBetween: 20,
-			loop: true,
-			pagination: {
-				el: '.production-pagination',
-				clickable: true,
-				bulletClass: 'production-bullet',
-				bulletActiveClass: 'production-bullet-active',
-			},
-			navigation: {
-				nextEl: '#productionPrev',
-				prevEl: '#productionNext',
-			}
+			spaceBetween: 20
 		});
 
 		new Swiper('#research', {
