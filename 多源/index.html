@@ -20,16 +20,16 @@
 			position: relative;
 		}
 
-		.index-banner .swiper-slide img {
+		.index-banner .swiper-slide .img {
 			width: 100%;
-			height: auto;
+			height: calc(100vh - 20px);
 			min-height: 100%;
 			transition: 1s linear 2s;
 			transform: scale(1.1, 1.1);
 		}
 
-		.index-banner .swiper-slide-active img,
-		.index-banner .swiper-slide-duplicate-active img {
+		.index-banner .swiper-slide-active .img,
+		.index-banner .swiper-slide-duplicate-active .img {
 			transition: 8s linear;
 			transform: scale(1, 1);
 		}
@@ -46,8 +46,8 @@
 
 		.banner-info h3 {
 			padding-bottom: 20px;
-			font-size: 16px;
-			font-weight: 900;
+			font-size: 18px;
+			font-weight: 600;
 		}
 
 		.banner-info h4 {
@@ -703,7 +703,8 @@
 		<div class="swiper-container" id="banner">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<img src="./images/test/banner1.jpg" alt="">
+					<!-- <img src="./images/test/banner1.jpg" alt=""> -->
+					<div class="img bg-cover" style="background: url(./images/test/banner1.jpg)"></div>
 					<div class="banner-info">
 						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
 							愿景VISION</h3>
@@ -715,7 +716,8 @@
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<img src="./images/test/banner2.jpg" alt="">
+					<!-- <img src="./images/test/banner2.jpg" alt=""> -->
+					<div class="img bg-cover" style="background: url(./images/test/banner2.jpg)"></div>
 					<div class="banner-info">
 						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
 							愿景VISION</h3>
@@ -727,7 +729,8 @@
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<img src="./images/test/banner3.jpg" alt="">
+					<!-- <img src="./images/test/banner3.jpg" alt=""> -->
+					<div class="img bg-cover" style="background: url(./images/test/banner3.jpg)"></div>
 					<div class="banner-info">
 						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
 							愿景VISION</h3>
