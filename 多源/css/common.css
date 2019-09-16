@@ -39,7 +39,7 @@
 
 .swiper-arrow .arrow.prev.color {
   background-image: url('../images/arrow_blank.png');
-  background-color: #bbc4e4;
+  background-color: #0067ab;
   transform: rotate(180deg);
 }
 
@@ -51,7 +51,7 @@
 
 .swiper-arrow .arrow.next.color {
   background-image: url('../images/arrow_blank.png');
-  background-color: #bbc4e4;
+  background-color: #0067ab;
 }
 
 /* more */

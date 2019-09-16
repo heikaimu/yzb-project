@@ -238,10 +238,24 @@
 			position: absolute;
 			left: 0;
 			top: 220px;
+			transition: 1s;
+			transform: scaleX(0);
+		}
+
+		.introduce .line.active {
+			transform: scaleX(1);
 		}
 
 		.introduce .info .title {
 			margin-left: -140px;
+			transition: 1s;
+			transform: translate3d(100px, 0, 0);
+			opacity: 0;
+		}
+
+		.introduce .info .title.active {
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
 		}
 
 		.introduce .info .content {
@@ -250,6 +264,14 @@
 			padding-top: 140px;
 			font-size: 12px;
 			color: #333;
+			transition: 1s;
+			transform: translate3d(0, 60px, 0);
+			opacity: 0;
+		}
+
+		.introduce .info .content.active {
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
 		}
 
 		.introduce .info .content .en {
@@ -287,6 +309,14 @@
 			width: 100%;
 			height: auto;
 			position: relative;
+			transition: 1s;
+			transform: scale(0);
+			opacity: 0;
+		}
+
+		.introduce .image.active {
+			transform: scale(1);
+			opacity: 1;
 		}
 
 		.introduce .image:after {
@@ -424,10 +454,30 @@
 			padding-bottom: 80px;
 		}
 
+		.news-title {
+			position: relative;
+			transition: 1s;
+			transform: translate3d(120px, 0, 0);
+			opacity: 0;
+		}
+
+		.news-title.active {
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+		}
+
 		.research-title {
 			position: absolute;
 			right: -180px;
 			top: -105px;
+			transition: 1s;
+			transform: translate3d(-100px, 0, 0);
+			opacity: 0;
+		}
+
+		.research-title.active {
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
 		}
 
 		.more-wrapper {
@@ -448,6 +498,7 @@
 		.news-card:hover .time {
 			color: #034593;
 		}
+
 		.news-card:hover .desc {
 			color: #034593;
 		}
@@ -727,7 +778,7 @@
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
 					<!-- <img src="./images/test/banner1.jpg" alt=""> -->
-					<div class="img bg-cover" style="background: url(./images/test/banner1.jpg)"></div>
+					<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
 					<div class="banner-info">
 						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
 							愿景VISION</h3>
@@ -740,7 +791,7 @@
 				</div>
 				<div class="swiper-slide">
 					<!-- <img src="./images/test/banner2.jpg" alt=""> -->
-					<div class="img bg-cover" style="background: url(./images/test/banner2.jpg)"></div>
+					<div class="img bg-cover" style="background-image: url(./images/test/banner2.jpg)"></div>
 					<div class="banner-info">
 						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
 							愿景VISION</h3>
@@ -753,7 +804,7 @@
 				</div>
 				<div class="swiper-slide">
 					<!-- <img src="./images/test/banner3.jpg" alt=""> -->
-					<div class="img bg-cover" style="background: url(./images/test/banner3.jpg)"></div>
+					<div class="img bg-cover" style="background-image: url(./images/test/banner3.jpg)"></div>
 					<div class="banner-info">
 						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
 							愿景VISION</h3>
@@ -807,14 +858,14 @@
 	</div>
 
 	<!-- 介绍 -->
-	<div class="section introduce">
-		<div class="line flex-md-hide"></div>
+	<div class="section introduce" id="introduce">
+		<div class="line flex-md-hide" id="introduceLine"></div>
 		<div class="section-content">
 			<div class="flex-column flex-md">
 				<div class="flex-item-8">
 					<figure class="info">
-						<img src="./images/title_introduce.png" alt="" class="title flex-md-hide">
-						<div class="content">
+						<img src="./images/title_introduce.png" alt="" class="title flex-md-hide" id="introduceTitle">
+						<div class="content" id="introduceContent">
 							<p class="en">DUOYUANJIESHAO</p>
 							<p class="ch">多源介绍</p>
 							<p class="desc">成都鑫博浩科技有限公司是从事
@@ -825,7 +876,7 @@
 					</figure>
 				</div>
 				<div class="flex-item-16">
-					<figure class="image">
+					<figure class="image" id="introduceImage">
 						<img src="./images/introduce.jpg" alt="">
 					</figure>
 				</div>
@@ -847,9 +898,14 @@
 							<div class="flex-item-6">
 								<figure class="info">
 									<div class="content">
-										<p class="en">KEYANCHENGGUO</p>
-										<p class="ch">科研成果</p>
-										<p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流</p>
+										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">KEYANCHENGGUO</p>
+										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">科研成果</p>
+										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">
+											中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+										</p>
 									</div>
 								</figure>
 							</div>
@@ -863,9 +919,14 @@
 							<div class="flex-item-6">
 								<figure class="info">
 									<div class="content">
-										<p class="en">KEYANCHENGGUO</p>
-										<p class="ch">科研成果</p>
-										<p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流</p>
+										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">KEYANCHENGGUO</p>
+										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">科研成果</p>
+										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">
+											中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+										</p>
 									</div>
 								</figure>
 							</div>
@@ -879,9 +940,14 @@
 							<div class="flex-item-6">
 								<figure class="info">
 									<div class="content">
-										<p class="en">KEYANCHENGGUO</p>
-										<p class="ch">科研成果</p>
-										<p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流</p>
+										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">KEYANCHENGGUO</p>
+										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">科研成果</p>
+										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">
+											中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+										</p>
 									</div>
 								</figure>
 							</div>
@@ -901,13 +967,14 @@
 	</div>
 
 	<!-- 新闻 -->
-	<div class="section news">
+	<div class="section news" id="newsWrapper">
 		<div class="section-content">
-			<figure class="research-title flex-md-hide"><img src="./images/title_scientific.png" alt=""></figure>
+			<figure class="research-title flex-md-hide" id="researchTitle"><img src="./images/title_scientific.png" alt="">
+			</figure>
 			<div class="flex-column flex-md">
 				<div class="flex-item-6">
 					<div class="news-pagination"></div>
-					<figure class="news-title flex-md-hide"><img src="./images/title_news.png" alt=""></figure>
+					<figure class="news-title flex-md-hide" id="newsTitle"><img src="./images/title_news.png" alt=""></figure>
 				</div>
 				<div class="flex-item-18">
 					<div class="swiper-container" id="news">
@@ -1232,6 +1299,15 @@
 				nextEl: '#researchPrev',
 				prevEl: '#researchNext',
 			},
+			on: {
+				init: function () {
+					swiperAnimateCache(this); //隐藏动画元素 
+					this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
+				},
+				slideChangeTransitionEnd: function () {
+					swiperAnimate(this); //每个slide切换结束时运行当前slide动画
+				}
+			}
 		});
 
 		new Swiper("#news", {
