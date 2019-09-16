@@ -1,3 +1,6 @@
+body {
+	padding-top: 20px;
+}
 .web-top {
 	height: 20px;
 	position: fixed;
@@ -5,7 +8,7 @@
 	right: 0;
 	top: 0;
 	z-index: 999999;
-	background-color: rgba(255, 255, 255, .8);
+	background-color: #0067ab;
 }
 
 .web-top-content {
@@ -14,7 +17,7 @@
 
 .web-top .web-top-content p {
 	font-size: 12px;
-	color: #666;
+	color: #fff;
 }
 
 .web-header {
@@ -25,7 +28,6 @@
 	top: 20px;
 	z-index: 999999;
 	background-color: rgba(255, 255, 255, .8);
-	border-top: 1px solid #f9f9f9;
 }
 
 .web-header-content {

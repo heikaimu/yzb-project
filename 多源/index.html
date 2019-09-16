@@ -13,28 +13,54 @@
 	<link rel="stylesheet" href="./css/layout.css">
 	<!-- swiper -->
 	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
-
+	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
 	<style>
 		/* banner */
 		.index-banner {
 			position: relative;
 		}
 
-		.banner-item {
+		.index-banner .swiper-slide img {
 			width: 100%;
+			height: auto;
+			min-height: 100%;
+			transition: 1s linear 2s;
+			transform: scale(1.1, 1.1);
 		}
 
-		.banner-item img {
-			display: block;
-			width: 100%;
+		.index-banner .swiper-slide-active img,
+		.index-banner .swiper-slide-duplicate-active img {
+			transition: 8s linear;
+			transform: scale(1, 1);
 		}
 
-		.index-banner-pagination {
+		.banner-info {
+			width: 600px;
 			position: absolute;
 			left: 50%;
-			margin-left: -750px;
-			bottom: 150px;
-			z-index: 99999;
+			top: 55%;
+			margin-left: -300px;
+			transform: translateY(-50%);
+			color: #fff;
+		}
+
+		.banner-info h3 {
+			padding-bottom: 20px;
+			font-size: 16px;
+			font-weight: 900;
+		}
+
+		.banner-info h4 {
+			padding-bottom: 20px;
+			font-size: 32px;
+			line-height: 1.6;
+			font-weight: 200;
+		}
+
+		.banner-info h5 {
+			line-height: 1.6;
+			font-size: 16px;
+			font-weight: 200;
 		}
 
 		.index-banner-arrow-wrapper {
@@ -416,20 +442,20 @@
 		}
 
 		.news-card .title {
-			padding: 1.5em 0;
+			padding: 1.3em 0;
 			font-size: 1em;
 			font-weight: 600;
 			color: #034593;
 		}
 
 		.news-card .time {
-			padding-bottom: 1.5em;
+			padding-bottom: 1.3em;
 			font-size: 0.8em;
 			color: #999;
 		}
 
 		.news-card .desc {
-			line-height: 1.4;
+			line-height: 1.6;
 			font-size: 0.8em;
 			color: #999;
 		}
@@ -677,35 +703,44 @@
 		<div class="swiper-container" id="banner">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<div class="banner-item">
-						<img src="./images/banner.jpg" alt="">
+					<img src="./images/test/banner1.jpg" alt="">
+					<div class="banner-info">
+						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							愿景VISION</h3>
+						<h4 class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							为发展人类健康事业，努力创新、追求卓越、持续发展</h4>
+						<h5 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							TO DEVELOP THE CAUSE OF HUMAN HEALTH STRIVING FOR INNOVATION, PURSUING
+							EXCELLENCE AND SUSTAINABLE DEVELOPMENT</h5>
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div class="banner-item">
-						<img src="./images/banner2.jpg" alt="">
+					<img src="./images/test/banner2.jpg" alt="">
+					<div class="banner-info">
+						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							愿景VISION</h3>
+						<h4 class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							为发展人类健康事业，努力创新、追求卓越、持续发展</h4>
+						<h5 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							TO DEVELOP THE CAUSE OF HUMAN HEALTH STRIVING FOR INNOVATION, PURSUING
+							EXCELLENCE AND SUSTAINABLE DEVELOPMENT</h5>
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div class="banner-item">
-						<img src="./images/banner.jpg" alt="">
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="banner-item">
-						<img src="./images/banner2.jpg" alt="">
+					<img src="./images/test/banner3.jpg" alt="">
+					<div class="banner-info">
+						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							愿景VISION</h3>
+						<h4 class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							为发展人类健康事业，努力创新、追求卓越、持续发展</h4>
+						<h5 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							TO DEVELOP THE CAUSE OF HUMAN HEALTH STRIVING FOR INNOVATION, PURSUING
+							EXCELLENCE AND SUSTAINABLE DEVELOPMENT</h5>
 					</div>
 				</div>
 			</div>
+			<div class="swiper-pagination index-banner-pagination"></div>
 		</div>
-		<div class="index-banner-arrow-wrapper">
-			<div class="swiper-arrow flex-column">
-				<!-- Add Arrows -->
-				<div class="arrow prev color flex-item-12" id="indexBannerPrev"></div>
-				<div class="arrow next blank flex-item-12" id="indexBannerNext"></div>
-			</div>
-		</div>
-		<div class="index-banner-pagination flex-sm-hide"></div>
 	</section>
 
 	<!-- 产品 -->
@@ -1147,25 +1182,33 @@
 	<script src="./js/scroll.js"></script>
 	<script src="./js/common.js"></script>
 	<script src="./plugin/swiper/swiper.min.js"></script>
+	<script src="./plugin/swiper/swiper.animate.min.js"></script>
 	<script>
 
 		// banner
 		new Swiper("#banner", {
-			loop: true,
-			effect: 'fade',
-			navigation: {
-				nextEl: '#indexBannerPrev',
-				prevEl: '#indexBannerNext',
+			autoplay: {
+				delay: 8000,
+				disableOnInteraction: false,
 			},
+			speed: 1000,
+			effect: 'fade',
+			// loop: true,//必须
+			preventInteractionOnTransition : true,
 			pagination: {
 				el: '.index-banner-pagination',
-				clickable: true,
-				bulletClass: 'research-bullet',
-				bulletActiveClass: 'research-bullet-active',
-				renderBullet: function (index, className) {
-					return '<span class="' + className + '">0' + (index + 1) + '</span>';
-				},
+				dynamicBullets: true,
+				clickable: true
 			},
+			on: {
+				init: function () {
+					swiperAnimateCache(this); //隐藏动画元素 
+					this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
+				},
+				slideChangeTransitionEnd: function () {
+					swiperAnimate(this); //每个slide切换结束时运行当前slide动画
+				}
+			}
 		});
 
 		//   产品
