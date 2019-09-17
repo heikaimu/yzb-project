@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- css -->
+	<link rel="stylesheet" href="./css/flex-layout.css">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/layout.css">
+	<link rel="stylesheet" href="./css/magic.css">
+	<!-- swiper -->
+	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
+	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
+	<style>
+		/* 标题 */
+		.introduce-page-title {
+			padding: 20px 0;
+		}
+
+		.introduce-page-title.center {
+			text-align: center;
+		}
+
+		.introduce-page-title .ch {
+			padding-bottom: 24px;
+			font-size: 24px;
+			color: #333;
+		}
+
+		.introduce-page-title .en {
+			padding-bottom: 28px;
+			font-size: 24px;
+			color: #0373df;
+		}
+
+		.introduce-page-title .line {
+			display: block;
+			width: 40px;
+			height: 2px;
+			background-color: #999;
+			position: relative;
+		}
+
+		.introduce-page-title .line::after {
+			content: "";
+			display: block;
+			width: 10px;
+			height: 2px;
+			background-color: #034593;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.introduce-page-title.center .line {
+			margin: 0 auto;
+		}
+
+		.introduce-page-title.center .line::after {
+			width: 14px;
+			left: 13px;
+		}
+
+		/* 技术简介 */
+		.technology-wrapper {
+			padding: 100px 0;
+			background: url(./images/introduce_image2.jpg) no-repeat center center / cover;
+		}
+
+		/* 专家 */
+		.experts-swiper-wrapper {
+			padding: 100px 0;
+			background: url(./images/introduce_image3.jpg) no-repeat center center / cover;
+		}
+
+		.experts-swiper-wrapper .expert-button-next {
+			margin-right: -100px;
+		}
+
+		.experts-swiper-wrapper .expert-button-prev {
+			margin-left: -100px;
+		}
+
+		.expert-card {
+			overflow: hidden;
+		}
+
+		.expert-card .cover {
+			height: 400px;
+			overflow: hidden;
+			background-color: #fff;
+		}
+
+		.expert-card .info {
+			height: 100px;
+			background-color: #b6bcde;
+		}
+
+		/* 荣誉 */
+		.honour-wrapper {
+			padding: 80px 0;
+		}
+
+		.honour-wrapper .honour-button-next {
+			margin-right: -100px;
+		}
+
+		.honour-wrapper .honour-button-prev {
+			margin-left: -100px;
+		}
+
+		.honour-card .cover {
+			height: 390px;
+			overflow: hidden;
+		}
+
+		.honour-card .info {
+			padding: 20px 0 10px 0;
+			border-bottom: 2px solid #cdcdcd;
+		}
+
+		.honour-card .info p {
+			line-height: 1.8;
+			font-size: 14px;
+			color: #666;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<!-- 顶部 -->
+	<section class="section web-top" id="webTop">
+		<div class="section-content web-top-content flex-column flex-middle">
+			<p class="flex-item-12 flex-column flex-left">欢迎来到多源官方网站！</p>
+			<p class="flex-item-12 flex-column flex-right flex-md-show">联系电话：028-85141556</p>
+		</div>
+	</section>
+
+	<!-- 导航 -->
+	<section class="section web-header" id="webHeader">
+		<div class="phone-menus-btn flex-md-show" id="phoneMenusBtn"></div>
+		<div class="section-content web-header-content flex-column flex-middle flex-md">
+			<div class="flex-item-4"><img src="./images/logo.png" alt="" class="logo"></div>
+			<div class="header-menus flex-item-19 flex-offset-1 flex-column" id="webMenus">
+				<a href="./index.html">首页</a>
+				<a href="./introduce.html" class="active">多源介绍</a>
+				<a href="./product.html">产品中心</a>
+				<a href="./medicine.html">临床医学</a>
+				<a href="./cooperation.html">多源合作</a>
+				<a href="./contact.html">联系我们</a>
+			</div>
+			<div class="phone-number flex-md-hide">(0848-1515)</div>
+		</div>
+	</section>
+
+	<!-- banner -->
+	<section class="section index-banner" id="webBanner">
+		<div class="swiper-container" id="banner">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<!-- <img src="./images/test/banner1.jpg" alt=""> -->
+					<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+					<!-- <div class="banner-info">
+						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							愿景VISION</h3>
+						<h4 class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							为发展人类健康事业，努力创新、追求卓越、持续发展</h4>
+						<h5 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0s">
+							TO DEVELOP THE CAUSE OF HUMAN HEALTH STRIVING FOR INNOVATION, PURSUING
+							EXCELLENCE AND SUSTAINABLE DEVELOPMENT</h5>
+					</div> -->
+				</div>
+				<div class="swiper-slide">
+					<!-- <img src="./images/test/banner2.jpg" alt=""> -->
+					<div class="img bg-cover" style="background-image: url(./images/test/banner2.jpg)"></div>
+				</div>
+				<div class="swiper-slide">
+					<!-- <img src="./images/test/banner3.jpg" alt=""> -->
+					<div class="img bg-cover" style="background-image: url(./images/test/banner3.jpg)"></div>
+				</div>
+			</div>
+			<div class="swiper-pagination index-banner-pagination"></div>
+		</div>
+	</section>
+
+	<!-- 多源介绍 -->
+	<section class="section introduce">
+		<section class="section-content introduce-content">
+			<div class="flex-column flex-md">
+				<div class="flex-item-10">
+					<div class="introduce-page-title">
+						<h3 class="ch">多源介绍</h3>
+						<h4 class="en">COMPANT PROFILE</h4>
+						<span class="line"></span>
+					</div>
+				</div>
+				<div class="flex-item-14">
+					<article class="context">
+						成都鑫博浩科技有限公司是从事新型医疗器械和消毒剂的研发、生产及销售的企业。公司一直秉承“为发展人类健康事业，努力创新、追求卓越、持续发展”的理念，致力于高新科技成果的开发与转化，将产品推向国内、国际市场，为人类的健康事业服务。公司以专业的方式将产品和服务推荐给医疗机构和家庭。
+						公司拥有生物医学工程学、生物物理学、半导体材料学、基础医学和临床医学、生命电子学、公共卫生学等多领域多学科的专家团队和甘于奉献的全体员工。我们始终坚持不懈的努力，积极响应健康中国行动的国家战略，为实现全人类人人享有健康的崇高理想而奋斗。
+					</article>
+				</div>
+
+			</div>
+		</section>
+	</section>
+
+	<!-- 技术简介 -->
+	<section class="section technology-wrapper">
+		<section class="section-content flex-column flex-md">
+			<div class="flex-item-12">
+				<div class="technology-content">
+					<div class="introduce-page-title center">
+						<h3 class="ch">技术简介</h3>
+						<h4 class="en">TECHNOLOGY INTRODUCE</h4>
+						<span class="line"></span>
+					</div>
+					<p class="summary">主要产品和技术成果：多源治疗技术及其系列产品。</p>
+					<p class="title">技术团队</p>
+					<p class="intro">
+						中国医学科学院北京协和医科大学、北京大学医学部、中国中医研究院西苑医院、四川大学华西医院、解放军陆军医科大学西南医院、意大利帕维亚大学医学院、台湾三军总医院等上千家医疗机构</p>
+				</div>
+			</div>
+			<div class="flex-item-12"></div>
+		</section>
+	</section>
+
+
+	<!-- 发展历程 -->
+	<section class="section introduce">
+		<div class="flex-column flex-md">
+			<div class="flex-item-12">
+				<img src="./images/introduce_image1.jpg" alt="">
+			</div>
+			<div class="flex-item-12">
+				<div class="introduce-page-title">
+					<h3 class="ch">发展历程</h3>
+					<h4 class="en">DEVELOPMENT HISTORY</h4>
+					<span class="line"></span>
+				</div>
+				<ol class="time-line">
+					<li class="time-node">
+						<p class="year">2019<span>年</span></p>
+						<div class="round"></div>
+						<p class="something">公司成立。</p>
+					</li>
+					<li class="time-node">
+						<p class="year">2019<span>年</span></p>
+						<div class="round"></div>
+						<p class="something">公司成立。</p>
+					</li>
+					<li class="time-node">
+						<p class="year">2019<span>年</span></p>
+						<div class="round"></div>
+						<p class="something">公司成立。</p>
+					</li>
+					<li class="time-node">
+						<p class="year">2019<span>年</span></p>
+						<div class="round"></div>
+						<p class="something">公司成立。</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- 专家介绍 -->
+	<section class="section experts-title-wrapper">
+		<div class="introduce-page-title center">
+			<h3 class="ch">专家介绍</h3>
+			<h4 class="en">BRIEF INTRODUCTION EXPERTS</h4>
+			<span class="line"></span>
+		</div>
+	</section>
+	<section class="section experts-swiper-wrapper">
+		<section class="section-content">
+			<div class="swiper-button-next expert-button-next"></div>
+			<div class="swiper-button-prev expert-button-prev"></div>
+			<div class="swiper-container" id="experts">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="expert-card hover-line">
+							<div class="cover">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+							</div>
+							<div class="info"></div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="expert-card hover-line">
+							<div class="cover">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+							</div>
+							<div class="info"></div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="expert-card hover-line">
+							<div class="cover">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+							</div>
+							<div class="info"></div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="expert-card hover-line">
+							<div class="cover">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+							</div>
+							<div class="info"></div>
+						</div>
+					</div>
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+			</div>
+		</section>
+	</section>
+
+	<!-- 荣誉简介 -->
+	<section class="section honour-wrapper">
+		<div class="introduce-page-title center">
+			<h3 class="ch">荣誉简介</h3>
+			<h4 class="en">BRIEF INTRODUCTION TO HONOURS</h4>
+			<span class="line"></span>
+		</div>
+		<section class="section-content">
+			<div class="swiper-button-next honour-button-next"></div>
+			<div class="swiper-button-prev honour-button-prev"></div>
+			<div class="swiper-container" id="honour">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="honour-card">
+							<div class="cover hover-line">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+							</div>
+							<div class="info">
+								<p>2010年10月2日</p>
+								<p>国产消毒器械卫生许可证</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="honour-card">
+							<div class="cover hover-line">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+							</div>
+							<div class="info">
+								<p>2010年10月2日</p>
+								<p>国产消毒器械卫生许可证</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="honour-card">
+							<div class="cover hover-line">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+							</div>
+							<div class="info">
+								<p>2010年10月2日</p>
+								<p>国产消毒器械卫生许可证</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="honour-card">
+							<div class="cover hover-line">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+							</div>
+							<div class="info">
+								<p>2010年10月2日</p>
+								<p>国产消毒器械卫生许可证</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+			</div>
+		</section>
+	</section>
+
+
+	<!-- 底部 -->
+	<section class="section web-footer">
+		<div class="section-content">
+			<div class="flex-column flex-md">
+				<div class="flex-item-20 flex-column flex-md-hide">
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+					<div class="flex-item-4">
+						<div class="footer-nav-item">
+							<h3>多源介绍</h3>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+							<a href="">公司简介</a>
+							<a href="">发展历程</a>
+						</div>
+					</div>
+				</div>
+				<div class="flex-item-4">
+					<div class="third-way-wrapper">
+						<figure class="third-way">
+							<img src="./images/icon_qq.png" alt="">
+							<p>在线QQ</p>
+						</figure>
+						<figure class="third-way">
+							<img src="./images/icon_qr.png" alt="">
+							<p>多源微信</p>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section footer-bottom">
+		<div class="section-content ">
+			<p>版权所有 Copyright@ 2019 成都鑫博浩科技有限公司网站设计：网匠科技</p>
+		</div>
+	</section>
+
+	<script src="./js/jquery.js"></script>
+	<script src="./js/scroll.js"></script>
+	<script src="./js/common.js"></script>
+	<script src="./plugin/swiper/swiper.min.js"></script>
+	<script src="./plugin/swiper/swiper.animate.min.js"></script>
+	<script>
+
+		// banner
+		new Swiper("#banner", {
+			autoplay: {
+				delay: 8000,
+				disableOnInteraction: false,
+			},
+			speed: 1000,
+			effect: 'fade',
+			// loop: true,//必须
+			preventInteractionOnTransition: true,
+			pagination: {
+				el: '.index-banner-pagination',
+				dynamicBullets: true,
+				clickable: true
+			},
+			on: {
+				init: function () {
+					swiperAnimateCache(this); //隐藏动画元素 
+					this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
+				},
+				slideChangeTransitionEnd: function () {
+					swiperAnimate(this); //每个slide切换结束时运行当前slide动画
+				}
+			}
+		});
+
+
+		// 专家
+		new Swiper('#experts', {
+			slidesPerView: 3,
+			spaceBetween: 30,
+			navigation: {
+				nextEl: '.expert-button-next',
+				prevEl: '.expert-button-prev',
+			},
+		});
+
+		// 荣誉
+		new Swiper('#honour', {
+			slidesPerView: 4,
+			spaceBetween: 50,
+			navigation: {
+				nextEl: '.honour-button-next',
+				prevEl: '.honour-button-prev',
+			},
+		});
+	</script>
+</body>
+
+</html>

@@ -16,61 +16,6 @@
 	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
 	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
 	<style>
-		/* banner */
-		.index-banner {
-			position: relative;
-		}
-
-		.index-banner .swiper-slide .img {
-			width: 100%;
-			height: calc(100vh - 20px);
-			min-height: 100%;
-			transition: 1s linear 2s;
-			transform: scale(1.1, 1.1);
-		}
-
-		.index-banner .swiper-slide-active .img,
-		.index-banner .swiper-slide-duplicate-active .img {
-			transition: 8s linear;
-			transform: scale(1, 1);
-		}
-
-		.banner-info {
-			width: 600px;
-			position: absolute;
-			left: 50%;
-			top: 55%;
-			margin-left: -300px;
-			transform: translateY(-50%);
-			color: #fff;
-		}
-
-		.banner-info h3 {
-			padding-bottom: 20px;
-			font-size: 18px;
-			font-weight: 600;
-		}
-
-		.banner-info h4 {
-			padding-bottom: 20px;
-			font-size: 32px;
-			line-height: 1.6;
-			font-weight: 200;
-		}
-
-		.banner-info h5 {
-			line-height: 1.6;
-			font-size: 16px;
-			font-weight: 200;
-		}
-
-		.index-banner-arrow-wrapper {
-			position: absolute;
-			left: 50%;
-			margin-left: -750px;
-			bottom: 0;
-			z-index: 99999;
-		}
 
 		/* 产品 */
 		.production {
@@ -587,13 +532,6 @@
 
 		@media screen and (max-width: 734px) {
 
-			/* banner */
-			.index-banner-arrow-wrapper {
-				left: auto;
-				right: 0;
-				margin-left: 0;
-			}
-
 			/* 产品 */
 			.production {
 				padding-top: 40px;
@@ -752,7 +690,7 @@
 	<section class="section web-top" id="webTop">
 		<div class="section-content web-top-content flex-column flex-middle">
 			<p class="flex-item-12 flex-column flex-left">欢迎来到多源官方网站！</p>
-			<p class="flex-item-12 flex-column flex-right">联系电话：028-85141556</p>
+			<p class="flex-item-12 flex-column flex-right flex-md-show">联系电话：028-85141556</p>
 		</div>
 	</section>
 
@@ -761,14 +699,15 @@
 		<div class="phone-menus-btn flex-md-show" id="phoneMenusBtn"></div>
 		<div class="section-content web-header-content flex-column flex-middle flex-md">
 			<div class="flex-item-4"><img src="./images/logo.png" alt="" class="logo"></div>
-			<div class="header-menus flex-item-19 flex-offset-1 flex-column flex-right" id="webMenus">
-				<a href="" class="active">首页</a>
-				<a href="">多源介绍</a>
-				<a href="">产品中心</a>
-				<a href="">临床医学</a>
-				<a href="">多源合作</a>
-				<a href="">联系我们</a>
+			<div class="header-menus flex-item-19 flex-offset-1 flex-column" id="webMenus">
+				<a href="./index.html" class="active">首页</a>
+				<a href="./introduce.html">多源介绍</a>
+				<a href="./product.html">产品中心</a>
+				<a href="./medicine.html">临床医学</a>
+				<a href="./cooperation.html">多源合作</a>
+				<a href="./contact.html">联系我们</a>
 			</div>
+			<div class="phone-number flex-md-hide">(0848-1515)</div>
 		</div>
 	</section>
 

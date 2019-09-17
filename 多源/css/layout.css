@@ -8,7 +8,7 @@ body {
 	right: 0;
 	top: 0;
 	z-index: 999999;
-	background-color: #0067ab;
+	background-color: #0073e0;
 }
 
 .web-top-content {
@@ -38,7 +38,7 @@ body {
 	box-sizing: border-box;
 	height: 90px;
 	line-height: 90px;
-	padding: 0 40px;
+	margin: 0 40px;
 	font-size: 16px;
 	color: #333;
 	text-decoration: none;
@@ -46,7 +46,7 @@ body {
 }
 
 .web-header-content a.active {
-	color: #044694;
+	color: #0073e0;
 }
 
 .web-header-content a.active:after {
@@ -57,7 +57,7 @@ body {
 	right: 0;
 	bottom: 0;
 	height: 2px;
-	background-color: #044694;
+	background-color: #0073e0;
 	transform: scaleX(1);
 }
 
@@ -69,16 +69,36 @@ body {
 	right: 0;
 	bottom: 0;
 	height: 2px;
-	background-color: #044694;
+	background-color: #0073e0;
 	transform: scaleX(0);
 }
 
 .web-header-content a:not(.active):hover {
-	color: #044694;
+	color: #0073e0;
 }
 
 .web-header-content a:not(.active):hover:after {
 	animation: move .3s forwards;
+}
+
+.web-header-content .phone-number {
+	position: absolute;
+	right: -50px;
+	top: 35px;
+	font-size: 18px;
+	color: #0073e0;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+}
+
+.web-header-content .phone-number::before {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 20px;
+	background: url(../images/phone.png) no-repeat center center / cover;
+	margin-right: 10px;
 }
 
 @keyframes move {
@@ -90,12 +110,61 @@ body {
 	}
 }
 
+
+/* banner */
+.index-banner {
+	position: relative;
+}
+
+.index-banner .swiper-slide .img {
+	width: 100%;
+	height: calc(100vh - 20px);
+	min-height: 100%;
+	transition: 1s linear 2s;
+	transform: scale(1.1, 1.1);
+}
+
+.index-banner .swiper-slide-active .img,
+.index-banner .swiper-slide-duplicate-active .img {
+	transition: 8s linear;
+	transform: scale(1, 1);
+}
+
+.banner-info {
+	width: 600px;
+	position: absolute;
+	left: 50%;
+	top: 55%;
+	margin-left: -300px;
+	transform: translateY(-50%);
+	color: #fff;
+}
+
+.banner-info h3 {
+	padding-bottom: 20px;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.banner-info h4 {
+	padding-bottom: 20px;
+	font-size: 32px;
+	line-height: 1.6;
+	font-weight: 200;
+}
+
+.banner-info h5 {
+	line-height: 1.6;
+	font-size: 16px;
+	font-weight: 200;
+}
+
 /* footer */
 
 .web-footer {
 	padding-top: 80px;
 	padding-bottom: 40px;
-	background-color: #35a0d3;
+	background-color: #0373df;
 }
 
 .footer-nav-item {
@@ -142,8 +211,8 @@ body {
 }
 
 .footer-bottom {
-	background-color: #35a0d3;
-	border-top: 1px solid #5db3dc;
+	background-color: #0373df;
+	border-top: 1px solid #358fe5;
 }
 
 .footer-bottom p {
@@ -196,7 +265,7 @@ body {
 		line-height: 50px;
 	}
 	.web-header-content a.active {
-		color: #044694;
+		color: #0073e0;
 	}
 	.web-header-content a.active:after {
 		content: "";

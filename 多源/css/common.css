@@ -39,7 +39,7 @@
 
 .swiper-arrow .arrow.prev.color {
   background-image: url('../images/arrow_blank.png');
-  background-color: #0067ab;
+  background-color: #0073e0;
   transform: rotate(180deg);
 }
 
@@ -51,7 +51,7 @@
 
 .swiper-arrow .arrow.next.color {
   background-image: url('../images/arrow_blank.png');
-  background-color: #0067ab;
+  background-color: #0073e0;
 }
 
 /* more */
@@ -62,8 +62,8 @@
   height: 26px;
   text-align: center;
   line-height: 26px;
-  background-color: #0067ab;
-  border: 2px solid #0067ab;
+  background-color: #0073e0;
+  border: 2px solid #0073e0;
   font-size: 12px;
   color: #fff;
   text-decoration: none;
@@ -72,9 +72,9 @@
   overflow: hidden;
 }
 .more:hover {
-  border: 2px solid #0067ab;
+  border: 2px solid #0073e0;
   background-color: #fff;
-  color: #0067ab;
+  color: #0073e0;
   animation: shaking 2s infinite;
 }
 
