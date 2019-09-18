@@ -24,13 +24,11 @@ $(window).scroll(function() {
 
 // 头部变色
 function headerBgChange() {
-	bannerHeight = banner.clientHeight;
+	bannerHeight = banner.height();
 	if (scrollHeight > bannerHeight) {
-		headerEl.style.backgroundColor = 'rgba(255, 255, 255, 1)';
-		headerEl.style.borderBottom = "1px solid #f9f9f9";
+		headerEl.css({'background-color': 'rgba(255, 255, 255, 1)', 'border-bottom': '1px solid #f9f9f9'});
 	} else {
-		headerEl.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-		headerEl.style.borderBottom = "none";
+		headerEl.css({'background-color': 'rgba(255, 255, 255, 0.8)', 'border-bottom': 'none'});
 	}
 }
 
@@ -38,8 +36,8 @@ function headerBgChange() {
 function indexProductTitle() {
 	var productionTitle = $("#productionTitle");
 	if (productionTitle) {
-		var productionTitleHeight = productionTitle.clientHeight;
+		var productionTitleHeight = productionTitle.height();
 		var productionTitleOffset = scrollHeight < productionTitleHeight ? productionTitleHeight - scrollHeight : 0;
-		productionTitle.style.transform = "translate3d(0, " + productionTitleOffset + "px, 0)";
+		productionTitle.css({"transform": "translate3d(0, " + productionTitleOffset + "px, 0)"});
 	}
 }

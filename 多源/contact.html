@@ -18,52 +18,120 @@
 	<!-- 百度地图 -->
 	<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 	<style>
+		.job {
+			padding: 30px 0;
+		}
+
 		.job-item {
 			margin-bottom: 10px;
-			background-color: #e7e7e7;
+			background-color: #f3f3f3;
 		}
 
 		.job-item .title-wrapper {
-			height: 60px;
+			height: 116px;
 		}
 
 		.job-item .title-wrapper .job-name {
-			line-height: 60px;
+			line-height: 116px;
 			position: relative;
+			font-size: 20px;
+			color: #111;
 		}
 
 		.job-item .title-wrapper .job-name::after {
 			content: "";
 			display: block;
-			width: 30px;
-			height: 30px;
-			background-color: red;
+			width: 20px;
+			height: 20px;
+			background: url(./images/add_icon.png) no-repeat center center / cover;
 			position: absolute;
 			right: 0;
-			top: 15px;
+			top: 45px;
 		}
 
 		.job-item .content-wrapper {
 			padding: 20px 0;
 			display: none;
+			color: #fff;
+			line-height: 1.8;
+		}
+
+		.job-item .content-wrapper article {
+			padding: 30px 0;
 		}
 
 		.job-item.active .title-wrapper {
-			background-color: #0073e0;
+			background-color: #35a0d3;
+		}
+
+		.job-item.active .title-wrapper .job-name {
+			color: #fff;
 		}
 
 		.job-item.active .content-wrapper {
 			display: block;
 		}
 
+		.job-item.active .title-wrapper .job-name::after {
+			background: url(./images/cut_icon.png) no-repeat center center / cover;
+		}
+
+		.more-wrapper {
+			padding: 50px;
+			text-align: center;
+		}
+
 		/* 联系我们 */
 		.company-info {
-			padding-top: 100px;
+			border-top: 1px solid #bfbfbf;
+			border-bottom: 1px solid #bfbfbf;
+			margin-bottom: 50px;
+			margin-top: 50px;
 		}
 
 		.map-wrapper {
 			width: 50vw;
 			height: 500px;
+		}
+
+		.base-list {}
+
+		.base-list li {
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+			color: #666;
+			margin-top: 30px;
+		}
+
+		.base-list li::before {
+			content: "";
+			display: block;
+			width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			border: 1px solid #3262ac;
+			margin-right: 10px;
+		}
+
+		.base-list li.cz::before {
+			background: url(./images/cz_icon.png) no-repeat center center / 16px;
+		}
+
+		.base-list li.phone::before {
+			background: url(./images/phone_icon.png) no-repeat center center / 16px;
+		}
+
+		.base-list li.address::before {
+			background: url(./images/address_icon.png) no-repeat center center / 16px;
+		}
+
+		.base-list li.email::before {
+			background: url(./images/email_icon.png) no-repeat center center / 16px;
+		}
+
+		.base-list li.file::before {
+			background: url(./images/file_icon.png) no-repeat center center / 16px;
 		}
 	</style>
 
@@ -97,17 +165,17 @@
 	</section>
 
 	<!-- banner -->
-	<section class="section banner" id="webBanner">
+	<section class="section single-banner" id="webBanner">
 		<img src="./images/test/banner1.jpg" alt="">
 	</section>
 
 	<!-- 招聘信息 -->
-	<section class="section">
+	<section class="section job">
 		<section class="section-content scroll-animation" mode="fadeInDown">
 			<div class="inner-page-title">
-				<h3 class="ch">荣誉简介</h3>
-				<h4 class="en">BRIEF INTRODUCTION TO HONOURS</h4>
-				<span class="line"></span>
+				<h3 class="ch scroll-animation" mode="fadeInDown">多源招聘</h3>
+				<h4 class="en scroll-animation" mode="fadeInLeft">DUOYUAN RECRUIT</h4>
+				<span class="line scroll-animation" mode="fadeInUp"></span>
 			</div>
 		</section>
 	</section>
@@ -177,26 +245,28 @@
 			</section>
 		</div>
 	</div>
-	<div class="flex-column flex-center flex-middle">
-		<a href="" class="more">查看更多</a>
+	<div class="more-wrapper">
+		<a href="" class="more big">查看更多</a>
 	</div>
 
 	<!-- 公司信息 -->
 	<section class="section company-info">
 		<section class="section-content flex-column">
-			<div class="flex-item-12">
-				<div class="inner-page-title">
-					<h3 class="ch">荣誉简介</h3>
-					<h4 class="en">BRIEF INTRODUCTION TO HONOURS</h4>
-					<span class="line"></span>
+			<div class="flex-item-12 flex-column flex-middle">
+				<div>
+					<div class="inner-page-title">
+						<h3 class="ch scroll-animation" mode="fadeInDown">售后与服务</h3>
+						<h4 class="en scroll-animation" mode="fadeInLeft">AFTER-SALE AND SERVICE</h4>
+						<span class="line scroll-animation" mode="fadeInUp"></span>
+					</div>
+					<ol class="base-list">
+						<li class="base-item address scroll-animation" mode="fadeInLeft">总公司地址：成都市高新区高朋东路5号</li>
+						<li class="base-item file scroll-animation" mode="fadeInLeft">邮编：32323</li>
+						<li class="base-item phone scroll-animation" mode="fadeInLeft">电话：12233233</li>
+						<li class="base-item cz scroll-animation" mode="fadeInLeft">传真号码：884848</li>
+						<li class="base-item email scroll-animation" mode="fadeInLeft">邮箱：32332323</li>
+					</ol>
 				</div>
-				<ul class="base-list">
-					<li class="base-item">成都市天府广场</li>
-					<li class="base-item">邮编：32323</li>
-					<li class="base-item">座机：3232</li>
-					<li class="base-item">电话：12233233</li>
-					<li class="base-item">邮箱：32332323</li>
-				</ul>
 			</div>
 			<div class="flex-item-12">
 				<div class="map-wrapper" id="dituContent"></div>

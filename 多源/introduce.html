@@ -16,13 +16,174 @@
 	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
 	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
 	<style>
+		.introduce {
+			padding: 100px 0;
+		}
+
+		.introduce .context {
+			font-size: 14px;
+			line-height: 1.8;
+			color: #666;
+		}
+
+		.introduce .down-arrow {
+			display: block;
+			width: 47px;
+			height: 47px;
+			background: url(./images/arrow_down.png) no-repeat center center / cover;
+			margin-top: 100px;
+		}
+
 		/* 技术简介 */
 		.technology-wrapper {
 			padding: 100px 0;
 			background: url(./images/introduce_image2.jpg) no-repeat center center / cover;
+			margin-bottom: 100px;
+		}
+
+		.technology-wrapper .technology-content {
+			padding: 140px 0;
+			background-color: #fff;
+		}
+
+		.technology-wrapper .technology-content .content-box {
+			max-width: 320px;
+			margin: 0 auto;
+		}
+
+		.technology-wrapper .technology-content .summary {
+			padding-top: 20px;
+			font-size: 14px;
+			color: #666;
+			text-align: center
+		}
+
+		.technology-wrapper .technology-content .title {
+			padding-top: 47px;
+			font-size: 18px;
+			color: #333;
+			text-align: center
+		}
+
+		.technology-wrapper .technology-content .intro {
+			padding-top: 28px;
+			font-size: 14px;
+			line-height: 1.6;
+			color: #666;
+			text-align: center
+		}
+
+		/* 发展历程 */
+		.grow-up {
+			margin: 100px 0;
+		}
+
+		.grow-up::after {
+			content: "";
+			display: block;
+			position: absolute;
+			right: 0;
+			top: -50px;
+			bottom: 50px;
+			left: 50%;
+			margin-left: -300px;
+			z-index: -2;
+			background-color: #f6f6f7;
+		}
+
+		.grow-up .inner-page-title {
+			padding-left: 130px;
+		}
+
+		.grow-up img {
+			display: block;
+			width: 100%;
+		}
+
+		.grow-up .time-line {
+			height: 460px;
+			margin-left: -38px;
+			display: flex;
+			flex-direction: column;
+			position: relative;
+		}
+
+		.grow-up .time-line::after {
+			content: "";
+			display: block;
+			height: 100%;
+			width: 1px;
+			background-color: #babfdf;
+			position: absolute;
+			top: 0;
+			left: 78px;
+			z-index: -1;
+		}
+
+		.grow-up .time-line .time-node {
+			flex: 1;
+			display: flex;
+			align-items: center;
+		}
+
+		.grow-up .time-line .time-node .year {
+			font-size: 16px;
+			color: #fff;
+			font-weight: 600;
+			margin-right: 10px;
+		}
+
+		.grow-up .time-line .time-node .year span {
+			color: #333;
+		}
+
+		.grow-up .time-line .time-node .round {
+			width: 34px;
+			height: 34px;
+			border-radius: 50%;
+			background-color: #e3e6f9;
+			margin-right: 70px;
+			position: relative;
+		}
+
+		.grow-up .time-line .time-node .round::before {
+			content: "";
+			display: block;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #034593;
+			position: absolute;
+			left: 50%;
+			margin-left: -5px;
+			top: 50%;
+			margin-top: -5px;
+		}
+
+		.grow-up .time-line .time-node .round::after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			border-left: 10px solid #034593;
+			border-top: 6px solid transparent;
+			border-bottom: 6px solid transparent;
+			position: absolute;
+			left: 40px;
+			top: 11px;
+		}
+
+		.grow-up .time-line .time-node .something {
+			font-size: 14px;
+			color: #666;
 		}
 
 		/* 专家 */
+		.experts-title-wrapper {
+			padding: 60px 0;
+			background-color: #f8f8fc;
+		}
+
 		.experts-swiper-wrapper {
 			padding: 100px 0;
 			background: url(./images/introduce_image3.jpg) no-repeat center center / cover;
@@ -111,9 +272,9 @@
 	</section>
 
 	<!-- banner -->
-	<section class="section banner" id="webBanner">
-			<img src="./images/test/banner1.jpg" alt="">
-		</section>
+	<section class="section single-banner" id="webBanner">
+		<img src="./images/test/banner1.jpg" alt="">
+	</section>
 
 	<!-- 多源介绍 -->
 	<section class="section introduce">
@@ -121,72 +282,54 @@
 			<div class="flex-column flex-md">
 				<div class="flex-item-10">
 					<div class="inner-page-title">
-						<h3 class="ch">多源介绍</h3>
-						<h4 class="en">COMPANT PROFILE</h4>
-						<span class="line"></span>
+						<h3 class="ch scroll-animation" mode="fadeInDown">多源介绍</h3>
+						<h4 class="en scroll-animation" mode="fadeInLeft">COMPANT PROFILE</h4>
+						<span class="line scroll-animation" mode="fadeInUp"></span>
 					</div>
 				</div>
 				<div class="flex-item-14">
-					<article class="context">
+					<article class="context scroll-animation" mode="fadeInDown">
 						成都鑫博浩科技有限公司是从事新型医疗器械和消毒剂的研发、生产及销售的企业。公司一直秉承“为发展人类健康事业，努力创新、追求卓越、持续发展”的理念，致力于高新科技成果的开发与转化，将产品推向国内、国际市场，为人类的健康事业服务。公司以专业的方式将产品和服务推荐给医疗机构和家庭。
 						公司拥有生物医学工程学、生物物理学、半导体材料学、基础医学和临床医学、生命电子学、公共卫生学等多领域多学科的专家团队和甘于奉献的全体员工。我们始终坚持不懈的努力，积极响应健康中国行动的国家战略，为实现全人类人人享有健康的崇高理想而奋斗。
 					</article>
 				</div>
-
-			</div>
-		</section>
-	</section>
-
-	<!-- 技术简介 -->
-	<section class="section technology-wrapper">
-		<section class="section-content flex-column flex-md">
-			<div class="flex-item-12">
-				<div class="technology-content">
-					<div class="inner-page-title center">
-						<h3 class="ch">技术简介</h3>
-						<h4 class="en">TECHNOLOGY INTRODUCE</h4>
-						<span class="line"></span>
-					</div>
-					<p class="summary">主要产品和技术成果：多源治疗技术及其系列产品。</p>
-					<p class="title">技术团队</p>
-					<p class="intro">
-						中国医学科学院北京协和医科大学、北京大学医学部、中国中医研究院西苑医院、四川大学华西医院、解放军陆军医科大学西南医院、意大利帕维亚大学医学院、台湾三军总医院等上千家医疗机构</p>
+				<div class="flex-item-24 flex-column flex-center flex-middle">
+					<span class="down-arrow"></span>
 				</div>
 			</div>
-			<div class="flex-item-12"></div>
 		</section>
 	</section>
 
 
 	<!-- 发展历程 -->
-	<section class="section introduce">
+	<section class="section grow-up">
 		<div class="flex-column flex-md">
 			<div class="flex-item-12">
 				<img src="./images/introduce_image1.jpg" alt="">
 			</div>
 			<div class="flex-item-12">
 				<div class="inner-page-title">
-					<h3 class="ch">发展历程</h3>
-					<h4 class="en">DEVELOPMENT HISTORY</h4>
-					<span class="line"></span>
+					<h3 class="ch scroll-animation" mode="fadeInDown">发展历程</h3>
+					<h4 class="en scroll-animation" mode="fadeInRight">DEVELOPMENT HISTORY</h4>
+					<span class="line scroll-animation" mode="fadeInUp"></span>
 				</div>
 				<ol class="time-line">
-					<li class="time-node">
+					<li class="time-node scroll-animation" mode="fadeInDown">
 						<p class="year">2019<span>年</span></p>
 						<div class="round"></div>
 						<p class="something">公司成立。</p>
 					</li>
-					<li class="time-node">
+					<li class="time-node scroll-animation" mode="fadeInDown">
 						<p class="year">2019<span>年</span></p>
 						<div class="round"></div>
 						<p class="something">公司成立。</p>
 					</li>
-					<li class="time-node">
+					<li class="time-node scroll-animation" mode="fadeInDown">
 						<p class="year">2019<span>年</span></p>
 						<div class="round"></div>
 						<p class="something">公司成立。</p>
 					</li>
-					<li class="time-node">
+					<li class="time-node scroll-animation" mode="fadeInDown">
 						<p class="year">2019<span>年</span></p>
 						<div class="round"></div>
 						<p class="something">公司成立。</p>
@@ -196,13 +339,35 @@
 		</div>
 	</section>
 
+	<!-- 技术简介 -->
+	<section class="section technology-wrapper">
+		<section class="section-content flex-column flex-md">
+			<div class="flex-item-12">
+				<div class="technology-content">
+					<div class="content-box">
+						<div class="inner-page-title center">
+							<h3 class="ch scroll-animation" mode="fadeInDown">技术简介</h3>
+							<h4 class="en scroll-animation" mode="fadeInLeft">TECHNOLOGY INTRODUCE</h4>
+							<span class="line scroll-animation" mode="fadeInUp"></span>
+						</div>
+						<p class="summary scroll-animation" mode="fadeInDown">主要产品和技术成果：多源治疗技术及其系列产品。</p>
+						<p class="title scroll-animation" mode="fadeInDown">技术团队</p>
+						<p class="intro scroll-animation" mode="fadeInDown">
+							中国医学科学院北京协和医科大学、北京大学医学部、中国中医研究院西苑医院、四川大学华西医院、解放军陆军医科大学西南医院、意大利帕维亚大学医学院、台湾三军总医院等上千家医疗机构</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex-item-12"></div>
+		</section>
+	</section>
+
 
 	<!-- 专家介绍 -->
 	<section class="section experts-title-wrapper">
 		<div class="inner-page-title center">
-			<h3 class="ch">专家介绍</h3>
-			<h4 class="en">BRIEF INTRODUCTION EXPERTS</h4>
-			<span class="line"></span>
+			<h3 class="ch scroll-animation" mode="fadeInDown">专家介绍</h3>
+			<h4 class="en scroll-animation" mode="fadeInDown">BRIEF INTRODUCTION EXPERTS</h4>
+			<span class="line scroll-animation" mode="fadeInDown"></span>
 		</div>
 	</section>
 	<section class="section experts-swiper-wrapper">
@@ -212,9 +377,10 @@
 			<div class="swiper-container" id="experts">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<div class="expert-card hover-line">
-							<div class="cover">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+						<div class="expert-card">
+							<div class="cover hover-line">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+								</div>
 							</div>
 							<div class="info">
 								<p>Mac Zhang</p>
@@ -222,9 +388,10 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="expert-card hover-line">
-							<div class="cover">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+						<div class="expert-card">
+							<div class="cover hover-line">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+								</div>
 							</div>
 							<div class="info">
 								<p>Mac Zhang</p>
@@ -232,9 +399,10 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="expert-card hover-line">
-							<div class="cover">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+						<div class="expert-card">
+							<div class="cover hover-line">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+								</div>
 							</div>
 							<div class="info">
 								<p>Mac Zhang</p>
@@ -242,9 +410,10 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="expert-card hover-line">
-							<div class="cover">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+						<div class="expert-card">
+							<div class="cover hover-line">
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+								</div>
 							</div>
 							<div class="info">
 								<p>Mac Zhang</p>
@@ -273,7 +442,8 @@
 					<div class="swiper-slide">
 						<div class="honour-card">
 							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+								</div>
 							</div>
 							<div class="info">
 								<p>2010年10月2日</p>
@@ -284,7 +454,8 @@
 					<div class="swiper-slide">
 						<div class="honour-card">
 							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+								</div>
 							</div>
 							<div class="info">
 								<p>2010年10月2日</p>
@@ -295,7 +466,8 @@
 					<div class="swiper-slide">
 						<div class="honour-card">
 							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+								</div>
 							</div>
 							<div class="info">
 								<p>2010年10月2日</p>
@@ -306,7 +478,8 @@
 					<div class="swiper-slide">
 						<div class="honour-card">
 							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
+								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+								</div>
 							</div>
 							<div class="info">
 								<p>2010年10月2日</p>

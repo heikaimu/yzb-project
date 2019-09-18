@@ -248,6 +248,11 @@ body {
 	font-size: 24px;
 	color: #0373df;
 }
+.inner-page-title .en.sm {
+	padding-bottom: 28px;
+	font-size: 12px;
+	color: #999;
+}
 
 .inner-page-title .line {
 	display: block;

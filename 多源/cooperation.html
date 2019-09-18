@@ -19,22 +19,27 @@
 		/* 研究 */
 		.research {
 			padding-top: 40px;
-			background-color: #bbc4e4;
+			background-color: #c3def7;
 		}
 
 		.cooperation-search-move {
 			display: flex;
 		}
-		.cooperation-search-move .prev,  .cooperation-search-move .next{
-			width: 80px;
-			height: 30px;
-			
-		}
-		.cooperation-search-move .prev {
-			background-color: red;
-		}
+
+		.cooperation-search-move .prev,
 		.cooperation-search-move .next {
-			background-color: orange;
+			width: 56px;
+			height: 56px;
+
+		}
+
+		.cooperation-search-move .prev {
+			background: url(./images/arrow_white.png) #00af93 no-repeat center center;
+		}
+
+		.cooperation-search-move .next {
+			background: url(./images/arrow_white.png) #0073e0 no-repeat center center;
+			transform: rotate(180deg);
 		}
 
 		.research-card {
@@ -69,15 +74,13 @@
 			position: relative;
 		}
 
-		.research-card .info .content .ch:before {
+		.research-card .info .content .ch::after {
 			content: "";
 			display: block;
-			width: 70px;
+			width: 100%;
 			height: 1px;
-			background-color: #bbc4e4;
-			position: absolute;
-			right: 0px;
-			top: 12px;
+			background-color: #d9d9da;
+			margin-top: 30px;
 		}
 
 		.research-card .info .content .desc {
@@ -85,6 +88,15 @@
 			line-height: 1.4;
 			font-size: 1.15em;
 			color: #666;
+		}
+
+		.research-card .info .content .desc::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: #d9d9da;
+			margin-top: 30px;
 		}
 
 		.research-arrow-wrapper {
@@ -132,27 +144,33 @@
 		.qualification {
 			padding-top: 40px;
 			padding-bottom: 80px;
-			background: url(./images/introduce_image3.jpg) no-repeat center center / cover;
+			background: url(./images/cooperation_image.jpg) no-repeat center center / cover;
 			margin-top: 200px;
 		}
 
 		.qualification-card {
 			box-sizing: border-box;
 			height: 200px;
-			padding: 20px;
-			background-color: rgba(255, 255, 255, 0.8);
+			padding: 40px;
+			border-radius: 10px;
+			background-color: rgba(255, 255, 255, 0.6);
 		}
 
 		.qualification-card .number {
-			font-size: 20px;
+			font-size: 24px;
+			color: #034593;
 		}
 
 		.qualification-card .number::after {
 			content: "";
 			display: block;
-			width: 30px;
+			box-sizing: border-box;
+			width: 100%;
 			height: 2px;
-			background-color: #666;
+			background-color: #cdcdcd;
+			border-left: 30px solid #034593;
+			margin-top: 20px;
+			margin-bottom: 20px;
 		}
 
 		.qualification-card .desc {
@@ -192,7 +210,7 @@
 	</section>
 
 	<!-- banner -->
-	<section class="section banner" id="webBanner">
+	<section class="section single-banner" id="webBanner">
 		<img src="./images/test/banner1.jpg" alt="">
 	</section>
 
@@ -203,15 +221,15 @@
 			<div class="top-wrapper flex-column">
 				<div class="flex-item-12">
 					<div class="inner-page-title">
-						<h3 class="ch">发展历程</h3>
-						<h4 class="en sm">DEVELOPMENT HISTORY</h4>
-						<span class="line"></span>
+						<h3 class="ch scroll-animation" mode="fadeInDown">合作项目</h3>
+						<h4 class="en scroll-animation" mode="fadeInLeft">COOPERATION PROJECTS</h4>
+						<span class="line scroll-animation" mode="fadeInUp"></span>
 					</div>
 				</div>
 				<div class="flex-item-12 flex-column flex-right flex-middle flex-md-hide">
 					<div class="cooperation-search-move">
-							<div class="prev" id="researchPrev">左</div>
-							<div class="next" id="researchNext">右</div>
+						<div class="prev" id="researchPrev"></div>
+						<div class="next" id="researchNext"></div>
 					</div>
 				</div>
 			</div>
@@ -220,17 +238,16 @@
 					<div class="swiper-slide">
 						<div class="research-card flex-column flex-md">
 							<div class="flex-item-14">
-								<figure class="image bg-cover" style="background-image:url(./images/test/banner1.jpg)"></figure>
+								<figure class="image bg-cover" style="background-image:url(./images/test/banner1.jpg)">
+								</figure>
 							</div>
 							<div class="flex-item-10">
 								<figure class="info">
 									<div class="content">
-										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">KEYANCHENGGUO</p>
-										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">科研成果</p>
-										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">
+										<p class="ch ani" swiper-animate-effect="fadeInRight"
+											swiper-animate-duration="1s" swiper-animate-delay="0s">科研成果</p>
+										<p class="desc ani" swiper-animate-effect="fadeInUp"
+											swiper-animate-duration="1s" swiper-animate-delay="0s">
 											中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
 										</p>
 									</div>
@@ -241,17 +258,16 @@
 					<div class="swiper-slide">
 						<div class="research-card flex-column flex-md">
 							<div class="flex-item-14">
-								<figure class="image bg-cover" style="background-image:url(./images/test/banner2.jpg)"></figure>
+								<figure class="image bg-cover" style="background-image:url(./images/test/banner2.jpg)">
+								</figure>
 							</div>
 							<div class="flex-item-10">
 								<figure class="info">
 									<div class="content">
-										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">KEYANCHENGGUO</p>
-										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">科研成果</p>
-										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">
+										<p class="ch ani" swiper-animate-effect="fadeInRight"
+											swiper-animate-duration="1s" swiper-animate-delay="0s">科研成果</p>
+										<p class="desc ani" swiper-animate-effect="fadeInUp"
+											swiper-animate-duration="1s" swiper-animate-delay="0s">
 											中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
 										</p>
 									</div>
@@ -262,17 +278,16 @@
 					<div class="swiper-slide">
 						<div class="research-card flex-column flex-md">
 							<div class="flex-item-14">
-								<figure class="image bg-cover" style="background-image:url(./images/test/banner3.jpg)"></figure>
+								<figure class="image bg-cover" style="background-image:url(./images/test/banner3.jpg)">
+								</figure>
 							</div>
 							<div class="flex-item-10">
 								<figure class="info">
 									<div class="content">
-										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">KEYANCHENGGUO</p>
-										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">科研成果</p>
-										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">
+										<p class="ch ani" swiper-animate-effect="fadeInRight"
+											swiper-animate-duration="1s" swiper-animate-delay="0s">科研成果</p>
+										<p class="desc ani" swiper-animate-effect="fadeInUp"
+											swiper-animate-duration="1s" swiper-animate-delay="0s">
 											中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
 										</p>
 									</div>
@@ -283,17 +298,16 @@
 					<div class="swiper-slide">
 						<div class="research-card flex-column flex-md">
 							<div class="flex-item-14">
-								<figure class="image bg-cover" style="background-image:url(./images/test/banner4.jpg)"></figure>
+								<figure class="image bg-cover" style="background-image:url(./images/test/banner4.jpg)">
+								</figure>
 							</div>
 							<div class="flex-item-10">
 								<figure class="info">
 									<div class="content">
-										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">KEYANCHENGGUO</p>
-										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">科研成果</p>
-										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">
+										<p class="ch ani" swiper-animate-effect="fadeInRight"
+											swiper-animate-duration="1s" swiper-animate-delay="0s">科研成果</p>
+										<p class="desc ani" swiper-animate-effect="fadeInUp"
+											swiper-animate-duration="1s" swiper-animate-delay="0s">
 											中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
 										</p>
 									</div>
@@ -318,9 +332,9 @@
 	<section class="section qualification">
 		<section class="section-content">
 			<div class="inner-page-title center">
-				<h3 class="ch">发展历程</h3>
-				<h4 class="en sm">DEVELOPMENT HISTORY</h4>
-				<span class="line"></span>
+				<h3 class="ch scroll-animation" mode="fadeInDown">合作介绍</h3>
+				<h4 class="en scroll-animation" mode="fadeInDown">INTRODUCTION TO COOPERATION</h4>
+				<span class="line scroll-animation" mode="fadeInDown"></span>
 			</div>
 			<div class="swiper-container" id="qualification">
 				<div class="swiper-wrapper">

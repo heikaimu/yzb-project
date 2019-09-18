@@ -13,28 +13,45 @@
 	<link rel="stylesheet" href="./css/layout.css">
 	<link rel="stylesheet" href="./css/magic.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- swiper -->
 	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
 	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
 	<style>
 		.page-title {
 			padding-bottom: 20px;
-			font-size: 20px;
+			color: #0373df;
 		}
 
 		.page-title h3 {
-			padding-bottom: 10px;
+			font-size: 30px;
+			font-weight: 600;
+			color: currentColor;
 		}
 
-		.page-title h4 {}
+		.page-title h4 {
+			font-size: 26px;
+			color: currentColor;
+		}
 
-		.type-list {}
+		.type-list {
+			height: 100%;
+			overflow-y: auto;
+		}
 
-		.type-list li a {
-			line-height: 60px;
-			font-size: 18px;
-			color: #666;
+		.type-list a {
+			display: block;
+			height: 100px;
+			font-size: 20px;
+			color: #333;
+			border-bottom: 1px solid #d0d0d0;
+			display: flex;
+			align-items: center;
+		}
+
+		.type-list a:hover {
+			text-decoration: none;
+			color: #0373df;
 		}
 
 		.product-wrapper {
@@ -48,12 +65,17 @@
 
 		.product-list-wrapper .type-title {
 			padding-left: 10px;
-			padding-bottom: 10px;
+			padding-bottom: 30px;
+			font-size: 24px;
+			color: #333;
 		}
 
 		.product-list-wrapper .type-desc {
 			padding-left: 10px;
-			padding-bottom: 10px;
+			padding-bottom: 20px;
+			font-size: 14px;
+			color: #2a2a2a;
+			line-height: 1.6;
 		}
 
 		.product-card {
@@ -61,7 +83,7 @@
 		}
 
 		.product-card .cover {
-			height: 200px;
+			height: 240px;
 		}
 	</style>
 
@@ -95,9 +117,9 @@
 	</section>
 
 	<!-- banner -->
-	<section class="section banner" id="webBanner">
-			<img src="./images/test/banner1.jpg" alt="">
-		</section>
+	<section class="section single-banner" id="webBanner">
+		<img src="./images/test/banner1.jpg" alt="">
+	</section>
 
 	<!-- 产品 -->
 	<section class="section product-wrapper">
@@ -105,66 +127,78 @@
 			<div class="flex-item-6">
 				<div class="product-type-wrapper">
 					<div class="page-title">
-						<h3>PRODUCT CENTER</h3>
-						<h4>产品中心</h4>
+						<h3 class="scroll-animation" mode="fadeInDown">PRODUCT CENTER</h3>
+						<h4 class="scroll-animation" mode="fadeInLeft">产品中心</h4>
 					</div>
-					<ul class="type-list">
-						<li>
-							<a href="">类型1</a>
-						</li>
-						<li>
-							<a href="">类型1</a>
-						</li>
-						<li>
-							<a href="">类型1</a>
-						</li>
-					</ul>
+					<div class="type-list">
+						<a href="">导航</a>
+						<a href="">导航</a>
+						<a href="">导航</a>
+						<a href="">导航</a>
+						<a href="">导航</a>
+						<a href="">导航</a>
+						<a href="">导航</a>
+					</div>
+					<!-- Add Pagination -->
+					<!-- <div class="nav-arrow-wrapper">
+						<div class="swiper-arrow flex-column">
+							<div class="arrow prev blank flex-item-12" id="navPrev"></div>
+							<div class="arrow next color flex-item-12" id="navNext"></div>
+						</div>
+					</div> -->
 				</div>
 			</div>
-			<div class="flex-item-18">
+			<div class="flex-item-17 flex-offset-1">
 				<div class="product-list-wrapper">
 					<h3 class="type-title">美容仪</h3>
-					<p class="type-desc"> 万代RG沙扎比日站评测更新,整体对比HG来说造型和细节上改变了许多,身体多处使用了联动关节,并且带有爆甲模式,浮游炮的展开液得到了还原。预计发售时间:2018年8月</p>
+					<p class="type-desc">
+						万代RG沙扎比日站评测更新,整体对比HG来说造型和细节上改变了许多,身体多处使用了联动关节,并且带有爆甲模式,浮游炮的展开液得到了还原。预计发售时间:2018年8月</p>
 					<ul class="flex-column">
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
 								</div>
 							</div>
 						</li>
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
 								</div>
 							</div>
 						</li>
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
 								</div>
 							</div>
 						</li>
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
 								</div>
 							</div>
 						</li>
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
 								</div>
 							</div>
 						</li>
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
 								</div>
 							</div>
 						</li>

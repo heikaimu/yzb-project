@@ -19,6 +19,7 @@
 		/* 研究 */
 		.research {
 			margin-top: -100px;
+			margin-bottom: 100px;
 		}
 
 		.research-card {
@@ -40,12 +41,6 @@
 			font-size: 12px;
 		}
 
-		.research-card .info .content .en {
-			padding-bottom: 10px;
-			font-size: 1em;
-			opacity: 0.5;
-		}
-
 		.research-card .info .content .ch {
 			padding-bottom: 1.1em;
 			font-size: 2em;
@@ -53,28 +48,35 @@
 			position: relative;
 		}
 
-		.research-card .info .content .ch:before {
+		.research-card .info .content .ch::after {
 			content: "";
 			display: block;
-			width: 70px;
+			width: 100%;
 			height: 1px;
-			background-color: #bbc4e4;
-			position: absolute;
-			right: 0px;
-			top: 12px;
+			background-color: #d9d9da;
+			margin-top: 30px;
 		}
 
 		.research-card .info .content .desc {
 			padding-bottom: 1.8em;
-			line-height: 1.4;
+			line-height: 1.6;
 			font-size: 1.15em;
 			color: #666;
+		}
+
+		.research-card .info .content .desc::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: #d9d9da;
+			margin-top: 30px;
 		}
 
 		.research-arrow-wrapper {
 			position: absolute;
 			bottom: 20px;
-			right: 350px;
+			right: 50%;
 			z-index: 9999;
 			display: flex;
 		}
@@ -91,9 +93,9 @@
 
 		/* 知识 */
 		.knowledge {
-			padding-top: 20px;
+			padding-top: 30px;
 			padding-bottom: 60px;
-			background-color: #bbc4e4;
+			background-color: #d6e8fa;
 		}
 
 		.knowledge-list {
@@ -101,8 +103,8 @@
 		}
 
 		.knowledge-list li {
-			padding: 20px;
-			border-bottom: 1px solid #e7e7e7;
+			padding: 30px;
+			border-bottom: 1px solid #cdcdcd;
 			position: relative;
 			transition: .3s;
 		}
@@ -110,12 +112,12 @@
 		.knowledge-list li::after {
 			content: "";
 			display: block;
-			width: 30px;
-			height: 30px;
-			background-color: red;
+			width: 20px;
+			height: 20px;
+			background: url(./images/add_icon.png) no-repeat center center / cover;
 			position: absolute;
-			right: 0;
-			top: 10px;
+			right: 20px;
+			top: 25px;
 		}
 
 		.knowledge-list li .title {
@@ -124,6 +126,7 @@
 
 		.knowledge-list li .desc {
 			padding-top: 20px;
+			padding-bottom: 20px;
 			font-size: 14px;
 			color: #fff;
 			display: none;
@@ -133,26 +136,93 @@
 		.knowledge-list li.active {
 			background-color: #0373df;
 		}
+
+		.knowledge-list li.active::after {
+			background: url(./images/cut_icon.png) no-repeat center center / cover;
+		}
+
 		.knowledge-list li.active .title {
 			font-size: 18px;
 			color: #fff;
 		}
+
 		.knowledge-list li.active .desc {
 			display: block;
 		}
 
 		/* 新闻咨询 */
+		.news {
+			padding: 75px 0;
+		}
+
+		.news-card {
+			display: flex;
+			margin-top: 60px;
+		}
+
+		.news-card .time {
+			flex: 0 0 90px;
+			width: 90px;
+			height: 80px;
+			border: 1px solid #1b1b1b;
+			text-align: center;
+			color: #202020;
+		}
+
+		.news-card .time .year {
+			padding-top: 15px;
+			padding-bottom: 5px;
+			font-size: 30px;
+		}
+
+		.news-card .time .day {
+			font-size: 18px;
+		}
+
+		.news-card .content {
+			flex: 1;
+			padding-left: 30px;
+		}
+
+		.news-card .content .title {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-size: 24px;
+			color: #2b2b2b;
+		}
+
+		.news-card .content .summary {
+			width: 100%;
+			font-size: 14px;
+			font-weight: 200;
+		}
+
 		.news-card-width-pic .cover {
+			margin-top: 150px;
 			height: 250px;
 		}
 
-		.news-card-width-pic .content {}
+		.news-card-width-pic .content {
+			padding: 25px 0;
+		}
 
-		.news-card-width-pic .content .time {}
+		.news-card-width-pic .content .time {
+			font-size: 18px;
+			color: #202020;
+		}
 
-		.news-card-width-pic .content .title {}
+		.news-card-width-pic .content .title {
+			padding-top: 17px;
+			font-size: 26px;
+			color: #2b2b2b;
+		}
 
-		.news-card-width-pic .content .summary {}
+		.news-card-width-pic .content .summary {
+			padding-top: 15px;
+			font-size: 14px;
+			font-weight: 200;
+			line-height: 1.6;
+		}
 	</style>
 
 </head>
@@ -185,7 +255,7 @@
 	</section>
 
 	<!-- banner -->
-	<section class="section banner" id="webBanner">
+	<section class="section single-banner" id="webBanner">
 		<img src="./images/test/banner1.jpg" alt="">
 	</section>
 
@@ -203,8 +273,6 @@
 							<div class="flex-item-10">
 								<figure class="info">
 									<div class="content">
-										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">KEYANCHENGGUO</p>
 										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
 											swiper-animate-delay="0s">科研成果</p>
 										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
@@ -224,8 +292,6 @@
 							<div class="flex-item-10">
 								<figure class="info">
 									<div class="content">
-										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">KEYANCHENGGUO</p>
 										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
 											swiper-animate-delay="0s">科研成果</p>
 										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
@@ -245,8 +311,6 @@
 							<div class="flex-item-10">
 								<figure class="info">
 									<div class="content">
-										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
-											swiper-animate-delay="0s">KEYANCHENGGUO</p>
 										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
 											swiper-animate-delay="0s">科研成果</p>
 										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
@@ -272,9 +336,9 @@
 	<section class="section knowledge">
 		<section class="section-content">
 			<div class="inner-page-title center">
-				<h3 class="ch">发展历程</h3>
-				<h4 class="en sm">DEVELOPMENT HISTORY</h4>
-				<span class="line"></span>
+				<h3 class="ch scroll-animation" mode="fadeInDown">亚健康知识</h3>
+				<h4 class="en sm scroll-animation" mode="fadeInDown">SUBHEALTH KNOWLEDGE</h4>
+				<span class="line scroll-animation" mode="fadeInDown"></span>
 			</div>
 			<ul class="knowledge-list" id="knowledgeList">
 				<li class="knowledge-item">
@@ -299,7 +363,7 @@
 				</li>
 			</ul>
 			<div class="flex-column flex-center flex-middle">
-				<a href="" class="more">MORE</a>
+				<a href="" class="more">查看更多 +</a>
 			</div>
 		</section>
 	</section>
@@ -309,44 +373,44 @@
 		<section class="section-content flex-column">
 			<div class="flex-item-12">
 				<div class="inner-page-title">
-					<h3 class="ch">发展历程</h3>
-					<h4 class="en sm">DEVELOPMENT HISTORY</h4>
-					<span class="line"></span>
+					<h3 class="ch scroll-animation" mode="fadeInDown">多源动态</h3>
+					<h4 class="en sm scroll-animation" mode="fadeInLeft">DUOYUANDYNAMIC</h4>
+					<span class="line scroll-animation" mode="fadeInUp"></span>
 				</div>
 				<ul class="news-list">
 					<li>
 						<div class="news-card">
 							<div class="time">
-								<p class="year">2019</p>
-								<p class="day">10月2日</p>
+								<p class="year">19</p>
+								<p class="day">2019-8</p>
 							</div>
 							<div class="content">
 								<h3 class="title">新闻标题</h3>
-								<p class="summary">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司</p>
+								<p class="summary">中国医学科学院北京协和医科大学教授l莅临我司技术交流中</p>
 							</div>
 						</div>
 					</li>
 					<li>
 						<div class="news-card">
 							<div class="time">
-								<p class="year">2019</p>
-								<p class="day">10月2日</p>
+								<p class="year">19</p>
+								<p class="day">2019-8</p>
 							</div>
 							<div class="content">
 								<h3 class="title">新闻标题</h3>
-								<p class="summary">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司</p>
+								<p class="summary">中技术交流中国医学科学院北京协和医科大学教授l莅临我司</p>
 							</div>
 						</div>
 					</li>
 					<li>
 						<div class="news-card">
 							<div class="time">
-								<p class="year">2019</p>
-								<p class="day">10月2日</p>
+								<p class="year">19</p>
+								<p class="day">2019-8</p>
 							</div>
 							<div class="content">
 								<h3 class="title">新闻标题</h3>
-								<p class="summary">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司</p>
+								<p class="summary">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医司</p>
 							</div>
 						</div>
 					</li>
@@ -456,8 +520,8 @@
 	<script>
 
 		$(function () {
-			$("#knowledgeList").find(".knowledge-item").each(function (){
-				$(this).click(function() {
+			$("#knowledgeList").find(".knowledge-item").each(function () {
+				$(this).click(function () {
 					if ($(this).hasClass("active")) {
 						$(this).removeClass("active");
 					} else {
