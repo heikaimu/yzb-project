@@ -16,55 +16,6 @@
 	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
 	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
 	<style>
-		/* 标题 */
-		.introduce-page-title {
-			padding: 20px 0;
-		}
-
-		.introduce-page-title.center {
-			text-align: center;
-		}
-
-		.introduce-page-title .ch {
-			padding-bottom: 24px;
-			font-size: 24px;
-			color: #333;
-		}
-
-		.introduce-page-title .en {
-			padding-bottom: 28px;
-			font-size: 24px;
-			color: #0373df;
-		}
-
-		.introduce-page-title .line {
-			display: block;
-			width: 40px;
-			height: 2px;
-			background-color: #999;
-			position: relative;
-		}
-
-		.introduce-page-title .line::after {
-			content: "";
-			display: block;
-			width: 10px;
-			height: 2px;
-			background-color: #034593;
-			position: absolute;
-			left: 0;
-			top: 0;
-		}
-
-		.introduce-page-title.center .line {
-			margin: 0 auto;
-		}
-
-		.introduce-page-title.center .line::after {
-			width: 14px;
-			left: 13px;
-		}
-
 		/* 技术简介 */
 		.technology-wrapper {
 			padding: 100px 0;
@@ -160,41 +111,16 @@
 	</section>
 
 	<!-- banner -->
-	<section class="section index-banner" id="webBanner">
-		<div class="swiper-container" id="banner">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<!-- <img src="./images/test/banner1.jpg" alt=""> -->
-					<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
-					<!-- <div class="banner-info">
-						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
-							愿景VISION</h3>
-						<h4 class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
-							为发展人类健康事业，努力创新、追求卓越、持续发展</h4>
-						<h5 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0s">
-							TO DEVELOP THE CAUSE OF HUMAN HEALTH STRIVING FOR INNOVATION, PURSUING
-							EXCELLENCE AND SUSTAINABLE DEVELOPMENT</h5>
-					</div> -->
-				</div>
-				<div class="swiper-slide">
-					<!-- <img src="./images/test/banner2.jpg" alt=""> -->
-					<div class="img bg-cover" style="background-image: url(./images/test/banner2.jpg)"></div>
-				</div>
-				<div class="swiper-slide">
-					<!-- <img src="./images/test/banner3.jpg" alt=""> -->
-					<div class="img bg-cover" style="background-image: url(./images/test/banner3.jpg)"></div>
-				</div>
-			</div>
-			<div class="swiper-pagination index-banner-pagination"></div>
-		</div>
-	</section>
+	<section class="section banner" id="webBanner">
+			<img src="./images/test/banner1.jpg" alt="">
+		</section>
 
 	<!-- 多源介绍 -->
 	<section class="section introduce">
 		<section class="section-content introduce-content">
 			<div class="flex-column flex-md">
 				<div class="flex-item-10">
-					<div class="introduce-page-title">
+					<div class="inner-page-title">
 						<h3 class="ch">多源介绍</h3>
 						<h4 class="en">COMPANT PROFILE</h4>
 						<span class="line"></span>
@@ -216,7 +142,7 @@
 		<section class="section-content flex-column flex-md">
 			<div class="flex-item-12">
 				<div class="technology-content">
-					<div class="introduce-page-title center">
+					<div class="inner-page-title center">
 						<h3 class="ch">技术简介</h3>
 						<h4 class="en">TECHNOLOGY INTRODUCE</h4>
 						<span class="line"></span>
@@ -239,7 +165,7 @@
 				<img src="./images/introduce_image1.jpg" alt="">
 			</div>
 			<div class="flex-item-12">
-				<div class="introduce-page-title">
+				<div class="inner-page-title">
 					<h3 class="ch">发展历程</h3>
 					<h4 class="en">DEVELOPMENT HISTORY</h4>
 					<span class="line"></span>
@@ -273,7 +199,7 @@
 
 	<!-- 专家介绍 -->
 	<section class="section experts-title-wrapper">
-		<div class="introduce-page-title center">
+		<div class="inner-page-title center">
 			<h3 class="ch">专家介绍</h3>
 			<h4 class="en">BRIEF INTRODUCTION EXPERTS</h4>
 			<span class="line"></span>
@@ -290,7 +216,9 @@
 							<div class="cover">
 								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
 							</div>
-							<div class="info"></div>
+							<div class="info">
+								<p>Mac Zhang</p>
+							</div>
 						</div>
 					</div>
 					<div class="swiper-slide">
@@ -298,7 +226,9 @@
 							<div class="cover">
 								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
 							</div>
-							<div class="info"></div>
+							<div class="info">
+								<p>Mac Zhang</p>
+							</div>
 						</div>
 					</div>
 					<div class="swiper-slide">
@@ -306,7 +236,9 @@
 							<div class="cover">
 								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
 							</div>
-							<div class="info"></div>
+							<div class="info">
+								<p>Mac Zhang</p>
+							</div>
 						</div>
 					</div>
 					<div class="swiper-slide">
@@ -314,7 +246,9 @@
 							<div class="cover">
 								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)"></div>
 							</div>
-							<div class="info"></div>
+							<div class="info">
+								<p>Mac Zhang</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -326,7 +260,7 @@
 
 	<!-- 荣誉简介 -->
 	<section class="section honour-wrapper">
-		<div class="introduce-page-title center">
+		<div class="inner-page-title center">
 			<h3 class="ch">荣誉简介</h3>
 			<h4 class="en">BRIEF INTRODUCTION TO HONOURS</h4>
 			<span class="line"></span>
@@ -475,33 +409,6 @@
 	<script src="./plugin/swiper/swiper.min.js"></script>
 	<script src="./plugin/swiper/swiper.animate.min.js"></script>
 	<script>
-
-		// banner
-		new Swiper("#banner", {
-			autoplay: {
-				delay: 8000,
-				disableOnInteraction: false,
-			},
-			speed: 1000,
-			effect: 'fade',
-			// loop: true,//必须
-			preventInteractionOnTransition: true,
-			pagination: {
-				el: '.index-banner-pagination',
-				dynamicBullets: true,
-				clickable: true
-			},
-			on: {
-				init: function () {
-					swiperAnimateCache(this); //隐藏动画元素 
-					this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
-				},
-				slideChangeTransitionEnd: function () {
-					swiperAnimate(this); //每个slide切换结束时运行当前slide动画
-				}
-			}
-		});
-
 
 		// 专家
 		new Swiper('#experts', {

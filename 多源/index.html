@@ -183,24 +183,10 @@
 			position: absolute;
 			left: 0;
 			top: 220px;
-			transition: 1s;
-			transform: scaleX(0);
-		}
-
-		.introduce .line.active {
-			transform: scaleX(1);
 		}
 
 		.introduce .info .title {
 			margin-left: -140px;
-			transition: 1s;
-			transform: translate3d(100px, 0, 0);
-			opacity: 0;
-		}
-
-		.introduce .info .title.active {
-			transform: translate3d(0, 0, 0);
-			opacity: 1;
 		}
 
 		.introduce .info .content {
@@ -209,14 +195,6 @@
 			padding-top: 140px;
 			font-size: 12px;
 			color: #333;
-			transition: 1s;
-			transform: translate3d(0, 60px, 0);
-			opacity: 0;
-		}
-
-		.introduce .info .content.active {
-			transform: translate3d(0, 0, 0);
-			opacity: 1;
 		}
 
 		.introduce .info .content .en {
@@ -254,14 +232,6 @@
 			width: 100%;
 			height: auto;
 			position: relative;
-			transition: 1s;
-			transform: scale(0);
-			opacity: 0;
-		}
-
-		.introduce .image.active {
-			transform: scale(1);
-			opacity: 1;
 		}
 
 		.introduce .image:after {
@@ -401,28 +371,13 @@
 
 		.news-title {
 			position: relative;
-			transition: 1s;
-			transform: translate3d(120px, 0, 0);
-			opacity: 0;
 		}
 
-		.news-title.active {
-			transform: translate3d(0, 0, 0);
-			opacity: 1;
-		}
 
 		.research-title {
 			position: absolute;
 			right: -180px;
 			top: -105px;
-			transition: 1s;
-			transform: translate3d(-100px, 0, 0);
-			opacity: 0;
-		}
-
-		.research-title.active {
-			transform: translate3d(0, 0, 0);
-			opacity: 1;
 		}
 
 		.more-wrapper {
@@ -772,7 +727,7 @@
 						<div class="production-card left">
 							<div class="img-wrapper hover-line">
 								<img src="./images/test.jpg" alt="" class="scale">
-								<div class="title">
+								<div class="title scroll-animation" mode="fadeInDown">
 									<p class="ch">医院设备</p>
 									<p class="en">hospital equipment</p>
 								</div>
@@ -784,7 +739,7 @@
 						<div class="production-card left">
 							<div class="img-wrapper hover-line">
 								<img src="./images/test.jpg" alt="" class="scale">
-								<div class="title">
+								<div class="title scroll-animation" mode="fadeInDown">
 									<p class="ch">医院设备</p>
 									<p class="en">hospital equipment</p>
 								</div>
@@ -798,16 +753,16 @@
 
 	<!-- 介绍 -->
 	<div class="section introduce" id="introduce">
-		<div class="line flex-md-hide" id="introduceLine"></div>
+		<div class="line flex-md-hide scroll-animation" mode="bounceIn" id="slideInLeft"></div>
 		<div class="section-content">
 			<div class="flex-column flex-md">
 				<div class="flex-item-8">
 					<figure class="info">
-						<img src="./images/title_introduce.png" alt="" class="title flex-md-hide" id="introduceTitle">
+						<img src="./images/title_introduce.png" alt="" class="title flex-md-hide scroll-animation" mode="bounceIn" id="introduceTitle">
 						<div class="content" id="introduceContent">
-							<p class="en">DUOYUANJIESHAO</p>
-							<p class="ch">多源介绍</p>
-							<p class="desc">成都鑫博浩科技有限公司是从事
+							<p class="en scroll-animation" mode="bounceIn">DUOYUANJIESHAO</p>
+							<p class="ch scroll-animation" mode="bounceIn">多源介绍</p>
+							<p class="desc scroll-animation" mode="bounceIn">成都鑫博浩科技有限公司是从事
 								新型医疗器械和消毒剂的研发、生产及销售的企业.公司一直秉承“为发展人类健康事业，努力创新、追求卓越、
 								持续发展”的理念</p>
 							<a href="" class="more hover-color">查看更多</a>
@@ -816,7 +771,7 @@
 				</div>
 				<div class="flex-item-16">
 					<figure class="image" id="introduceImage">
-						<img src="./images/introduce.jpg" alt="">
+						<img src="./images/introduce.jpg" alt="" class="scroll-animation" mode="rotateIn">
 					</figure>
 				</div>
 			</div>
@@ -908,12 +863,12 @@
 	<!-- 新闻 -->
 	<div class="section news" id="newsWrapper">
 		<div class="section-content">
-			<figure class="research-title flex-md-hide" id="researchTitle"><img src="./images/title_scientific.png" alt="">
+			<figure class="research-title flex-md-hide scroll-animation" mode="bounceIn" id="researchTitle"><img src="./images/title_scientific.png" alt="">
 			</figure>
 			<div class="flex-column flex-md">
 				<div class="flex-item-6">
-					<div class="news-pagination"></div>
-					<figure class="news-title flex-md-hide" id="newsTitle"><img src="./images/title_news.png" alt=""></figure>
+					<div class="news-pagination scroll-animation" mode="fadeInLeft"></div>
+					<figure class="news-title flex-md-hide scroll-animation" mode="bounceIn" id="newsTitle"><img src="./images/title_news.png" alt=""></figure>
 				</div>
 				<div class="flex-item-18">
 					<div class="swiper-container" id="news">

@@ -131,6 +131,11 @@
   overflow: hidden;
 }
 
+/* 动画 */
+.scroll-animation {
+  opacity: 0;
+}
+
 @media screen and (max-width: 1068px) {
   .section-content {
     width: 690px;

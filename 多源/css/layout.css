@@ -159,6 +159,14 @@ body {
 	font-weight: 200;
 }
 
+.single-banner {
+
+}
+.single-banner img {
+	display: block;
+	width: 100%;
+}
+
 /* footer */
 
 .web-footer {
@@ -219,6 +227,54 @@ body {
 	line-height: 40px;
 	font-size: 1em;
 	color: #fff;
+}
+
+.inner-page-title {
+	padding: 20px 0;
+}
+
+.inner-page-title.center {
+	text-align: center;
+}
+
+.inner-page-title .ch {
+	padding-bottom: 24px;
+	font-size: 24px;
+	color: #333;
+}
+
+.inner-page-title .en {
+	padding-bottom: 28px;
+	font-size: 24px;
+	color: #0373df;
+}
+
+.inner-page-title .line {
+	display: block;
+	width: 40px;
+	height: 2px;
+	background-color: #999;
+	position: relative;
+}
+
+.inner-page-title .line::after {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 2px;
+	background-color: #034593;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.inner-page-title.center .line {
+	margin: 0 auto;
+}
+
+.inner-page-title.center .line::after {
+	width: 14px;
+	left: 13px;
 }
 
 @media screen and (max-width: 1068px) {}

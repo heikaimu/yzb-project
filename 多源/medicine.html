@@ -16,7 +16,143 @@
 	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
 	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
 	<style>
+		/* 研究 */
+		.research {
+			margin-top: -100px;
+		}
 
+		.research-card {
+			height: 500px;
+			background-color: #fff;
+		}
+
+		.research-card .image {
+			width: 100%;
+			height: 500px;
+		}
+
+		.research-card .info {
+			padding: 40px;
+		}
+
+		.research-card .info .content {
+			color: #333;
+			font-size: 12px;
+		}
+
+		.research-card .info .content .en {
+			padding-bottom: 10px;
+			font-size: 1em;
+			opacity: 0.5;
+		}
+
+		.research-card .info .content .ch {
+			padding-bottom: 1.1em;
+			font-size: 2em;
+			font-weight: 600;
+			position: relative;
+		}
+
+		.research-card .info .content .ch:before {
+			content: "";
+			display: block;
+			width: 70px;
+			height: 1px;
+			background-color: #bbc4e4;
+			position: absolute;
+			right: 0px;
+			top: 12px;
+		}
+
+		.research-card .info .content .desc {
+			padding-bottom: 1.8em;
+			line-height: 1.4;
+			font-size: 1.15em;
+			color: #666;
+		}
+
+		.research-arrow-wrapper {
+			position: absolute;
+			bottom: 20px;
+			right: 350px;
+			z-index: 9999;
+			display: flex;
+		}
+
+		.research-arrow-wrapper .swiper-button-prev {
+			left: -30px;
+			transform: scale(0.8);
+		}
+
+		.research-arrow-wrapper .swiper-button-next {
+			right: -30px;
+			transform: scale(0.8);
+		}
+
+		/* 知识 */
+		.knowledge {
+			padding-top: 20px;
+			padding-bottom: 60px;
+			background-color: #bbc4e4;
+		}
+
+		.knowledge-list {
+			padding-bottom: 40px;
+		}
+
+		.knowledge-list li {
+			padding: 20px;
+			border-bottom: 1px solid #e7e7e7;
+			position: relative;
+			transition: .3s;
+		}
+
+		.knowledge-list li::after {
+			content: "";
+			display: block;
+			width: 30px;
+			height: 30px;
+			background-color: red;
+			position: absolute;
+			right: 0;
+			top: 10px;
+		}
+
+		.knowledge-list li .title {
+			font-size: 16px;
+		}
+
+		.knowledge-list li .desc {
+			padding-top: 20px;
+			font-size: 14px;
+			color: #fff;
+			display: none;
+			transition: .3s;
+		}
+
+		.knowledge-list li.active {
+			background-color: #0373df;
+		}
+		.knowledge-list li.active .title {
+			font-size: 18px;
+			color: #fff;
+		}
+		.knowledge-list li.active .desc {
+			display: block;
+		}
+
+		/* 新闻咨询 */
+		.news-card-width-pic .cover {
+			height: 250px;
+		}
+
+		.news-card-width-pic .content {}
+
+		.news-card-width-pic .content .time {}
+
+		.news-card-width-pic .content .title {}
+
+		.news-card-width-pic .content .summary {}
 	</style>
 
 </head>
@@ -49,35 +185,187 @@
 	</section>
 
 	<!-- banner -->
-	<section class="section index-banner" id="webBanner">
-		<div class="swiper-container" id="banner">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<!-- <img src="./images/test/banner1.jpg" alt=""> -->
-					<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
-					<!-- <div class="banner-info">
-						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
-							愿景VISION</h3>
-						<h4 class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
-							为发展人类健康事业，努力创新、追求卓越、持续发展</h4>
-						<h5 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0s">
-							TO DEVELOP THE CAUSE OF HUMAN HEALTH STRIVING FOR INNOVATION, PURSUING
-							EXCELLENCE AND SUSTAINABLE DEVELOPMENT</h5>
-					</div> -->
-				</div>
-				<div class="swiper-slide">
-					<!-- <img src="./images/test/banner2.jpg" alt=""> -->
-					<div class="img bg-cover" style="background-image: url(./images/test/banner2.jpg)"></div>
-				</div>
-				<div class="swiper-slide">
-					<!-- <img src="./images/test/banner3.jpg" alt=""> -->
-					<div class="img bg-cover" style="background-image: url(./images/test/banner3.jpg)"></div>
-				</div>
-			</div>
-			<div class="swiper-pagination index-banner-pagination"></div>
-		</div>
+	<section class="section banner" id="webBanner">
+		<img src="./images/test/banner1.jpg" alt="">
 	</section>
 
+	<!-- 科技？？？ -->
+	<!-- 科研成果 -->
+	<div class="section research">
+		<div class="section-content">
+			<div class="swiper-container" id="research">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="research-card flex-column flex-md">
+							<div class="flex-item-14">
+								<figure class="image bg-cover" style="background-image:url(./images/test.jpg)"></figure>
+							</div>
+							<div class="flex-item-10">
+								<figure class="info">
+									<div class="content">
+										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">KEYANCHENGGUO</p>
+										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">科研成果</p>
+										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">
+											中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+										</p>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="research-card flex-column flex-md">
+							<div class="flex-item-14">
+								<figure class="image bg-cover" style="background-image:url(./images/test.jpg)"></figure>
+							</div>
+							<div class="flex-item-10">
+								<figure class="info">
+									<div class="content">
+										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">KEYANCHENGGUO</p>
+										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">科研成果</p>
+										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">
+											中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+										</p>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="research-card flex-column flex-md">
+							<div class="flex-item-14">
+								<figure class="image bg-cover" style="background-image:url(./images/test.jpg)"></figure>
+							</div>
+							<div class="flex-item-10">
+								<figure class="info">
+									<div class="content">
+										<p class="en ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">KEYANCHENGGUO</p>
+										<p class="ch ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">科研成果</p>
+										<p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
+											swiper-animate-delay="0s">
+											中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+										</p>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="research-arrow-wrapper">
+				<div class="swiper-button-prev" id="researchPrev"></div>
+				<div class="" id="researchPagination"></div>
+				<div class="swiper-button-next" id="researchNext"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 知识 -->
+	<section class="section knowledge">
+		<section class="section-content">
+			<div class="inner-page-title center">
+				<h3 class="ch">发展历程</h3>
+				<h4 class="en sm">DEVELOPMENT HISTORY</h4>
+				<span class="line"></span>
+			</div>
+			<ul class="knowledge-list" id="knowledgeList">
+				<li class="knowledge-item">
+					<h3 class="title">中国医学科学院北</h3>
+					<p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流</p>
+				</li>
+				<li class="knowledge-item">
+					<h3 class="title">中国医学科学院北</h3>
+					<p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流</p>
+				</li>
+				<li class="knowledge-item">
+					<h3 class="title">中国医学科学院北</h3>
+					<p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流</p>
+				</li>
+				<li class="knowledge-item">
+					<h3 class="title">中国医学科学院北</h3>
+					<p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流</p>
+				</li>
+				<li class="knowledge-item">
+					<h3 class="title">中国医学科学院北</h3>
+					<p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流</p>
+				</li>
+			</ul>
+			<div class="flex-column flex-center flex-middle">
+				<a href="" class="more">MORE</a>
+			</div>
+		</section>
+	</section>
+
+	<!-- 动态资讯 -->
+	<section class="section news">
+		<section class="section-content flex-column">
+			<div class="flex-item-12">
+				<div class="inner-page-title">
+					<h3 class="ch">发展历程</h3>
+					<h4 class="en sm">DEVELOPMENT HISTORY</h4>
+					<span class="line"></span>
+				</div>
+				<ul class="news-list">
+					<li>
+						<div class="news-card">
+							<div class="time">
+								<p class="year">2019</p>
+								<p class="day">10月2日</p>
+							</div>
+							<div class="content">
+								<h3 class="title">新闻标题</h3>
+								<p class="summary">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="news-card">
+							<div class="time">
+								<p class="year">2019</p>
+								<p class="day">10月2日</p>
+							</div>
+							<div class="content">
+								<h3 class="title">新闻标题</h3>
+								<p class="summary">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="news-card">
+							<div class="time">
+								<p class="year">2019</p>
+								<p class="day">10月2日</p>
+							</div>
+							<div class="content">
+								<h3 class="title">新闻标题</h3>
+								<p class="summary">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="flex-item-11 flex-offset-1">
+				<div class="news-card-width-pic">
+					<div class="cover">
+						<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+					</div>
+					<div class="content">
+						<p class="time">2039-23-3</p>
+						<h3 class="title">新闻标题</h3>
+						<p class="summary">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
 
 	<!-- 底部 -->
 	<section class="section web-footer">
@@ -167,20 +455,27 @@
 	<script src="./plugin/swiper/swiper.animate.min.js"></script>
 	<script>
 
-		// banner
-		new Swiper("#banner", {
-			autoplay: {
-				delay: 8000,
-				disableOnInteraction: false,
-			},
-			speed: 1000,
-			effect: 'fade',
-			// loop: true,//必须
-			preventInteractionOnTransition: true,
+		$(function () {
+			$("#knowledgeList").find(".knowledge-item").each(function (){
+				$(this).click(function() {
+					if ($(this).hasClass("active")) {
+						$(this).removeClass("active");
+					} else {
+						$(this).addClass("active");
+					}
+				})
+			})
+		})
+
+		new Swiper('#research', {
+			loop: true,
 			pagination: {
-				el: '.index-banner-pagination',
-				dynamicBullets: true,
-				clickable: true
+				el: '#researchPagination',
+				type: 'fraction'
+			},
+			navigation: {
+				nextEl: '#researchPrev',
+				prevEl: '#researchNext',
 			},
 			on: {
 				init: function () {

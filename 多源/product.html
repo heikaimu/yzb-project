@@ -12,11 +12,57 @@
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/layout.css">
 	<link rel="stylesheet" href="./css/magic.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- swiper -->
 	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
 	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
 	<style>
+		.page-title {
+			padding-bottom: 20px;
+			font-size: 20px;
+		}
 
+		.page-title h3 {
+			padding-bottom: 10px;
+		}
+
+		.page-title h4 {}
+
+		.type-list {}
+
+		.type-list li a {
+			line-height: 60px;
+			font-size: 18px;
+			color: #666;
+		}
+
+		.product-wrapper {
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+
+		.product-type-wrapper {
+			height: 500px;
+		}
+
+		.product-list-wrapper .type-title {
+			padding-left: 10px;
+			padding-bottom: 10px;
+		}
+
+		.product-list-wrapper .type-desc {
+			padding-left: 10px;
+			padding-bottom: 10px;
+		}
+
+		.product-card {
+			margin: 10px;
+		}
+
+		.product-card .cover {
+			height: 200px;
+		}
 	</style>
 
 </head>
@@ -49,48 +95,114 @@
 	</section>
 
 	<!-- banner -->
-	<section class="section index-banner" id="webBanner">
-		<div class="swiper-container" id="banner">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<!-- <img src="./images/test/banner1.jpg" alt=""> -->
-					<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
-					<!-- <div class="banner-info">
-						<h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s" swiper-animate-delay="0s">
-							愿景VISION</h3>
-						<h4 class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="2s" swiper-animate-delay="0s">
-							为发展人类健康事业，努力创新、追求卓越、持续发展</h4>
-						<h5 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0s">
-							TO DEVELOP THE CAUSE OF HUMAN HEALTH STRIVING FOR INNOVATION, PURSUING
-							EXCELLENCE AND SUSTAINABLE DEVELOPMENT</h5>
-					</div> -->
-				</div>
-				<div class="swiper-slide">
-					<!-- <img src="./images/test/banner2.jpg" alt=""> -->
-					<div class="img bg-cover" style="background-image: url(./images/test/banner2.jpg)"></div>
-				</div>
-				<div class="swiper-slide">
-					<!-- <img src="./images/test/banner3.jpg" alt=""> -->
-					<div class="img bg-cover" style="background-image: url(./images/test/banner3.jpg)"></div>
+	<section class="section banner" id="webBanner">
+			<img src="./images/test/banner1.jpg" alt="">
+		</section>
+
+	<!-- 产品 -->
+	<section class="section product-wrapper">
+		<div class="section-content flex-column">
+			<div class="flex-item-6">
+				<div class="product-type-wrapper">
+					<div class="page-title">
+						<h3>PRODUCT CENTER</h3>
+						<h4>产品中心</h4>
+					</div>
+					<ul class="type-list">
+						<li>
+							<a href="">类型1</a>
+						</li>
+						<li>
+							<a href="">类型1</a>
+						</li>
+						<li>
+							<a href="">类型1</a>
+						</li>
+					</ul>
 				</div>
 			</div>
-			<div class="swiper-pagination index-banner-pagination"></div>
+			<div class="flex-item-18">
+				<div class="product-list-wrapper">
+					<h3 class="type-title">美容仪</h3>
+					<p class="type-desc"> 万代RG沙扎比日站评测更新,整体对比HG来说造型和细节上改变了许多,身体多处使用了联动关节,并且带有爆甲模式,浮游炮的展开液得到了还原。预计发售时间:2018年8月</p>
+					<ul class="flex-column">
+						<li class="flex-item-8">
+							<div class="product-card">
+								<div class="cover">
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+								</div>
+							</div>
+						</li>
+						<li class="flex-item-8">
+							<div class="product-card">
+								<div class="cover">
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+								</div>
+							</div>
+						</li>
+						<li class="flex-item-8">
+							<div class="product-card">
+								<div class="cover">
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+								</div>
+							</div>
+						</li>
+						<li class="flex-item-8">
+							<div class="product-card">
+								<div class="cover">
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+								</div>
+							</div>
+						</li>
+						<li class="flex-item-8">
+							<div class="product-card">
+								<div class="cover">
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+								</div>
+							</div>
+						</li>
+						<li class="flex-item-8">
+							<div class="product-card">
+								<div class="cover">
+									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)"></div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!-- 分页 -->
+					<div class="flex-column flex-middle flex-center">
+						<nav aria-label="Page navigation">
+							<ul class="pagination">
+								<li>
+									<a href="#" aria-label="Previous">
+										<span aria-hidden="true">上一页</span>
+									</a>
+								</li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li>
+									<a href="#" aria-label="Next">
+										<span aria-hidden="true">下一页</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
-
-
-	<section class="section flex-column">
-			<div class="flex-item-10 type-tab-wrapper">
-				<div class="page-title">
-					<h3>PRODUCT CENTER</h3>
-					<h4>产品中心</h4>
-				</div>
-			</div>
-			<div class="flex-item-14 products-wrapper">
-
-			</div>
-	</section>
-
 
 	<!-- 底部 -->
 	<section class="section web-footer">
