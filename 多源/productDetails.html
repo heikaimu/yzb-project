@@ -18,20 +18,81 @@
   <link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
   <link rel="stylesheet" href="./plugin/swiper/animate.min.css">
   <style>
-    .product-details {
-      padding: 100px 0;
-      background-color: #ccc;
-    }
-    .product-details .img{
+    .product-title {
       padding: 30px 0;
     }
-    .product-details .img img{
+    .product-details {
+      padding: 100px 0;
+      background: url(./images/wang.png);
+    }
+
+    .product-details::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      border-right: 1px solid #bbc4e4;
+    }
+
+    .product-details .img {
+      padding-right: 100px;
+    }
+
+    .product-details .img img {
       display: block;
       max-width: 100%;
-}
-.page-back-wrapper {
-  padding: 30px 0;
-}
+    }
+
+    .product-details .content {
+      padding-left: 100px;
+    }
+
+    .product-details .content .title {
+      padding-bottom: 50px;
+      font-size: 20px;
+      color: #666;
+    }
+
+    .product-details .content .other p{
+      font-size: 14px;
+      color: #666;
+    }
+
+    .page-back-wrapper {
+      padding: 30px 0;
+    }
+
+    @media screen and (max-width: 734px) {
+      .product-title {
+      padding: 10px 0;
+    }
+    .product-details {
+      padding: 40px 0;
+    }
+
+    .product-details::after {
+     display: none;
+    }
+
+    .product-details .img {
+      padding-right: 0;
+    }
+
+    .product-details .img img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .product-details .content {
+      padding-left: 0;
+    }
+
+    .product-details .content .title {
+      padding-bottom: 10px;
+    }
+    }
   </style>
 
 </head>
@@ -80,13 +141,20 @@
     </section>
   </section>
   <section class="section product-details">
-    <section class="section-content flex-column">
-      <div class="flex-item-12">
+    <section class="section-content flex-column flex-md">
+      <div class="flex-item-12 flex-column flex-middle">
         <figure class="img"><img src="./images/test/banner1.jpg" alt=""></figure>
       </div>
       <div class="flex-item-12">
         <div class="content">
-          <p>dwdawdwdw</p>
+          <h3 class="title">产品的名字</h3>
+          <div class="other">
+            <p>产品名称：多源烧伤治疗仪</p>
+            <p>产品名称：多源烧伤治疗仪</p>
+            <p>产品名称：多源烧伤治疗仪</p>
+            <p>产品名称：多源烧伤治疗仪</p>
+            <p>产品名称：多源烧伤治疗仪</p>
+          </div>
         </div>
       </div>
     </section>
@@ -94,9 +162,9 @@
 
   <section class="section page-back-wrapper">
     <section class="section-content">
-        <div class="page-back text-right">
-            <a href="">返回上一页</a>
-          </div>
+      <div class="page-back text-right">
+        <a href="">返回上一页</a>
+      </div>
     </section>
   </section>
 

@@ -283,6 +283,10 @@ body {
 
 .page-back a {
   font-size: 14px;
+  color: #999999;
+}
+.page-back a:hover {
+  text-decoration: none;
   color: #666;
 }
 
