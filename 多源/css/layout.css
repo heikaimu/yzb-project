@@ -129,13 +129,20 @@ body {
   transform: scale(1, 1);
 }
 
-.banner-info {
-  width: 600px;
+.banner-info-wrapper {
   position: absolute;
-  left: 50%;
-  top: 55%;
-  margin-left: -300px;
-  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner-info {
+  max-width: 600px;
+  padding: 0 20px;
   color: #fff;
 }
 
@@ -377,6 +384,7 @@ body {
     flex-direction: row-reverse;
   }
   .third-way {
+    padding: 30px;
     flex: 1;
     margin: 10px;
   }
