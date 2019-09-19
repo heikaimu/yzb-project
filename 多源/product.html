@@ -39,6 +39,12 @@
 			overflow-y: auto;
 		}
 
+		/* .type-list.active {
+			position: fixed;
+			top: 70px;
+			bottom: 0;
+		} */
+
 		.type-list a {
 			display: block;
 			height: 100px;
@@ -49,7 +55,8 @@
 			align-items: center;
 		}
 
-		.type-list a:hover {
+		.type-list a:hover,
+		.type-list a.active {
 			text-decoration: none;
 			color: #0373df;
 		}
@@ -85,6 +92,53 @@
 		.product-card .cover {
 			height: 240px;
 		}
+
+		@media screen and (max-width: 734px) {
+			.page-title {
+				padding-bottom: 10px;
+			}
+
+			.page-title h3 {
+				font-size: 16px;
+			}
+
+			.page-title h4 {
+				font-size: 13px;
+			}
+
+			.type-list a {
+				height: 40px;
+				font-size: 12px;
+			}
+
+			.product-wrapper {
+				padding-top: 50px;
+				padding-bottom: 20px;
+			}
+
+			.product-type-wrapper {
+				position: fixed;
+				width: 80px;;
+				left: 20px;
+				top: 70px;
+				height: auto;
+			}
+
+			.product-list-wrapper .type-title {
+				padding-bottom: 10px;
+				font-size: 16px;
+				color: #333;
+			}
+
+			.product-list-wrapper .type-desc {
+				padding-bottom: 10px;
+				font-size: 12px;
+			}
+
+			.product-card .cover {
+				height: 200px;
+			}
+		}
 	</style>
 
 </head>
@@ -117,7 +171,7 @@
 	</section>
 
 	<!-- banner -->
-	<section class="section single-banner" id="webBanner">
+	<section class="section single-banner flex-md-hide" id="webBanner">
 		<img src="./images/test/banner1.jpg" alt="">
 	</section>
 
@@ -130,8 +184,8 @@
 						<h3 class="scroll-animation" mode="fadeInDown">PRODUCT CENTER</h3>
 						<h4 class="scroll-animation" mode="fadeInLeft">产品中心</h4>
 					</div>
-					<div class="type-list">
-						<a href="">导航</a>
+					<div class="type-list" id="productNav">
+						<a href="" class="active">导航</a>
 						<a href="">导航</a>
 						<a href="">导航</a>
 						<a href="">导航</a>
@@ -153,7 +207,7 @@
 					<h3 class="type-title">美容仪</h3>
 					<p class="type-desc">
 						万代RG沙扎比日站评测更新,整体对比HG来说造型和细节上改变了许多,身体多处使用了联动关节,并且带有爆甲模式,浮游炮的展开液得到了还原。预计发售时间:2018年8月</p>
-					<ul class="flex-column">
+					<ul class="flex-column flex-md">
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
@@ -212,19 +266,19 @@
 										<span aria-hidden="true">上一页</span>
 									</a>
 								</li>
-								<li><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
+								<li class="flex-md-hide"><a href="#">1</a></li>
+								<li class="flex-md-hide"><a href="#">2</a></li>
+								<li class="flex-md-hide"><a href="#">3</a></li>
+								<li class="flex-md-hide"><a href="#">4</a></li>
+								<li class="flex-md-hide"><a href="#">5</a></li>
+								<li class="flex-md-hide"><a href="#">2</a></li>
+								<li class="flex-md-hide"><a href="#">3</a></li>
+								<li class="flex-md-hide"><a href="#">4</a></li>
+								<li class="flex-md-hide"><a href="#">5</a></li>
+								<li class="flex-md-hide"><a href="#">2</a></li>
+								<li class="flex-md-hide"><a href="#">3</a></li>
+								<li class="flex-md-hide"><a href="#">4</a></li>
+								<li class="flex-md-hide"><a href="#">5</a></li>
 								<li>
 									<a href="#" aria-label="Next">
 										<span aria-hidden="true">下一页</span>

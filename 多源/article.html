@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- css -->
+  <link rel="stylesheet" href="./css/flex-layout.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/magic.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- swiper -->
+  <link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
+  <link rel="stylesheet" href="./plugin/swiper/animate.min.css">
+  <style>
+    .article-type {
+      border-top: 1px solid #f9f9f9;
+      border-bottom: 1px solid #f9f9f9;
+      margin-bottom: 20px;
+    }
+
+    .article-type nav {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .article-type nav a {
+      padding: 20px 30px;
+      margin: 0 20px;
+      position: relative;
+      border-bottom: 3px solid transparent;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .article-type nav a:hover {
+      text-decoration: none;
+    }
+
+    .article-type nav a::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 10px;
+      background-color: #666;
+      position: absolute;
+      right: -20px;
+      top: 25px;
+    }
+
+    .article-type nav a:last-child::after {
+      display: none;
+    }
+
+    .article-type nav a.active {
+      border-bottom: 3px solid #0373df;
+      color: #0373df;
+    }
+
+    .article {
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .article .title {
+      font-size: 20px;
+      color: #333;
+    }
+
+    .article .tags {
+      padding: 30px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .article .tags p {
+      height: 20px;
+      font-size: 14px;
+      color: #666;
+      line-height: 20px;
+      margin: 0 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .article .tags p::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+    }
+
+    .article .tags p.time::before {
+      background: url(./images/time_icon.png) no-repeat center center / cover;
+    }
+
+    .article .tags p.views::before {
+      background: url(./images/eye_icon.png) no-repeat center center / cover;
+    }
+
+    .article p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    .article img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      margin: 20px 0;
+    }
+
+    .page-back a {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .page-back a::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url(./images/long_arrow_left.png) no-repeat center center / cover;
+      margin-right: 10px;
+      position: relative;
+      top: 5px;
+    }
+
+    @media screen and (max-width: 734px) {
+
+      .article-type nav a {
+        padding: 10px 10px;
+        margin: 0 20px;
+      }
+
+      .article-type nav a::after {
+        right: -20px;
+        top: 15px;
+      }
+
+      .article-type nav a:last-child::after {
+        display: none;
+      }
+
+      .article-type nav a.active {
+        border-bottom: 3px solid #0373df;
+        color: #0373df;
+      }
+
+      .article {
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      .article .title {
+        font-size: 20px;
+        color: #333;
+      }
+
+      .article .tags {
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .article .tags p {
+        height: 20px;
+        font-size: 14px;
+        color: #666;
+        line-height: 20px;
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .article .tags p::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+      }
+
+      .article .tags p.time::before {
+        background: url(./images/time_icon.png) no-repeat center center / cover;
+      }
+
+      .article .tags p.views::before {
+        background: url(./images/eye_icon.png) no-repeat center center / cover;
+      }
+
+      .article p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #666;
+      }
+
+      .article img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        margin: 20px 0;
+      }
+      
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- 顶部 -->
+  <section class="section web-top" id="webTop">
+    <div class="section-content web-top-content flex-column flex-middle">
+      <p class="flex-item-12 flex-column flex-left">欢迎来到多源官方网站！</p>
+      <p class="flex-item-12 flex-column flex-right flex-md-show">联系电话：028-85141556</p>
+    </div>
+  </section>
+
+  <!-- 导航 -->
+  <section class="section web-header" id="webHeader">
+    <div class="phone-menus-btn flex-md-show" id="phoneMenusBtn"></div>
+    <div class="section-content web-header-content flex-column flex-middle flex-md">
+      <div class="flex-item-4"><img src="./images/logo.png" alt="" class="logo"></div>
+      <div class="header-menus flex-item-19 flex-offset-1 flex-column" id="webMenus">
+        <a href="./index.html">首页</a>
+        <a href="./introduce.html">多源介绍</a>
+        <a href="./product.html" class="active">产品中心</a>
+        <a href="./medicine.html">临床医学</a>
+        <a href="./cooperation.html">多源合作</a>
+        <a href="./contact.html">联系我们</a>
+      </div>
+      <div class="phone-number flex-md-hide">(0848-1515)</div>
+    </div>
+  </section>
+
+  <!-- banner -->
+  <section class="section single-banner" id="webBanner">
+    <img src="./images/test/banner1.jpg" alt="">
+  </section>
+
+  <!-- 分类切换 -->
+  <section class="section article-type">
+    <section class="section-content">
+      <nav>
+        <a href="" class="active">分类1</a>
+        <a href="">分类2</a>
+        <a href="">分类3</a>
+      </nav>
+    </section>
+  </section>
+
+  <section class="section">
+    <section class="section-content">
+      <article class="article">
+        <h2 class="title">文章标题</h2>
+        <div class="tags">
+          <p class="time">2019-3-1</p>
+          <p class="views">103</p>
+        </div>
+        <div class="content">
+          <p>2016年11月15日 - 使用Node.js给图片加水印,首先要确保本地安装了node环境。然后,我们进行图像编辑操作需要用到一个Node.js的库:images。具体详情大家可以通过本文了解下</p>
+          <img src="./images/test/banner1.jpg" alt="">
+        </div>
+        <div class="page-back text-right">
+          <a href="">返回上一页</a>
+        </div>
+      </article>
+    </section>
+  </section>
+
+  <!-- 底部 -->
+  <section class="section web-footer">
+    <div class="section-content">
+      <div class="flex-column flex-md">
+        <div class="flex-item-20 flex-column flex-md-hide">
+          <div class="flex-item-4">
+            <div class="footer-nav-item">
+              <h3>多源介绍</h3>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+            </div>
+          </div>
+          <div class="flex-item-4">
+            <div class="footer-nav-item">
+              <h3>多源介绍</h3>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+            </div>
+          </div>
+          <div class="flex-item-4">
+            <div class="footer-nav-item">
+              <h3>多源介绍</h3>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+            </div>
+          </div>
+          <div class="flex-item-4">
+            <div class="footer-nav-item">
+              <h3>多源介绍</h3>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+            </div>
+          </div>
+          <div class="flex-item-4">
+            <div class="footer-nav-item">
+              <h3>多源介绍</h3>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+            </div>
+          </div>
+          <div class="flex-item-4">
+            <div class="footer-nav-item">
+              <h3>多源介绍</h3>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+              <a href="">公司简介</a>
+              <a href="">发展历程</a>
+            </div>
+          </div>
+        </div>
+        <div class="flex-item-4">
+          <div class="third-way-wrapper">
+            <figure class="third-way">
+              <img src="./images/icon_qq.png" alt="">
+              <p>在线QQ</p>
+            </figure>
+            <figure class="third-way">
+              <img src="./images/icon_qr.png" alt="">
+              <p>多源微信</p>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section footer-bottom">
+    <div class="section-content ">
+      <p>版权所有 Copyright@ 2019 成都鑫博浩科技有限公司网站设计：网匠科技</p>
+    </div>
+  </section>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/scroll.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./plugin/swiper/swiper.min.js"></script>
+  <script src="./plugin/swiper/swiper.animate.min.js"></script>
+  <script>
+
+  </script>
+</body>
+
+</html>

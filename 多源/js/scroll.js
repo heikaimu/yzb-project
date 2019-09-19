@@ -7,11 +7,21 @@ var scrollHeight = 0;
 var bannerHeight = 0;
 
 $(window).scroll(function() {
+	scrollEvents();
+})
+
+$(function() {
+	scrollEvents();
+})
+
+// 滚动的所以事件
+function scrollEvents() {
 	scrollHeight = $('body,html').scrollTop();
 	winHeight = $(window).height();
 	
 	headerBgChange();
 	indexProductTitle();
+	// fixedProductNav();
 
 	$(".scroll-animation").each(function () {
 		var offsetTop = $(this).offset().top;
@@ -20,7 +30,7 @@ $(window).scroll(function() {
 			$(this).addClass(mode + " animated");
 		}
 	})
-})
+}
 
 // 头部变色
 function headerBgChange() {
@@ -39,5 +49,18 @@ function indexProductTitle() {
 		var productionTitleHeight = productionTitle.height();
 		var productionTitleOffset = scrollHeight < productionTitleHeight ? productionTitleHeight - scrollHeight : 0;
 		productionTitle.css({"transform": "translate3d(0, " + productionTitleOffset + "px, 0)"});
+	}
+}
+
+// 产品页面移动端滚动固定
+function fixedProductNav() {
+	var productNav = $("#productNav");
+	if (productNav) {
+		if (scrollHeight > productNav.offset().top - 70) {
+			productNav.addClass("active");
+		} else {
+			console.log(1);
+			// productNav.removeClass("active");
+		}
 	}
 }

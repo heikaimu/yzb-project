@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/layout.css">
 	<link rel="stylesheet" href="./css/magic.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- swiper -->
 	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
 	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
@@ -208,6 +210,9 @@
 		}
 
 		.expert-card .info {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			height: 100px;
 			background-color: #b6bcde;
 		}
@@ -239,6 +244,121 @@
 			line-height: 1.8;
 			font-size: 14px;
 			color: #666;
+		}
+
+		@media screen and (max-width: 734px) {
+			.introduce {
+				padding: 20px 0 0 0;
+			}
+
+			.introduce .down-arrow {
+				width: 30px;
+				height: 30px;
+				margin-top: 40px;
+			}
+
+			/* 技术简介 */
+			.technology-wrapper {
+				padding: 40px 0;
+				margin-bottom: 40px;
+			}
+
+			.technology-wrapper .technology-content {
+				padding: 30px;
+			}
+
+			.technology-wrapper .technology-content .summary {
+				padding-top: 10px;
+				font-size: 12px;
+				line-height: 1.6;
+			}
+
+			.technology-wrapper .technology-content .title {
+				padding-top: 37px;
+				font-size: 16px;
+			}
+
+			.technology-wrapper .technology-content .intro {
+				padding-top: 18px;
+				font-size: 12px;
+				line-height: 1.6;
+			}
+
+			/* 发展历程 */
+			.grow-up {
+				margin: 40px 0;
+			}
+
+			.grow-up::after {
+				display: none;
+			}
+
+			.grow-up .inner-page-title {
+				padding-top: 40px;
+				padding-left: 20px;
+			}
+
+			.grow-up .time-line {
+				margin-left: 20px;
+			}
+
+			.grow-up .time-line .time-node .year {
+				color: #666;
+			}
+
+			/* 专家 */
+			.experts-title-wrapper {
+				padding: 40px 0;
+			}
+
+			.experts-swiper-wrapper {
+				padding: 40px 0;
+			}
+
+			.experts-swiper-wrapper .expert-button-next {
+				margin-right: 0;
+			}
+
+			.experts-swiper-wrapper .expert-button-prev {
+				margin-left: 0;
+			}
+
+			.expert-card .cover {
+				height: 300px;
+			}
+
+			.expert-card .info {
+				height: 60px;
+				background-color: #b6bcde;
+			}
+
+			/* 荣誉 */
+			.honour-wrapper {
+				padding: 40px 0;
+			}
+
+			.honour-wrapper .honour-button-next {
+				margin-right: 0;
+			}
+
+			.honour-wrapper .honour-button-prev {
+				margin-left: 0;
+			}
+
+			.honour-card .cover {
+				height: 300px;
+			}
+
+			.honour-card .info {
+				padding: 20px 0 10px 0;
+				border-bottom: 2px solid #cdcdcd;
+			}
+
+			.honour-card .info p {
+				line-height: 1.8;
+				font-size: 14px;
+				color: #666;
+			}
 		}
 	</style>
 
@@ -591,6 +711,11 @@
 				nextEl: '.expert-button-next',
 				prevEl: '.expert-button-prev',
 			},
+			breakpoints: {
+				734: {
+					slidesPerView: 1
+				}
+			}
 		});
 
 		// 荣誉
@@ -601,6 +726,11 @@
 				nextEl: '.honour-button-next',
 				prevEl: '.honour-button-prev',
 			},
+			breakpoints: {
+				734: {
+					slidesPerView: 1
+				}
+			}
 		});
 	</script>
 </body>

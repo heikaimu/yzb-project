@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/layout.css">
 	<link rel="stylesheet" href="./css/magic.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- swiper -->
 	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
 	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
@@ -114,24 +116,100 @@
 			margin-right: 10px;
 		}
 
+		.base-list li::before {
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 16px;
+		}
+
 		.base-list li.cz::before {
-			background: url(./images/cz_icon.png) no-repeat center center / 16px;
+			background-image: url(./images/cz_icon.png);
 		}
 
 		.base-list li.phone::before {
-			background: url(./images/phone_icon.png) no-repeat center center / 16px;
+			background-image: url(./images/phone_icon.png);
 		}
 
 		.base-list li.address::before {
-			background: url(./images/address_icon.png) no-repeat center center / 16px;
+			background-image: url(./images/address_icon.png);
 		}
 
 		.base-list li.email::before {
-			background: url(./images/email_icon.png) no-repeat center center / 16px;
+			background-image: url(./images/email_icon.png);
 		}
 
 		.base-list li.file::before {
-			background: url(./images/file_icon.png) no-repeat center center / 16px;
+			background-image: url(./images/file_icon.png);
+		}
+
+		@media screen and (max-width: 734px) {
+			.job {
+				padding: 10px 0;
+			}
+
+			.job-item {
+				margin-bottom: 10px;
+			}
+
+			.job-item .title-wrapper {
+				height: 66px;
+			}
+
+			.job-item .title-wrapper .job-name {
+				line-height: 66px;
+				font-size: 18px;
+			}
+
+			.job-item .title-wrapper .job-name::after {
+				top: 25px;
+			}
+
+			.job-item .content-wrapper article {
+				padding: 20px 0;
+			}
+
+			.more-wrapper {
+				padding: 20px;
+				text-align: center;
+			}
+
+			/* 联系我们 */
+			.company-info {
+				padding-top: 20px;
+				border-top: 1px solid #bfbfbf;
+				border-bottom: 1px solid #bfbfbf;
+				margin-bottom: 50px;
+				margin-top: 0;
+			}
+
+			.map-wrapper {
+				width: 100%;
+				height: 400px;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+
+			.base-list li {
+				display: flex;
+				align-items: center;
+				font-size: 14px;
+				color: #666;
+				margin-top: 20px;
+			}
+
+			.base-list li::before {
+				content: "";
+				display: block;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				border: 1px solid #3262ac;
+				margin-right: 10px;
+			}
+
+			.base-list li::before {
+				background-size: 12px;
+			}
 		}
 	</style>
 
@@ -192,7 +270,7 @@
 						顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
 						</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
 					</article>
-					<div class="more">投递简历</div>
+					<div class="more publish-resume">投递简历</div>
 				</section>
 			</section>
 		</div>
@@ -208,7 +286,7 @@
 						顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
 						</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
 					</article>
-					<div class="more">投递简历</div>
+					<div class="more publish-resume">投递简历</div>
 				</section>
 			</section>
 		</div>
@@ -224,7 +302,7 @@
 						顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
 						</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
 					</article>
-					<div class="more">投递简历</div>
+					<div class="more publish-resume">投递简历</div>
 				</section>
 			</section>
 		</div>
@@ -240,7 +318,7 @@
 						顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
 						</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
 					</article>
-					<div class="more">投递简历</div>
+					<div class="more publish-resume">投递简历</div>
 				</section>
 			</section>
 		</div>
@@ -251,7 +329,7 @@
 
 	<!-- 公司信息 -->
 	<section class="section company-info">
-		<section class="section-content flex-column">
+		<section class="section-content flex-column flex-md">
 			<div class="flex-item-12 flex-column flex-middle">
 				<div>
 					<div class="inner-page-title">
@@ -364,12 +442,19 @@
 		$(function () {
 
 			$("#jobsList").find(".job-item").each(function () {
-				$(this).click(function () {
+				$(this).click(function (event) {
+					event.stopPropagation();
 					if ($(this).hasClass("active")) {
 						$(this).removeClass("active");
 					} else {
 						$(this).addClass("active");
 					}
+				})
+			})
+
+			$(".publish-resume").each(function() {
+				$(this).click(function(event) {
+					event.stopPropagation();
 				})
 			})
 
