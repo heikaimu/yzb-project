@@ -87,10 +87,40 @@
 
 		.product-card {
 			margin: 10px;
+			position: relative;
 		}
 
 		.product-card .cover {
 			height: 240px;
+			overflow: hidden;
+		}
+
+		.product-card .info {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 3;
+			background-color: rgba(0, 0, 0, 0.3);
+			display: flex;
+			flex-direction: column-reverse;
+			transition: .5s;
+			opacity: 0;
+		}
+
+		.product-card .info p {
+			padding: 20px;
+			color: #fff;
+			font-size: 16px;
+		}
+
+		.product-card:hover .cover .img {
+			transform: scale(1.1);
+		}
+		
+		.product-card:hover .info{
+			opacity: 1;
 		}
 
 		@media screen and (max-width: 734px) {
@@ -211,7 +241,10 @@
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									<div class="img bg-cover animation" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
+									<div class="info">
+										<p>产品名字</p>
 									</div>
 								</div>
 							</div>
@@ -219,7 +252,10 @@
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									<div class="img bg-cover animation" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
+									<div class="info">
+										<p>产品名字</p>
 									</div>
 								</div>
 							</div>
@@ -227,7 +263,10 @@
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									<div class="img bg-cover animation" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
+									<div class="info">
+										<p>产品名字</p>
 									</div>
 								</div>
 							</div>
@@ -235,7 +274,10 @@
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									<div class="img bg-cover animation" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
+									<div class="info">
+										<p>产品名字</p>
 									</div>
 								</div>
 							</div>
@@ -243,7 +285,10 @@
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									<div class="img bg-cover animation" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
+									<div class="info">
+										<p>产品名字</p>
 									</div>
 								</div>
 							</div>
@@ -251,7 +296,10 @@
 						<li class="flex-item-8">
 							<div class="product-card">
 								<div class="cover">
-									<div class="img bg-cover" style="background-image: url(./images/test/banner1.jpg)">
+									<div class="img bg-cover animation" style="background-image: url(./images/test/banner1.jpg)">
+									</div>
+									<div class="info">
+										<p>产品名字</p>
 									</div>
 								</div>
 							</div>

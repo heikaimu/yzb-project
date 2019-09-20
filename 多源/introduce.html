@@ -152,7 +152,7 @@
 			width: 10px;
 			height: 10px;
 			border-radius: 50%;
-			background-color: #034593;
+			background-color: #0073e0;
 			position: absolute;
 			left: 50%;
 			margin-left: -5px;
@@ -165,7 +165,7 @@
 			display: block;
 			width: 0;
 			height: 0;
-			border-left: 10px solid #034593;
+			border-left: 10px solid #0073e0;
 			border-top: 6px solid transparent;
 			border-bottom: 6px solid transparent;
 			position: absolute;
@@ -212,7 +212,13 @@
 			align-items: center;
 			justify-content: center;
 			height: 100px;
-			background-color: #b6bcde;
+			background-color: #fff;
+			transition: .5s;
+		}
+
+		.expert-card:hover .info {
+			background-color: #0073e0;
+			color: #fff;
 		}
 
 		/* 荣誉 */
@@ -236,12 +242,22 @@
 		.honour-card .info {
 			padding: 20px 0 10px 0;
 			border-bottom: 2px solid #cdcdcd;
+			transition: .5s;
 		}
 
 		.honour-card .info p {
 			line-height: 1.8;
 			font-size: 14px;
 			color: #666;
+		}
+
+		.honour-card:hover .info {
+			padding: 20px 20px 10px 20px;
+			background-color: #0073e0;
+		}
+
+		.honour-card:hover .info p {
+			color: #fff;
 		}
 
 		@media screen and (max-width: 734px) {
@@ -412,7 +428,7 @@
 					</article>
 				</div>
 				<div class="flex-item-24 flex-column flex-center flex-middle">
-					<span class="down-arrow"></span>
+					<span class="down-arrow scroll-animation" mode="bounceIn"></span>
 				</div>
 			</div>
 		</section>
@@ -496,8 +512,8 @@
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<div class="expert-card">
-							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+							<div class="cover">
+								<div class="img bg-cover animation" style="background-image:url(./images/test/banner1.jpg)">
 								</div>
 							</div>
 							<div class="info">
@@ -507,8 +523,8 @@
 					</div>
 					<div class="swiper-slide">
 						<div class="expert-card">
-							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+							<div class="cover">
+								<div class="img bg-cover animation" style="background-image:url(./images/test/banner1.jpg)">
 								</div>
 							</div>
 							<div class="info">
@@ -518,8 +534,8 @@
 					</div>
 					<div class="swiper-slide">
 						<div class="expert-card">
-							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+							<div class="cover">
+								<div class="img bg-cover animation" style="background-image:url(./images/test/banner1.jpg)">
 								</div>
 							</div>
 							<div class="info">
@@ -529,8 +545,8 @@
 					</div>
 					<div class="swiper-slide">
 						<div class="expert-card">
-							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+							<div class="cover">
+								<div class="img bg-cover animation" style="background-image:url(./images/test/banner1.jpg)">
 								</div>
 							</div>
 							<div class="info">
@@ -559,8 +575,8 @@
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<div class="honour-card">
-							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+							<div class="cover">
+								<div class="img bg-cover animation" style="background-image:url(./images/test/banner1.jpg)">
 								</div>
 							</div>
 							<div class="info">
@@ -571,8 +587,8 @@
 					</div>
 					<div class="swiper-slide">
 						<div class="honour-card">
-							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+							<div class="cover">
+								<div class="img bg-cover animation" style="background-image:url(./images/test/banner1.jpg)">
 								</div>
 							</div>
 							<div class="info">
@@ -583,8 +599,8 @@
 					</div>
 					<div class="swiper-slide">
 						<div class="honour-card">
-							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+							<div class="cover">
+								<div class="img bg-cover animation" style="background-image:url(./images/test/banner1.jpg)">
 								</div>
 							</div>
 							<div class="info">
@@ -595,8 +611,8 @@
 					</div>
 					<div class="swiper-slide">
 						<div class="honour-card">
-							<div class="cover hover-line">
-								<div class="img bg-cover scale" style="background-image:url(./images/test/banner1.jpg)">
+							<div class="cover">
+								<div class="img bg-cover animation" style="background-image:url(./images/test/banner1.jpg)">
 								</div>
 							</div>
 							<div class="info">

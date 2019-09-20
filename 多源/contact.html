@@ -23,57 +23,47 @@
 		}
 
 		.job-item {
-			margin-bottom: 10px;
-			background-color: #f3f3f3;
+			border-radius: 8px;
+			border: 1px solid #e5e5e5;
+			margin-top: 20px;
+			transition: .3s;
 		}
-
-		.job-item .title-wrapper {
-			height: 116px;
+		.job-item:hover {
+			border: 1px solid #0373df;
 		}
-
-		.job-item .title-wrapper .job-name {
-			line-height: 116px;
-			position: relative;
+		.job-item .job-name {
+			border-radius: 8px;
+			padding: 30px;
 			font-size: 20px;
-			color: #111;
+			color: #333;
 		}
-
-		.job-item .title-wrapper .job-name::after {
+		.job-item .job-name::after {
 			content: "";
 			display: block;
 			width: 20px;
 			height: 20px;
 			background: url(./images/add_icon.png) no-repeat center center / cover;
 			position: absolute;
-			right: 0;
-			top: 45px;
+			right: 20px;
+			top: 31px;
 		}
-
-		.job-item .content-wrapper {
-			padding: 20px 0;
+		.job-item .job-content {
+			padding: 30px;
 			display: none;
-			color: #fff;
-			line-height: 1.8;
+			transition: .3s;
 		}
-
-		.job-item .content-wrapper article {
-			padding: 30px 0;
+		.job-item.active .job-name {
+			background-color: #f9f9f9;
 		}
-
-		.job-item.active .title-wrapper {
-			background-color: #35a0d3;
-		}
-
-		.job-item.active .title-wrapper .job-name {
-			color: #fff;
-		}
-
-		.job-item.active .content-wrapper {
+		.job-item.active .job-content{
 			display: block;
 		}
 
-		.job-item.active .title-wrapper .job-name::after {
-			background: url(./images/cut_icon.png) no-repeat center center / cover;
+		.job-item.active .job-content article{
+			font-size: 16px;
+			line-height: 1.8;
+			color: #666;
+			margin-bottom: 30px;
 		}
 
 		.more-wrapper {
@@ -143,27 +133,6 @@
 		@media screen and (max-width: 734px) {
 			.job {
 				padding: 10px 0;
-			}
-
-			.job-item {
-				margin-bottom: 10px;
-			}
-
-			.job-item .title-wrapper {
-				height: 66px;
-			}
-
-			.job-item .title-wrapper .job-name {
-				line-height: 66px;
-				font-size: 18px;
-			}
-
-			.job-item .title-wrapper .job-name::after {
-				top: 25px;
-			}
-
-			.job-item .content-wrapper article {
-				padding: 20px 0;
 			}
 
 			.more-wrapper {
@@ -254,73 +223,49 @@
 				<span class="line scroll-animation" mode="fadeInUp"></span>
 			</div>
 		</section>
+		<section class="section-content" id="jobsList">
+				<div class="job-item">
+						<p class="job-name">一：web 前端</p>
+						<div class="job-content">
+							<article>
+								顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
+								</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
+							</article>
+							<div class="more publish-resume">投递简历</div>
+						</div>
+					</div>
+					<div class="job-item">
+							<p class="job-name">一：web 前端</p>
+							<div class="job-content">
+								<article>
+									顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
+									</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
+								</article>
+								<div class="more publish-resume">投递简历</div>
+							</div>
+						</div>
+						<div class="job-item">
+								<p class="job-name">一：web 前端</p>
+								<div class="job-content">
+									<article>
+										顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
+										</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
+									</article>
+									<div class="more publish-resume">投递简历</div>
+								</div>
+							</div>
+							<div class="job-item">
+									<p class="job-name">一：web 前端</p>
+									<div class="job-content">
+										<article>
+											顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
+											</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
+										</article>
+										<div class="more publish-resume">投递简历</div>
+									</div>
+								</div>
+		</section>
 	</section>
-	<div class="jobs-wrapper" id="jobsList">
-		<div class="job-item active">
-			<section class="section title-wrapper">
-				<section class="section-content">
-					<p class="job-name">一：web 前端</p>
-				</section>
-			</section>
-			<section class="section content-wrapper bg-cover" style="background-image: url(./images/test/banner1.jpg)">
-				<section class="section-content">
-					<article>
-						顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
-						</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
-					</article>
-					<div class="more publish-resume">投递简历</div>
-				</section>
-			</section>
-		</div>
-		<div class="job-item">
-			<section class="section title-wrapper">
-				<section class="section-content">
-					<p class="job-name">一：web 前端</p>
-				</section>
-			</section>
-			<section class="section content-wrapper bg-cover" style="background-image: url(./images/test/banner1.jpg)">
-				<section class="section-content">
-					<article>
-						顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
-						</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
-					</article>
-					<div class="more publish-resume">投递简历</div>
-				</section>
-			</section>
-		</div>
-		<div class="job-item">
-			<section class="section title-wrapper">
-				<section class="section-content">
-					<p class="job-name">一：web 前端</p>
-				</section>
-			</section>
-			<section class="section content-wrapper bg-cover" style="background-image: url(./images/test/banner1.jpg)">
-				<section class="section-content">
-					<article>
-						顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
-						</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
-					</article>
-					<div class="more publish-resume">投递简历</div>
-				</section>
-			</section>
-		</div>
-		<div class="job-item">
-			<section class="section title-wrapper">
-				<section class="section-content">
-					<p class="job-name">一：web 前端</p>
-				</section>
-			</section>
-			<section class="section content-wrapper bg-cover" style="background-image: url(./images/test/banner1.jpg)">
-				<section class="section-content">
-					<article>
-						顺势撇了一眼，一个小伙子，眉开眼笑的靠近盒饭铺，今天是1号
-						</br>，看样子是发工资了。就当他走近时，看到了我，刚才的欢愉的表情瞬时黯淡下去，</br>他知道我认出了他，靠，满头白里带一点黑的头发，永远没睡醒的眼神，</br>以及那凌乱的胡渣子，都出卖了他的身份。我继续狠狠的盯着他，他越发的羞愧了，</br>我犀利的眼神正在和他做着底层通信，我默默的向他传达一个信息，
-					</article>
-					<div class="more publish-resume">投递简历</div>
-				</section>
-			</section>
-		</div>
-	</div>
 	<div class="more-wrapper">
 		<a href="" class="more big">查看更多</a>
 	</div>
@@ -450,8 +395,8 @@
 				})
 			})
 
-			$(".publish-resume").each(function() {
-				$(this).click(function(event) {
+			$(".publish-resume").each(function () {
+				$(this).click(function (event) {
 					event.stopPropagation();
 				})
 			})
