@@ -1,6 +1,17 @@
 body {
   padding-top: 20px;
 }
+
+.stick-footer-wrapper {
+  box-sizing: border-box;
+  padding-bottom: 323px;
+  min-height: calc(100vh - 20px);
+}
+
+.stick-footer {
+  margin-top: -323px;
+}
+
 .web-top {
   height: 20px;
   position: fixed;
@@ -314,6 +325,14 @@ body {
 @media screen and (max-width: 734px) {
   body {
     /* padding-top: 70px; */
+  }
+  .stick-footer-wrapper {
+    padding-bottom: 274px;
+    min-height: calc(100vh - 21px);
+  }
+  
+  .stick-footer {
+    margin-top: -274px;
   }
   .web-header {
     height: 50px;

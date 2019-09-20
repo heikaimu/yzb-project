@@ -54,6 +54,10 @@
   background-color: #0073e0;
 }
 
+.text-right {
+  text-align: right;
+}
+
 /* more */
 
 .more {
