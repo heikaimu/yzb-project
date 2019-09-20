@@ -88,6 +88,7 @@
 		.product-card {
 			margin: 10px;
 			position: relative;
+			transition: .3s;
 		}
 
 		.product-card .cover {
@@ -114,7 +115,10 @@
 			color: #fff;
 			font-size: 16px;
 		}
-
+		.product-card:hover {
+			transform: translate3d(0,-5px,0);
+			box-shadow: 0 0 5px #666;
+		}
 		.product-card:hover .cover .img {
 			transform: scale(1.1);
 		}

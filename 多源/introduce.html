@@ -199,6 +199,7 @@
 
 		.expert-card {
 			overflow: hidden;
+			transition: .3s;
 		}
 
 		.expert-card .cover {
@@ -214,6 +215,11 @@
 			height: 100px;
 			background-color: #fff;
 			transition: .5s;
+		}
+
+		.expert-card:hover {
+			transform: translate3d(0,-5px,0);
+			box-shadow: 0 0 5px #666;
 		}
 
 		.expert-card:hover .info {
@@ -233,7 +239,9 @@
 		.honour-wrapper .honour-button-prev {
 			margin-left: -100px;
 		}
-
+		.honour-card{
+			transition: .3s;
+		}
 		.honour-card .cover {
 			height: 390px;
 			overflow: hidden;
@@ -250,7 +258,10 @@
 			font-size: 14px;
 			color: #666;
 		}
-
+		.honour-card:hover {
+			transform: translate3d(0,-5px,0);
+			box-shadow: 0 0 5px #666;
+		}
 		.honour-card:hover .info {
 			padding: 20px 20px 10px 20px;
 			background-color: #0073e0;
