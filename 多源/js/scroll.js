@@ -24,7 +24,7 @@ function scrollEvents() {
 	// fixedProductNav();
 
 	$(".scroll-animation").each(function () {
-		console.log(1)
+		alert(1)
 		var offsetTop = $(this).offset().top;
 		if (scrollHeight > offsetTop - winHeight / 1.3) {
 			const mode = $(this).attr("mode");
