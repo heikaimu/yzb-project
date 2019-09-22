@@ -18,12 +18,13 @@ $(function() {
 function scrollEvents() {
 	scrollHeight = $('body,html').scrollTop();
 	winHeight = $(window).height();
-	// headerBgChange();
+	headerBgChange();
 	// indexProductTitle();
 	// fixedProductNav();
 
 	$(".scroll-animation").each(function () {
 		var offsetTop = $(this).offset().top;
+		$(this).text(Math.floor(offsetTop) + "----" + Math.floor(scrollHeight))
 		if (scrollHeight > offsetTop - winHeight / 1.3) {
 			const mode = $(this).attr("mode");
 			$(this).addClass(mode + " animated");
