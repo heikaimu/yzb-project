@@ -16,7 +16,7 @@ $(function() {
 
 // 滚动的所以事件
 function scrollEvents() {
-	scrollHeight = $('body,html').scrollTop();
+	scrollHeight = $('body').scrollTop();
 	winHeight = $(window).height();
 	headerBgChange();
 	// indexProductTitle();
