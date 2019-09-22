@@ -18,7 +18,7 @@ $(function() {
 function scrollEvents() {
 	scrollHeight = $('body,html').scrollTop();
 	winHeight = $(window).height();
-	
+	alert(winHeight)
 	headerBgChange();
 	indexProductTitle();
 	// fixedProductNav();
