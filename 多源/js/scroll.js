@@ -16,7 +16,7 @@ $(function() {
 
 // 滚动的所以事件
 function scrollEvents() {
-	scrollHeight = $('body').scrollTop();
+	scrollHeight = $('html').scrollTop();
 	winHeight = $(window).height();
 	headerBgChange();
 	// indexProductTitle();
@@ -24,7 +24,6 @@ function scrollEvents() {
 
 	$(".scroll-animation").each(function () {
 		var offsetTop = $(this).offset().top;
-		$(this).text(Math.floor(offsetTop) + "----" + Math.floor(scrollHeight))
 		if (scrollHeight > offsetTop - winHeight / 1.3) {
 			const mode = $(this).attr("mode");
 			$(this).addClass(mode + " animated");
