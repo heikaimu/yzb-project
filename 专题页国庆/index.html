@@ -13,16 +13,19 @@
   <link rel="stylesheet" href="./css/swiper.min.css">
   <style>
     .web-container {
-      background: url(./images/web_bg.png) no-repeat center top / 100% auto;
+      background: url(./images/web_bg.png) no-repeat center top / 100%;
     }
+
     .banner-blank {
-      height: 44vw;
-    }
-    /* swiper */
-    .swiper-container {
       width: 100%;
-      height: 300px;
-      margin-bottom: 100px;
+      height: 0;
+      padding-bottom: 44%;
+    }
+
+    /* swiper */
+    .swiper-banner {
+      width: 100%;
+      height: 430px;
     }
 
     .slide-img {
@@ -34,6 +37,19 @@
 
     .slide-img.shadow {
       position: relative;
+    }
+
+    .slide-info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 60px;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.54);
+      line-height: 60px;
+      text-align: center;
+      color: #fff;
+      font-size: 22px;
     }
 
     .slide-img.shadow:after {
@@ -48,54 +64,207 @@
       opacity: 0.4;
       z-index: 9;
     }
+
+    .pagination-wrapper {
+      padding-top: 20px;
+      position: relative;
+    }
+
+    .swiper-pagination {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .my-bullet {
+      display: inline-block;
+      width: 60px;
+      height: 4px;
+      margin: 0 4px;
+      background-color: #EBABAA;
+    }
+
+    .my-bullet-active {
+      display: inline-block;
+      width: 60px;
+      height: 4px;
+      margin: 0 4px;
+      background-color: #FF0401;
+    }
+
     /* message */
     .message-box {
       display: flex;
       margin-bottom: 100px;
     }
+
+    .message-box.full-width {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+
     .message-box .col {
       flex: 1;
     }
+
     .message-card-one {
-      height: 400px;
-      background-color: #333;
-    }
-    .message-card-one.half {
-      height: 200px;
+      height: 480px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .message-card-two {
-      height: 400px;
-      background-color: #333;
+    .message-card-one.half {
+      height: 240px;
+    }
+
+    .message-card-one .cover {
+      height: 100%;
+    }
+
+    .message-card-one .info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 9;
+      background: linear-gradient(0deg, rgba(196, 0, 0, 0.6), rgba(196, 0, 0, 0));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: .3s;
+      transform: translate3d(0, 50%, 0);
+      opacity: 0;
+    }
+
+    .message-card-one.active .info {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+
+    .message-card-one .info p {
+      font-size: 24px;
+      color: #fff;
     }
 
     .message-card-three {
-      height: 200px;
-      background-color: #333;
+      background-color: #444;
+      margin: 0 10px;
+    }
+
+    .message-card-three .cover {
+      height: 173px;
+    }
+
+    .message-card-three .info {
+      height: 70px;
+      background-color: #fff;
+      border: 1px solid #FDDBDA;
+      transition: .3s;
+      box-sizing: border-box;
+    }
+
+    .message-card-three.active .info {
+      border-bottom: 4px solid #FF0401;
+    }
+
+    .message-card-three .info p {
+      font-size: 20px;
+      color: #444;
+      line-height: 70px;
+      text-indent: 20px;
+    }
+
+    .swiper-message {
+      margin-bottom: 100px;
+    }
+
+    .message-button {
+      width: 40px;
+      height: 74px;
+      position: absolute;
+      top: 50%;
+      z-index: 999999;
+      margin-top: -37px;
+      background-color: rgba(255, 255, 255, 0.3);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url(./images/arrow.png);
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .message-button:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .message-button.prev {
+      left: 20px;
+      transform: rotate(180deg);
+    }
+
+    .message-button.next {
+      right: 20px;
     }
 
     .news-box {
       display: flex;
-      margin-bottom: 100px;
     }
+
     .news-box .left-box {
       width: 800px;
       flex: 0 0 800px;
-      height: 400px;
-      background-color: red;
+      height: 450px;
+      background-color: #fff;
     }
+
+    .news-box .left-box .cover {
+      height: 100%;
+    }
+
     .news-box .right-box {
       flex: 1;
       display: flex;
       flex-direction: column;
+      background-color: #fff;
     }
+
     .news-box .right-box a {
+      box-sizing: border-box;
       width: 100%;
       flex: 1;
       display: flex;
       align-items: center;
-      text-indent: 20px;
-      background-color: #333;
+      padding-left: 70px;
+      font-size: 24px;
+      color: #444;
+      position: relative;
+    }
+
+    .news-box .right-box a::before {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: #FF0000;
+      position: absolute;
+      left: 46px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .news-box .right-box a.active {
+      background-color: rgba(255, 0, 0, 0.9);
+      color: #fff;
+    }
+
+    .news-box .right-box a.active::before {
+      background-color: #ff8181;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 100%;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -107,60 +276,75 @@
 
     <!-- Swiper -->
     <div class="container">
-      <div class="swiper-container">
+      <div class="swiper-container swiper-banner">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="slide-img" style="background-image: url(./images/banner.png)"></div>
+            <p class="slide-info">我和祖国一起成长</p>
           </div>
           <div class="swiper-slide">
             <div class="slide-img" style="background-image: url(./images/banner.png)"></div>
+            <p class="slide-info">我和祖国一起成长</p>
           </div>
           <div class="swiper-slide">
             <div class="slide-img" style="background-image: url(./images/banner.png)"></div>
+            <p class="slide-info">我和祖国一起成长</p>
           </div>
           <div class="swiper-slide">
             <div class="slide-img" style="background-image: url(./images/banner.png)"></div>
+            <p class="slide-info">我和祖国一起成长</p>
           </div>
           <div class="swiper-slide">
             <div class="slide-img" style="background-image: url(./images/banner.png)"></div>
+            <p class="slide-info">我和祖国一起成长</p>
           </div>
         </div>
       </div>
       <!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
+      <div class="pagination-wrapper">
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
 
     <!-- message-one -->
-    <div class="container">
+    <div class="container" style="margin-top: 100px;">
       <div class="message-box">
         <div class="col">
-          <div class="message-card-one">
-            <div class="cover" style="background-image: url(./images/banner.png)"></div>
-            <div class="info">
-              <p>标题啊</p>
-            </div>
+          <div class="message-card-one hover-card">
+            <a href="">
+              <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
+              <div class="info">
+                <p>标题啊</p>
+              </div>
+            </a>
           </div>
         </div>
         <div class="col">
-          <div class="message-card-one half">
-              <div class="cover" style="background-image: url(./images/banner.png)"></div>
+          <div class="message-card-one hover-card half">
+            <a href="">
+              <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
               <div class="info">
                 <p>标题啊</p>
               </div>
+            </a>
           </div>
-          <div class="message-card-one half">
-              <div class="cover" style="background-image: url(./images/banner.png)"></div>
+          <div class="message-card-one hover-card half">
+            <a href="">
+              <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
               <div class="info">
                 <p>标题啊</p>
               </div>
+            </a>
           </div>
         </div>
         <div class="col">
-          <div class="message-card-one">
-              <div class="cover" style="background-image: url(./images/banner.png)"></div>
+          <div class="message-card-one hover-card">
+            <a href="">
+              <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
               <div class="info">
                 <p>标题啊</p>
               </div>
+            </a>
           </div>
         </div>
       </div>
@@ -168,107 +352,181 @@
 
     <!-- message-two -->
     <div class="container">
-        <div class="message-box">
-          <div class="col">
-            <div class="message-card-two">
-              <div class="cover" style="background-image: url(./images/banner.png)"></div>
-              <div class="info">
+      <div class="swiper-container swiper-message">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="message-card-one hover-card half">
+              <a href="">
+              <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
+              <div class="info bottom">
                 <p>标题啊</p>
               </div>
+            </a>
             </div>
           </div>
-          <div class="col">
-            <div class="message-card-two half">
-                <div class="cover" style="background-image: url(./images/banner.png)"></div>
-                <div class="info">
-                  <p>标题啊</p>
-                </div>
+          <div class="swiper-slide">
+            <div class="message-card-one hover-card half">
+              <a href="">
+              <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
+              <div class="info bottom">
+                <p>标题啊</p>
+              </div>
+            </a>
             </div>
           </div>
-          <div class="col">
-            <div class="message-card-two">
-                <div class="cover" style="background-image: url(./images/banner.png)"></div>
-                <div class="info">
-                  <p>标题啊</p>
-                </div>
+          <div class="swiper-slide">
+            <div class="message-card-one hover-card half">
+              <a href="">
+              <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
+              <div class="info bottom">
+                <p>标题啊</p>
+              </div>
+            </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="message-card-one hover-card half">
+              <a href="">
+              <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
+              <div class="info bottom">
+                <p>标题啊</p>
+              </div>
+            </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="message-card-one hover-card half">
+              <a href="">
+              <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
+              <div class="info bottom">
+                <p>标题啊</p>
+              </div>
+            </a>
             </div>
           </div>
         </div>
       </div>
+      <!-- Add Arrows -->
+      <div class="message-button prev" id="message_prev"></div>
+      <div class="message-button next" id="message_next"></div>
+    </div>
 
-      <!-- message-three -->
+    <!-- message-three -->
     <div class="container">
-        <div class="message-box">
-          <div class="col">
-            <div class="message-card-three">
-              <div class="cover" style="background-image: url(./images/banner.png)"></div>
-              <div class="info">
-                <p>标题啊</p>
-              </div>
+      <div class="message-box full-width">
+        <div class="col">
+          <div class="message-card-three hover-card">
+            <a href="">
+            <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
+            <div class="info">
+              <p>标题啊</p>
             </div>
+          </a>
           </div>
-          <div class="col">
-            <div class="message-card-three half">
-                <div class="cover" style="background-image: url(./images/banner.png)"></div>
-                <div class="info">
-                  <p>标题啊</p>
-                </div>
+        </div>
+        <div class="col">
+          <div class="message-card-three hover-card">
+            <a href="">
+            <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
+            <div class="info">
+              <p>标题啊</p>
             </div>
+          </a>
           </div>
-          <div class="col">
-              <div class="message-card-three">
-                  <div class="cover" style="background-image: url(./images/banner.png)"></div>
-                  <div class="info">
-                    <p>标题啊</p>
-                  </div>
-              </div>
+        </div>
+        <div class="col">
+          <div class="message-card-three hover-card">
+            <a href="">
+            <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
+            <div class="info">
+              <p>标题啊</p>
             </div>
-            <div class="col">
-                <div class="message-card-three">
-                    <div class="cover" style="background-image: url(./images/banner.png)"></div>
-                    <div class="info">
-                      <p>标题啊</p>
-                    </div>
-                </div>
-              </div>
+          </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="message-card-three hover-card">
+            <a href="">
+            <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
+            <div class="info">
+              <p>标题啊</p>
+            </div>
+          </a>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- news -->
-      <div class="container">
-        <div class="news-box">
-          <div class="left-box">
-            <div class="cover" style="background-image: url(./images/banner.png)"></div>
-          </div>
-          <div class="right-box">
-              <a>标题1</a>
-              <a>标题2</a>
-              <a>标题3</a>
-              <a>标题4</a>
-          </div>
+    <!-- news -->
+    <div class="container">
+      <div class="news-box">
+        <div class="left-box">
+          <div class="cover bg-cover" id="news_image"></div>
+        </div>
+        <div class="right-box" id="news_list">
+          <a href="" _src="./images/banner.png">标题1</a>
+          <a href="" _src="./images/web_bg.png">标题2</a>
+          <a href="" _src="./images/banner.png">标题3</a>
+          <a href="" _src="./images/banner.png">标题4</a>
         </div>
       </div>
+    </div>
 
   </div>
 
+  <script src="./js/jquery.js"></script>
   <script src="./js/swiper.min.js"></script>
   <script>
-    var swiper = new Swiper('.swiper-container', {
+    new Swiper('.swiper-banner', {
       effect: 'coverflow',
       loop: true,
-      slidesPerView: 2,
+      slidesPerView: 1.6,
       centeredSlides: true,
       coverflowEffect: {
         rotate: 0, //slide做3d旋转时Y轴的旋转角度。默认50
-        stretch: 100, //每个slide之间的拉伸值，越大slide靠得越紧。 默认0
-        depth: 300, //每个slide之间的拉伸值，越大slide靠得越紧。 默认0
-        modifier: 1.2, //depth和rotate和stretch的倍率，相当于depth*modifier、rotate*modifier、stretch*modifier，值越大这三个参数的效果越明显。默认1。
+        stretch: 200, //每个slide之间的拉伸值，越大slide靠得越紧。 默认0
+        depth: 400, //每个slide之间的拉伸值，越大slide靠得越紧。 默认0
+        modifier: 1, //depth和rotate和stretch的倍率，相当于depth*modifier、rotate*modifier、stretch*modifier，值越大这三个参数的效果越明显。默认1。
         slideShadows: true //开启slide阴影。默认 true。
       },
       pagination: {
         el: '.swiper-pagination',
+        bulletClass: 'my-bullet',//需设置.my-bullet样式
+        bulletActiveClass: 'my-bullet-active',
       },
     });
+
+    new Swiper('.swiper-message', {
+      slidesPerView: 3,
+      navigation: {
+        nextEl: '#message_next',
+        prevEl: '#message_prev',
+      },
+    });
+
+    $(function () {
+      $(".hover-card").each(function () {
+        $(this).hover(function () {
+          $(this).addClass("active");
+        }, function (params) {
+          $(this).removeClass("active");
+        })
+      })
+
+      lightNews(0);
+      $("#news_list").find("a").each(function() {
+        $(this).hover(function() {
+          lightNews($(this).index());
+        })
+      })
+    })
+
+    function lightNews(index) {
+      $("#news_list").find("a").removeClass("active");
+      $("#news_list").find("a").eq(index).addClass("active");
+      var currentSrc = $("#news_list").find("a").eq(index).attr("_src");
+      $("#news_image").css({'background-image': 'url('+currentSrc+')'});
+    }
   </script>
 </body>
 
