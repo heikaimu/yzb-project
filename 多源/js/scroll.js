@@ -16,11 +16,10 @@ $(function() {
 
 // 滚动的所以事件
 function scrollEvents() {
-	scrollHeight = $('body,html').scrollTop();
+	scrollHeight = $(document).scrollTop();
 	winHeight = $(window).height();
-	
 	headerBgChange();
-	indexProductTitle();
+	// indexProductTitle();
 	// fixedProductNav();
 
 	$(".scroll-animation").each(function () {
