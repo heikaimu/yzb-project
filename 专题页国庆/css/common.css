@@ -1,0 +1,111 @@
+.flex {
+  display: flex;
+}
+
+.x-center {
+  justify-content: center;
+}
+
+.x-left {
+  justify-content: flex-start;
+}
+
+.x-right {
+  justify-content: flex-end;
+}
+
+.x-space-around {
+  justify-content: space-around;
+}
+
+.x-space-between {
+  justify-content: space-between;
+}
+
+.bg-cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.bg-cover.animation {
+  transition: 0.3s;
+}
+.bg-cover.animation:hover {
+  transform: scale(1.1);
+}
+
+.pt-xs {
+  padding-top: 10px;
+}
+
+.pt-sm {
+  padding-top: 30px;
+}
+
+.pt-md {
+  padding-top: 50px;
+}
+
+.pt-lg {
+  padding-top: 70px;
+}
+
+.pb-xs {
+  padding-bottom: 10px;
+}
+
+.pb-sm {
+  padding-bottom: 30px;
+}
+
+.pb-md {
+  padding-bottom: 50px;
+}
+
+.pb-lg {
+  padding-bottom: 70px;
+}
+
+.omit {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.omit2 {
+}
+
+/* 手机样式 */
+@media screen and (max-width: 900px) {
+  .pt-xs {
+    padding-top: 5px;
+  }
+
+  .pt-sm {
+    padding-top: 15px;
+  }
+
+  .pt-md {
+    padding-top: 25px;
+  }
+
+  .pt-lg {
+    padding-top: 35px;
+  }
+
+  .pb-xs {
+    padding-bottom: 5px;
+  }
+
+  .pb-sm {
+    padding-bottom: 15px;
+  }
+
+  .pb-md {
+    padding-bottom: 25px;
+  }
+
+  .pb-lg {
+    padding-bottom: 35px;
+  }
+}
