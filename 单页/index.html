@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- css -->
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/layout.css">
+	<link rel="stylesheet" href="./css/jquery.fullPage.css">
+	<!-- swiper -->
+	<link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
+	<style>
+		.banner-swiper .swiper-slide{
+			height: 100vh;
+		}
+
+		.company-intro {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+
+		.company-intro p {
+			padding-bottom: 20px;
+			font-size: 18px;
+			color: #222;
+			line-height: 1.8;
+			text-indent: 2;
+		}
+
+		.culture-wrapper {
+			padding: 70px 0;
+			background: rgba(255, 255, 255, 0.6);
+		}
+
+		.culture-list {
+			display: flex;
+		}
+
+		.culture-list li {
+			flex: 1;
+			position: relative;
+		}
+
+		.culture-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.culture-item .icon {
+			display: block;
+			width: 40px;
+			height: 40px;
+			background-color: red;
+			border-radius: 50%;
+		}
+
+		.culture-item .icon img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.culture-item .title {
+			padding-top: 17px;
+			padding-bottom: 17px;
+			font-size: 18px;
+			color: #222;
+			font-weight: 600;
+		}
+
+		.culture-item .desc {
+			font-size: 18px;
+			color: #222;
+		}
+
+		.business-list {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.business-list li {
+			width: 20%;
+		}
+
+		.business-item {
+			width: 100%;
+			height: 0;
+			padding-bottom: 100%;
+			position: relative;
+		}
+
+		.business-item .cover {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background-color: red;
+		}
+
+		.business-item .cover.arrow-right::after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			border-top: 12px solid transparent;
+			border-bottom: 12px solid transparent;
+			border-right: 20px solid #fff;
+			position: absolute;
+			z-index: 99;
+			right: 0;
+			top: 30px;
+		}
+
+		.business-item .cover.arrow-left::after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			border-top: 12px solid transparent;
+			border-bottom: 12px solid transparent;
+			border-left: 20px solid #fff;
+			position: absolute;
+			z-index: 99;
+			left: 0;
+			top: 30px;
+		}
+
+		.business-item .cover.arrow-bottom::after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			border-bottom: 20px solid #fff;
+			border-right: 12px solid transparent;
+			border-left: 12px solid transparent;
+			position: absolute;
+			z-index: 99;
+			left: 30px;
+			bottom: 0;
+		}
+
+		.business-item .info {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			box-sizing: border-box;
+			padding: 24px;
+			background-color: #fff;
+		}
+
+		.business-item .info .title {
+			font-size: 18px;
+			color: #222;
+			font-weight: 600;
+			position: relative;
+		}
+
+		.business-item .info .title::after {
+			content: "";
+			display: block;
+			box-sizing: border-box;
+			height: 1px;
+			width: 100%;
+			background-color: #efefef;
+			margin-top: 10px;
+		}
+
+		.business-item .info .title::before {
+			content: "";
+			display: block;
+			box-sizing: border-box;
+			height: 3px;
+			width: 40px;
+			background-color: #9d070d;
+			position: absolute;
+			left: 0;
+			bottom: -1px;
+		}
+
+		.business-item .info .desc {
+			padding-top: 20px;
+			font-size: 14px;
+			line-height: 1.6;
+			color: #666;
+		}
+
+		.honor-list {
+			display: flex;
+		}
+
+		.honor-list li {
+			flex: 1;
+			padding: 0 40px;
+		}
+
+		.honor-item .cover {
+			height: 290px;
+		}
+
+		.honor-item .info {
+			height: 130px;
+			background-color: #000;
+			text-align: center;
+		}
+
+		.honor-item .info .title {
+			padding-top: 20px;
+			font-size: 24px;
+			color: #fff;
+			font-weight: 600;
+		}
+
+		.honor-item .info .desc {
+			padding: 20px;
+			font-size: 18px;
+			color: #fff;
+		}
+
+		.contact-logo img {
+			text-align: center;
+			margin: 0 auto;
+		}
+
+		.contact-desc {
+			text-align: center;
+			font-size: 36px;
+			font-weight: 600;
+			color: #202438;
+		}
+
+		.contact-basic-wrapper {
+			padding-top: 150px;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.basic-left {}
+
+		.basic-left .basic-item {
+			font-size: 16px;
+			font-weight: 600;
+			color: #666;
+			line-height: 20px;
+			margin-bottom: 20px;
+			display: flex;
+			align-items: center;
+		}
+
+		.basic-left .basic-item::before {
+			content: "";
+			display: block;
+			width: 20px;
+			height: 20px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			margin-right: 10px;
+		}
+
+		.basic-left .basic-item.address::before {
+			background-image: url(./images/icon-dw.png);
+		}
+
+		.basic-left .basic-item.phone::before {
+			background-image: url(./images/icon-phone.png);
+		}
+
+		.basic-left .basic-item.cz::before {
+			background-image: url(./images/icon-dy.png);
+		}
+
+		.basic-left .basic-item.email::before {
+			background-image: url(./images/icon-email.png);
+		}
+
+		.basic-right .qr-code {
+			text-align: center;
+		}
+
+		.basic-right .qr-code img {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+		}
+
+		.basic-right .qr-code p {
+			padding-top: 10px;
+			font-size: 16px;
+			color: #666;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="dowebok">
+		<!-- banner -->
+		<div class="section">
+			<div class="swiper-container banner-swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide bg-cover" style="background-image: url(./images/index_banner1.jpg)"></div>
+					<div class="swiper-slide bg-cover" style="background-image: url(./images/index_banner2.jpg)"></div>
+					<div class="swiper-slide bg-cover" style="background-image: url(./images/index_banner3.png)"></div>
+				</div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next swiper-button-white"></div>
+				<div class="swiper-button-prev swiper-button-white"></div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<!-- 公司介绍 -->
+		<div class="section bg-cover" style="background-image: url(./images/index_bg4.png)">
+			<div class="part-wrapper">
+				<div class="part-title">
+					<h3 class="zh black">公司介绍</h3>
+					<span class="line"></span>
+					<h4 class="en">INTRODUCEE</h4>
+				</div>
+				<div class="company-intro">
+					<article>
+						<p>成都格调文化传媒有限公司是一家集电视广告设计制作、营销策划、媒体代理、发布、执行为一体的专业化媒体整合营销传播机构。</p>
+						<p>公司成立于2006年，拥有创意、技术、媒体、数据、产品营销、客户服务等多方面专业人才。各部门在项目开发、推广和维护方面默契合作，以客户为中心，将“服务”贯穿于公司运作和管理的每一个细节。</p>
+					</article>
+					<div class="more">
+						<a href="">VIEW ALL</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 企业文化 -->
+		<div class="section bg-cover" style="background-image: url(./images/index_bg3.png)">
+			<div class="culture-wrapper part-wrapper">
+				<div class="part-title sm-pb">
+					<h3 class="zh black">企业文化</h3>
+					<span class="line"></span>
+					<h4 class="en">ENTERPRISE CULTURE</h4>
+				</div>
+				<ul class="culture-list">
+					<li>
+						<div class="culture-item">
+							<span class="icon"><img src="" alt=""></span>
+							<h3 class="title">企业使命</h3>
+							<p class="desc">让企业更有使命</p>
+						</div>
+					</li>
+					<li>
+						<div class="culture-item">
+							<span class="icon"><img src="" alt=""></span>
+							<h3 class="title">企业使命</h3>
+							<p class="desc">让企业更有使命</p>
+						</div>
+					</li>
+					<li>
+						<div class="culture-item">
+							<span class="icon"><img src="" alt=""></span>
+							<h3 class="title">企业使命</h3>
+							<p class="desc">让企业更有使命</p>
+						</div>
+					</li>
+					<li>
+						<div class="culture-item">
+							<span class="icon"><img src="" alt=""></span>
+							<h3 class="title">企业使命</h3>
+							<p class="desc">让企业更有使命</p>
+						</div>
+					</li>
+					<li>
+						<div class="culture-item">
+							<span class="icon"><img src="" alt=""></span>
+							<h3 class="title">企业使命</h3>
+							<p class="desc">让企业更有使命</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 业务模块 -->
+		<div class="section">
+			<div class="part-wrapper">
+				<div class="part-title sm-pb">
+					<h3 class="zh black">企业文化</h3>
+					<span class="line"></span>
+					<h4 class="en">ENTERPRISE CULTURE</h4>
+				</div>
+				<ul class="business-list">
+					<li>
+						<div class="business-item">
+							<div class="cover bg-cover arrow-right" style="background-image:url(./images/banner1.jpg)"></div>
+						</div>
+					</li>
+					<li>
+						<div class="business-item">
+							<div class="info">
+								<h3 class="title">媒体代理</h3>
+								<p class="desc">独家代理四川影视文艺频道非黄时段广告，四川电视台各频道部分特种广告代理、二级广告代理以及重庆时尚频道的部分电视广告代理</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="business-item">
+							<div class="cover bg-cover arrow-right" style="background-image:url(./images/banner1.jpg)"></div>
+						</div>
+					</li>
+					<li>
+						<div class="business-item">
+							<div class="info">
+								<h3 class="title">媒体代理</h3>
+								<p class="desc">独家代理四川影视文艺频道非黄时段广告，四川电视台各频道部分特种广告代理、二级广告代理以及重庆时尚频道的部分电视广告代理</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="business-item">
+							<div class="cover bg-cover arrow-bottom" style="background-image:url(./images/banner1.jpg)"></div>
+						</div>
+					</li>
+					<li>
+						<div class="business-item">
+							<div class="info">
+								<h3 class="title">媒体代理</h3>
+								<p class="desc">独家代理四川影视文艺频道非黄时段广告，四川电视台各频道部分特种广告代理、二级广告代理以及重庆时尚频道的部分电视广告代理</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="business-item">
+							<div class="cover bg-cover arrow-left" style="background-image:url(./images/banner1.jpg)"></div>
+						</div>
+					</li>
+					<li>
+						<div class="business-item">
+							<div class="info">
+								<h3 class="title">媒体代理</h3>
+								<p class="desc">独家代理四川影视文艺频道非黄时段广告，四川电视台各频道部分特种广告代理、二级广告代理以及重庆时尚频道的部分电视广告代理</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="business-item">
+							<div class="cover bg-cover arrow-left" style="background-image:url(./images/banner1.jpg)"></div>
+						</div>
+					</li>
+					<li>
+						<div class="business-item">
+							<div class="info">
+								<h3 class="title">媒体代理</h3>
+								<p class="desc">独家代理四川影视文艺频道非黄时段广告，四川电视台各频道部分特种广告代理、二级广告代理以及重庆时尚频道的部分电视广告代理</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 公司荣誉 -->
+		<div class="section bg-cover" style="background-image: url(./images/index_bg2.png)">
+			<div class="part-wrapper">
+				<div class="part-title sm-pb">
+					<h3 class="zh">公司荣誉</h3>
+					<span class="line"></span>
+					<h4 class="en">HONOR</h4>
+				</div>
+				<ul class="honor-list">
+					<li>
+						<div class="honor-item">
+							<div class="cover bg-cover" style="background-image: url(./images/index_banner1.jpg)"></div>
+							<div class="info">
+								<h3 class="title">2015年</h3>
+								<p class="desc">成都电视台啥子啥子</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="honor-item">
+							<div class="cover bg-cover" style="background-image: url(./images/index_banner1.jpg)"></div>
+							<div class="info">
+								<h3 class="title">2015年</h3>
+								<p class="desc">成都电视台啥子啥子</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="honor-item">
+							<div class="cover bg-cover" style="background-image: url(./images/index_banner1.jpg)"></div>
+							<div class="info">
+								<h3 class="title">2015年</h3>
+								<p class="desc">成都电视台啥子啥子</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="honor-item">
+							<div class="cover bg-cover" style="background-image: url(./images/index_banner1.jpg)"></div>
+							<div class="info">
+								<h3 class="title">2015年</h3>
+								<p class="desc">成都电视台啥子啥子</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="more">
+					<a href="" class="red">VIEW ALL</a>
+				</div>
+			</div>
+		</div>
+		<!-- 联系我们 -->
+		<div class="section bg-cover" style="background-image: url(./images/index_bg1.png)">
+			<div class="part-wrapper">
+				<div class="contact-logo">
+					<img src="./images/index_logo.png" alt="">
+				</div>
+				<p class="contact-desc">一堆文字描述</p>
+				<div class="contact-basic-wrapper">
+					<div class="basic-left">
+						<p class="basic-item address">这是地址</p>
+						<p class="basic-item phone">这是电话号码</p>
+						<p class="basic-item cz">这是传真</p>
+						<p class="basic-item email">这是邮箱</p>
+					</div>
+					<div class="basic-right">
+						<div class="qr-code">
+							<img src="./images/ewm.png" alt="">
+							<p>格调传媒官方公众号</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.fullPage.min.js"></script>
+	<script src="./plugin/swiper/swiper.min.js"></script>
+
+	<script>
+		var swiper = new Swiper('.banner-swiper', {
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+		});
+		$(function () {
+			$('#dowebok').fullpage({
+				sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f9f9f9'],
+				navigation: true,
+				navigationColor: 'red'
+			});
+		});
+	</script>
+</body>
+
+</html>
