@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- css -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <!-- swiper -->
+  <link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
+  <style>
+    .swiper-box {
+      position: relative;
+    }
+
+    .swiper-one .swiper-slide {
+      display: block;
+      width: 100%;
+      height: 100px;
+      background-color: red;
+      position: relative;
+    }
+
+    .swiper-button-next {
+      right: -100px;
+      outline: none;
+    }
+
+    .swiper-button-prev {
+      left: -100px;
+      outline: none;
+    }
+
+    .case-wrapper {
+      width: 100%;
+      display: flex;
+    }
+
+    .case-wrapper .case-img {
+      width: 700px;
+      flex: 0 0 700px;
+      height: 530px;
+    }
+
+    .swiper-container-case {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #111;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery-top {
+      height: 72%;
+      width: 100%;
+    }
+
+    .gallery-thumbs {
+      height: 28%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+
+    .gallery-thumbs .swiper-slide {
+      width: 25%;
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .gallery-thumbs .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+
+    .case-wrapper .case-info {
+      flex: 1;
+      box-sizing: border-box;
+      padding: 45px;
+      background-color: #fff;
+    }
+
+    .case-wrapper .case-info .case-title {
+      font-size: 20px;
+      color: #222;
+      line-height: 1.6;
+      font-weight: 600;
+      padding-bottom: 15px;
+      position: relative;
+    }
+
+    .case-wrapper .case-info .case-title::before {
+      content: "";
+      display: block;
+      box-sizing: border-box;
+      height: 1px;
+      width: 100%;
+      background-color: #efefef;
+      margin-bottom: 20px;
+    }
+
+    .case-wrapper .case-info .case-title::after {
+      content: "";
+      display: block;
+      box-sizing: border-box;
+      height: 3px;
+      width: 40px;
+      background-color: #9d070d;
+      position: absolute;
+      left: 0;
+      top: -1px;
+    }
+
+    .case-wrapper .case-info .way {
+      font-size: 16px;
+      color: #666666;
+      padding-bottom: 30px;
+    }
+
+    .case-wrapper .case-info .desc {
+      font-size: 16px;
+      color: #666666;
+      line-height: 1.6;
+    }
+
+    /* 手机样式 */
+    @media screen and (max-width: 900px) {
+      .swiper-button-next {
+        right: 10px;
+        margin-top: 212px;
+      }
+
+      .swiper-button-prev {
+        left: 10px;
+        margin-top: 212px;
+      }
+
+      .case-wrapper {
+        width: 100%;
+        display: block;
+      }
+
+      .case-wrapper .case-img {
+        width: 100%;
+        height: 200px;
+      }
+
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+      }
+
+      .case-wrapper .case-info {
+        height: 200px;
+        padding: 14px;
+        overflow-y: auto;
+      }
+
+      .case-wrapper .case-info .case-title {
+        font-size: 16px;
+        padding-bottom: 10px;
+      }
+
+      .case-wrapper .case-info .case-title::before {
+        margin-bottom: 10px;
+      }
+
+      .case-wrapper .case-info .way {
+        font-size: 13px;
+        padding-bottom: 20px;
+      }
+
+      .case-wrapper .case-info .desc {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="part-container bg-cover" style="background-image:url(./images/bg1.png)">
+    <section class="part-wrapper">
+      <div class="part-title">
+        <h3 class="zh">服务客户</h3>
+        <span class="line"></span>
+        <h4 class="en">SERVING CUSTOMERS</h4>
+      </div>
+      <!-- Swiper -->
+      <div class="swiper-box">
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <div class="swiper-container swiper-one">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section class="part-container bg-cover" id="case_bg">
+    <section class="part-wrapper">
+      <div class="part-title">
+        <h3 class="zh">服务案例</h3>
+        <span class="line"></span>
+        <h4 class="en">SERVICE CASE</h4>
+      </div>
+
+      <div class="swiper-box">
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+
+        <div class="swiper-container case-wrapper-swiper">
+          <div class="swiper-wrapper">
+            <!-- warning  循环的时候必须带上索引 gallery+index gallery-thumbs+index 从0开始 -->
+            <div class="swiper-slide case-slide" _bg="./images/banner1.jpg">
+              <div class="case-wrapper">
+                <div class="case-img">
+                  <div class="swiper-container swiper-container-case gallery-top gallery-top0">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" style="background-image:url(./images/banner1.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner2.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner3.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner1.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner2.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner3.jpg)"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-container swiper-container-case gallery-thumbs gallery-thumbs0">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" style="background-image:url(./images/banner1.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner2.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner3.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner1.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner2.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner3.jpg)"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="case-info">
+                  <h3 class="case-title">新佰伦时代2018秋冬新品发布会暨慈善盛典</h3>
+                  <p class="way">合作方式：承包</p>
+                  <p class="desc">全程策划执行，新佰伦时代秋冬新品发布会暨陪你长大，让爱助跑慈善盛典完美收官。奥运冠军何可欣、著名演员黄奕现身为本次慈善盛典打CALL，多位时尚KOL现场为品牌助力。</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide case-slide" _bg="./images/banner2.jpg">
+              <div class="case-wrapper">
+                <div class="case-img">
+                  <div class="swiper-container swiper-container-case gallery-top gallery-top1">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" style="background-image:url(./images/banner1.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner2.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner3.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner1.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner2.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner3.jpg)"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-container swiper-container-case gallery-thumbs gallery-thumbs1">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" style="background-image:url(./images/banner1.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner2.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner3.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner1.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner2.jpg)"></div>
+                      <div class="swiper-slide" style="background-image:url(./images/banner3.jpg)"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="case-info">
+                  <h3 class="case-title">新佰伦时代2018秋冬新品发布会暨慈善盛典</h3>
+                  <p class="way">合作方式：承包</p>
+                  <p class="desc">全程策划执行，新佰伦时代秋冬新品发布会暨陪你长大，让爱助跑慈善盛典完美收官。奥运冠军何可欣、著名演员黄奕现身为本次慈善盛典打CALL，多位时尚KOL现场为品牌助力。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </section>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./plugin/swiper/swiper.min.js"></script>
+
+  <script>
+    var swiperOne = new Swiper(".swiper-one", {
+      slidesPerView: 5,
+      slidesPerColumn: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        //当宽度大于等于900
+        900: {
+          slidesPerView: 2,
+          slidesPerColumn: 2,
+        },
+      }
+    });
+
+
+    setTimeout(function () {
+      // 案例详情
+      var caseSwiper = new Swiper('.case-wrapper-swiper', {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        allowTouchMove: false,
+        on: {
+          init: function () {
+            this.emit('transitionEnd');//在初始化时触发一次transitionEnd事件，需要先设置transitionEnd
+          },
+          transitionEnd: function () {
+            var bg = $(".case-slide").eq(this.activeIndex).attr("_bg");
+            $("#case_bg").css({ "background-image": "url(" + bg + ")" });
+          },
+        },
+      })
+
+      // 循环每一个swiper
+      $(".case-slide").each(function (index) {
+        var galleryThumbs = new Swiper('.gallery-thumbs' + index, {
+          spaceBetween: 10,
+          slidesPerView: 3,
+          freeMode: true,
+          watchSlidesVisibility: true,
+          watchSlidesProgress: true,
+        });
+        var galleryTop = new Swiper('.gallery-top' + index, {
+          spaceBetween: 10,
+          thumbs: {
+            swiper: galleryThumbs
+          }
+        });
+      })
+    }, 1000)
+
+
+  </script>
+</body>
+
+</html>
