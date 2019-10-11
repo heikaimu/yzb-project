@@ -283,12 +283,6 @@
             <div class="swiper-slide">
               <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
             </div>
-            <div class="swiper-slide">
-              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
-            </div>
-            <div class="swiper-slide">
-              <div class="bg-cover" style="background-image:url(./images/banner1.jpg)"></div>
-            </div>
           </div>
         </div>
       </div>
@@ -311,7 +305,7 @@
         <div class="swiper-container case-wrapper-swiper">
           <div class="swiper-wrapper">
             <!-- warning  循环的时候必须带上索引 gallery+index gallery-thumbs+index 从0开始 -->
-            <div class="swiper-slide case-slide" _bg="./images/banner1.jpg">
+            <div class="swiper-slide case-slide" _bg="https://www.gstatic.com/youtube/img/promos/growth/f0accb1c85c9c18464c137e8fbc7e2ba0106a204abfccb7abb7f46fc95055aa7_2560x520.jpeg">
               <div class="case-wrapper">
                 <div class="case-img">
                   <div class="swiper-container swiper-container-case gallery-top gallery-top0">
@@ -342,7 +336,7 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide case-slide" _bg="./images/banner2.jpg">
+            <div class="swiper-slide case-slide" _bg="https://www.gstatic.com/youtube/img/promos/growth/f95b73879e23f4b2418c4dcfb5d9e9bf2cac266176b1cbef0d5de71b53c6b00f_490x210.jpeg">
               <div class="case-wrapper">
                 <div class="case-img">
                   <div class="swiper-container swiper-container-case gallery-top gallery-top1">
@@ -416,6 +410,11 @@
         allowTouchMove: false,
         on: {
           init: function () {
+            $(".case-slide").each(function () {
+              var url = $(this).attr('_bg');
+              var img = new Image();
+              img.src = url;
+            })
             this.emit('transitionEnd');//在初始化时触发一次transitionEnd事件，需要先设置transitionEnd
           },
           transitionEnd: function () {
