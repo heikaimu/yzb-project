@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./css/swiper.min.css">
   <style>
     .web-container {
+      padding-bottom: 80px;
       background: url(./images/web_bg.png) no-repeat center top / 100%;
     }
 
@@ -310,23 +311,19 @@
     <div class="container" style="margin-top: 100px;">
       <div class="message-box">
         <div class="col">
-          <div class="message-card-one hover-card">
-            <a href="">
+          <div class="message-card-one hover-card video-play" _title="异性：普罗米修斯" _src="./video.mp4">
               <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
               <div class="info">
                 <p>标题啊</p>
               </div>
-            </a>
           </div>
         </div>
         <div class="col">
-          <div class="message-card-one hover-card half">
-            <a href="">
+          <div class="message-card-one hover-card half video-play" _title="32323" _src="./video2.mp4">
               <div class="cover bg-cover" style="background-image: url(./images/banner.png)"></div>
               <div class="info">
                 <p>标题啊</p>
               </div>
-            </a>
           </div>
           <div class="message-card-one hover-card half">
             <a href="">
@@ -475,6 +472,7 @@
   </div>
 
   <script src="./js/jquery.js"></script>
+  <script src="./js/videoView.js"></script>
   <script src="./js/swiper.min.js"></script>
   <script>
     new Swiper('.swiper-banner', {

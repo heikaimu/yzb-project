@@ -324,13 +324,13 @@ body {
 
 @media screen and (max-width: 734px) {
   body {
-    /* padding-top: 70px; */
+    padding-top: 70px;
   }
   .stick-footer-wrapper {
     padding-bottom: 274px;
     min-height: calc(100vh - 21px);
   }
-  
+
   .stick-footer {
     margin-top: -274px;
   }
@@ -386,6 +386,32 @@ body {
   }
   .web-header-content a:after {
     display: none;
+  }
+  /* banner */
+  .index-banner .swiper-slide .img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .banner-info h3 {
+    padding-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .banner-info h4 {
+    padding-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .banner-info h5 {
+    font-size: 12px;
+  }
+
+  .single-banner {
+  }
+  .single-banner img {
+    display: block;
+    width: 100%;
   }
   /* footer */
   .web-footer {

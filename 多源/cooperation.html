@@ -237,18 +237,26 @@
 			}
 
 			/* 合作资格 */
-			.qualification {
-				padding-top: 20px;
-				padding-bottom: 40px;
-				margin-top: 60px;
-			}
-
 			.qualification-card {
-				padding: 20px;
+				height: 120px;
+				padding: 10px;
+				border-radius: 4px;
 			}
 
 			.qualification-card .number {
-				font-size: 20px;
+				font-size: 18px;
+			}
+
+			.qualification-card .number::after {
+				height: 1px;
+				border-left: 30px solid #0073e0;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+
+			.qualification-card .desc {
+				font-size: 12px;
+				line-height: 1.8;
 			}
 		}
 	</style>
@@ -448,6 +456,7 @@
 						</div>
 					</div>
 				</div>
+				<div class="swiper-pagination qualification-pagination"></div>
 			</div>
 		</section>
 	</section>
@@ -571,11 +580,14 @@
 			spaceBetween: 30,
 			breakpoints: {
 				734: {
-					loop: true,
-					slidesPerView: 1.4,
-					slidesPerColumn: 1,
+					slidesPerView: 2,
+					slidesPerColumn: 2,
 					spaceBetween: 20,
-					centeredSlides: true
+					pagination: {
+						el: '.qualification-pagination',
+						dynamicBullets: true,
+						clickable: true
+					}
 				}
 			}
 		})
