@@ -88,6 +88,60 @@
 
 		.business-list li {
 			width: 20%;
+			transition: .3s;
+			position: relative;
+		}
+
+		.business-list li.active::after {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			border: 3px solid red;
+			z-index: 99;
+		}
+
+		.business-list li:nth-child(1).active::after {
+			border-right: none;
+		}
+
+		.business-list li:nth-child(2).active::after {
+			border-left: none;
+		}
+
+		.business-list li:nth-child(3).active::after {
+			border-right: none;
+		}
+
+		.business-list li:nth-child(4).active::after {
+			border-left: none;
+		}
+
+		.business-list li:nth-child(5).active::after {
+			border-bottom: none;
+		}
+
+		.business-list li:nth-child(6).active::after {
+			border-right: none;
+		}
+
+		.business-list li:nth-child(7).active::after {
+			border-left: none;
+		}
+
+		.business-list li:nth-child(8).active::after {
+			border-right: none;
+		}
+
+		.business-list li:nth-child(9).active::after {
+			border-left: none;
+		}
+
+		.business-list li:nth-child(10).active::after {
+			border-top: none;
 		}
 
 		.business-item {
@@ -301,7 +355,7 @@
 
 		@media screen and (max-width: 900px) {
 			.banner-swiper .swiper-slide {
-				height: 100vh;
+				height: 200px;
 			}
 
 			.company-intro p {
@@ -525,7 +579,7 @@
 <body>
 	<div id="dowebok">
 		<!-- banner -->
-		<div class="section">
+		<div class="section" id="banner_box">
 			<div class="swiper-container banner-swiper">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide bg-cover" style="background-image: url(./images/index_banner1.jpg)"></div>
@@ -614,13 +668,13 @@
 					<h4 class="en">ENTERPRISE CULTURE</h4>
 				</div>
 				<ul class="business-list">
-					<li>
+					<li _group="1" _link="http://wwww.baidu.com">
 						<div class="business-item">
 							<div class="cover bg-cover arrow-right" style="background-image:url(./images/banner1.jpg)">
 							</div>
 						</div>
 					</li>
-					<li>
+					<li _group="1" _link="http://wwww.baidu.com">
 						<div class="business-item">
 							<div class="info">
 								<h3 class="title">媒体代理</h3>
@@ -628,13 +682,13 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li _group="2" _link="http://wwww.baidu.com">
 						<div class="business-item">
 							<div class="cover bg-cover arrow-right" style="background-image:url(./images/banner1.jpg)">
 							</div>
 						</div>
 					</li>
-					<li>
+					<li _group="2" _link="http://wwww.baidu.com">
 						<div class="business-item">
 							<div class="info">
 								<h3 class="title">媒体代理</h3>
@@ -642,13 +696,13 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li _group="3" _link="http://wwww.baidu.com">
 						<div class="business-item">
 							<div class="cover bg-cover arrow-bottom" style="background-image:url(./images/banner1.jpg)">
 							</div>
 						</div>
 					</li>
-					<li>
+					<li _group="4" _link="http://wwww.baidu.com">
 						<div class="business-item">
 							<div class="info">
 								<h3 class="title">媒体代理</h3>
@@ -656,13 +710,13 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li _group="4">
 						<div class="business-item">
 							<div class="cover bg-cover arrow-left" style="background-image:url(./images/banner1.jpg)">
 							</div>
 						</div>
 					</li>
-					<li>
+					<li _group="5" _link="http://wwww.baidu.com">
 						<div class="business-item">
 							<div class="info">
 								<h3 class="title">媒体代理</h3>
@@ -670,13 +724,13 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li _group="5" _link="http://wwww.baidu.com">
 						<div class="business-item">
 							<div class="cover bg-cover arrow-left" style="background-image:url(./images/banner1.jpg)">
 							</div>
 						</div>
 					</li>
-					<li>
+					<li _group="3" _link="http://wwww.baidu.com">
 						<div class="business-item">
 							<div class="info">
 								<h3 class="title">媒体代理</h3>
@@ -844,11 +898,36 @@
 
 
 		$(function () {
-			$('#dowebok').fullpage({
-				sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f9f9f9'],
-				navigation: true,
-				navigationColor: 'red'
-			});
+			// 根据分辨率来判断插件的显示方式
+			var fullPageConfig = {
+					sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f9f9f9'],
+					navigation: true,
+					navigationColor: 'red'
+				};
+			var wWidth = $(window).width();
+			if (wWidth < 768) {
+				fullPageConfig.autoScrolling = false;
+				fullPageConfig.navigation = false;
+				$("#banner_box").removeClass("section");
+			}
+			$('#dowebok').fullpage(fullPageConfig);
+
+			// 鼠标效果
+			$(".business-list").find("li").each(function () {
+				var groupNum = $(this).attr("_group");
+				var link = $(this).attr("_link");
+				$(this).hover(function () {
+					$(this).addClass("active");
+					$(this).siblings("li[_group=" + groupNum + "]").addClass("active");
+				}, function () {
+					$(this).removeClass("active");
+					$(this).siblings("li[_group=" + groupNum + "]").removeClass("active");
+				})
+				$(this).click(function () {
+					location.href = link;
+				})
+			})
+
 		});
 	</script>
 </body>
