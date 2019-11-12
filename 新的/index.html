@@ -46,6 +46,7 @@
     }
 
     .part-next-prev-wrapper {
+      display: flex;
       position: absolute;
       left: 0;
       bottom: 0;
@@ -53,6 +54,20 @@
       width: 200px;
       height: 60px;
       background-color: #fff;
+    }
+
+    .part-next-prev-wrapper .prev {
+      flex: 1;
+      height: 100%;
+      background-color: #333;
+      outline: none;
+    }
+
+    .part-next-prev-wrapper .next {
+      flex: 1;
+      height: 100%;
+      background-color: #888;
+      outline: none;
     }
 
     .part-one-card {}
@@ -160,17 +175,26 @@
       width: 80%;
       margin: 0 auto;
     }
+
     .part-three-paginatio-box {
       display: flex;
       justify-content: center;
     }
+
     .part-three-bullet {
       display: inline-block;
       width: 20px;
       height: 20px;
       border-radius: 50%;
+      border: 1px solid #333;
       background-color: #333;
       margin: 0 10px;
+      outline: none;
+    }
+
+    .part-three-bullet-active {
+      background-color: #fff;
+      border: 1px solid #333;
     }
 
     .part-three-card {}
@@ -190,6 +214,63 @@
       height: 200px;
       margin: 0 auto;
       background-color: #333;
+    }
+
+    /* 底部 */
+    .footer-container {
+      background-color: #333;
+    }
+
+    .footer-wrapper {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .footer-wrapper .top-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-wrapper .top-wrapper .menus {
+      display: flex;
+    }
+
+    .footer-wrapper .top-wrapper .menus a {
+      font-size: 14px;
+      color: #fff;
+      margin-right: 20px;
+    }
+
+    .footer-wrapper .top-wrapper .shares {
+      display: flex;
+    }
+
+    .footer-wrapper .top-wrapper .shares a {
+      margin-left: 20px;
+    }
+
+    .footer-wrapper .top-wrapper .shares a img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .footer-wrapper .bottom-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer-wrapper .bottom-wrapper select {}
+
+    .footer-wrapper .bottom-wrapper .qr-code {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+    }
+
+    .footer-wrapper .bottom-wrapper .qr-code img {
+      width: 100%;
+      height: 100%;
     }
 
     /* 手机样式 */
@@ -241,8 +322,8 @@
         </div>
       </div>
       <div class="part-next-prev-wrapper">
-        <div class="prew part-one-swiper-prev">左</div>
-        <div class="prew part-one-swiper-next">右</div>
+        <div class="prev part-one-swiper-prev">左</div>
+        <div class="next part-one-swiper-next">右</div>
       </div>
     </section>
   </section>
@@ -406,42 +487,71 @@
         </div>
       </div>
       <div class="part-three-paginatio-box">
-      <div class="swiper-pagination part-three-pagination"></div>
-    </div>
+        <div class="swiper-pagination part-three-pagination"></div>
+      </div>
     </section>
   </section>
 
-  <script src="./js/jquery.js"></script>
-  <script src="./plugin/swiper/swiper.min.js"></script>
+  <!-- 底部 -->
+  <section class="footer-container">
+    <section class="footer-wrapper">
+      <div class="top-wrapper">
+        <div class="menus">
+          <a href="">链接1</a>
+          <a href="">链接1</a>
+          <a href="">链接1</a>
+          <a href="">链接1</a>
+          <a href="">链接1</a>
+        </div>
+        <div class="shares">
+          <a href=""><img src="" alt=""></a>
+          <a href=""><img src="" alt=""></a>
+          <a href=""><img src="" alt=""></a>
+        </div>
+      </div>
+      <div class="bottom-wrapper">
+        <select name="" id="">
+          <option value="1">选项1</option>
+          <option value="2">选项1</option>
+          <option value="3">选项1</option>
+        </select>
+        <div class="qr-code">
+          <img src="./images/banner2.jpg" alt="">
+        </div>
+      </div>
+    </section>
+    </div>
 
-  <script>
-    new Swiper("#partOneSwiper", {
-      navigation: {
-        nextEl: '.part-one-swiper-next',
-        prevEl: '.part-one-swiper-prev',
-      },
-    });
-    new Swiper("#partTwoSwiper", {
-      navigation: {
-        nextEl: '.part-one-swiper-next',
-        prevEl: '.part-one-swiper-prev',
-      },
-    });
-    new Swiper("#partThreeSwiper", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.part-one-swiper-next',
-        prevEl: '.part-one-swiper-prev',
-      },
-      pagination: {
-        el: '.part-three-pagination',
-        bulletClass : 'part-three-bullet',
-        bulletActiveClass: 'part-three-bullet-active',
-      },
-    });
+    <script src="./js/jquery.js"></script>
+    <script src="./plugin/swiper/swiper.min.js"></script>
 
-  </script>
+    <script>
+      new Swiper("#partOneSwiper", {
+        navigation: {
+          nextEl: '.part-one-swiper-next',
+          prevEl: '.part-one-swiper-prev',
+        },
+      });
+
+      new Swiper("#partTwoSwiper", {
+      });
+
+      new Swiper("#partThreeSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.part-one-swiper-next',
+          prevEl: '.part-one-swiper-prev',
+        },
+        pagination: {
+          el: '.part-three-pagination',
+          bulletClass: 'part-three-bullet',
+          bulletActiveClass: 'part-three-bullet-active',
+          clickable: true
+        },
+      });
+
+    </script>
 </body>
 
 </html>
