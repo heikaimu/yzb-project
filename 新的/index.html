@@ -9,8 +9,8 @@
   <!-- css -->
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/flex-layout.css">
-  <!-- swiper -->
   <link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
+	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
   <style>
     /* body {
       padding-top: 90px;
@@ -49,56 +49,90 @@
       display: flex;
       position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: 20px;
       z-index: 999;
       width: 200px;
-      height: 60px;
-      background-color: #fff;
+      height: 74px;
+      background-color: rgba(255, 255, 255, 0.8);
     }
 
     .part-next-prev-wrapper .prev {
       flex: 1;
       height: 100%;
-      background-color: #333;
       outline: none;
+      background: url(./images/arrow.png) no-repeat center center;
     }
 
     .part-next-prev-wrapper .next {
       flex: 1;
       height: 100%;
-      background-color: #888;
       outline: none;
+      background: url(./images/arrow.png) no-repeat center center;
+      transform: rotate(180deg);
     }
 
     .part-one-card {}
 
     .part-one-card .image-wrapper {
-      width: 100%;
-      height: 400px;
+      width: 536px;
+      height: 646px;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .part-one-card .image-wrapper::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: -20px;
+      top: 140px;
+      bottom: -20px;
+      left: 200px;
+      z-index: -1;
+      background-color: #0091ef;
     }
 
     .part-one-card .info-wrapper {
-      width: 100%;
-      height: 400px;
-      background-color: #333;
+      padding: 50px 0;
     }
 
     .part-one-card .info-wrapper .title {
       font-size: 30px;
-      color: #fff;
+      color: #1d1d1d;
+      padding-bottom: 48px;
+      position: relative;
+    }
+
+    .part-one-card .info-wrapper .title::after {
+      content: "";
+      display: block;
+      width: 90px;
+      height: 3px;
+      background-color: #0091ef;
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
 
     .part-one-card .info-wrapper .desc {
-      font-size: 18px;
-      color: #fff;
+      font-size: 14px;
+      color: #1d1d1d;
+      line-height: 2;
+      margin-top: 66px;
     }
 
     .part-one-card .info-wrapper .button {
-      background-color: blue;
+      width: 144px;
+      height: 44px;
+      line-height: 44px;
+      border: none;
+      outline: none;
+      background-color: #0091ef;
       color: #fff;
+      margin-top: 66px;
     }
 
     /* 板块2 */
@@ -112,7 +146,7 @@
 
     .part-two-card .image-wrapper {
       width: 100%;
-      height: 300px;
+      height: 580px;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
@@ -120,28 +154,52 @@
 
     .part-two-card .info-wrapper {
       width: 100%;
-      height: 299px;
-      background-color: #333;
+      height: 409px;
+      box-sizing: border-box;
+      padding: 66px 100px;
+      background-color: #212121;
     }
 
     .part-two-card .info-wrapper .title {
       font-size: 30px;
+      padding-bottom: 30px;
+      position: relative;
       color: #fff;
+    }
+
+    .part-two-card .info-wrapper .title::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 3px;
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      bottom: 0;
     }
 
     .part-two-card .info-wrapper .desc {
-      font-size: 18px;
-      color: #fff;
+      margin-top: 30px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.4);
     }
 
     .part-two-card .info-wrapper .button {
-      background-color: blue;
+      width: 144px;
+      height: 44px;
+      line-height: 44px;
+      border: none;
+      outline: none;
+      background-color: #0091ef;
       color: #fff;
+      margin-top: 40px;
     }
 
     .part-two-swiper-menus .menus-list {
       display: flex;
       flex-wrap: wrap;
+      background: url(./images/banner2.jpg) no-repeat center center / cover;
     }
 
     .part-two-swiper-menus .menus-list .menu-item {
@@ -151,29 +209,30 @@
       align-items: center;
       box-sizing: border-box;
       width: 25%;
-      height: 300px;
-      background-color: #333;
+      height: 495px;
+      background-color: rgba(0, 0, 0, 0.2);
       border-right: 1px solid #fff;
       border-bottom: 1px solid #fff;
+      cursor: pointer;
+    }
+
+    .part-two-swiper-menus .menus-list .menu-item.active {
+      background-color: rgba(29, 149, 227, 0.8);
     }
 
     .part-two-swiper-menus .menus-list .menu-item .icon {
       display: block;
-      width: 60px;
-      height: 60px;
-      background-color: #fff;
       margin-bottom: 20px;
     }
 
     .part-two-swiper-menus .menus-list .menu-item .title {
-      font-size: 14px;
+      font-size: 24px;
       color: #fff;
     }
 
     /* 板块3 */
     .part3-wrapper {
-      width: 80%;
-      margin: 0 auto;
+      padding: 70px;
     }
 
     .part-three-paginatio-box {
@@ -183,25 +242,25 @@
 
     .part-three-bullet {
       display: inline-block;
-      width: 20px;
-      height: 20px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      border: 1px solid #333;
-      background-color: #333;
+      border: 2px solid #333;
+      background-color: #fff;
       margin: 0 10px;
       outline: none;
     }
 
     .part-three-bullet-active {
-      background-color: #fff;
-      border: 1px solid #333;
+      background-color: #0091ef;
+      border: 2px solid #0091ef;
     }
 
     .part-three-card {}
 
     .part-three-card .image-wrapper {
       width: 100%;
-      height: 200px;
+      height: 400px;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
@@ -209,22 +268,67 @@
 
     .part-three-card .info-wrapper {
       position: relative;
-      top: -30px;
-      width: 80%;
-      height: 200px;
+      top: -55px;
+      width: 90%;
+      box-sizing: border-box;
+      padding: 45px;
       margin: 0 auto;
-      background-color: #333;
+      background-color: #fff;
+      box-shadow: 0 0 5px #666;
+    }
+
+    .part-three-card .info-wrapper .content {}
+
+    .part-three-card .info-wrapper .content .title {
+      padding-bottom: 20px;
+      font-size: 24px;
+      color: #080808;
+    }
+
+    .part-three-card .info-wrapper .content .desc {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #080808;
+    }
+
+    .part-three-card .info-wrapper .content .time-wrapper {
+      width: 80px;
+      height: 80px;
+      border: 1px solid #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .part-three-card .info-wrapper .content .day {
+      padding-bottom: 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .part-three-card .info-wrapper .content .month {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .part-three-card .info-wrapper .content .link {
+      display: block;
+      width: 80px;
+      text-align: center;
+      font-size: 16px;
+      color: #080808;
+      text-decoration: none;
+      margin-top: 40px;
     }
 
     /* 底部 */
     .footer-container {
-      background-color: #333;
+      background-color: #202020;
+      padding: 70px 70px 0px 70px;
     }
 
-    .footer-wrapper {
-      width: 90%;
-      margin: 0 auto;
-    }
+    .footer-wrapper {}
 
     .footer-wrapper .top-wrapper {
       display: flex;
@@ -239,7 +343,8 @@
     .footer-wrapper .top-wrapper .menus a {
       font-size: 14px;
       color: #fff;
-      margin-right: 20px;
+      margin-right: 40px;
+      text-decoration: none;
     }
 
     .footer-wrapper .top-wrapper .shares {
@@ -248,19 +353,31 @@
 
     .footer-wrapper .top-wrapper .shares a {
       margin-left: 20px;
+      opacity: 0.6;
     }
 
     .footer-wrapper .top-wrapper .shares a img {
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-wrapper .top-wrapper .shares a:hover {
+      opacity: 1;
     }
 
     .footer-wrapper .bottom-wrapper {
       display: flex;
+      padding: 48px 0;
       justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #a7a7a7;
+      margin-top: 75px;
     }
 
-    .footer-wrapper .bottom-wrapper select {}
+    .footer-wrapper .bottom-wrapper select {
+      width: 200px;
+      height: 36px;
+    }
 
     .footer-wrapper .bottom-wrapper .qr-code {
       width: 100px;
@@ -273,8 +390,364 @@
       height: 100%;
     }
 
+    .web-bottom {
+      height: 87px;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .web-bottom p {
+      font-size: 14px;
+      color: #fff;
+    }
+
     /* 手机样式 */
-    @media screen and (max-width: 900px) {}
+    @media screen and (max-width: 900px) {
+
+      /* 主体内容 */
+      /* 板块1 */
+      .part-container {
+        padding: 0;
+      }
+
+      .part1-wrapper {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .part-next-prev-wrapper {
+        bottom: 20px;
+        left: auto;
+        right: 0;
+        z-index: 999;
+        width: 100px;
+        height: 34px;
+      }
+
+      .part-next-prev-wrapper .prev {
+        flex: 1;
+        height: 100%;
+        outline: none;
+        background: url(./images/arrow.png) no-repeat center center;
+      }
+
+      .part-next-prev-wrapper .next {
+        flex: 1;
+        height: 100%;
+        outline: none;
+        background: url(./images/arrow.png) no-repeat center center;
+        transform: rotate(180deg);
+      }
+
+      .part-one-card {}
+
+      .part-one-card .image-wrapper {
+        width: 100%;
+        height: 200px;
+      }
+
+      .part-one-card .image-wrapper::after {
+        display: none;
+      }
+
+      .part-one-card .info-wrapper {
+        padding: 20px;
+      }
+
+      .part-one-card .info-wrapper .title {
+        font-size: 20px;
+        padding-bottom: 28px;
+      }
+
+      .part-one-card .info-wrapper .title::after {
+        width: 60px;
+        height: 3px;
+      }
+
+      .part-one-card .info-wrapper .desc {
+        font-size: 14px;
+        color: #1d1d1d;
+        line-height: 2;
+        margin-top: 26px;
+      }
+
+      .part-one-card .info-wrapper .button {
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 26px;
+      }
+
+      /* 板块2 */
+      .part2-wrapper {
+        padding: 0;
+      }
+
+      .part-two-swiper-wrapper {}
+
+      .part-two-card {}
+
+      .part-two-card .image-wrapper {
+        width: 100%;
+        height: 280px;
+      }
+
+      .part-two-card .info-wrapper {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 20px;
+        background-color: #212121;
+      }
+
+      .part-two-card .info-wrapper .title {
+        font-size: 20px;
+        padding-bottom: 30px;
+      }
+
+      .part-two-card .info-wrapper .title::after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 3px;
+      }
+
+      .part-two-card .info-wrapper .desc {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .part-two-card .info-wrapper .button {
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        margin-top: 30px;
+      }
+
+      .part-two-swiper-menus .menus-list {
+        display: flex;
+        flex-wrap: wrap;
+        background: url(./images/banner2.jpg) no-repeat center center / cover;
+      }
+
+      .part-two-swiper-menus .menus-list .menu-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        width: 25%;
+        height: 100px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        cursor: pointer;
+      }
+
+      .part-two-swiper-menus .menus-list .menu-item.active {
+        background-color: rgba(29, 149, 227, 0.8);
+      }
+
+      .part-two-swiper-menus .menus-list .menu-item .icon {
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      .part-two-swiper-menus .menus-list .menu-item .icon img {
+        width: 30px;
+      }
+
+      .part-two-swiper-menus .menus-list .menu-item .title {
+        font-size: 14px;
+        color: #fff;
+      }
+
+      /* 板块3 */
+      .part3-wrapper {
+        padding: 10px 10px 30px 10px;
+      }
+
+      .part-three-paginatio-box {
+        display: flex;
+        justify-content: center;
+      }
+
+      .part-three-bullet {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        background-color: #fff;
+        margin: 0 10px;
+        outline: none;
+      }
+
+      .part-three-bullet-active {
+        background-color: #0091ef;
+        border: 2px solid #0091ef;
+      }
+
+      .part-three-card {}
+
+      .part-three-card .image-wrapper {
+        width: 100%;
+        height: 200px;
+      }
+
+      .part-three-card .info-wrapper {
+        position: relative;
+        top: -55px;
+        width: 90%;
+        box-sizing: border-box;
+        padding: 15px;
+      }
+
+      .part-three-card .info-wrapper .content {}
+
+      .part-three-card .info-wrapper .content .title {
+        font-size: 16px;
+        color: #080808;
+      }
+
+      .part-three-card .info-wrapper .content .desc {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #080808;
+        margin-bottom: 20px;
+      }
+
+      .part-three-card .info-wrapper .content .time-wrapper {
+        width: 60px;
+        height: 60px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+      }
+
+      .part-three-card .info-wrapper .content .day {
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: #333;
+      }
+
+      .part-three-card .info-wrapper .content .month {
+        font-size: 12px;
+        color: #333;
+      }
+
+      .part-three-card .info-wrapper .content .link {
+        display: block;
+        width: 80px;
+        text-align: center;
+        font-size: 16px;
+        color: #080808;
+        text-decoration: none;
+        margin-top: 40px;
+      }
+
+      /* 底部 */
+      .footer-container {
+        background-color: #202020;
+        padding: 0;
+      }
+
+      .footer-wrapper {}
+
+      .footer-wrapper .top-wrapper {
+        display: block;
+      }
+
+      .footer-wrapper .top-wrapper .menus {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .footer-wrapper .top-wrapper .menus a {
+        width: 100%;
+        line-height: 50px;
+        text-indent: 20px;
+        font-size: 14px;
+        background-color: #333;
+        border-bottom: 1px solid #444;
+        color: #fff;
+        margin-right: 0;
+        text-decoration: none;
+      }
+
+      .footer-wrapper .top-wrapper .shares {
+        padding-top: 30px;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .footer-wrapper .top-wrapper .shares a {
+        margin-left: 20px;
+        opacity: 0.6;
+      }
+
+      .footer-wrapper .top-wrapper .shares a img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .footer-wrapper .top-wrapper .shares a:hover {
+        opacity: 1;
+      }
+
+      .footer-wrapper .bottom-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 48px 0;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #a7a7a7;
+        margin-top: 35px;
+      }
+
+      .footer-wrapper .bottom-wrapper select {
+        width: 200px;
+        height: 36px;
+      }
+
+      .footer-wrapper .bottom-wrapper .qr-code {
+        margin-top: 20px;
+        width: 120px;
+        height: 120px;
+        background-color: #fff;
+      }
+
+      .footer-wrapper .bottom-wrapper .qr-code img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .web-bottom {
+        height: 67px;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .web-bottom p {
+        padding: 0 20px;
+        font-size: 12px;
+        color: #fff;
+      }
+
+    }
   </style>
 </head>
 
@@ -294,9 +767,14 @@
               <div class="flex-item-12">
                 <figure class="info-wrapper">
                   <div class="content">
-                    <h3 class="title">这是标题</h3>
-                    <p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流</p>
-                    <button class="button">查看详情</button>
+                    <h3 class="title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
+                    swiper-animate-delay="0s">这是标题</h3>
+                    <p class="desc ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
+                    swiper-animate-delay="0s">
+                      中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+                    </p>
+                    <button class="button ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
+                    swiper-animate-delay="0s">查看详情</button>
                   </div>
                 </figure>
               </div>
@@ -322,8 +800,8 @@
         </div>
       </div>
       <div class="part-next-prev-wrapper">
-        <div class="prev part-one-swiper-prev">左</div>
-        <div class="next part-one-swiper-next">右</div>
+        <div class="prev part-one-swiper-prev"></div>
+        <div class="next part-one-swiper-next"></div>
       </div>
     </section>
   </section>
@@ -336,6 +814,93 @@
           <div class="part-two-swiper-wrapper">
             <div class="swiper-container" id="partTwoSwiper">
               <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="part-two-card">
+                    <figure class="image-wrapper" style="background-image:url(./images/banner2.jpg)">
+                    </figure>
+                    <figure class="info-wrapper">
+                      <div class="content">
+                        <h3 class="title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
+                        swiper-animate-delay="0s">这是标题</h3>
+                        <p class="desc ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
+                        swiper-animate-delay="0s">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+                        </p>
+                        <button class="button ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
+                        swiper-animate-delay="0s">查看详情</button>
+                      </div>
+                    </figure>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="part-two-card">
+                    <figure class="image-wrapper" style="background-image:url(./images/banner2.jpg)">
+                    </figure>
+                    <figure class="info-wrapper">
+                      <div class="content">
+                        <h3 class="title">这是标题</h3>
+                        <p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+                        </p>
+                        <button class="button">查看详情</button>
+                      </div>
+                    </figure>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="part-two-card">
+                    <figure class="image-wrapper" style="background-image:url(./images/banner2.jpg)">
+                    </figure>
+                    <figure class="info-wrapper">
+                      <div class="content">
+                        <h3 class="title">这是标题</h3>
+                        <p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+                        </p>
+                        <button class="button">查看详情</button>
+                      </div>
+                    </figure>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="part-two-card">
+                    <figure class="image-wrapper" style="background-image:url(./images/banner2.jpg)">
+                    </figure>
+                    <figure class="info-wrapper">
+                      <div class="content">
+                        <h3 class="title">这是标题</h3>
+                        <p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+                        </p>
+                        <button class="button">查看详情</button>
+                      </div>
+                    </figure>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="part-two-card">
+                    <figure class="image-wrapper" style="background-image:url(./images/banner2.jpg)">
+                    </figure>
+                    <figure class="info-wrapper">
+                      <div class="content">
+                        <h3 class="title">这是标题</h3>
+                        <p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+                        </p>
+                        <button class="button">查看详情</button>
+                      </div>
+                    </figure>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="part-two-card">
+                    <figure class="image-wrapper" style="background-image:url(./images/banner2.jpg)">
+                    </figure>
+                    <figure class="info-wrapper">
+                      <div class="content">
+                        <h3 class="title">这是标题</h3>
+                        <p class="desc">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+                        </p>
+                        <button class="button">查看详情</button>
+                      </div>
+                    </figure>
+                  </div>
+                </div>
                 <div class="swiper-slide">
                   <div class="part-two-card">
                     <figure class="image-wrapper" style="background-image:url(./images/banner2.jpg)">
@@ -370,38 +935,38 @@
         </div>
         <div class="flex-item-12">
           <div class="part-two-swiper-menus">
-            <ul class="menus-list">
-              <li class="menu-item">
-                <span class="icon">图片</span>
-                <p class="title">文字</p>
+            <ul class="menus-list" id="partMenus">
+              <li class="menu-item active">
+                <span class="icon"><img src="./images/icon.png" alt=""></span>
+                <p class="title">能源</p>
               </li>
               <li class="menu-item">
-                <span class="icon">图片</span>
-                <p class="title">文字</p>
+                <span class="icon"><img src="./images/icon.png" alt=""></span>
+                <p class="title">交通</p>
               </li>
               <li class="menu-item">
-                <span class="icon">图片</span>
-                <p class="title">文字</p>
+                <span class="icon"><img src="./images/icon.png" alt=""></span>
+                <p class="title">物流</p>
               </li>
               <li class="menu-item">
-                <span class="icon">图片</span>
-                <p class="title">文字</p>
+                <span class="icon"><img src="./images/icon.png" alt=""></span>
+                <p class="title">地产</p>
               </li>
               <li class="menu-item">
-                <span class="icon">图片</span>
-                <p class="title">文字</p>
+                <span class="icon"><img src="./images/icon.png" alt=""></span>
+                <p class="title">农业</p>
               </li>
               <li class="menu-item">
-                <span class="icon">图片</span>
-                <p class="title">文字</p>
+                <span class="icon"><img src="./images/icon.png" alt=""></span>
+                <p class="title">文旅</p>
               </li>
               <li class="menu-item">
-                <span class="icon">图片</span>
-                <p class="title">文字</p>
+                <span class="icon"><img src="./images/icon.png" alt=""></span>
+                <p class="title">科技</p>
               </li>
               <li class="menu-item">
-                <span class="icon">图片</span>
-                <p class="title">文字</p>
+                <span class="icon"><img src="./images/icon.png" alt=""></span>
+                <p class="title">化工</p>
               </li>
             </ul>
           </div>
@@ -423,10 +988,12 @@
                 <div class="content">
                   <div class="flex-column flex-md">
                     <div class="flex-item-18">
-                      <h3 class="title">这是标题</h3>
-                      <p class="desc">这是描述这是描述这是描述这是描述这是描述这是描述</p>
+                      <h3 class="title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
+                      swiper-animate-delay="0s">这是标题</h3>
+                      <p class="desc ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
+                      swiper-animate-delay="0s">这是描述这是描述这是描述这是描述这是描述这是描述</p>
                     </div>
-                    <div class="flex-item-6">
+                    <div class="flex-item-6 flex-column flex-right">
                       <div class="time-wrapper">
                         <p class="day">12</p>
                         <p class="month">11月</p>
@@ -449,12 +1016,14 @@
                       <h3 class="title">这是标题</h3>
                       <p class="desc">这是描述这是描述这是描述这是描述这是描述这是描述</p>
                     </div>
-                    <div class="flex-item-6">
-                      <div class="time-wrapper">
-                        <p class="day">12</p>
-                        <p class="month">11月</p>
+                    <div class="flex-item-6 flex-column flex-right">
+                      <div>
+                        <div class="time-wrapper">
+                          <p class="day">12</p>
+                          <p class="month">11月</p>
+                        </div>
+                        <a href="" class="link">查看详情</a>
                       </div>
-                      <a href="" class="link">查看详情</a>
                     </div>
                   </div>
                 </div>
@@ -470,14 +1039,18 @@
                   <div class="flex-column flex-md">
                     <div class="flex-item-18">
                       <h3 class="title">这是标题</h3>
-                      <p class="desc">这是描述这是描述这是描述这是描述这是描述这是描述</p>
+                      <p class="desc">
+                        臻于至善：不断探索，任何事物都不是一蹴而就的，都需要不断探索才能发现真理，达到前所未有的新境界，实现使命和愿景的过程，就是追求卓越的过程。整句话的意思是：必须以“明德”自律，使公司成为“明德”之主体，培养仁爱之德
+                        ...</p>
                     </div>
-                    <div class="flex-item-6">
-                      <div class="time-wrapper">
-                        <p class="day">12</p>
-                        <p class="month">11月</p>
+                    <div class="flex-item-6 flex-column flex-right">
+                      <div>
+                        <div class="time-wrapper">
+                          <p class="day">12</p>
+                          <p class="month">11月</p>
+                        </div>
+                        <a href="" class="link">查看详情</a>
                       </div>
-                      <a href="" class="link">查看详情</a>
                     </div>
                   </div>
                 </div>
@@ -504,54 +1077,101 @@
           <a href="">链接1</a>
         </div>
         <div class="shares">
-          <a href=""><img src="" alt=""></a>
-          <a href=""><img src="" alt=""></a>
-          <a href=""><img src="" alt=""></a>
+          <a href=""><img src="./images/QQ.png" alt=""></a>
+          <a href=""><img src="./images/VX.png" alt=""></a>
+          <a href=""><img src="./images/XL.png" alt=""></a>
         </div>
       </div>
       <div class="bottom-wrapper">
-        <select name="" id="">
-          <option value="1">选项1</option>
-          <option value="2">选项1</option>
-          <option value="3">选项1</option>
-        </select>
+        <div>
+          <select name="" id="">
+            <option value="1">选项1</option>
+            <option value="2">选项1</option>
+            <option value="3">选项1</option>
+          </select>
+        </div>
         <div class="qr-code">
           <img src="./images/banner2.jpg" alt="">
         </div>
       </div>
     </section>
-    </div>
+  </section>
+  <section class="web-bottom">
+    <p>Copyright 2019,HAO JUN Group All rights reserved 备案号：蜀ICP备11234567号 版权归浩君控股集团所有</p>
+  </section>
 
-    <script src="./js/jquery.js"></script>
-    <script src="./plugin/swiper/swiper.min.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./plugin/swiper/swiper.min.js"></script>
+	<script src="./plugin/swiper/swiper.animate.min.js"></script>
 
-    <script>
-      new Swiper("#partOneSwiper", {
-        navigation: {
-          nextEl: '.part-one-swiper-next',
-          prevEl: '.part-one-swiper-prev',
+  <script>
+    new Swiper("#partOneSwiper", {
+      on: {
+				init: function () {
+					swiperAnimateCache(this); //隐藏动画元素 
+					this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
+				},
+				slideChangeTransitionEnd: function () {
+					swiperAnimate(this); //每个slide切换结束时运行当前slide动画
+				}
+			},
+      navigation: {
+        nextEl: '.part-one-swiper-next',
+        prevEl: '.part-one-swiper-prev',
+      },
+    });
+
+    var partSwiper = new Swiper("#partTwoSwiper", {
+      on: {
+        init: function () {
+					swiperAnimateCache(this); //隐藏动画元素 
+					this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
+				},
+				slideChangeTransitionEnd: function () {
+          $("#partMenus").find("li").eq(this.activeIndex).addClass("active").siblings("li").removeClass("active");
+					swiperAnimate(this); //每个slide切换结束时运行当前slide动画
+				},
+      },
+    });
+    $("#partMenus").find("li").each(function () {
+      $(this).click(function () {
+        $(this).addClass('active').siblings("li").removeClass("active");
+        partSwiper.slideTo($(this).index());
+      })
+    })
+
+    new Swiper("#partThreeSwiper", {
+      slidesPerView: 3,
+      autoHeight: true,
+      on: {
+				init: function () {
+					swiperAnimateCache(this); //隐藏动画元素 
+					this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
+				},
+				slideChangeTransitionEnd: function () {
+					swiperAnimate(this); //每个slide切换结束时运行当前slide动画
+				}
+			},
+      navigation: {
+        nextEl: '.part-one-swiper-next',
+        prevEl: '.part-one-swiper-prev',
+      },
+      pagination: {
+        el: '.part-three-pagination',
+        bulletClass: 'part-three-bullet',
+        bulletActiveClass: 'part-three-bullet-active',
+        clickable: true
+      },
+      breakpoints: {
+        //当宽度大于等于768
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 20
         },
-      });
+      }
+    });
 
-      new Swiper("#partTwoSwiper", {
-      });
-
-      new Swiper("#partThreeSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        navigation: {
-          nextEl: '.part-one-swiper-next',
-          prevEl: '.part-one-swiper-prev',
-        },
-        pagination: {
-          el: '.part-three-pagination',
-          bulletClass: 'part-three-bullet',
-          bulletActiveClass: 'part-three-bullet-active',
-          clickable: true
-        },
-      });
-
-    </script>
+  </script>
 </body>
 
 </html>
