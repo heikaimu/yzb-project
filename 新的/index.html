@@ -10,7 +10,9 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/flex-layout.css">
   <link rel="stylesheet" href="./plugin/swiper/swiper.min.css">
-	<link rel="stylesheet" href="./plugin/swiper/animate.min.css">
+  <link rel="stylesheet" href="./plugin/swiper/animate.min.css">
+  <!-- select -->
+  <link rel="stylesheet" href="./css/select.css">
   <style>
     /* body {
       padding-top: 90px;
@@ -380,15 +382,20 @@
     }
 
     .footer-wrapper .bottom-wrapper .qr-code {
-      width: 100px;
-      height: 100px;
-      background-color: #fff;
+      display: flex;
     }
 
     .footer-wrapper .bottom-wrapper .qr-code img {
-      width: 100%;
-      height: 100%;
+      width: 100px;
+      height: 100px;
     }
+    .footer-wrapper .bottom-wrapper .qr-code p {
+      width: 20px;
+        font-size: 14px;
+        color: #fff;
+        word-wrap: break-word; 
+letter-spacing: 20px; 
+      }
 
     .web-bottom {
       height: 87px;
@@ -725,12 +732,14 @@
         margin-top: 20px;
         width: 120px;
         height: 120px;
-        background-color: #fff;
       }
 
       .footer-wrapper .bottom-wrapper .qr-code img {
         width: 100%;
         height: 100%;
+      }
+      .footer-wrapper .bottom-wrapper .qr-code p {
+        line-height: 1.22;
       }
 
       .web-bottom {
@@ -768,13 +777,13 @@
                 <figure class="info-wrapper">
                   <div class="content">
                     <h3 class="title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
-                    swiper-animate-delay="0s">这是标题</h3>
+                      swiper-animate-delay="0s">这是标题</h3>
                     <p class="desc ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
-                    swiper-animate-delay="0s">
+                      swiper-animate-delay="0s">
                       中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
                     </p>
                     <button class="button ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
-                    swiper-animate-delay="0s">查看详情</button>
+                      swiper-animate-delay="0s">查看详情</button>
                   </div>
                 </figure>
               </div>
@@ -821,12 +830,13 @@
                     <figure class="info-wrapper">
                       <div class="content">
                         <h3 class="title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
-                        swiper-animate-delay="0s">这是标题</h3>
+                          swiper-animate-delay="0s">这是标题</h3>
                         <p class="desc ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
-                        swiper-animate-delay="0s">中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
+                          swiper-animate-delay="0s">
+                          中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流中国医学科学院北京协和医科大学教授l莅临我司技术交流
                         </p>
                         <button class="button ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
-                        swiper-animate-delay="0s">查看详情</button>
+                          swiper-animate-delay="0s">查看详情</button>
                       </div>
                     </figure>
                   </div>
@@ -989,9 +999,9 @@
                   <div class="flex-column flex-md">
                     <div class="flex-item-18">
                       <h3 class="title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
-                      swiper-animate-delay="0s">这是标题</h3>
+                        swiper-animate-delay="0s">这是标题</h3>
                       <p class="desc ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="2s"
-                      swiper-animate-delay="0s">这是描述这是描述这是描述这是描述这是描述这是描述</p>
+                        swiper-animate-delay="0s">这是描述这是描述这是描述这是描述这是描述这是描述</p>
                     </div>
                     <div class="flex-item-6 flex-column flex-right">
                       <div class="time-wrapper">
@@ -1084,13 +1094,26 @@
       </div>
       <div class="bottom-wrapper">
         <div>
-          <select name="" id="">
-            <option value="1">选项1</option>
-            <option value="2">选项1</option>
-            <option value="3">选项1</option>
-          </select>
+          <div class="custom-select" id="link-select">
+            <div class="input-wrapper">
+              <div class="input-text">
+                <input type="text" name="sex" value="-友情链接-">
+              </div>
+              <div class="input-btn"></div>
+            </div>
+            <div class="select-list">
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+              <a href="">dwa</a>
+            </div>
+          </div>
         </div>
         <div class="qr-code">
+          <p>浩君集团公众号</p>
           <img src="./images/banner2.jpg" alt="">
         </div>
       </div>
@@ -1101,20 +1124,21 @@
   </section>
 
   <script src="./js/jquery.js"></script>
+  <script src="./js/select.js"></script>
   <script src="./plugin/swiper/swiper.min.js"></script>
-	<script src="./plugin/swiper/swiper.animate.min.js"></script>
+  <script src="./plugin/swiper/swiper.animate.min.js"></script>
 
   <script>
     new Swiper("#partOneSwiper", {
       on: {
-				init: function () {
-					swiperAnimateCache(this); //隐藏动画元素 
-					this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
-				},
-				slideChangeTransitionEnd: function () {
-					swiperAnimate(this); //每个slide切换结束时运行当前slide动画
-				}
-			},
+        init: function () {
+          swiperAnimateCache(this); //隐藏动画元素 
+          this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
+        },
+        slideChangeTransitionEnd: function () {
+          swiperAnimate(this); //每个slide切换结束时运行当前slide动画
+        }
+      },
       navigation: {
         nextEl: '.part-one-swiper-next',
         prevEl: '.part-one-swiper-prev',
@@ -1124,13 +1148,13 @@
     var partSwiper = new Swiper("#partTwoSwiper", {
       on: {
         init: function () {
-					swiperAnimateCache(this); //隐藏动画元素 
-					this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
-				},
-				slideChangeTransitionEnd: function () {
+          swiperAnimateCache(this); //隐藏动画元素 
+          this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
+        },
+        slideChangeTransitionEnd: function () {
           $("#partMenus").find("li").eq(this.activeIndex).addClass("active").siblings("li").removeClass("active");
-					swiperAnimate(this); //每个slide切换结束时运行当前slide动画
-				},
+          swiperAnimate(this); //每个slide切换结束时运行当前slide动画
+        },
       },
     });
     $("#partMenus").find("li").each(function () {
@@ -1144,14 +1168,14 @@
       slidesPerView: 3,
       autoHeight: true,
       on: {
-				init: function () {
-					swiperAnimateCache(this); //隐藏动画元素 
-					this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
-				},
-				slideChangeTransitionEnd: function () {
-					swiperAnimate(this); //每个slide切换结束时运行当前slide动画
-				}
-			},
+        init: function () {
+          swiperAnimateCache(this); //隐藏动画元素 
+          this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
+        },
+        slideChangeTransitionEnd: function () {
+          swiperAnimate(this); //每个slide切换结束时运行当前slide动画
+        }
+      },
       navigation: {
         nextEl: '.part-one-swiper-next',
         prevEl: '.part-one-swiper-prev',
