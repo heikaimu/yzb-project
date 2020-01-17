@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <!-- css -->
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/common.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./plugin/swiper/swiper.min.css" />
+  <style>
+    /* 标题 */
+    .title-box {
+      padding: 30px 0;
+      display: flex;
+      display: flex;
+      align-items: center;
+    }
+
+    .title-box .left-line {
+      height: 2px;
+      flex: 1;
+      background-color: #ea3c3f;
+      position: relative;
+    }
+
+    .title-box .left-line::after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 9px;
+      background-color: #ea3c3f;
+      position: absolute;
+      right: 0;
+      top: -3px;
+    }
+
+    .title-box .right-line {
+      height: 2px;
+      flex: 1;
+      background-color: #ea3c3f;
+      position: relative;
+    }
+
+    .title-box .right-line::after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 9px;
+      background-color: #ea3c3f;
+      position: absolute;
+      left: 0;
+      top: -3px;
+    }
+
+    .title-box .title {
+      padding: 0 60px;
+      font-size: 30px;
+      font-weight: 900;
+      color: #fa1015;
+    }
+
+    .title-box .menus {
+      display: flex;
+      padding: 0 20px;
+    }
+
+    .title-box .menus p {
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 2px solid #ea3c3f;
+      color: #ea3c3f;
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    .title-box .menus p.active {
+      background-color: #ea3c3f;
+      color: #fff;
+    }
+
+    /* 更多 */
+    .more {
+      padding: 30px 0;
+      text-align: right;
+    }
+
+    .more a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #ea3c3f;
+    }
+
+    /* 图片视频 */
+    .tab-content-wrapper {
+      height: 330px;
+      padding-bottom: 130px;
+      position: relative;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-picture .img {
+      height: 330px;
+    }
+
+    .tab-picture .img {
+      height: 330px;
+    }
+
+    .tab-video .img {
+      height: 330px;
+    }
+
+    /* 轮播新闻 */
+    .swiper-news-wrapper {
+      display: flex;
+      height: 360px;
+    }
+
+    .swiper-news-wrapper .left-wrapper {
+      flex: 0 0 550px;
+      height: 360px;
+      background-color: red;
+      margin-right: 20px;
+    }
+
+    .swiper-news-wrapper .left-wrapper .big-news-wrapper {}
+
+    .swiper-news-wrapper .left-wrapper .big-news-wrapper .news-card .img {
+      width: 100%;
+      height: 320px;
+    }
+
+    .swiper-news-wrapper .left-wrapper .big-news-wrapper .news-card .title {
+      height: 40px;
+      padding: 0 10px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .swiper-news-wrapper .left-wrapper .big-news-wrapper .news-card .title a {
+      font-size: 18px;
+      color: #444;
+      line-height: 40px;
+      text-decoration: none;
+    }
+
+    .swiper-news-wrapper .right-wrapper {
+      flex: 1;
+      height: 360px;
+    }
+
+    .swiper-news-wrapper .right-wrapper .static-wrapper {}
+
+    .swiper-news-wrapper .right-wrapper .static-wrapper .img {
+      height: 150px;
+      background-color: pink;
+    }
+
+    .swiper-news-content {
+      padding-top: 10px;
+    }
+
+    .swiper-news-wrapper .right-wrapper .swiper-news-content .swiper-container {
+      width: 400px;
+      height: 180px;
+    }
+
+    .swiper-news-wrapper .right-wrapper .swiper-news-content .swiper-slide {
+      height: 180px;
+    }
+
+    .swiper-news-wrapper .right-wrapper .swiper-news-content .swiper-slide .news-card .img {
+      width: 100%;
+      height: 150px;
+    }
+
+    .swiper-news-wrapper .right-wrapper .swiper-news-content .swiper-slide .news-card .title {
+      height: 30px;
+      padding: 0 10px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .swiper-news-wrapper .right-wrapper .swiper-news-content .swiper-slide .news-card .title a {
+      font-size: 12px;
+      color: #444;
+      line-height: 30px;
+      text-decoration: none;
+    }
+
+    /* 践行落实 */
+    .news-wrapper {
+      overflow: hidden;
+    }
+
+    .news-wrapper ul {
+      width: 50%;
+      float: left;
+      box-sizing: border-box;
+    }
+
+    .news-wrapper ul:nth-child(1) {
+      padding-right: 20px;
+    }
+
+    .news-wrapper ul:nth-child(2) {
+      padding-left: 20px;
+    }
+
+    .news-wrapper ul li {
+      padding: 10px 0 10px 16px;
+      position: relative;
+    }
+
+    .news-wrapper ul li::before {
+      content: "";
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #c64242;
+      position: absolute;
+      left: 0;
+      top: 15px;
+    }
+
+    .news-wrapper ul li a {
+      font-size: 16px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .news-wrapper ul li a:hover {
+      text-decoration: underline;
+      color: #f60100;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="web-container">
+    <div class="web-wrapper">
+      <!-- banner -->
+      <section class="part"></section>
+
+      <!-- 聚焦全会 -->
+      <section class="part"></section>
+
+      <!-- 亮点巡礼 -->
+      <section class="part"></section>
+
+      <!-- 视频图片 -->
+      <section class="part">
+        <div class="title-box">
+          <span class="left-line"></span>
+          <div class="menus" id="tab_menus">
+            <p class="active">图片</p>
+            <p>视频</p>
+          </div>
+          <span class="right-line"></span>
+        </div>
+        <div class="tab-content-wrapper" id="tab_content">
+          <div class="tab-content tab-picture active">
+            <div class="swiper-container" id="picture">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content tab-video">
+            <div class="swiper-container" id="video">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner2.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner2.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner2.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner2.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner2.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img bg-cover" style="background-image: url('./images/banner2.jpg')"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 新闻 -->
+      <section class="part">
+        <div class="swiper-news-wrapper">
+          <div class="left-wrapper">
+            <div class="big-news-wrapper">
+              <div class="news-card">
+                <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                <div class="title omit">
+                  <a href="">这是标题</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-wrapper">
+            <div class="static-wrapper">
+              <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+            </div>
+            <div class="swiper-news-content">
+              <div class="swiper-container" id="news">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="news-card">
+                      <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                      <div class="title omit">
+                        <a href="">这是标题</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="news-card">
+                      <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                      <div class="title omit">
+                        <a href="">这是标题</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="news-card">
+                      <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                      <div class="title omit">
+                        <a href="">这是标题这是标题这是标题这是标题</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="news-card">
+                      <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                      <div class="title omit">
+                        <a href="">这是标题</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="news-card">
+                      <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                      <div class="title omit">
+                        <a href="">这是标题</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 践行落实 -->
+      <section class="part">
+        <div class="title-box">
+          <span class="left-line"></span>
+          <p class="title">践行落实</p>
+          <span class="right-line"></span>
+        </div>
+        <div class="news-wrapper">
+          <ul>
+            <li class="omit">
+              <a href="">内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”
+                全面推进党的各项...</a>
+            </li>
+            <li class="omit">
+              <a href="">内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”
+                全面推进党的各项...</a>
+            </li>
+            <li class="omit">
+              <a href="">内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”
+                全面推进党的各项...</a>
+            </li>
+            <li class="omit">
+              <a href="">内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”
+                全面推进党的各项...</a>
+            </li>
+            <li class="omit">
+              <a href="">内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”
+                全面推进党的各项...</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="omit">
+              <a href="">内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”
+                全面推进党的各项...</a>
+            </li>
+            <li class="omit">
+              <a href="">内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”
+                全面推进党的各项...</a>
+            </li>
+            <li class="omit">
+              <a href="">内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”
+                全面推进党的各项...</a>
+            </li>
+            <li class="omit">
+              <a href="">内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”
+                全面推进党的各项...</a>
+            </li>
+            <li class="omit">
+              <a href="">内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”内江市委书记马波：坚定“五个再加强”
+                全面推进党的各项...</a>
+            </li>
+          </ul>
+        </div>
+        <div class="more">
+          <a href="">更多></a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/pictureView.js"></script>
+  <!-- Swiper JS -->
+  <script src="./plugin/swiper/swiper.min.js"></script>
+  <script>
+
+    var picture = new Swiper("#picture", {
+      slidesPerView: 4,
+      spaceBetween: 23
+    })
+
+    var video = new Swiper("#video", {
+      slidesPerView: 4,
+      spaceBetween: 23
+    })
+
+    var news = new Swiper("#news", {
+      effect: "coverflow",
+      loop: true,
+      slidesPerView: 2,
+      centeredSlides: true,
+      coverflowEffect: {
+        rotate: 0, //slide做3d旋转时Y轴的旋转角度。默认50
+        stretch: 100, //每个slide之间的拉伸值，越大slide靠得越紧。 默认0
+        depth: 100, //每个slide之间的拉伸值，越大slide靠得越紧。 默认0
+        modifier: 1.2, //depth和rotate和stretch的倍率，相当于depth*modifier、rotate*modifier、stretch*modifier，值越大这三个参数的效果越明显。默认1。
+        slideShadows: true //开启slide阴影。默认 true。
+      }
+    });
+
+    $(function() {
+      $("#tab_menus").find("p").each(function() {
+        $(this).click(function() {
+          $("#tab_content").find(".tab-content").eq($(this).index()).show().siblings(".tab-content").hide();
+          picture.update();
+          video.update();
+        })
+      })
+    })
+  </script>
+</body>
+
+</html>
