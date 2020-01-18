@@ -1,9 +1,19 @@
 .web-container {
-    min-width: 1000px;
+    padding-top: 500px;
+    min-width: 1200px;
     margin: 0 auto;
+    background: url(../images/bg.png) no-repeat top center;
+    position: relative;
 }
 
 .web-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.sm-web-wrapper {
     width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
