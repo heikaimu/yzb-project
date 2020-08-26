@@ -123,9 +123,7 @@ body {
   right: 0;
   top: 0;
   z-index: 99;
-  background-color: #fff;
-  color: #333;
-  box-shadow: 0 5px 40px -2px rgba(7, 0, 2, 0.15);
+  color: #ffffff;
 }
 
 .web-header__wrapper {
@@ -179,7 +177,7 @@ body {
 }
 
 .web-header__nav__item a {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.8;
   color: currentColor;
   text-decoration: none;

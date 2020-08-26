@@ -1,32 +1,44 @@
 .banner {
-  height: calc(100vh - 100px);
+  height: 100vh;
 }
 
 .banner_card {
   position: relative;
-  height: calc(100vh - 100px);
+  height: 100vh;
 }
 
 .banner_card .image {
   height: 100%;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .banner_card .info {
-  width: 590px;
-  height: 82px;
-  padding: 0 20px;
-  background-color: rgba(200, 24, 26, .63);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
+  left: 0;
+  top: 0;
   right: 0;
   bottom: 0;
+  background-color: rgba(0, 0, 0, .3);
 }
 
-.banner_card .info .text {
-  display: block;
-  font-size: 19px;
+.banner_card .content {
   color: #ffffff;
-  line-height: 82px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.banner_card .content .cn { 
+  font-size: 50px;
+  padding-bottom: 20px;
+}
+
+.banner_card .content .en { 
+  font-size: 20px;
+  opacity: .6;
 }
 
 /* 本室快讯 */
