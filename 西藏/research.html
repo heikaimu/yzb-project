@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>新闻</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./fonts/iconfont.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/public.css">
+  <link rel="stylesheet" href="./swiper/swiper.min.css">
+  <link rel="stylesheet" href="./css/pages.css">
+</head>
+
+<body>
+  <!-- 头部 -->
+  <header class="web-header">
+    <div class="web-header__wrapper">
+      <!-- logo -->
+      <a class="web-header__logo"><img src="./images/logo.png" alt=""></a>
+      <!-- 导航 -->
+      <nav class="web-header__nav">
+        <ul class="web-header__nav__list">
+          <li class="web-header__nav__item"><a href="./index.html">གཙོ་ངོས།<br>首页</a></li>
+          <li class="web-header__nav__item"><a href="./laboratory.html">ཚོད་ལྟ་ཁང་<br>实验室概况</a></li>
+          <li class="web-header__nav__item"><a href="./team.html">ཚོགས་པ།<br>团队介绍</a></li>
+          <li class="web-header__nav__item"><a href="./news.html">གསར་འགྱུར།<br>新闻资讯</a></li>
+          <li class="web-header__nav__item active"><a href="./machine.html">དཔྱད་ཆས་སྒྲིག་ཆས་<br>仪器设备</a></li>
+        </ul>
+      </nav>
+      <!-- 移动端导航隐藏显示按钮 -->
+      <div class="web-header__nav__switch--mobile">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- 搜索框显示按钮 -->
+      <div class="web-header__searchbar__button--open">
+        <span class="iconfont icon-search"></span>
+      </div>
+      <!-- 搜索框弹窗 -->
+      <div class="web-header__searchbar__dialog">
+        <div class="web-header__searchbar__form">
+          <div class="web-header__searchbar__item">
+            <input type="text" class="input" placeholder="输入关键词搜索">
+          </div>
+          <div class="web-header__searchbar__button--submit">
+            <span class="iconfont icon-search"></span>
+          </div>
+        </div>
+        <div class="web-header__searchbar__button--close">
+          <span class="iconfont icon-close"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 顶部头图 -->
+  <div class="top-image" style="background-image: url(./images/top_image.png)">
+    <div class="top-image__content">
+      <div class="container">
+        <div class="top-image__title">
+          <p class="text">科研研究</p>
+          <p class="fw">ཚན་རིག་ཞིབ་འཇུག་</p>
+        </div>
+        <div class="top-image__bread-nav">
+          <a class="link" href="">首页</a>
+          <i class="iconfont icon-shezhi-youjiantou"></i>
+          <p class="label">新闻资讯</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 导航 -->
+  <div class="page-tabs">
+    <a href="" class="tab-item active">研究方向</a>
+    <a href="" class="tab-item">科研成果</a>
+  </div>
+
+  <!-- 研究方向 -->
+  <div class="container research-direction">
+    <div class="page-title">
+      <p class="text">研究方向</p>
+      <p class="fw">ཞིབ་འཇུག་ཁ་ཕྱོགས་ </p>
+    </div>
+    <div class="research-direction-wrapper">
+      <ul class="page-machine__list">
+        <li class="page-machine__item half">
+          <div class="machine-card">
+            <div class="cover hover">
+              <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+            </div>
+            <div class="info"><a class="title omit" href="">团队合作研究C团队合作研究C团队合作研究C团队合作研究C</a></div>
+          </div>
+        </li>
+        <li class="page-machine__item half">
+          <div class="machine-card">
+            <div class="cover hover">
+              <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+            </div>
+            <div class="info"><a class="title omit" href="">团队合作研究C团队合作研究C团队合作研究C团队合作研究C</a></div>
+          </div>
+        </li>
+        <li class="page-machine__item half">
+          <div class="machine-card">
+            <div class="cover hover">
+              <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+            </div>
+            <div class="info"><a class="title omit" href="">团队合作研究C团队合作研究C团队合作研究C团队合作研究C</a></div>
+          </div>
+        </li>
+        <li class="page-machine__item half">
+          <div class="machine-card">
+            <div class="cover hover">
+              <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+            </div>
+            <div class="info"><a class="title omit" href="">团队合作研究C团队合作研究C团队合作研究C团队合作研究C</a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- 科研成果 -->
+  <div class="container research-result">
+    <div class="page-title">
+      <p class="text">科研成果</p>
+      <p class="fw">ཚན་རིག་ཞིབ་འཇུག་གི་གྲུབ་འབྲས་ </p>
+    </div>
+    <div class="research-result-wrapper">
+      <!-- swiper -->
+      <div class="swiper-container" id="research_result_swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a class="research-result__card">
+              <img src="./images/activity_image.png" alt="">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="research-result__card">
+              <img src="./images/activity_image.png" alt="">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="research-result__card">
+              <img src="./images/activity_image.png" alt="">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="research-result__card">
+              <img src="./images/activity_image.png" alt="">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="research-result__card">
+              <img src="./images/activity_image.png" alt="">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a class="research-result__card">
+              <img src="./images/activity_image.png" alt="">
+            </a>
+          </div>
+        </div>
+         <!-- 如果需要分页器 -->
+         <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 网页底部 -->
+  <footer class="web-footer">
+    <!-- 上部分 -->
+    <div class="web-footer__top">
+      <div class="web-footer__content">
+        <!-- 联系方式 -->
+        <div class="web-footer_contact">
+          <div class="company-basic-info">
+            <p class="text"><span class="iconfont icon-dizhi"></span> 四川省成都市高新区天府三街64号</p>
+            <p class="text"><span class="iconfont icon-iconfontdianhua1"></span> 0823-3401199</p>
+            <p class="text"><span class="iconfont icon-youjian"></span> qzgywswu@163.com</p>
+          </div>
+          <div class="third-info">
+            <p class="text">+关注青藏高原微生物研究</p>
+            <a href=""><span class="iconfont icon-weixin"></span></a>
+            <a href=""><span class="iconfont icon-weibo"></span></a>
+            <a href=""><span class="iconfont icon-qq"></span></a>
+          </div>
+        </div>
+        <!-- 友情链接 -->
+        <div class="web-footer__links">
+          <select class="select" name="link" id="footer_link">
+            <option value='' disabled selected style='display:none;'>友情链接</option>
+            <option value="baidu">百度</option>
+            <option value="tengxun">腾讯</option>
+            <option value="ali">阿里</option>
+            <option value="3">Google</option>
+            <option value="3">Facebook</option>
+          </select>
+          <span class="iconfont icon-xiajiantou"></span>
+        </div>
+      </div>
+    </div>
+    <!-- 下部分 -->
+    <div class="web-footer__bottom">
+      <div class="web-footer__content">
+        <!-- 导航 -->
+        <nav class="web-footer__nav">
+          <ul class="web-footer__nav__list">
+            <li class="web-footer__nav__item" class="active"><a href="./index.html">གཙོ་ངོས།<br>首页</a></li>
+            <li class="web-footer__nav__item"><a href="./aboutus.html">ཚོད་ལྟ་ཁང་<br>实验室概况</a></li>
+            <li class="web-footer__nav__item"><a href="">ཚོགས་པ།<br>团队介绍</a></li>
+            <li class="web-footer__nav__item"><a href="">གསར་འགྱུར།<br>新闻资讯</a></li>
+            <li class="web-footer__nav__item"><a href="">དཔྱད་ཆས་སྒྲིག་ཆས་<br>仪器设备</a></li>
+          </ul>
+        </nav>
+        <!-- 备案号 -->
+        <div class="web-footer__copyright">
+          <p class="text">Copyright © 2020 蜀ICP备11103356号</p>
+          <p class="text">青藏高原微生物国家地方联合工程研究中心</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/my-jq-fun.js"></script>
+  <script src="./js/wow.min.js"></script>
+  <script src="./swiper/swiper.min.js"></script>
+  <script src="./js/common.js"></script>
+  <script>
+  var research_result_swiper = new Swiper('#research_result_swiper', {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      breakpoints: {
+        320: {  //当屏幕宽度大于等于320
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        768: {  //当屏幕宽度大于等于768 
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        1280: {  //当屏幕宽度大于等于1280
+          slidesPerView: 2,
+        }
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '#activity_next',
+        prevEl: '#activity_prev',
+      },
+    })
+  </script>
+</body>
+
+</html>
