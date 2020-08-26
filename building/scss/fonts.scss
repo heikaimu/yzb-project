@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?bbmgu9');
+  src:  url('../fonts/icomoon.eot?bbmgu9#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?bbmgu9') format('truetype'),
+    url('../fonts/icomoon.woff?bbmgu9') format('woff'),
+    url('../fonts/icomoon.svg?bbmgu9#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-location:before {
+  content: "\e90a";
+}
+.icon-phone:before {
+  content: "\e90b";
+}
+.icon-arrow-right:before {
+  content: "\e905";
+}
+.icon-arrow-left:before {
+  content: "\e906";
+}
+.icon-arrow-right-round-long:before {
+  content: "\e907";
+}
+.icon-arrow-left-round-long:before {
+  content: "\e908";
+}
+.icon-play:before {
+  content: "\e909";
+  color: #fff;
+}
+.icon-arrow-right-long:before {
+  content: "\e904";
+}
+.icon-close:before {
+  content: "\e903";
+}
+.icon-arrow-right-round:before {
+  content: "\e900";
+  color: #797979;
+}
+.icon-arrow-left-round:before {
+  content: "\e901";
+  color: #797979;
+}
+.icon-search:before {
+  content: "\e902";
+}

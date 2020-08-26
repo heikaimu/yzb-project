@@ -1,0 +1,14 @@
+{
+  "name": "campany",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reset": "sass scss/reset.scss:css/reset.css --sourcemap=none --no-cache --style expanded",
+    "build": "sass --watch scss/app.scss:css/app.css --sourcemap=none --no-cache --style expanded",
+    "mobile-build": "sass --watch scss/mobile-app.scss:css/mobile-app.css --sourcemap=none --no-cache --style expanded"
+  },
+  "author": "Yaowen Liu",
+  "license": "ISC"
+}

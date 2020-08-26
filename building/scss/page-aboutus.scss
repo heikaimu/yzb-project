@@ -1,0 +1,474 @@
+.aboutus-nav-container {
+  margin-top: -222px;
+  .aboutus-nav-wrapper {
+    height: 222px;
+    background-color: $white;
+    .aboutus-nav-box {
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+      .bread-nav {
+        padding-top: 50px;
+        height: 110px;
+        color: #333;
+        a {
+          color: currentColor;
+        }
+        span {
+          display: inline-block;
+          color: currentColor;
+          margin: 0 20px;
+        }
+      }
+      .aboutus-nav-list {
+        @include flex-between-x;
+        .aboutus-nav-item {
+          flex: 1;
+          text-align: center;
+          position: relative;
+          a {
+            display: inline-block;
+            padding: 40px 10px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 18px;
+            background-color: #bfbfbf;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+          }
+          &:first-child {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+      .line {
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        background-color: $red;
+      }
+    }
+  }
+}
+
+.aboutus-introduce {
+  padding-bottom: 100px;
+  .page-title {
+    padding: 90px 0;
+  }
+  .full-container {
+    .our-video {
+      position: relative;
+      overflow: hidden;
+      .bg {
+        img {
+          width: 100%;
+          transition: .3s;
+        }
+      }
+      .icon-play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%,-50%,0);
+        color: $white;
+        font-size: 80px;
+        cursor: pointer;
+        &:hover {
+          animation: rubberBand 1s infinite;
+        }
+      }
+      &:hover {
+        .bg {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    .aboutus-article {
+      color: #2e2e2e;
+      .title {
+        font-size: 30px;
+        margin-bottom: 30px;
+        &.no-border {
+          &::after {
+            display: none;
+          }
+        }
+        &::after {
+          content: "";
+          display: block;
+          height: 1px;
+          background-color: #2e2e2e;
+          margin-top: 30px;
+        }
+      }
+      .desc {
+        line-height: 1.8;
+        font-size: $font-size-large;
+        font-weight: 600;
+      }
+      .more-wrapper {
+        padding-top: 40px;
+      }
+      .tag-texts {
+        padding-top: 80px;
+        text-align: center;
+        p {
+          display: inline-block;
+          font-size: 30px;
+          color: $red;
+          &:first-child {
+            padding-right: 50px;
+          }
+          &:last-child {
+            padding-left: 50px;
+          }
+        }
+      }
+    }
+    .statistical {
+      @include flex-wrap;
+      padding-top: 60px;
+      .item {
+        margin-right: 50px;
+        .num {
+          font-size: 48px;
+          font-weight: 600;
+          color: $red;
+          position: relative;
+          transition: 0.3s;
+          &::after {
+            font-size: $font-size-medium;
+            color: $font-color-main;
+            position: absolute;
+            right: -20px;
+            top: 0px;
+          }
+          &.year {
+            &::after {
+              content: "年";
+            }
+          }
+          &.money {
+            &::after {
+              content: "万";
+            }
+          }
+        }
+        .desc {
+          font-size: $font-size-base;
+        }
+      }
+    }
+  }
+}
+
+.company-culture {
+  padding-bottom: 160px;
+  position: relative;
+  .bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url(../images/about_bg_2.png);
+    @include bg-cover;
+    background-attachment: fixed;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba($color: #000000, $alpha: 0.4);
+    }
+  }
+  .page-title {
+    padding: 90px 0;
+  }
+  .culture-container {
+    position: relative;
+    .culture-box {
+      padding: 0 150px;
+      .line {
+        display: block;
+        height: 2px;
+        background-image: linear-gradient(90deg, $red 60%, rgba(0, 0, 0, 0) 10%);
+        background-size: 10px 10px;
+        position: absolute;
+        left: 58px;
+        right: 58px;
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+      }
+      .culture-card--round {
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        margin: 0 auto;
+        background-color: $white;
+        text-align: center;
+        .title {
+          font-size: 24px;
+          color: #312878;
+          padding-top: 100px;
+          &::after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: currentColor;
+            margin: 20px auto;
+          }
+        }
+        .desc {
+          padding: 0 50px;
+          font-size: 18px;
+          color: #202020;
+          opacity: 0.7;
+        }
+      }
+    }
+    .culture-swiper-prev,
+    .culture-swiper-next {
+      position: absolute;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+      opacity: 0.8;
+      span {
+        font-size: 60px;
+        color: $white;
+        cursor: pointer;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+    .culture-swiper-prev {
+      left: 0;
+    }
+    .culture-swiper-next {
+      right: 0;
+    }
+  }
+}
+
+.company-honor {
+  padding-bottom: 160px;
+  background-image: url(../images/about_bg_1.png);
+  @include bg-cover;
+  background-attachment: fixed;
+  .page-title {
+    padding: 90px 0;
+  }
+  .honor-container {
+    padding: 0 150px;
+    position: relative;
+    .honor-card {
+      max-width: 265px;
+      margin: 0 auto;
+      text-align: center;
+      img {
+        width: 100%;
+      }
+    }
+    .honor-swiper-prev,
+    .honor-swiper-next {
+      position: absolute;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+      opacity: 0.8;
+      span {
+        font-size: 60px;
+        color: #ccc;
+        cursor: pointer;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+    .honor-swiper-prev {
+      left: 0;
+    }
+    .honor-swiper-next {
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .aboutus-nav-container {
+    margin-top: -100px;
+    .aboutus-nav-wrapper {
+      height: 100px;
+      .aboutus-nav-box {
+        width: 90%;
+        .bread-nav {
+          padding-top: 20px;
+          height: 40px;
+          a {
+            font-size: 12px;
+          }
+          span {
+            margin: 0 10px;
+            font-size: 12px;
+          }
+        }
+        .aboutus-nav-list {
+          .aboutus-nav-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            a {
+              display: inline-block;
+              padding: 20px 10px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .aboutus-introduce {
+    padding-bottom: 50px;
+    .page-title {
+      padding: 30px 0;
+    }
+    .our-video {
+      padding-bottom: 30px;
+    }
+    .full-container {
+      .aboutus-article {
+        .title {
+          font-size: 18px;
+          margin-bottom: 20px;
+          &::after {
+            margin-top: 20px;
+          }
+        }
+        .desc {
+          font-size: 14px;
+        }
+        .more-wrapper {
+          padding-top: 30px;
+        }
+        .tag-texts {
+          padding-top: 50px;
+          p {
+            display: inline-block;
+            font-size: 20px;
+            &:first-child {
+              padding-right: 20px;
+            }
+            &:last-child {
+              padding-left: 20px;
+            }
+          }
+        }
+      }
+      .statistical {
+        @include flex-wrap;
+        padding-top: 30px;
+        .item {
+          margin-right: 20px;
+          .num {
+            font-size: 28px;
+            &::after {
+              font-size: 10px;;
+            }
+          }
+          .desc {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  
+  .company-culture {
+    padding-bottom: 60px;
+    position: relative;
+    .page-title {
+      padding: 30px 0;
+    }
+    .culture-container {
+      position: relative;
+      .culture-box {
+        padding: 0 40px;
+        .line {
+          display: none;
+        }
+        .culture-card--round {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          margin: 0 auto;
+          background-color: $white;
+          text-align: center;
+          .title {
+            font-size: 16px;
+            color: #312878;
+            padding-top: 40px;
+          }
+          .desc {
+            padding: 0 30px;
+            font-size: 12px;
+          }
+        }
+      }
+      .culture-swiper-prev,
+      .culture-swiper-next {
+        position: absolute;
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+        opacity: 0.8;
+        span {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+  
+  .company-honor {
+    padding-bottom: 50px;
+    .page-title {
+      padding: 30px 0;
+    }
+    .honor-container {
+      padding: 0 40px;
+      position: relative;
+      .honor-card {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        img {
+          width: 100%;
+        }
+      }
+      .honor-swiper-prev,
+      .honor-swiper-next {
+        span {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

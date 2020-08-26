@@ -1,0 +1,151 @@
+.building-details {
+  padding: 20px 0;
+  .page-title {
+    padding: 50px 0;
+  }
+  .main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    .desc {
+      line-height: 2;
+      padding-bottom: 50px;
+    }
+    .image-tab-wrapper {
+      .tab-title {
+        @include flex-between-x;
+        li {
+          flex: 1;
+          margin: 0 20px;
+          text-align: center;
+          line-height: 80px;
+          font-size: 20px;
+          color: #333;
+          border-bottom: 1px solid #e7e7e7;
+          cursor: pointer;
+          &.active {
+            color: $red;
+            border-bottom: 1px solid $red;
+          }
+        }
+      }
+      .tab-list {
+        .card-list {
+          @include flex-wrap;
+          .box {
+            width: 33.33%;
+            box-sizing: border-box;
+            padding: 10px;
+            .img-card {
+              position: relative;
+              cursor: pointer;
+              overflow: hidden;
+              &:hover {
+                .icon {
+                  opacity: 1;
+                }
+                .text {
+                  transform: translate3d(0,0,0);
+                  opacity: 1;
+                }
+              }
+              .cover {
+                img {
+                  display: block;
+                  width: 100%;
+                }
+              }
+              .icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: rgba(0, 0, 0, .6);
+                line-height: 60px;
+                text-align: center;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate3d(-50%,-50%,0);
+                transition: .3s;
+                opacity: 0;
+                span {
+                  color: $white;
+                }
+              }
+              .text {
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                color: $white;
+                background-color: $red;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin-bottom: 0;
+                transition: .3s;
+                transform: translate3d(0,40px,0);
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .building-details {
+    padding: 20px 0;
+    .page-title {
+      padding: 30px 0;
+    }
+    .main-content {
+      .desc {
+        padding-bottom: 30px;
+        font-size: 14px;
+      }
+      .image-tab-wrapper {
+        .tab-title {
+          @include flex-between-x;
+          li {
+            flex: 1;
+            margin: 0 20px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 16px;
+            cursor: pointer;
+          }
+        }
+        .tab-list {
+          .card-list {
+            @include flex-wrap;
+            .box {
+              width: 50%;
+              box-sizing: border-box;
+              padding: 10px;
+              .img-card {
+                .icon {
+                  width: 30px;
+                  height: 30px;
+                  line-height: 30px;
+                  span {
+                    color: $white;
+                    font-size: 12px;
+                  }
+                }
+                .text {
+                  height: 20px;
+                  line-height: 20px;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
+}

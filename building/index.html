@@ -1,0 +1,608 @@
+<!--
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: Yaowen Liu
+ * @Date: 2020-05-01 09:06:12
+ * @LastEditors: Yaowen Liu
+ * @LastEditTime: 2020-06-01 12:12:56
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>网站首页</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./plugins/swiper/swiper.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/app.css">
+  <link rel="stylesheet" href="https://cdn.dowebok.com/98/css/animate.min.css">
+  <script src="./js/jquery.js"></script>
+</head>
+
+<body>
+
+  <header class="web-header fixed">
+    <div class="header-container">
+      <!-- logo -->
+      <a href="/" class="web-logo" title="成龙"><img src="./images/logo.png" alt=""></a>
+      <!-- 导航 -->
+      <nav class="web-nav">
+        <ul class="nav-list">
+          <li class="nav-item" class="active"><a href="./index.html">官方首页</a></li>
+          <li class="nav-item"><a href="./aboutus.html">关于我们</a></li>
+          <li class="nav-item"><a href="">党建工作</a></li>
+          <li class="nav-item"><a href="">新闻中心</a></li>
+          <li class="nav-item"><a href="./business-one.html">业务领域</a></li>
+          <li class="nav-item"><a href="">合作伙伴</a></li>
+          <li class="nav-item"><a href="">城市布局</a></li>
+        </ul>
+      </nav>
+      <div class="web-nav-switch">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- 搜索框 -->
+      <div class="search-bar">
+        <div class="search-form">
+          <div class="input-wrapper">
+            <input type="text" class="search-input-text" placeholder="输入关键词搜索">
+          </div>
+          <div class="submit-wrapper">
+            <span class="icon-search"></span>
+          </div>
+        </div>
+        <div class="search-bar-close">
+          <span class="icon-close"></span>
+        </div>
+      </div>
+
+      <div class="search-bar-show">
+        <span class="icon-search"></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="index-banner">
+    <div class="swiper-container swiper-animation">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="swiper-item">
+            <div class="bg ani" swiper-animate-effect="shrink" swiper-animate-duration="5s" swiper-no-hidden
+              style="background-image: url(./images/banner1.png)"></div>
+            <div class="content">
+              <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
+                swiper-animate-delay="0.3s">
+                CHENGLONG</h2>
+              <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
+                swiper-animate-delay="0.6s">
+                以高素质人才带动高速度发展，以专业化服务带来规范化市场
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-item">
+            <div class="bg ani" swiper-animate-effect="shrink" swiper-animate-duration="5s" swiper-no-hidden
+              style="background-image: url(./images/banner2.png)"></div>
+            <div class="content">
+              <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
+                swiper-animate-delay="0.3s">
+                WOW.js</h2>
+              <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
+                swiper-animate-delay="0.6s">
+                让页面滚动更有趣_dowebok</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-item">
+            <div class="bg ani" swiper-animate-effect="shrink" swiper-animate-duration="5s" swiper-no-hidden
+              style="background-image: url(./images/banner3.png)"></div>
+            <div class="content">
+              <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
+                swiper-animate-delay="0.3s">
+                Animate.css</h2>
+              <p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
+                swiper-animate-delay="0.6s">
+                一款强大的预设css3动画库</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-operations">
+      <div class="left">
+        <div class="icon prev wow fadeInUp" id="index_banner_prev"><span class="icon-arrow-left-round"></span></div>
+        <div class="icon next wow fadeInUp" id="index_banner_next"><span class="icon-arrow-right-round"></span></div>
+      </div>
+      <div class="medium">
+        <a class="icon wow fadeInUp" id="down_scroll_btn">
+          <i>MORE</i>
+          <span></span>
+        </a>
+      </div>
+      <div class="right wow fadeInUp"></div>
+    </div>
+  </div>
+
+  <div class="main" id="main">
+    <div class="introduce" id="introduce">
+      <div class="full-container">
+        <div class="half-wrapper left center-y">
+          <div class="content">
+            <div class="page-title">
+              <h2 class="cn wow fadeInUp">公司介绍</h2>
+              <p class="en wow fadeInLeft">COMPANY PROFILE</p>
+            </div>
+            <div class="image">
+              <img class="wow zoomIn" src="./images/avatar.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="half-wrapper right center-y">
+          <div class="content">
+            <div class="page-article black">
+              <h2 class="title wow fadeInUp">塞尔达传说：旷野之息111</h2>
+              <article class="desc wow fadeInUp">
+                《塞尔达传说：旷野之息》（ゼルダの伝说： ブレスオブザワイルド）是由任天堂企划制作本部与子公司Monolith
+                Soft协力研发制作的开放世界动作冒险游戏。2017年3月3日由任天堂发行，为《塞尔达传说》系列游戏正统续作第15部作品，其他续作有《塞尔达传说：众神的三角力量》、《塞尔达传说2：林克的冒险》、《塞尔达传说：风之杖》、《塞尔达传说：时之笛》等。2019年6月12日，在任天堂E3展前发布会上官方公开了该作续作的首个宣传片，并正在开发中
+                [1] 。
+              </article>
+            </div>
+            <div class="statistical">
+              <div class="item">
+                <span class="num year run-num">2010</span>
+                <p class="desc">成龙建安成立于2010年</p>
+              </div>
+              <div class="item">
+                <span class="num money run-num">8000</span>
+                <p class="desc">成龙建安注册资本</p>
+              </div>
+            </div>
+            <div class="more-wrapper wow fadeInUp">
+              <a href="#" class="btn btn-sm animated-button victoria-four">Read More <span
+                  class="icon-arrow-right"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="business" id="business">
+      <div class="page-bg">
+        <div class="swiper-container business-bg-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="business-bg" style="background-image: url(./images/business_bg.png)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="business-bg" style="background-image: url(./images/banner1.png)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="business-bg" style="background-image: url(./images/banner2.png)"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="business-bg" style="background-image: url(./images/banner3.png)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="full-container">
+        <div class="half-wrapper left center-y">
+          <div class="bg"></div>
+          <div class="content">
+            <div class="page-title">
+              <h2 class="cn white wow fadeInUp">业务领域</h2>
+              <p class="en wow fadeInLeft">Business Domain</p>
+            </div>
+            <div class="swiper-container business-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="page-article">
+                    <h2 class="title ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">建筑工程总承包</h2>
+                    <article class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">
+                      《塞尔达传说：旷野之息》（ゼルダの伝说： ブレスオブザワイルド）是由任天堂企划制作本部与子公司Monolith
+                      Soft协力研发制作的开放世界动作冒险游戏。2017《塞尔达传说2：林克的冒险》、《塞尔达传说：风之杖》、《塞尔达传说：时之笛》等。2019年6月12日，在任天堂E3展前发布会上官方公开了该作续作的首个宣传片，并正在开发中
+                      [1] 。
+                    </article>
+                    <div class="more-wrapper ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">
+                      <a href="#" class="btn btn-sm animated-button victoria-four white">Read More <span
+                          class="icon-arrow-right"></span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="page-article">
+                    <h2 class="title ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">塞尔达传说：旷野之息
+                    </h2>
+                    <article class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">
+                      《塞尔达传说：旷野之息》任天堂发行，为《塞尔达传说》系列游戏达传说：众神的三角力量》、《塞尔达传说2：林克的冒险》、《塞尔达传说：风之杖》、《塞尔达传说：时之笛》等。2019年6月12日，在任天堂E3展前发布会上官方公开了该作续作的首个宣传片，并正在开发中
+                      [1] 。
+                    </article>
+                    <div class="more-wrapper ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">
+                      <a href="#" class="btn btn-sm animated-button victoria-four white">Read More <span
+                          class="icon-arrow-right"></span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="page-article">
+                    <h2 class="title ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">塞尔达传说：旷野之息
+                    </h2>
+                    <article class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">
+                      《塞尔达传说：旷野之息》（ゼルダの伝说： ブレスオブザワイルド）是由任天堂企划制作本部与子公司Monolith
+                      。
+                    </article>
+                    <div class="more-wrapper ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">
+                      <a href="#" class="btn btn-sm animated-button victoria-four white">Read More <span
+                          class="icon-arrow-right"></span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="page-article">
+                    <h2 class="title ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">塞尔达传说：旷野之息
+                    </h2>
+                    <article class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">
+                      《塞尔达传说：旷野之息》
+                      Soft协力研发制作的开放世界动作冒险游戏。2017年3月3日由任天堂发行，为《塞尔达传说》系列游戏正统续作第15部作品，其他续作有《塞尔达传说：众神的三角力量》、《塞尔达传说2：林克的冒险》、《塞尔达传说：风之杖》、《塞尔达传说：时之笛》等。2019年6月12日，在任天堂E3展前发布会上官方公开了该作续作的首个宣传片，并正在开发中
+                      [1] 。
+                    </article>
+                    <div class="more-wrapper ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s">
+                      <a href="#" class="btn btn-sm animated-button victoria-four white">Read More <span
+                          class="icon-arrow-right"></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="half-wrapper right">
+          <div class="menu-wrapper">
+            <div class="menu-item active">
+              <div class="content">
+                <div class="icon wow fadeInUp"><img src="./images/lift.png" alt=""></div>
+                <h2 class="cn wow fadeInUp">电梯</h2>
+                <p class="en wow fadeInUp">ELEVATOR</p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="content">
+                <div class="icon wow fadeInUp"><img src="./images/electrical.png" alt=""></div>
+                <h2 class="cn wow fadeInUp">电气</h2>
+                <p class="en wow fadeInUp">ELECTRIC</p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="content">
+                <div class="icon wow fadeInUp"><img src="./images/maintenance.png" alt=""></div>
+                <h2 class="cn wow fadeInUp">维保</h2>
+                <p class="en wow fadeInUp">MAINTENANCE</p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="content">
+                <div class="icon wow fadeInUp"><img src="./images/fire.png" alt=""></div>
+                <h2 class="cn wow fadeInUp">消防</h2>
+                <p class="en wow fadeInUp">FIRE FIGHING</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="news">
+      <div class="full-container">
+        <div class="half-wrapper left center-y">
+          <div class="bg"></div>
+          <div class="content">
+            <div class="time wow bounceInDown">
+              <p class="day">05</p>
+              <p class="year-month">2020-04</p>
+              <p class="desc">焦点新闻</p>
+            </div>
+            <div class="page-article">
+              <h2 class="title no-border wow fadeInUp">塞尔达传说：旷野之息</h2>
+              <article class="desc wow fadeInUp">
+                《塞尔达传说：旷野之息》
+                Soft协力研发制作的开放世界动作冒险游戏。2017年3月3日由任天堂发行，为《塞尔达传说》系列游戏正统续作第15部作品，其他续作有《塞尔达传说：众神的三角力量》、《塞尔达传说2：林克的冒险》、《塞尔达传说：风之杖》、《塞尔达传说：时之笛》等。2019年6月12日，在任天堂E3展前发布会上官方公开了该作续作的首个宣传片，并正在开发中
+                [1] 。
+              </article>
+              <div class="more-wrapper wow fadeInUp">
+                <a href="#" class="btn btn-sm animated-button victoria-four white">Read More <span
+                    class="icon-arrow-right"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="half-wrapper right">
+          <div class="content">
+            <div class="page-title">
+              <h2 class="cn wow fadeInUp">成龙新闻</h2>
+              <p class="en wow fadeInLeft">NEWS</p>
+            </div>
+            <ul class="single-news">
+              <li class="wow fadeInUp" data-wow-delay="0.1s"><a href="">安红章：《四川省区块链产四川省区块链产业白
+                  皮书》解读</a><span>2020-04-20</span></li>
+              <li class="wow fadeInUp" data-wow-delay="0.2s"><a href="">安红章：《四川省区块链产业白 皮书》解读</a><span>2020-04-20</span>
+              </li>
+              <li class="wow fadeInUp" data-wow-delay="0.3s"><a href="">安红章：《四川省区块链产四川省区块链产业白
+                  皮书》解读</a><span>2020-04-20</span></li>
+              <li class="wow fadeInUp" data-wow-delay="0.4s"><a href="">安红章：《四川省区块链产业白 皮书》解读</a><span>2020-04-20</span>
+              </li>
+              <li class="wow fadeInUp" data-wow-delay="0.5s"><a href="">安红章：《四川省区块链产四川省区块链产业白
+                  皮书》解读</a><span>2020-04-20</span></li>
+              <li class="wow fadeInUp" data-wow-delay="0.6s"><a href="">安红章：《四川省区块链产业白 皮书》解读</a><span>2020-04-20</span>
+              </li>
+              <li class="wow fadeInUp" data-wow-delay="0.7s"><a href="">安红章：《四川省区块链产四川省区块链产业白
+                  皮书》解读</a><span>2020-04-20</span></li>
+              <li class="wow fadeInUp" data-wow-delay="0.8s"><a href="">安红章：《四川省区块链产四川省区块链产业白
+                  皮书》解读</a><span>2020-04-20</span></li>
+              <li class="wow fadeInUp" data-wow-delay="0.9s"><a href="">安红章：《四川省区块链产业白 皮书》解读</a><span>2020-04-20</span>
+              </li>
+              <li class="wow fadeInUp" data-wow-delay="1s"><a href="">安红章：《四川省区块链产四川省区块链产业白
+                  皮书》解读</a><span>2020-04-20</span></li>
+              <li class="wow fadeInUp" data-wow-delay="1.1s"><a href="">安红章：《四川省区块链产四川省区块链产业白
+                  皮书》解读</a><span>2020-04-20</span></li>
+              <li class="wow fadeInUp" data-wow-delay="1.2s"><a href="">安红章：《四川省区块链产业白 皮书》解读</a><span>2020-04-20</span>
+              </li>
+              <li class="wow fadeInUp" data-wow-delay="1.3s"><a href="">安红章：《四川省区块链产四川省区块链产业白
+                  皮书》解读</a><span>2020-04-20</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="partner">
+      <div class="full-container">
+        <div class="full-wrapper">
+          <div class="content">
+            <div class="page-title">
+              <h2 class="cn wow fadeInUp">合作伙伴</h2>
+              <p class="en wow fadeInLeft">PARTNERS</p>
+            </div>
+            <div class="partner-container">
+              <div class="swiper-container partner-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="partner-card wow fadeInUp" data-wow-delay="0.1s">
+                      <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="partner-card wow fadeInUp" data-wow-delay="0.2s">
+                      <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="partner-card wow fadeInUp" data-wow-delay="0.3s">
+                      <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="partner-card wow fadeInUp" data-wow-delay="0.4s">
+                      <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="partner-card wow fadeInUp" data-wow-delay="0.5s">
+                      <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="partner-card wow fadeInUp" data-wow-delay="0.6s">
+                      <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="partner-card wow fadeInUp" data-wow-delay="0.7s">
+                      <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="partner-card wow fadeInUp" data-wow-delay="0.8s">
+                      <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="partner-card wow fadeInUp" data-wow-delay="0.9s">
+                      <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination" id="partner_pagination"></div>
+              <div class="swiper-button-prev swiper-button-black" id="partner_prev"></div>
+              <div class="swiper-button-next swiper-button-black" id="partner_next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="bg"></div>
+    <div class="full-container">
+      <div class="full-wrapper">
+        <div class="content">
+          <div class="top">
+            <div class="left">
+              <nav class="nav">
+                <ul class="nav-list">
+                  <li class="nav-item"><a href="">官方首页</a></li>
+                  <li class="nav-item"><a href="">关于我们</a></li>
+                  <li class="nav-item"><a href="">党建工作</a></li>
+                  <li class="nav-item"><a href="">新闻中心</a></li>
+                  <li class="nav-item"><a href="">业务领域</a></li>
+                  <li class="nav-item"><a href="">合作伙伴</a></li>
+                  <li class="nav-item"><a href="">城市布局</a></li>
+                  <li class="nav-item"><a href="">官方首页</a></li>
+                  <li class="nav-item"><a href="">关于我们</a></li>
+                  <li class="nav-item"><a href="">党建工作</a></li>
+                  <li class="nav-item"><a href="">新闻中心</a></li>
+                  <li class="nav-item"><a href="">业务领域</a></li>
+                  <li class="nav-item"><a href="">合作伙伴</a></li>
+                  <li class="nav-item"><a href="">城市布局</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="right">
+              <div class="third">
+                <div class="share">
+                  <a class="link" href=""><img src="./images/xinlang.png" alt=""></a>
+                  <a class="link" href=""><img src="./images/qq.png" alt=""></a>
+                  <a class="link" href=""><img src="./images/wechat.png" alt=""></a>
+                </div>
+                <div class="qr-code"><img src="./images/qr.png" alt=""></div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="left"><img src="./images/logo.png" alt=""></div>
+            <div class="right">
+              <p class="profile">copyright @ 四川成龙建筑安装有限公司 川ICP备00000000号 </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="./js/my-jq-fun.js"></script>
+  <script src="./js/wow.min.js"></script>
+  <script src="./plugins/swiper/swiper.min.js"></script>
+  <script src="./plugins/swiper/swiper.animate.rewrite.min.js"></script>
+  <script src="./js/my-swiper.js"></script>
+  <script src="./js/main.js"></script>
+  <script>
+    // 滚动数字
+    var isDone = false;
+
+    $(function () {
+      // 滚动数字
+      runNumber();
+
+      // 滚动到第二屏
+      $("#down_scroll_btn").click(function () {
+        $("#main").scrollInto({ duration: 1000 });
+      })
+    })
+
+    $(window).scroll(function () {
+      runNumber();
+    });
+
+    // 滚动数字
+    function runNumber() {
+      if (Math.abs($(window).scrollTop()) > $('#introduce').offset().top - 300) {
+        if (!isDone) {
+          $(".run-num").each(function () {
+            $(this).runNumber();
+          })
+          isDone = true;
+        }
+      }
+    }
+
+
+    /**swiper**/
+    // banner
+    var indexBannerSwiper = new Swiper('.swiper-animation', {
+      loop: true,
+      speed: 500,
+      effect: 'fade',
+      autoplay: {
+        delay: 5000
+      },
+      disableOnInteraction: false,
+      pagination: {
+        el: '.swiper-pagination',
+        bulletClass: 'my-bullet',
+        bulletActiveClass: 'my-bullet-active',
+        clickable: true
+      },
+      on: {
+        init: function () {
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        },
+        slideChangeTransitionEnd: function () {
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        }
+      }
+    });
+    $("#index_banner_prev").click(function () {
+      indexBannerSwiper.slidePrev();
+    })
+    $("#index_banner_next").click(function () {
+      indexBannerSwiper.slideNext();
+    })
+
+    // 业务领域
+    var businessSwiper = new Swiper('.business-swiper', {
+      speed: 500,
+      autoplay: {
+        delay: 5000
+      },
+      spaceBetween: 35,
+      on: {
+        init: function () {
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+          $('#business').find('.menu-item').eq(this.activeIndex).addClass('active').siblings('.menu-item').removeClass('active');
+        },
+        slideChangeTransitionEnd: function () {
+          swiperAnimate(this);
+          $('#business').find('.menu-item').eq(this.activeIndex).addClass('active').siblings('.menu-item').removeClass('active');
+        },
+      },
+    });
+    var businessBgSwiper = new Swiper('.business-bg-swiper', {
+      effect: 'fade'
+    })
+    $('#business').find('.menu-item').each(function () {
+      $(this).hover(function () {
+        $(this).addClass('active').siblings('.menu-item').removeClass('active');
+        businessSwiper.slideTo($(this).index());
+        businessBgSwiper.slideTo($(this).index());
+      })
+    })
+
+
+
+    // 品牌切换
+    var brandSwiper = new Swiper('.partner-swiper', {
+      spaceBetween: 15,
+      slidesPerView: 4,//一行显示3个
+      slidesPerColumn: 2,//显示2行
+      speed: 500,
+      autoplay: {
+        delay: 5000
+      },
+      disableOnInteraction: false,
+      navigation: {
+        nextEl: '#partner_prev',
+        prevEl: '#partner_next',
+      },
+      pagination: {
+        el: '#partner_pagination',
+        type: 'fraction',
+        renderFraction: function (currentClass, totalClass) {
+          return '<span class="' + currentClass + '"></span>' +
+            ' / ' +
+            '<span class="' + totalClass + '"></span>';
+        },
+      }
+    });
+  </script>
+</body>
+
+</html>
