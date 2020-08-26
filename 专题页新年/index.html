@@ -10,8 +10,58 @@
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/common.css" />
   <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/animate.css" />
   <link rel="stylesheet" href="./plugin/swiper/swiper.min.css" />
   <style>
+    .hvr-bounce-to-right {
+      display: inline-block;
+      vertical-align: middle;
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px transparent;
+      position: relative;
+      -webkit-transition-property: #fff;
+      transition-property: #fff;
+      -webkit-transition-duration: 0.5s;
+      transition-duration: 0.5s;
+    }
+
+    .hvr-bounce-to-right:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #b01a16;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transform-origin: 0 50%;
+      transform-origin: 0 50%;
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      -webkit-transition-duration: 0.5s;
+      transition-duration: 0.5s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+    }
+
+    .hvr-bounce-to-right:hover:before,
+    .hvr-bounce-to-right:focus:before,
+    .hvr-bounce-to-right:active:before {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+      opacity: 1;
+      -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+      transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    }
+
+
+    .swiper-slide {
+      overflow: hidden;
+    }
+
     /* 侧边栏 */
     .slide-bar {
       position: fixed;
@@ -129,6 +179,7 @@
       display: flex;
       align-items: center;
     }
+
     .title-box .menus p .img {
       margin-right: 10px;
       display: block;
@@ -136,6 +187,7 @@
       height: 32px;
       background: url(./images/icon_img.png) no-repeat center center;
     }
+
     .title-box .menus p .video {
       margin-right: 10px;
       display: block;
@@ -152,6 +204,7 @@
     .title-box .menus p.active .img {
       background: url(./images/icon_img_selected.png) no-repeat center center;
     }
+
     .title-box .menus p.active .video {
       background: url(./images/icon_video_selected.png) no-repeat center center;
     }
@@ -166,6 +219,7 @@
       flex: 1;
       height: 100%;
       background-color: #fff;
+      overflow: hidden;
     }
 
     .banner-news-wrapper .picture-wrapper .img {
@@ -176,20 +230,22 @@
     .banner-news-wrapper .title-wrapper {
       flex: 0 0 350px;
       height: 100%;
-      background-color: #333;
+      background-color: #fff;
     }
 
     .banner-news-wrapper .title-wrapper li {
       height: 33.33%;
-      padding: 30px;
       box-sizing: border-box;
-      border-bottom: 1px solid #fff;
+      padding: 30px;
       background-color: #FFF4DE;
       cursor: pointer;
     }
+    .banner-news-wrapper .title-wrapper li:first-child {
+      border-bottom: 1px solid #fff;
+    }
 
-    .banner-news-wrapper .title-wrapper li:last-child {
-      border-bottom: none;
+    .banner-news-wrapper .title-wrapper li.active {
+      background-color: #b01a16;
     }
 
     .banner-news-wrapper .title-wrapper li a {
@@ -199,16 +255,39 @@
       line-height: 1.6;
     }
 
-    .banner-news-wrapper .title-wrapper li:hover,
-    .banner-news-wrapper .title-wrapper li.active {
-      background-color: #C1111B;
-    }
-
-    .banner-news-wrapper .title-wrapper li:hover a,
-    .banner-news-wrapper .title-wrapper li.active a {
+    .banner-news-wrapper .title-wrapper li:hover a,.banner-news-wrapper .title-wrapper li.active a {
       color: #fff;
     }
 
+    /* banner新闻轮播 */
+    .banner-news-swiper {}
+
+    .banner-news-swiper .img {
+      width: 100%;
+      height: 508px;
+      position: relative;
+    }
+
+    .banner-news-swiper .title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 20px;
+      height: 30px;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      text-align: center;
+    }
+
+    .banner-news-swiper .title a {
+      line-height: 30px;
+      font-size: 22px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* 图片标题链接 */
     .news-link-img {
       padding-top: 133px;
       padding-bottom: 100px;
@@ -358,6 +437,7 @@
       position: relative;
       cursor: pointer;
     }
+
     .tab-video .img::after {
       content: "";
       display: block;
@@ -381,7 +461,7 @@
     .swiper-news-wrapper .left-wrapper {
       flex: 0 0 550px;
       height: 360px;
-      background-color: red;
+      background-color: #fff;
       margin-right: 20px;
     }
 
@@ -399,6 +479,8 @@
       padding: 0 10px;
       background-color: #fff;
       text-align: center;
+      position: relative;
+      z-index: 9999;
     }
 
     .swiper-news-wrapper .left-wrapper .big-news-wrapper .news-card .title a {
@@ -421,7 +503,42 @@
     }
 
     .swiper-news-content {
-      padding-top: 10px;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .news-thumbnail-prev {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 110px;
+      background: url(./images/btn_left.png) rgba(0, 0, 0, 0.3) no-repeat center center;
+      z-index: 99999;
+      opacity: 0.6;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .news-thumbnail-prev:hover {
+      opacity: 1;
+    }
+
+    .news-thumbnail-next {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 110px;
+      background: url(./images/btn_right.png) rgba(0, 0, 0, 0.3) no-repeat center center;
+      z-index: 99999;
+      opacity: 0.6;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .news-thumbnail-next:hover {
+      opacity: 1;
     }
 
     .swiper-news-wrapper .right-wrapper .swiper-news-content .swiper-container {
@@ -518,21 +635,41 @@
 
 
   <div class="web-container">
+
     <div class="web-wrapper">
       <!-- banner -->
       <section class="part" id="part0">
+        <!-- 样式1 -->
         <div class="banner-news-wrapper">
           <div class="picture-wrapper">
-            <div class="img bg-cover" id="banner_news_img"></div>
+            <div class="img bg-cover animation" id="banner_news_img"></div>
           </div>
           <ul class="title-wrapper" id="banner_news">
-            <li _src="./images/banner1.jpg"><a href="">省纪委十一届三次全会举行 彭 清华强调推动四川全面从严治 党取得更大战略性成果</a></li>
-            <li _src="./images/banner2.jpg"><a href="">省纪委十一届三次全会举行 彭 清华强调推动四川全面从严治 党取得更大战略性成果</a></li>
-            <li _src="./images/banner1.jpg"><a href="">省纪委十一届三次全会举行 彭 清华强调推动四川全面从严治 党取得更大战略性成果</a></li>
+            <li _src="./images/banner1.jpg" class="hvr-bounce-to-right"><a href="/n1/2020/0120/c64094-31557066.html"
+                target="_blank">习近平签署命令发布《军队监察工作条例（试行）》</a></li>
+            <li _src="./images/banner2.jpg" class="hvr-bounce-to-right"><a href="/n1/2020/0120/c64094-31557066.html"
+                target="_blank">习近平签署命令发布《军队监察工作条例（试行）》</a></li>
+            <li _src="./images/banner1.jpg" class="hvr-bounce-to-right"><a href="/n1/2020/0120/c64094-31557066.html"
+                target="_blank">习近平签署命令发布《军队监察工作条例（试行）》</a></li>
           </ul>
         </div>
+
+        <!-- 样式二 -->
+        <div class="swiper-container banner-news-swiper" id="banner_news_swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="img bg-cover animation" style="background-image: url('./images/banner1.jpg')">
+              </div>
+              <div class="title omit">
+                <a href="">彭清华在省纪委十一届三次全会上强调：坚定把反腐败斗争进行到底彭清华在省纪委十一届三次全会上强调：坚定把反腐败斗争进行到底</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
     </div>
+
     <div class="sm-web-wrapper" style="padding-bottom:80px;">
       <div class="part news-link-img">
         <a href=""><img src="./images/news_link_img.png" alt=""></a>
@@ -591,22 +728,28 @@
             <div class="swiper-container" id="picture">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <div class="img bg-cover photo-img" _src="./images/banner1.jpg" style="background-image: url('./images/banner1.jpg')"></div>
+                  <div class="img bg-cover photo-img animation" _src="./images/banner1.jpg"
+                    style="background-image: url('./images/banner1.jpg')"></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img bg-cover photo-img" _src="./images/banner1.jpg" style="background-image: url('./images/banner1.jpg')"></div>
+                  <div class="img bg-cover photo-img animation" _src="./images/banner1.jpg"
+                    style="background-image: url('./images/banner1.jpg')"></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img bg-cover photo-img" _src="./images/banner1.jpg" style="background-image: url('./images/banner1.jpg')"></div>
+                  <div class="img bg-cover photo-img animation" _src="./images/banner1.jpg"
+                    style="background-image: url('./images/banner1.jpg')"></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img bg-cover photo-img" _src="./images/banner1.jpg" style="background-image: url('./images/banner1.jpg')"></div>
+                  <div class="img bg-cover photo-img animation" _src="./images/banner1.jpg"
+                    style="background-image: url('./images/banner1.jpg')"></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img bg-cover photo-img" _src="./images/banner1.jpg" style="background-image: url('./images/banner1.jpg')"></div>
+                  <div class="img bg-cover photo-img animation" _src="./images/banner1.jpg"
+                    style="background-image: url('./images/banner1.jpg')"></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img bg-cover photo-img" _src="./images/banner1.jpg" style="background-image: url('./images/banner1.jpg')"></div>
+                  <div class="img bg-cover photo-img animation" _src="./images/banner1.jpg"
+                    style="background-image: url('./images/banner1.jpg')"></div>
                 </div>
               </div>
             </div>
@@ -617,22 +760,28 @@
             <div class="swiper-container" id="video">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <div class="img bg-cover video-play" _src="./video.mp4" style="background-image: url('./images/banner2.jpg')"></div>
+                  <div class="img bg-cover video-play" _src="./video.mp4"
+                    style="background-image: url('./images/banner2.jpg')"></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img bg-cover video-play" _src="./video.mp4" style="background-image: url('./images/banner2.jpg')"></div>
+                  <div class="img bg-cover video-play" _src="./video.mp4"
+                    style="background-image: url('./images/banner2.jpg')"></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img bg-cover video-play" _src="./video.mp4" style="background-image: url('./images/banner2.jpg')"></div>
+                  <div class="img bg-cover video-play" _src="./video.mp4"
+                    style="background-image: url('./images/banner2.jpg')"></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img bg-cover video-play" _src="./video.mp4" style="background-image: url('./images/banner2.jpg')"></div>
+                  <div class="img bg-cover video-play" _src="./video.mp4"
+                    style="background-image: url('./images/banner2.jpg')"></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img bg-cover video-play" _src="./video.mp4" style="background-image: url('./images/banner2.jpg')"></div>
+                  <div class="img bg-cover video-play" _src="./video.mp4"
+                    style="background-image: url('./images/banner2.jpg')"></div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="img bg-cover video-play" _src="./video.mp4" style="background-image: url('./images/banner2.jpg')"></div>
+                  <div class="img bg-cover video-play" _src="./video.mp4"
+                    style="background-image: url('./images/banner2.jpg')"></div>
                 </div>
               </div>
             </div>
@@ -644,66 +793,62 @@
       <section class="part" id="part4">
         <div class="swiper-news-wrapper">
           <div class="left-wrapper">
-              <div class="big-news-wrapper swiper-container" id="bg_news">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="news-card">
-                        <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
-                        <div class="title omit">
-                          <a href="">这是标题</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="news-card">
-                        <div class="img bg-cover" style="background-image: url('./images/banner2.jpg')"></div>
-                        <div class="title omit">
-                          <a href="">这是标题</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="news-card">
-                        <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
-                        <div class="title omit">
-                          <a href="">这是标题这是标题这是标题这是标题</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="news-card">
-                        <div class="img bg-cover" style="background-image: url('./images/banner2.jpg')"></div>
-                        <div class="title omit">
-                          <a href="">这是标题</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="news-card">
-                        <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
-                        <div class="title omit">
-                          <a href="">这是标题</a>
-                        </div>
-                      </div>
+            <div class="big-news-wrapper swiper-container" id="bg_news">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="news-card">
+                    <div class="img bg-cover animation" style="background-image: url('./images/banner1.jpg')"></div>
+                    <div class="title omit">
+                      <a href="">这是标题</a>
                     </div>
                   </div>
                 </div>
+                <div class="swiper-slide">
+                  <div class="news-card">
+                    <div class="img bg-cover animation" style="background-image: url('./images/banner2.jpg')"></div>
+                    <div class="title omit">
+                      <a href="">这是标题</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="news-card">
+                    <div class="img bg-cover animation" style="background-image: url('./images/banner1.jpg')"></div>
+                    <div class="title omit">
+                      <a href="">这是标题这是标题这是标题这是标题</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="news-card">
+                    <div class="img bg-cover animation" style="background-image: url('./images/banner2.jpg')"></div>
+                    <div class="title omit">
+                      <a href="">这是标题</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="news-card">
+                    <div class="img bg-cover animation" style="background-image: url('./images/banner1.jpg')"></div>
+                    <div class="title omit">
+                      <a href="">这是标题</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="right-wrapper">
+            <!-- 静态图标 -->
             <div class="static-wrapper">
               <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
             </div>
+            <!-- 新闻说略图 -->
             <div class="swiper-news-content">
+              <div class="news-thumbnail-prev" id="news_thumbnail_prev"></div>
+              <div class="news-thumbnail-next" id="news_thumbnail_next"></div>
               <div class="swiper-container" id="news">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="news-card">
-                      <div class="img bg-cover" style="background-image: url('./images/banner2.jpg')"></div>
-                      <div class="title omit">
-                        <a href="">这是标题</a>
-                      </div>
-                    </div>
-                  </div>
                   <div class="swiper-slide">
                     <div class="news-card">
                       <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
@@ -715,6 +860,14 @@
                   <div class="swiper-slide">
                     <div class="news-card">
                       <div class="img bg-cover" style="background-image: url('./images/banner2.jpg')"></div>
+                      <div class="title omit">
+                        <a href="">这是标题</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="news-card">
+                      <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
                       <div class="title omit">
                         <a href="">这是标题这是标题这是标题这是标题</a>
                       </div>
@@ -722,7 +875,7 @@
                   </div>
                   <div class="swiper-slide">
                     <div class="news-card">
-                      <div class="img bg-cover" style="background-image: url('./images/banner1.jpg')"></div>
+                      <div class="img bg-cover" style="background-image: url('./images/banner2.jpg')"></div>
                       <div class="title omit">
                         <a href="">这是标题</a>
                       </div>
@@ -820,6 +973,9 @@
       }
     }
 
+    // 首屏新闻轮播
+    var firstScreenNewsSwiper = new Swiper("#banner_news_swiper");
+
     // 图片轮播
     var pictureSwiper = new Swiper("#picture", {
       slidesPerView: 4,
@@ -832,27 +988,28 @@
       spaceBetween: 23
     })
 
-    // 新闻大图轮播
-    var bg_news = new Swiper('#bg_news', {
-      allowTouchMove: false,
-    });
-
-    var news = new Swiper("#news", {
+    // 新闻小图
+    var thumbnailNews = new Swiper("#news", {
       effect: "coverflow",
       loop: true,
       slidesPerView: 2,
+      loopedSlides: 4,
       centeredSlides: true,
       coverflowEffect: {
-        rotate: 0, //slide做3d旋转时Y轴的旋转角度。默认50
-        stretch: 100, //每个slide之间的拉伸值，越大slide靠得越紧。 默认0
-        depth: 100, //每个slide之间的拉伸值，越大slide靠得越紧。 默认0
-        modifier: 1.2, //depth和rotate和stretch的倍率，相当于depth*modifier、rotate*modifier、stretch*modifier，值越大这三个参数的效果越明显。默认1。
-        slideShadows: true //开启slide阴影。默认 true。
+        rotate: 0,
+        stretch: 100,
+        depth: 100,
+        modifier: 1.2,
+        slideShadows: true
       },
-      on: {
-        slideChangeTransitionEnd: function(){
-          bg_news.slideTo(this.realIndex)
-        },
+    });
+
+    // 新闻大图轮播
+    var bg_news = new Swiper('#bg_news', {
+      loop: true,
+      loopedSlides: 5, //looped slides should be the same
+      thumbs: {
+        swiper: thumbnailNews,
       },
     });
 
@@ -860,43 +1017,55 @@
 
       // 视频图片切换
       $("#tab_menus").find("p").click(function () {
-          $(this).addClass("active").siblings("p").removeClass("active");
-          $("#tab_content").find(".tab-content").eq($(this).index()).show().siblings(".tab-content").hide();
-          // tab切换之后需要更新两个swiper
-          videoSwiper.update();
-          pictureSwiper.update();
-        })
+        $(this).addClass("active").siblings("p").removeClass("active");
+        $("#tab_content").find(".tab-content").eq($(this).index()).show().siblings(".tab-content").hide();
+        // tab切换之后需要更新两个swiper
+        videoSwiper.update();
+        pictureSwiper.update();
+      })
+
+      // 新闻小图前进后退
+      $("#news_thumbnail_prev").click(function () {
+        thumbnailNews.slidePrev();
+      })
+      $("#news_thumbnail_next").click(function () {
+        thumbnailNews.slideNext();
+      })
 
       // 图片前后
-      $("#picture_prev").click(function() {
+      $("#picture_prev").click(function () {
         pictureSwiper.slidePrev();
       })
-      $("#picture_next").click(function() {
+      $("#picture_next").click(function () {
         pictureSwiper.slideNext();
       })
 
       // 视频前后
-      $("#video_prev").click(function() {
+      $("#video_prev").click(function () {
         videoSwiper.slidePrev();
       })
-      $("#video_next").click(function() {
+      $("#video_next").click(function () {
         videoSwiper.slideNext();
       })
-      
+
       // 第一屏新闻轮播
-      $("#banner_news").find("li").hover(function() {
-        activeNews($(this).index())
+      $("#banner_news").find("li").hover(function () {
+        activeNews($(this).index());
+      }, function() {
+        $(this).addClass("active");
       })
       // 第一次点亮
-      activeNews(0)
+      activeNews(0);
+      $("#banner_news").find("li").eq(0).addClass("active");
 
     })
 
 
     function activeNews(index) {
-      $("#banner_news").find("li").eq(index).addClass("active").siblings("li").removeClass("active");
-        var img = $("#banner_news").find("li").eq(index).attr("_src");
-        $("#banner_news_img").css({backgroundImage:'url('+img+')'})
+      $("#banner_news").find("li").removeClass('active');
+
+      var img = $("#banner_news").find("li").eq(index).attr("_src");
+      $("#banner_news_img").css({ backgroundImage: 'url(' + img + ')' })
     }
   </script>
 </body>

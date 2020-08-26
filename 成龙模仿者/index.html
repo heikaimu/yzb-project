@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>首页</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./fonts/iconfont.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/public.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./swiper/swiper.min.css">
+</head>
+
+<body>
+
+  <!-- 头部 -->
+  <header class="web-header">
+    <div class="web-header__wrapper">
+      <!-- logo -->
+      <a class="web-header__logo"><img src="./images/logo.png" alt=""></a>
+      <!-- 导航 -->
+      <nav class="web-header__nav">
+        <ul class="web-header__nav__list">
+          <li class="web-header__nav__item active"><a href="./index.html">གཙོ་ངོས།<br>首页</a></li>
+          <li class="web-header__nav__item"><a href="./laboratory.html">ཚོད་ལྟ་ཁང་<br>实验室概况</a></li>
+          <li class="web-header__nav__item"><a href="./team.html">ཚོགས་པ།<br>团队介绍</a></li>
+          <li class="web-header__nav__item"><a href="./news.html">གསར་འགྱུར།<br>新闻资讯</a></li>
+          <li class="web-header__nav__item"><a href="./machine.html">དཔྱད་ཆས་སྒྲིག་ཆས་<br>仪器设备</a></li>
+        </ul>
+      </nav>
+      <!-- 移动端导航隐藏显示按钮 -->
+      <div class="web-header__nav__switch--mobile">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- 搜索框显示按钮 -->
+      <div class="web-header__searchbar__button--open">
+        <span class="iconfont icon-search"></span>
+      </div>
+      <!-- 搜索框弹窗 -->
+      <div class="web-header__searchbar__dialog">
+        <div class="web-header__searchbar__form">
+          <div class="web-header__searchbar__item">
+            <input type="text" class="input" id="keyword" placeholder="输入关键词搜索">
+          </div>
+          <div class="web-header__searchbar__button--submit">
+            <span class="iconfont icon-search" onclick="handleSearch()"></span>
+          </div>
+        </div>
+        <div class="web-header__searchbar__button--close">
+          <span class="iconfont icon-close"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- banner -->
+  <div class="banner">
+    <div class="swiper-container" id="index_banner_swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="banner_card">
+            <div class="image cover" style="background-image:url(./images/banner.png)"></div>
+            <div class="info"><a href="" class="text omit">《唱出王者：德国 第一季》全集/Sing On! Germany Season 1在线观看1在线观看1在线观看</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="banner_card">
+            <div class="image cover" style="background-image:url(./images/banner.png)"></div>
+            <div class="info"><a href="" class="text omit">《唱出王者：德国 第一季》全集/Sing On! Germany Season 1在线观看1在线观看1在线观看</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="banner_card">
+            <div class="image cover" style="background-image:url(./images/banner.png)"></div>
+            <div class="info"><a href="" class="text omit">《唱出王者：德国 第一季》全集/Sing On! Germany Season 1在线观看1在线观看1在线观看</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="banner_card">
+            <div class="image cover" style="background-image:url(./images/banner.png)"></div>
+            <div class="info"><a href="" class="text omit">《唱出王者：德国 第一季》全集/Sing On! Germany Season 1在线观看1在线观看1在线观看</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination banner-swiper-pagination"></div>
+
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev swiper-button-white" id="banner_prev"></div>
+      <div class="swiper-button-next swiper-button-white" id="banner_next"></div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <!-- 本室快讯 -->
+    <div class="container fast-news-container">
+      <!-- 标题 -->
+      <div class="section-title">
+        <div class="section-title__title">
+          <p class="fw">གསར་འགྱུར་དཔྱད་ཡིག་</p>
+          <p class="text">本室快讯</p>
+        </div>
+        <div class="section-title__other">
+          <a href="" class="more"><span class="iconfont icon-jia"></span></a>
+        </div>
+      </div>
+      <div class="fast-news">
+        <div class="fast-news__left-box">
+          <div class="top-news">
+            <div class="cover hover">
+              <a href="" class="image" style="background-image: url(./images/index_image1.png)"></a>
+            </div>
+            <div class="info">
+              <div class="time">
+                <p class="day">30</p>
+                <p class="year">2017.7</p>
+              </div>
+              <h2 class="title omit">青藏高原微生物国家地方联青藏高原微生物国家地方联青藏高原微生物国家地方联...</h2>
+              <article class="summary">2012年7月，国家发展改革委原则同意将青藏高原微生物国家地方联合工程研究中心（西藏）. . .</article>
+              <a href="" class="learn-more">了解详情 <span class="iconfont icon-shezhi-youjiantou"></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="fast-news__right-box">
+          <div class="menus" id="fast_news_menus">
+            <p class="menu-item active">近期论文</p>
+            <p class="menu-item">在研项目</p>
+            <p class="menu-item">专利申请</p>
+          </div>
+          <div id="fast_news_list">
+            <!-- 近期论文 -->
+            <ul class="news-list">
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">1青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复1</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">1青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复1</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复1</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复1</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复1</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复1</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复1</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复1</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复1</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复1</span></a>
+              </li>
+            </ul>
+            <!-- 在研项目 -->
+            <ul class="news-list">
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">2青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复2</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">2青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复2</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复2</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复2</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复2</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复2</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复2</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复2</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复2</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复2</span></a>
+              </li>
+            </ul>
+            <!-- 专利申请 -->
+            <ul class="news-list">
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">3青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复3</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">3青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复3</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复3</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复3</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复3</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复3</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复3</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复3</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复3</span></a>
+              </li>
+              <li class="news-item">
+                <a href="" class="news-card"><span class="time">2017.5.2</span><span
+                    class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复3</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中间广告 -->
+    <div class="container middle-ad-container">
+      <img src="./images/ad_bg.png" alt="">
+      <div class="blank"></div>
+      <div class="middle-ad">
+        <p class="fw">སྐྱེ་དངོས་འདུ་འགོད་ལ་གཞོལ་ནས་སྐྱེ་དངོས་ཀྱི་ངོ་མཚར་བཏོད་པ།</p>
+        <p class="text">致力生物工程 创造生物奇迹</p>
+      </div>
+    </div>
+
+    <!-- 学术活动 -->
+    <div class="container academic-activities-container">
+      <!-- 标题 -->
+      <div class="section-title">
+        <div class="section-title__title">
+          <p class="fw">རིག་གཞུང་བྱེད་སྒོ་</p>
+          <p class="text">学术活动</p>
+        </div>
+        <div class="section-title__other">
+          <div class="next-prev-wrapper">
+            <div class="button prev" id="activity_prev"><span class="iconfont icon-shezhi-youjiantou"></span></div>
+            <div class="button next" id="activity_next"><span class="iconfont icon-shezhi-youjiantou"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="academic-activities">
+        <!-- swiper -->
+        <div class="swiper-container" id="activity_swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="activity-card">
+                <div class="cover black">
+                  <div class="image" style="background-image: url(./images/ad_bg.png)"></div>
+                </div>
+                <h2 class="bg-title">微生物研究研讨活动</h2>
+                <div class="info">
+                  <h2 class="title">青藏高原微生物国家地方联...</h2>
+                  <article class="summary">2012年7月，国家发展改革委原则同意将青藏高原微生物国家地方联合工程研究中心（西藏）. . .</article>
+                  <a href="" class="learn-more">了解详情 <span class="iconfont icon-shezhi-youjiantou"></span></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="activity-card">
+                <div class="cover black">
+                  <div class="image" style="background-image: url(./images/ad_bg.png)"></div>
+                </div>
+                <h2 class="bg-title">微生物研究研讨活动</h2>
+                <div class="info">
+                  <h2 class="title">青藏高原微生物国家地方联...</h2>
+                  <article class="summary">2012年7月，国家发展改革委原则同意将青藏高原微生物国家地方联合工程研究中心（西藏）. . .</article>
+                  <a href="" class="learn-more">了解详情 <span class="iconfont icon-shezhi-youjiantou"></span></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="activity-card">
+                <div class="cover black">
+                  <div class="image" style="background-image: url(./images/ad_bg.png)"></div>
+                </div>
+                <h2 class="bg-title">微生物研究研讨活动</h2>
+                <div class="info">
+                  <h2 class="title">青藏高原微生物国家地方联...</h2>
+                  <article class="summary">2012年7月，国家发展改革委原则同意将青藏高原微生物国家地方联合工程研究中心（西藏）. . .</article>
+                  <a href="" class="learn-more">了解详情 <span class="iconfont icon-shezhi-youjiantou"></span></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="activity-card">
+                <div class="cover black">
+                  <div class="image" style="background-image: url(./images/ad_bg.png)"></div>
+                </div>
+                <h2 class="bg-title">微生物研究研讨活动</h2>
+                <div class="info">
+                  <h2 class="title">青藏高原微生物国家地方联...</h2>
+                  <article class="summary">2012年7月，国家发展改革委原则同意将青藏高原微生物国家地方联合工程研究中心（西藏）. . .</article>
+                  <a href="" class="learn-more">了解详情 <span class="iconfont icon-shezhi-youjiantou"></span></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="activity-card">
+                <div class="cover black">
+                  <div class="image" style="background-image: url(./images/ad_bg.png)"></div>
+                </div>
+                <h2 class="bg-title">微生物研究研讨活动</h2>
+                <div class="info">
+                  <h2 class="title">青藏高原微生物国家地方联...</h2>
+                  <article class="summary">2012年7月，国家发展改革委原则同意将青藏高原微生物国家地方联合工程研究中心（西藏）. . .</article>
+                  <a href="" class="learn-more">了解详情 <span class="iconfont icon-shezhi-youjiantou"></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 近期会议&研究生生活 -->
+    <div class="container news-life-container">
+      <!-- 近期会议 -->
+      <div class="recently-news-wrapper">
+        <div class="section-title">
+          <div class="section-title__title">
+            <p class="fw">རིག་གཞུང་བྱེད་སྒོ་</p>
+            <p class="text">近期会议</p>
+          </div>
+          <div class="section-title__other">
+            <a href="" class="more"><span class="iconfont icon-jia"></span></a>
+          </div>
+        </div>
+        <div class="recently-news">
+          <div class="cover">
+            <div class="image" style="background-image: url(./images/activity_image.png)"></div>
+          </div>
+          <ul class="news-list">
+            <li class="news-item">
+              <a class="news-card">
+                <span class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复</span>
+                <span class="time">2017.5.2</span>
+              </a>
+            </li>
+            <li class="news-item">
+              <a class="news-card">
+                <span class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复</span>
+                <span class="time">2017.5.2</span>
+              </a>
+            </li>
+            <li class="news-item">
+              <a class="news-card">
+                <span class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复</span>
+                <span class="time">2017.5.2</span>
+              </a>
+            </li>
+            <li class="news-item">
+              <a class="news-card">
+                <span class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复</span>
+                <span class="time">2017.5.2</span>
+              </a>
+            </li>
+            <li class="news-item">
+              <a class="news-card">
+                <span class="text omit">青藏高原微生物国家地方联合工程研究中心(西藏)项目通过批复</span>
+                <span class="time">2017.5.2</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 研究生生活 -->
+      <div class="student-life-wrapper">
+        <div class="section-title">
+          <div class="section-title__title">
+            <p class="fw">ཞིབ་འཇུག་སློབ་མའི་འཚོ་བ་</p>
+            <p class="text">研究生生活</p>
+          </div>
+          <div class="section-title__other">
+            <a href="" class="more"><span class="iconfont icon-jia"></span></a>
+          </div>
+        </div>
+        <div class="student-life">
+          <div class="swiper-container" id="student_swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="life-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title" href="">团队合作研究</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="life-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title" href="">团队合作研究</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="life-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title" href="">团队合作研究</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="life-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title" href="">团队合作研究</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="life-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title" href="">团队合作研究</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="student-swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 仪器设备 -->
+    <div class="container machine-container">
+      <div class="section-title">
+        <div class="section-title__title">
+          <p class="fw">དཔྱད་ཆས་སྒྲིག་ཆས་</p>
+          <p class="text">仪器设备</p>
+        </div>
+        <div class="section-title__other">
+          <div class="menus" id="machine_menus">
+            <p class="menu-item active">A产品</p>
+            <p class="menu-item">B产品</p>
+            <p class="menu-item">C产品</p>
+          </div>
+        </div>
+      </div>
+      <div class="machine" id="machine">
+        <!-- A -->
+        <div class="tab-list active">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究A团队合作研究A团队合作研究A团队合作研究A</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究A</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究A</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究A</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究A</a></div>
+                </div>
+              </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <!-- B -->
+        <div class="tab-list">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究B团队合作研究B团队合作研究B团队合作研究B</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究B</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究B</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究B</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究B</a></div>
+                </div>
+              </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <!-- C -->
+        <div class="tab-list">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究C团队合作研究C团队合作研究C团队合作研究C</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究C</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究C</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究C</a></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="machine-card">
+                  <div class="cover hover">
+                    <a href="" class="image" style="background-image: url(./images/activity_image.png)"></a>
+                  </div>
+                  <div class="info"><a class="title omit" href="">团队合作研究C</a></div>
+                </div>
+              </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 网页底部 -->
+  <footer class="web-footer">
+    <!-- 上部分 -->
+    <div class="web-footer__top">
+      <div class="web-footer__content">
+        <!-- 联系方式 -->
+        <div class="web-footer_contact">
+          <div class="company-basic-info">
+            <p class="text"><span class="iconfont icon-dizhi"></span> 四川省成都市高新区天府三街64号</p>
+            <p class="text"><span class="iconfont icon-iconfontdianhua1"></span> 0823-3401199</p>
+            <p class="text"><span class="iconfont icon-youjian"></span> qzgywswu@163.com</p>
+          </div>
+          <div class="third-info">
+            <p class="text">+关注青藏高原微生物研究</p>
+            <a href=""><span class="iconfont icon-weixin"></span></a>
+            <a href=""><span class="iconfont icon-weibo"></span></a>
+            <a href=""><span class="iconfont icon-qq"></span></a>
+          </div>
+        </div>
+        <!-- 友情链接 -->
+        <div class="web-footer__links">
+          <select class="select" name="link" id="footer_link">
+            <option value='' disabled selected style='display:none;'>友情链接</option>
+            <option value="baidu">百度</option>
+            <option value="tengxun">腾讯</option>
+            <option value="ali">阿里</option>
+            <option value="3">Google</option>
+            <option value="3">Facebook</option>
+          </select>
+          <span class="iconfont icon-xiajiantou"></span>
+        </div>
+      </div>
+    </div>
+    <!-- 下部分 -->
+    <div class="web-footer__bottom">
+      <div class="web-footer__content">
+        <!-- 导航 -->
+        <nav class="web-footer__nav">
+          <ul class="web-footer__nav__list">
+            <li class="web-footer__nav__item" class="active"><a href="./index.html">གཙོ་ངོས།<br>首页</a></li>
+            <li class="web-footer__nav__item"><a href="./aboutus.html">ཚོད་ལྟ་ཁང་<br>实验室概况</a></li>
+            <li class="web-footer__nav__item"><a href="">ཚོགས་པ།<br>团队介绍</a></li>
+            <li class="web-footer__nav__item"><a href="">གསར་འགྱུར།<br>新闻资讯</a></li>
+            <li class="web-footer__nav__item"><a href="">དཔྱད་ཆས་སྒྲིག་ཆས་<br>仪器设备</a></li>
+          </ul>
+        </nav>
+        <!-- 备案号 -->
+        <div class="web-footer__copyright">
+          <p class="text">Copyright © 2020 蜀ICP备11103356号</p>
+          <p class="text">青藏高原微生物国家地方联合工程研究中心</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/my-jq-fun.js"></script>
+  <script src="./js/wow.min.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./swiper/swiper.min.js"></script>
+  <script>
+    // 搜索
+    function handleSearch() {
+      var searchVal = $("#keyword").val();
+      alert(searchVal)
+    }
+
+    // banner
+    new Swiper('#index_banner_swiper', {
+      pagination: {
+        el: '.banner-swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: '#banner_next',
+        prevEl: '#banner_prev',
+      },
+    });
+
+    var activity_swiper = new Swiper('#activity_swiper', {
+      slidesPerView: 4,
+      breakpoints: {
+        320: {  //当屏幕宽度大于等于320
+          slidesPerView: 1,
+        },
+        768: {  //当屏幕宽度大于等于768 
+          slidesPerView: 1,
+        },
+        1280: {  //当屏幕宽度大于等于1280
+          slidesPerView: 2,
+        }
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '#activity_next',
+        prevEl: '#activity_prev',
+      },
+    })
+    var student_swiper = new Swiper('#student_swiper', {
+      slidesPerView: 1,
+      pagination: {
+        el: '.student-swiper-pagination',
+        clickable: true,
+      },
+    })
+
+    $("#machine").find(".swiper-container").each(function () {
+      const swiperEl = $(this);
+      new Swiper(swiperEl, {
+        slidesPerView: 4,
+        breakpoints: {
+          320: {  //当屏幕宽度大于等于320
+            slidesPerView: 2,
+          },
+          768: {  //当屏幕宽度大于等于768 
+            slidesPerView: 2,
+          },
+          1280: {  //当屏幕宽度大于等于1280
+            slidesPerView: 3,
+          }
+        },
+        spaceBetween: 20,
+        observer: true,
+        observeParents: true,
+        pagination: {
+          el: $(this).find('.swiper-pagination'),
+          clickable: true,
+        },
+        navigation: {
+          nextEl: $(this).find('#activity_next'),
+          prevEl: $(this).find('#activity_prev'),
+        },
+      })
+    })
+    // 本室快讯
+    $("#fast_news_menus").find(".menu-item").each(function () {
+      $(this).click(function () {
+        const index = $(this).index();
+        $(this).addClass("active").siblings(".menu-item").removeClass("active");
+        $("#fast_news_list").find(".news-list").eq(index).show().siblings(".news-list").hide();
+      })
+    })
+
+    // 器材
+    $("#machine_menus").find(".menu-item").each(function () {
+      $(this).click(function () {
+        const index = $(this).index();
+        $(this).addClass("active").siblings(".menu-item").removeClass("active");
+        $("#machine").find(".tab-list").eq(index).addClass("active").siblings(".tab-list").removeClass("active");
+      })
+    })
+  </script>
+</body>
+
+</html>
